@@ -10,4 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+void        *ft_memset(void *b, int c, size_t len)
+{
+    char *x;
+
+    x = (char*)b;
+
+    /*if (x != NULL)
+    {*/
+        while (len)
+        {
+            *x = (char)c;
+            x++;
+            len--;
+        }
+    /*}*/
+    return (b);
+}

@@ -14,11 +14,14 @@
 
 void		*ft_memalloc(size_t size)
 {
-	char *res;
-	res = NULL;
-	if (size < sizeof(long long))
-		res = ft_strnew(size);
-	else if (res == NULL)
-		return(NULL);
-	return((void*)res);
+	void *res;
+
+	if (size > 9223372036854775807)
+		return (NULL);
+	res = malloc(size + 1);
+	if (res)
+	{
+		ft_memset(res, '\0', size);
+	}
+	return (res);
 }

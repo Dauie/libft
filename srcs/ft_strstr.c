@@ -18,7 +18,7 @@ char		*ft_strstr(const char *big, const char *little)
 	char *res;
 
 	i = 0;
-	if (little == NULL || ft_strlen(little) == 0)
+	if (ft_strlen(little) == 0) /*add protection*/
 		return ((char*)big);
 	while (i < ft_strlen(big))
 	{

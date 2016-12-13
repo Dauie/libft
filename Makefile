@@ -18,7 +18,12 @@ HEADDR = /srcs/libft.h
 
 OBJ =  	ft_atoi.o\
         ft_bzero.o\
-		ft_memcpy.o\
+        ft_memcmp.o\
+        ft_memdel.o\
+        ft_memalloc.o\
+        ft_memchr.o\
+        ft_memset.o\
+        ft_memcpy.o\
 		ft_memmove.o\
 		ft_memccpy.o\
 		ft_cnttrim.o\
@@ -63,10 +68,19 @@ OBJ =  	ft_atoi.o\
 		ft_strsub.o\
 		ft_strtrim.o\
 		ft_tolower.o\
-		ft_toupper.o
+		ft_toupper.o\
+		ft_lstnew.o\
+		ft_lstadd.o\
+		ft_lstdelone.o\
+		ft_lstdel.o
 
 SRC =	srcs/ft_atoi.c\
+        srcs/ft_memdel.c\
+        srcs/ft_memalloc.c\
+        srcs/ft_memcmp.c\
+        srcs/ft_memset.c\
         srcs/ft_bzero.c\
+        srcs/ft_memchr.c\
         srcs/ft_memmove.c\
 		srcs/ft_memccpy.c\
 		srcs/ft_memcpy.c\
@@ -112,7 +126,11 @@ SRC =	srcs/ft_atoi.c\
 		srcs/ft_strsub.c\
 		srcs/ft_strtrim.c\
 		srcs/ft_tolower.c\
-		srcs/ft_toupper.c
+		srcs/ft_toupper.c\
+		srcs/ft_lstnew.c\
+		srcs/ft_lstdelone.c\
+		srcs/ft_lstadd.c\
+		srcs/ft_lstdel.c
 
 CCFLAGS = -Isrcs -Wall -Werror -Wextra -c
 

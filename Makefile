@@ -72,7 +72,9 @@ OBJ =  	ft_atoi.o\
 		ft_lstnew.o\
 		ft_lstadd.o\
 		ft_lstdelone.o\
-		ft_lstdel.o
+		ft_lstdel.o\
+		ft_lsteadd.o\
+		ft_lstiter.o
 
 SRC =	srcs/ft_atoi.c\
         srcs/ft_memdel.c\
@@ -130,6 +132,8 @@ SRC =	srcs/ft_atoi.c\
 		srcs/ft_lstnew.c\
 		srcs/ft_lstdelone.c\
 		srcs/ft_lstadd.c\
+		srcs/ft_lstiter.c\
+		srcs/ft_lsteadd.c\
 		srcs/ft_lstdel.c
 
 CCFLAGS = -Isrcs -Wall -Werror -Wextra -c

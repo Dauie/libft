@@ -15,16 +15,20 @@
 char		*ft_strnstr(const char *big, const char *little, size_t n)
 {
 	const char *res;
+	const char *end;
+	size_t	llen;
 
 	res = big;
-	if (!little)
+	end = res + n;
+	llen = ft_strlen(little);
+	if (llen == 0)
 		return ((char*)big);
-	while (n > 0)
+	end -= (llen -1);
+	while (res < end)
 	{
-		if (ft_strncmp(res, little, n) == 0)
+		if (ft_strncmp(res, little, llen) == 0)
 			return ((char *)res);
 		res++;
-		n--;
 	}
 	return (NULL);
 }

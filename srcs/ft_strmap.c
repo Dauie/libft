@@ -20,18 +20,19 @@ char		*ft_strmap(char const *s, char (*f)(char))
 
 	i = 0;
 	len = 0;
-	if (*s && *f)
-		len = ft_strlen(s);
-	res = (char *)malloc(sizeof(char) * len + 1);
-	if (res == NULL)
+	len = ft_strlen(s);
+	res = (char *) malloc(sizeof(char) * (len + 1));
+	if (!res)
 		return NULL;
-	while (*s)
+	if (*s && *f)
 	{
-		res[i] = f(*s);
-		i++;
-		s++;
+		while (*s)
+		{
+			res[i] = (*f)(*s);
+			i++;
+			s++;
+		}
 	}
-
 	res[i] = '\0';
 	return (res);
 }

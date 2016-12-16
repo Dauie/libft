@@ -14,12 +14,12 @@
 
 size_t		ft_strlen(const char *str)
 {
-	unsigned int i;
+	size_t i;
 
 	i = 0;
 	if (!str[i])
 		return (0);
 	while (str[i])
 		i++;
-	return((size_t)i);
+	return(i);
 }

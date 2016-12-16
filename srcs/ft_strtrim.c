@@ -12,23 +12,30 @@
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+char 	*ft_strtrim(char const *s)
 {
+	char *ec;
 	char *res;
-	int len;
-	len = ft_strlen(s + 1);
-	res = ft_strnew(len);
-	res = (char*)s;
-	if (res)
-	{
-		while(*res == ' ' || *res == '\n' || *res == '\t')
-			res++;
-		while (res[len] == ' ' || res[len] == '\n' || res[len] == '\t')
-		{
-			res[len] = '\0';
-			len--;
-		}
+	size_t i;
 
+	i = 0;
+	if (ft_cnttotspc((char *)s) == ft_strlen(s))
+		return (res = "");
+	ec = (char *)s + (ft_strlen(s) - 1);
+	while (*ec == ' ' || *ec == '\n' || *ec == '\t')
+		ec--;
+	ec++;
+	while (*s == ' ' || *s == '\n' || *s == '\t')
+		s++;
+	res = ft_strnew(sizeof(char) * (ec - s));
+	if (res == NULL || *s == '\0')
+		return (NULL);
+	while (s < ec)
+	{
+		res[i] = *s;
+		s++;
+		i++;
 	}
-		return (res);
+	res[i] = '\0';
+	return (res);
 }

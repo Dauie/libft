@@ -14,28 +14,11 @@
 
 char		**ft_strsplit(char const *s, char c)
 {
-	int i;
-	int ii;
-	char **res;
-	
+	size_t i;
+	size_t y;
+
 	i = 0;
-	ii = 0;
-	res = NULL;
-	while(*s)
-	{
-		if(*s == c)
-			s++;
-		while(*s != c)
-		{
-			res[ii][i] = *s;
-			if (*s == c)
-			{
-				i = 0;
-				ii++;
-			}
-			i++;
-			s++;
-		}
-	}
-	return (res);
+	y = 0;
+	while(ft_iss)
+
 }

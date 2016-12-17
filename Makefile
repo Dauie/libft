@@ -32,6 +32,7 @@ OBJ =  	ft_atoi.o\
 		ft_isascii.o\
 		ft_isdigit.o\
 		ft_isprint.o\
+		ft_isspc.o\
 		ft_putchar.o\
 		ft_putchar_fd.o\
 		ft_putendl.o\
@@ -74,6 +75,10 @@ OBJ =  	ft_atoi.o\
 		ft_lstdelone.o\
 		ft_lstdel.o\
 		ft_lsteadd.o\
+		ft_lstmap.o\
+		ft_cntwrds.o\
+		ft_nxtwrdlen.o\
+		ft_cnttotspc.o\
 		ft_lstiter.o
 
 SRC =	srcs/ft_atoi.c\
@@ -92,6 +97,7 @@ SRC =	srcs/ft_atoi.c\
 		srcs/ft_isascii.c\
 		srcs/ft_isdigit.c\
 		srcs/ft_isprint.c\
+		srcs/ft_isspc.c\
 		srcs/ft_putchar.c\
 		srcs/ft_putchar_fd.c\
 		srcs/ft_putendl.c\
@@ -130,10 +136,14 @@ SRC =	srcs/ft_atoi.c\
 		srcs/ft_tolower.c\
 		srcs/ft_toupper.c\
 		srcs/ft_lstnew.c\
+		srcs/ft_cntwrds.c\
+		srcs/ft_nxtwrdlen.c\
 		srcs/ft_lstdelone.c\
 		srcs/ft_lstadd.c\
 		srcs/ft_lstiter.c\
 		srcs/ft_lsteadd.c\
+		srcs/ft_lstmap.c\
+		srcs/ft_cnttotspc.c\
 		srcs/ft_lstdel.c
 
 CCFLAGS = -Isrcs -Wall -Werror -Wextra -c

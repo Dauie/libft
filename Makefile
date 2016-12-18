@@ -78,6 +78,8 @@ OBJ =  	ft_atoi.o\
 		ft_lstmap.o\
 		ft_cntwrds.o\
 		ft_nxtwrdlen.o\
+		ft_numlen.o\
+		ft_itoa.o\
 		ft_cnttotspc.o\
 		ft_lstiter.o
 
@@ -137,6 +139,8 @@ SRC =	srcs/ft_atoi.c\
 		srcs/ft_toupper.c\
 		srcs/ft_lstnew.c\
 		srcs/ft_cntwrds.c\
+		srcs/ft_numlen.c\
+		srcs/ft_itoa.c\
 		srcs/ft_nxtwrdlen.c\
 		srcs/ft_lstdelone.c\
 		srcs/ft_lstadd.c\

@@ -69,6 +69,8 @@ char		*ft_strmap(char const *s,char(*f)(char));
 char		*ft_strdup(const char *src);
 char		*ft_strcpy(char *dest,char *src);
 char		*ft_strncpy(char *dest,char *src,size_t size);
+char 		*ft_itoa(int nbg);
+size_t		ft_numlen(int n);
 size_t		ft_cntwrds(char *str , char c);
 size_t		ft_nxtwrdlen(char *str, char c);
 t_list	*	ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));

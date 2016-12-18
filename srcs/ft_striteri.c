@@ -22,9 +22,9 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char *))
 	if (s != NULL && f != NULL)
 	{
 		i = ft_strlen(s);
-		while(y < i)
+		while (y < i)
 		{
-		(*f)(y++, s++);
+			(*f)(y++, s++);
 		}
 	}
 }

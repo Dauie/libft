@@ -12,24 +12,23 @@
 
 #include "libft.h"
 
-char *ft_itoa(int nbg)
+char		*ft_itoa(int nbg)
 {
-	char hex[16] = "0123456789ABCDEF";
-	long nb;
-	int sz;
-	char *res;
+	char	hex[16];
+	long	nb;
+	int		sz;
+	char	*res;
 
 	nb = nbg;
 	sz = ft_numlen(nbg);
+	ft_strncpy(hex, "0123456789ABCDEF", 16);
 	if (!(res = ((char *)ft_memalloc(sizeof(char) * sz + 1))))
-		return NULL;
+		return (NULL);
 	res[sz-- + 1] = '\0';
 	if (nbg == 0)
 		return ("0");
 	if (nbg < 0)
 		nb = nb * -1;
-	if (nbg < 0)
-		sz++;
 	while (nb)
 	{
 		res[sz] = hex[nb % 10];
@@ -38,5 +37,5 @@ char *ft_itoa(int nbg)
 	}
 	if (nbg < 0)
 		res[0] = '-';
-	return res;
+	return (res);
 }

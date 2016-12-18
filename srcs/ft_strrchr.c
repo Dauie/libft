@@ -19,7 +19,7 @@ char		*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	scp = NULL;
-	while  (s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		if (s[i] == (char)c)
 			scp = ((char*)&s[i]);

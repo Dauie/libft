@@ -12,10 +12,9 @@
 
 #include "libft.h"
 
-
-void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
+void				*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 {
-	unsigned char x;
+	unsigned char	x;
 	unsigned char	*st1;
 	unsigned char	*st2;
 	size_t			i;
@@ -23,7 +22,7 @@ void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 	i = 0;
 	st1 = (unsigned char *)s1;
 	st2 = (unsigned char *)s2;
-	x = (unsigned char) c;
+	x = (unsigned char)c;
 	while (i < n)
 	{
 		if ((*st1++ = *st2++) == x)

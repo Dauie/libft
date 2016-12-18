@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspc.c                                         :+:      :+:    :+:   */
+/*   ft_cntspc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/15 19:20:08 by rlutt             #+#    #+#             */
-/*   Updated: 2016/12/15 19:25:43 by rlutt            ###   ########.fr       */
+/*   Created: 2016/12/18 04:52:24 by rlutt             #+#    #+#             */
+/*   Updated: 2016/12/18 04:52:41 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isspc(int c)
+#include "libft.h"
+
+int			ft_cntspc(char *str)
 {
-	if (c == '\n' || c == '\t' || c == '\v' ||
-			c == '\f' || c == '\r' || c == ' ')
-		return (1);
-	else
-		return (0);
+	int		cnt;
+
+	cnt = 0;
+	while (str[cnt] == ' ' || str[cnt] == '\n' || str[cnt] == '\t' ||
+			str[cnt] == '\v' || str[cnt] == '\r' || str[cnt] == '\f')
+		cnt++;
+	return (cnt);
 }

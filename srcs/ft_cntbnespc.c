@@ -14,21 +14,21 @@
 
 size_t		ft_cntbnespc(char *str)
 {
-	char *ep;
-	size_t i;
+	char	*ep;
+	size_t	i;
 
 	i = 0;
 	ep = str;
 	ep = ep + ft_strlen(str);
-	while (*str == ' ' || *str == '\n' || *str == '\t'
-		   || *str == '\v' || *str == '\r' || *str == '\f' )
+	while (*str == ' ' || *str == '\n' || *str == '\t' ||
+			*str == '\v' || *str == '\r' || *str == '\f')
 	{
 		str++;
 		i++;
 	}
 	ep--;
-	while (*ep == ' ' || *ep == '\n' || *ep == '\t'
-		   || *ep == '\v' || *ep == '\r' || *ep == '\f' )
+	while (*ep == ' ' || *ep == '\n' || *ep == '\t' ||
+			*ep == '\v' || *ep == '\r' || *ep == '\f')
 	{
 		ep--;
 		i++;

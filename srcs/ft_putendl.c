@@ -19,7 +19,7 @@ void		ft_putendl(char const *s)
 	i = 0;
 	if (s != NULL)
 	{
-		while(s[i])
+		while (s[i])
 		{
 			ft_putchar(s[i]);
 			i++;

@@ -12,15 +12,15 @@
 
 #include "libft.h"
 
-void        ft_bzero(void *s, size_t n)
+void		ft_bzero(void *s, size_t n)
 {
-    char *cp;
+	char	*cp;
 
-    cp = s;
-    while (n > 0)
-    {
-        *cp = '\0';
-        cp++;
-        n--;
-    }
+	cp = s;
+	while (n > 0)
+	{
+		*cp = '\0';
+		cp++;
+		n--;
+	}
 }

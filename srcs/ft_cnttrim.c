@@ -15,13 +15,15 @@
 int		ft_cnttrim(char const *s)
 {
 	int i;
+
 	i = 0;
-    if (s != NULL)
-    {
-        while (s) {
-            if (*s == ' ' || *s == '\t' || *s == '\n')
-                i++;
-        }
-    }
+	if (s != NULL)
+	{
+		while (s)
+		{
+			if (*s == ' ' || *s == '\t' || *s == '\n')
+				i++;
+		}
+	}
 	return (i);
 }

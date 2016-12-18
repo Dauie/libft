@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-size_t		ft_cntwrds(char *str , char c)
+size_t		ft_cntwrds(char *str, char c)
 {
-	size_t i;
-	char *sc;
+	size_t	i;
+	char	*sc;
 
 	i = 0;
 	sc = str;

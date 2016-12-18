@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -24,7 +24,7 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		len = ft_strlen(s);
 	res = ft_memalloc(len);
 	if (!res)
-		return NULL;
+		return (NULL);
 	if (s && f)
 	{
 		if (s && res && (ft_strlen(s) != 0))

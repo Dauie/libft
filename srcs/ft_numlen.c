@@ -19,6 +19,8 @@ size_t		ft_numlen(int n)
 	i = 1;
 	if (n == 0)
 		return (0);
+	if (n < 0)
+		i++;
 	while (n /= 10)
 		i++;
 	return (i);

@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-char		*ft_strstr(const char *big, const char *little)
+char				*ft_strstr(const char *big, const char *little)
 {
-	unsigned int i;
-	char *res;
+	unsigned int	i;
+	char			*res;
 
 	i = 0;
-	if (ft_strlen(little) == 0) /*add protection*/
+	if (ft_strlen(little) == 0)
 		return ((char*)big);
 	while (i < ft_strlen(big))
 	{

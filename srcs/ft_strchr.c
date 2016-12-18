@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
+#include "libft.h"
 
 char		*ft_strchr(const char *s, int c)
 {
@@ -19,11 +19,11 @@ char		*ft_strchr(const char *s, int c)
 	scp = (char *)s;
 	if (c == '\0')
 	{
-		while(*scp)
+		while (*scp)
 			scp++;
-			return (scp);
+		return (scp);
 	}
-	while  (*scp)
+	while (*scp)
 	{
 		if (*scp == c)
 			return (scp);

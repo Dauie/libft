@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-char 	*ft_xtrctnxtwrd(char *str, char c, size_t *i)
+char		*ft_xtrctnxtwrd(char *str, char c, size_t *i)
 {
-	size_t y;
-	char *res;
+	size_t	y;
+	char	*res;
 
 	y = 0;
 	res = ft_memalloc(ft_nxtwrdlen(&str[*i], c));
-	while (str[*i] != c )
+	while (str[*i] != c)
 	{
 		res[y] = str[*i];
 		y++;
@@ -31,19 +31,19 @@ char 	*ft_xtrctnxtwrd(char *str, char c, size_t *i)
 
 char		**ft_strsplit(char const *s, char c)
 {
-	char **res;
-	size_t i;
-	size_t ii;
-	size_t wcnt;
+	char	**res;
+	size_t	i;
+	size_t	ii;
+	size_t	wcnt;
 
 	i = 0;
 	ii = 0;
 	if (!s || !c)
 		return (NULL);
-	wcnt = ft_cntwrds((char *)s , c);
+	wcnt = ft_cntwrds((char *)s, c);
 	if (!(res = (char **)ft_memalloc(sizeof(char *) * wcnt)))
 		return (NULL);
-	while((char)s[i] == c)
+	while ((char)s[i] == c)
 		i++;
 	while (s[i] && ii < wcnt)
 	{

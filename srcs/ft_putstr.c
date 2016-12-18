@@ -19,7 +19,7 @@ void		ft_putstr(char *str)
 	i = 0;
 	if (str != NULL)
 	{
-		while(str[i])
+		while (str[i])
 		{
 			ft_putchar(str[i]);
 			i++;

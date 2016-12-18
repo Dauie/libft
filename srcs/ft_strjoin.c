@@ -14,18 +14,15 @@
 
 char		*ft_strjoin(char const *s1, char const *s2)
 {
-	char *ns;
-	int lo;
-	int i;
-	int it;
-	
+	char	*ns;
+	int		i;
+	int		it;
+
 	i = 0;
 	it = 0;
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	lo = (ft_strlen(s1) + ft_strlen(s2));
-	ns = ft_strnew(lo);
-	if (ns == NULL)
+	if (!(ns = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
 		return (NULL);
 	if (s1 != NULL && s2 != NULL)
 	{
@@ -35,11 +32,7 @@ char		*ft_strjoin(char const *s1, char const *s2)
 			i++;
 		}
 		while (s2[it])
-		{
-			ns[i] = s2[it];
-			i++;
-			it++;
-		}
+			ns[i++] = s2[it++];
 	}
 	ns[i] = '\0';
 	return (ns);

@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-char 	*ft_strtrim(char const *s)
+char			*ft_strtrim(char const *s)
 {
-	char 		*ec;
+	char		*ec;
 	char		*res;
 	size_t		i;
 
@@ -22,9 +22,9 @@ char 	*ft_strtrim(char const *s)
 	res = NULL;
 	if (!s)
 		return (NULL);
-	if (ft_cnttotspc((char *) s) == ft_strlen(s))
+	if (ft_cnttotspc((char *)s) == ft_strlen(s))
 		return (res = "");
-	ec = (char *) s + (ft_strlen(s) - 1);
+	ec = (char *)s + (ft_strlen(s) - 1);
 	while (*ec == ' ' || *ec == '\n' || *ec == '\t')
 		ec--;
 	ec++;
@@ -33,11 +33,8 @@ char 	*ft_strtrim(char const *s)
 	res = ft_strnew(sizeof(char) * (ec - s));
 	if (res == NULL || *s == '\0')
 		return (NULL);
-	while (s < ec) {
-		res[i] = *s;
-		s++;
-		i++;
-	}
+	while (s < ec)
+		res[i++] = *s++;
 	res[i] = '\0';
 	return (res);
 }

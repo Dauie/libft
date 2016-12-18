@@ -17,10 +17,10 @@ size_t		ft_cnttotspc(char *str)
 	size_t i;
 
 	i = 0;
-	while(*str)
+	while (*str)
 	{
 		if (*str == ' ' || *str == '\n' || *str == '\v'
-			   	|| *str == '\t' || *str == '\f' || *str == '\r' )
+			|| *str == '\t' || *str == '\f' || *str == '\r')
 			i++;
 		str++;
 	}

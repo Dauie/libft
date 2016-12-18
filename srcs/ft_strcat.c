@@ -17,9 +17,9 @@ char	*ft_strcat(char *s1, const char *s2)
 	char *rdst;
 
 	rdst = s1;
-	while(*s1)
+	while (*s1)
 		s1++;
-	while(*s2)
+	while (*s2)
 	{
 		*s1++ = *s2++;
 	}

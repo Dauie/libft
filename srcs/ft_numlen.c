@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/30 14:12:45 by rlutt             #+#    #+#             */
-/*   Updated: 2016/12/02 21:24:23 by rlutt            ###   ########.fr       */
+/*   Created: 2016/12/17 00:42:45 by rlutt             #+#    #+#             */
+/*   Updated: 2016/12/17 00:43:03 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_itoa(int nbg)
+size_t		ft_numlen(int n)
 {
-	char hex[16] = "0123456789ABCDEF";
-	long nb;
-	int sz;
-	char *res;
+	size_t		i;
 
-	nb = nbg;
-	sz = ft_numlen(nbg);
-	if (!(res = ((char *)ft_memalloc(sizeof(char) * sz + 1))))
-		return NULL;
-	res[sz-- + 1] = '\0';
-	if (nbg == 0)
-		return ("0");
-	if (nbg < 0)
-		nb = nb * -1;
-	if (nbg < 0)
-		sz++;
-	while (nb)
-	{
-		res[sz] = hex[nb % 10];
-		nb = nb / 10;
-		sz--;
-	}
-	if (nbg < 0)
-		res[0] = '-';
-	return res;
+	i = 1;
+	if (n == 0)
+		return (0);
+	while (n /= 10)
+		i++;
+	return (i);
 }

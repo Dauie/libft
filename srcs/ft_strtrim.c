@@ -14,14 +14,17 @@
 
 char 	*ft_strtrim(char const *s)
 {
-	char *ec;
-	char *res;
-	size_t i;
+	char 		*ec;
+	char		*res;
+	size_t		i;
 
 	i = 0;
-	if (ft_cnttotspc((char *)s) == ft_strlen(s))
+	res = NULL;
+	if (!s)
+		return (NULL);
+	if (ft_cnttotspc((char *) s) == ft_strlen(s))
 		return (res = "");
-	ec = (char *)s + (ft_strlen(s) - 1);
+	ec = (char *) s + (ft_strlen(s) - 1);
 	while (*ec == ' ' || *ec == '\n' || *ec == '\t')
 		ec--;
 	ec++;
@@ -30,8 +33,7 @@ char 	*ft_strtrim(char const *s)
 	res = ft_strnew(sizeof(char) * (ec - s));
 	if (res == NULL || *s == '\0')
 		return (NULL);
-	while (s < ec)
-	{
+	while (s < ec) {
 		res[i] = *s;
 		s++;
 		i++;

@@ -11,14 +11,11 @@
 /* ************************************************************************** */
 
 #ifndef		LIBFT_H
-#define 	LIBFT_H
+# define 	LIBFT_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
-
-# define 	INT_MIN = -2147483648
-# define 	INT_MAX = 2147483648
+# include <unistd.h>
+# include <stdlib.h>
+# include <string.h>
 
 typedef	struct		s_list
 {
@@ -28,8 +25,8 @@ typedef	struct		s_list
 }					t_list;
 
 
-int	    	ft_toupper(int c);
-int	    	ft_tolower(int c);
+int			ft_toupper(int c);
+int	   		ft_tolower(int c);
 void		ft_memdel(void **ap);
 void		*ft_memalloc(size_t size);
 int     	ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -73,7 +70,7 @@ char 		*ft_itoa(int nbg);
 size_t		ft_numlen(int n);
 size_t		ft_cntwrds(char *str , char c);
 size_t		ft_nxtwrdlen(char *str, char c);
-t_list	*	ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list		*ft_lstnew(void const *content, size_t content_size);
 void		ft_lsteadd(t_list **alst, t_list *nw);
 void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));

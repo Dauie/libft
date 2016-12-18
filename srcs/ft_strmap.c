@@ -20,11 +20,12 @@ char		*ft_strmap(char const *s, char (*f)(char))
 
 	i = 0;
 	len = 0;
-	len = ft_strlen(s);
+	if (s)
+		len = ft_strlen(s);
 	res = (char *) malloc(sizeof(char) * (len + 1));
 	if (!res)
 		return NULL;
-	if (*s && *f)
+	if (s && f)
 	{
 		while (*s)
 		{

@@ -92,4 +92,7 @@ int					ft_atoi(char *str);
 int					ft_cntspc(char *str);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_strcmp(const char *s1, const char *s2);
+void				ft_putstrto(char *str, int wf);
+void				ft_putlong(long nb);
+void				ft_putchrto(char c, int wf);
 #endif

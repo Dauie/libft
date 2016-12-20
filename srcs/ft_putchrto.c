@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_putchrto.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
+/*   By: rlutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/11 02:11:28 by rlutt             #+#    #+#             */
-/*   Updated: 2016/12/11 02:14:45 by rlutt            ###   ########.fr       */
+/*   Created: 2016/12/19 18:20:58 by rlutt             #+#    #+#             */
+/*   Updated: 2016/12/19 18:21:01 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memalloc(size_t size)
+void		ft_putchrto(char c, int wf)
 {
-	void *res;
-
-	if (size > 9223372036854775807)
-		return (NULL);
-	res = malloc(size + 1);
-	if (!res)
-	{
-		free(res);
-		return (NULL);
-	}
-	if (res)
-	{
-		ft_memset(res, '\0', size);
-	}
-	return (res);
+	write(wf, &c, 1);
 }

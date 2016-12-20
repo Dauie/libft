@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2016/12/09 02:27:34 by rlutt            ###   ########.fr        #
+#    Updated: 2016/12/19 18:57:28 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,11 @@ OBJ =  	ft_atoi.o\
 		ft_itoa.o\
 		ft_cnttotspc.o\
 		ft_cntspc.o\
-		ft_lstiter.o
+		ft_lstiter.o\
+		ft_putstrto.o\
+		ft_putchrto.o\
+		ft_putlong.o
+
 
 SRC =	srcs/ft_atoi.c\
         srcs/ft_memdel.c\
@@ -150,7 +154,10 @@ SRC =	srcs/ft_atoi.c\
 		srcs/ft_lstmap.c\
 		srcs/ft_cnttotspc.c\
 		srcs/ft_cntspc.c\
-		srcs/ft_lstdel.c
+		srcs/ft_lstdel.c\
+		srcs/ft_putstrto.c\
+		srcs/ft_putchrto.c\
+		srcs/ft_putlong.c
 
 CCFLAGS = -Isrcs -Wall -Werror -Wextra -c
 

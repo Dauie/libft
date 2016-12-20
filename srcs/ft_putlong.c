@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_putlong.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/11 19:49:35 by rlutt             #+#    #+#             */
-/*   Updated: 2016/12/11 19:49:49 by rlutt            ###   ########.fr       */
+/*   Created: 2016/12/19 18:14:28 by rlutt             #+#    #+#             */
+/*   Updated: 2016/12/19 18:14:31 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void const *content, size_t content_size)
+void		ft_putlong(long nb)
 {
-	void		*c_cp;
-	size_t		cs_cp;
-	t_list		*res;
-
-	if (!(res = (t_list*)malloc(sizeof(t_list))))
+	if (nb < 0)
 	{
-		free(res);
-		return (NULL);
+		nb *= -1;
+		ft_putchar('-');
 	}
-	if (content != NULL)
+	if (nb > 9)
 	{
-		c_cp = ft_memalloc(content_size);
-		cs_cp = content_size;
-		ft_memcpy(c_cp, content, cs_cp);
-		res->content = c_cp;
-		res->content_size = cs_cp;
+		ft_putlong(nb /= 10);
+		ft_putlong(nb %= 10);
 	}
 	else
-	{
-		res->content = NULL;
-		res->content_size = 0;
-	}
-	res->next = NULL;
-	return (res);
+		ft_putchar(nb + '0');
 }

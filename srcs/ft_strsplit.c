@@ -42,7 +42,10 @@ char		**ft_strsplit(char const *s, char c)
 		return (NULL);
 	wcnt = ft_cntwrds((char *)s, c);
 	if (!(res = (char **)ft_memalloc(sizeof(char *) * wcnt)))
+	{
+		free(res);
 		return (NULL);
+	}
 	while ((char)s[i] == c)
 		i++;
 	while (s[i] && ii < wcnt)

@@ -4,7 +4,8 @@ This started as my 1st Project @ 42USA but is now just a continuously growing
 library that is product of my time here at 42.
 Please use my code for anything you like. Modify it for your own use, etc.
 If you have suggestions for improvements, those are welcome just the same.
-My email can be found at the top of each file and at the bottom of this.
+My email can be found at the top of each file and at the bottom of this
+document.
 
 #Libft - Descriptions
 
@@ -236,5 +237,5 @@ Function puts single character to the standard output.
 /***
 This code is unlicensed.
 Code is free to be used and modified, but please pay mention to its author.
-All code authored by Robert Wyatt Lutt.
+All code authored by Robert Wyatt Lutt - Ausdauerr@gmail.com
 ***/

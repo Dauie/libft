@@ -233,6 +233,15 @@ new array of chars.
 
 Function puts single character to the standard output.
 
+#### ft_putlong:
+
+Function acts exactly like ft_putnbr but takes in a long rather than an int.
+
+#### ft_putstrto:
+
+Function takes in a string and also an int that will represent which output to write to.
+ "1" being the standard output, "2" being standard error.
+
 /***
 This code is unlicensed.
 Code is free to be used and modified, but please pay mention to its author.

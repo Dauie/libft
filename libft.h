@@ -77,7 +77,7 @@ void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 size_t				ft_cnttotspc(char *str);
 void				ft_lstadd(t_list **alst, t_list *nw);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-size_t				ft_strlcat(char *dst, const char *src, int len);
+size_t				ft_strlcat(char *dst, const char *src, int size);
 size_t				ft_strlen(const char *str);
 int					ft_cntspc(char *str);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
@@ -92,7 +92,4 @@ int					ft_atoi(char *str);
 int					ft_cntspc(char *str);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_strcmp(const char *s1, const char *s2);
-void				ft_putstrto(char *str, int wf);
-void				ft_putlong(long nb);
-void				ft_putchrto(char c, int wf);
 #endif

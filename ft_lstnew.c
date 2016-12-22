@@ -19,10 +19,7 @@ t_list		*ft_lstnew(void const *content, size_t content_size)
 	t_list		*res;
 
 	if (!(res = (t_list*)malloc(sizeof(t_list))))
-	{
-		free(res);
 		return (NULL);
-	}
 	if (content != NULL)
 	{
 		c_cp = ft_memalloc(content_size);

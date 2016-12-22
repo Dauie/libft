@@ -17,11 +17,10 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	t_list	*fst;
 	t_list	*nue;
 
-	if (!(fst = (t_list*)ft_memalloc(sizeof(lst))))
-	{
-		free(fst);
+	if (lst == NULL || f == NULL)
 		return (NULL);
-	}
+	if (!(fst = (t_list*)ft_memalloc(sizeof(lst))))
+		return (NULL);
 	if (lst && f)
 	{
 		nue = f(lst);

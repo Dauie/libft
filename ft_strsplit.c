@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-char		*ft_xtrctnxtwrd(char *str, char c, size_t *i)
+static char		*ft_xtrctnxtwrd(char *str, char c, size_t *i)
 {
-	size_t	y;
-	char	*res;
+	size_t		y;
+	char		*res;
 
 	y = 0;
 	if (!(res = ft_memalloc((ft_nxtwrdlen(&str[*i], c) + 1))))
@@ -38,12 +38,12 @@ char		*ft_xtrctnxtwrd(char *str, char c, size_t *i)
 	return (res);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	char	**res;
-	size_t	i;
-	size_t	ii;
-	size_t	wcnt;
+	char		**res;
+	size_t		i;
+	size_t		ii;
+	size_t		wcnt;
 
 	i = 0;
 	ii = 0;

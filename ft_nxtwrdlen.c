@@ -19,7 +19,7 @@ size_t		ft_nxtwrdlen(char *str, char c)
 	i = 0;
 	while (*str != c)
 	{
-		if (*str != c && *str != '\0')
+		if (*str != c && *str)
 			i++;
 		str++;
 	}

@@ -6,7 +6,7 @@
 /*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 02:11:28 by rlutt             #+#    #+#             */
-/*   Updated: 2016/12/11 02:14:45 by rlutt            ###   ########.fr       */
+/*   Updated: 2016/12/22 23:50:42 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,9 @@ void		*ft_memalloc(size_t size)
 {
 	void *res;
 
-	if (size > 9223372036854775807)
-		return (NULL);
 	res = malloc(size);
 	if (!res)
 		return (NULL);
-	if (res)
-		ft_bzero(res, size);
+	ft_bzero(res, size);
 	return (res);
 }

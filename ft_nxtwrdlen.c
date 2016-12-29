@@ -17,10 +17,9 @@ size_t		ft_nxtwrdlen(char *str, char c)
 	size_t i;
 
 	i = 0;
-	while (*str != c)
+	while (*str != c && *str)
 	{
-		if (*str != c && *str)
-			i++;
+		i++;
 		str++;
 	}
 	return (i);

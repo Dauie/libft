@@ -24,7 +24,7 @@ char		*ft_itoa(int nbg)
 		return (NULL);
 	sz--;
 	if (nbg == 0)
-		return ("0");
+		return (ft_strdup("0"));
 	if (nbg < 0)
 		nb = nb * -1;
 	while (nb != 0)

@@ -22,7 +22,7 @@ char			*ft_strtrim(char const *s)
 	if (!s)
 		return (NULL);
 	if (ft_cnttotspc((char *)s) == ft_strlen(s))
-		return (res = "");
+		return (ft_strdup(""));
 	ec = (char *)s + (ft_strlen(s) - 1);
 	while ((*ec == ' ' || *ec == '\n' || *ec == '\t') && *s)
 		ec--;

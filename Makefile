@@ -26,7 +26,6 @@ OBJ =  	ft_atoi.o\
         ft_memcpy.o\
 		ft_memmove.o\
 		ft_memccpy.o\
-		ft_cnttrim.o\
 		ft_isalnum.o\
 		ft_isalpha.o\
 		ft_isascii.o\
@@ -94,7 +93,6 @@ SRC =	ft_atoi.c\
         ft_memmove.c\
 		ft_memccpy.c\
 		ft_memcpy.c\
-		ft_cnttrim.c\
 		ft_isalnum.c\
 		ft_isalpha.c\
 		ft_isascii.c\

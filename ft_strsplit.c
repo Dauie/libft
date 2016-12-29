@@ -16,23 +16,20 @@ static char		*ft_xtrctnxtwrd(char *str, char c, size_t *i)
 {
 	size_t		y;
 	char		*res;
+	size_t		len;
 
 	y = 0;
-	if (!(res = ft_memalloc((ft_nxtwrdlen(&str[*i], c) + 1))))
-	{
-		while (*res)
-		{
-			free(res);
-			res = NULL;
-			res--;
-		}
+	len = ft_nxtwrdlen(&str[*i], c);
+	if (!(res = (char *)ft_memalloc(sizeof(char) * len + 1)))
 		return (NULL);
-	}
-	while (str[*i] != c && str[*i])
+	if (str != NULL)
 	{
-		res[y] = str[*i];
-		y++;
-		*i += 1;
+		while (str[*i] != c && str[*i])
+		{
+			res[y] = str[*i];
+			y++;
+			*i += 1;
+		}
 	}
 	res[y] = '\0';
 	return (res);
@@ -49,16 +46,16 @@ char			**ft_strsplit(char const *s, char c)
 	ii = 0;
 	if (!s || !c)
 		return (NULL);
-	wcnt = ft_cntwrds((char *)s, c);
-	if (!(res = (char **)ft_memalloc(sizeof(char *) * wcnt + 1)))
+	wcnt = ft_cntwrds((char*)s, c);
+	if (!(res = (char **)ft_memalloc(sizeof(char *) * (wcnt + 1))))
 		return (NULL);
-	while ((char)s[i] == c)
+	while (s[i] && s[i] == c)
 		i++;
 	while (s[i] && ii < wcnt)
 	{
 		res[ii] = ft_xtrctnxtwrd((char *)s, c, &i);
 		ii++;
-		while (s[i] == c && s[i])
+		while (s[i] && s[i] == c)
 			i++;
 	}
 	res[ii] = NULL;

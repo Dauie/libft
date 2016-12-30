@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-size_t		ft_numlen(int n)
+size_t		ft_numlen(long long nb, int bse)
 {
 	size_t		i;
 
 	i = 1;
-	if (n < 0)
+	if (nb < 0)
 		i++;
-	while (n /= 10)
+	while (nb /= bse)
 		i++;
 	return (i);
 }

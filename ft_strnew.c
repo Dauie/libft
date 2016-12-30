@@ -19,6 +19,5 @@ char		*ft_strnew(size_t size)
 	res = (char *)ft_memalloc(sizeof(char) * (size + 1));
 	if (!res)
 		return (NULL);
-	ft_memset(res, 0, size + 1);
 	return (res);
 }

@@ -19,7 +19,7 @@ char		*ft_itoa(int nbg)
 	char	*res;
 
 	nb = nbg;
-	sz = ft_numlen(nbg);
+	sz = ft_numlen((long long)nbg, 10);
 	if (!(res = ((char *)ft_memalloc(sz + 1))))
 		return (NULL);
 	sz--;

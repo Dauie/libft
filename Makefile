@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2016/12/20 15:33:08 by rlutt            ###   ########.fr        #
+#    Updated: 2016/12/29 17:45:52 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,7 @@ OBJ =  	ft_atoi.o\
 		ft_numlen.o\
 		ft_itoa.o\
 		ft_cnttotspc.o\
-		ft_cntspc.o\
+		ft_cntbspc.o\
 		ft_lstiter.o
 
 SRC =	ft_atoi.c\
@@ -147,7 +147,7 @@ SRC =	ft_atoi.c\
 		ft_lsteadd.c\
 		ft_lstmap.c\
 		ft_cnttotspc.c\
-		ft_cntspc.c\
+		ft_cntbspc.c\
 		ft_lstdel.c
 
 CCFLAGS = -I. -Wall -Werror -Wextra -c
@@ -174,3 +174,6 @@ fclean:clean
 		$(RM) $(NAME)
 
 re:fclean $(NAME)
+
+dau: re
+		$(RM) $(OBJ)

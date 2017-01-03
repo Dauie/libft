@@ -16,139 +16,93 @@ CC = gcc
 
 HEADDR = /srcs/libft.h
 
-OBJ =  	ft_atoi.o\
-        ft_bzero.o\
-        ft_memcmp.o\
-        ft_memdel.o\
-        ft_memalloc.o\
-        ft_memchr.o\
-        ft_memset.o\
-        ft_memcpy.o\
-		ft_memmove.o\
-		ft_memccpy.o\
-		ft_isalnum.o\
-		ft_isalpha.o\
-		ft_isascii.o\
-		ft_isdigit.o\
-		ft_isprint.o\
-		ft_isspc.o\
-		ft_putchar.o\
-		ft_putchar_fd.o\
-		ft_putendl.o\
-		ft_putendl_fd.o\
-		ft_putnbr.o\
-		ft_putnbr_fd.o\
-		ft_putstr.o\
-		ft_putstr_fd.o\
-		ft_strcat.o\
-		ft_strchr.o\
-		ft_strclr.o\
-		ft_strcmp.o\
-		ft_strcpy.o\
-		ft_strdel.o\
-		ft_strdup.o\
-		ft_strequ.o\
-		ft_striter.o\
-		ft_striteri.o\
-		ft_strjoin.o\
-		ft_strlcat.o\
-		ft_strlen.o\
-		ft_strmap.o\
-		ft_strmapi.o\
-		ft_strncat.o\
-		ft_strncpy.o\
-		ft_strncmp.o\
-		ft_strnequ.o\
-		ft_strnew.o\
-		ft_strnstr.o\
-		ft_strrchr.o\
-		ft_strrev.o\
-		ft_strsplit.o\
-		ft_strstr.o\
-		ft_strsub.o\
-		ft_strtrim.o\
-		ft_tolower.o\
-		ft_toupper.o\
-		ft_lstnew.o\
-		ft_lstadd.o\
-		ft_lstdelone.o\
-		ft_lstdel.o\
-		ft_lsteadd.o\
-		ft_lstmap.o\
-		ft_cntwrds.o\
-		ft_nxtwrdlen.o\
-		ft_numlen.o\
-		ft_itoa.o\
-		ft_cnttotspc.o\
-		ft_cntbspc.o\
-		ft_lstiter.o
 
-SRC =	ft_atoi.c\
-        ft_memdel.c\
-        ft_memalloc.c\
-        ft_memcmp.c\
-        ft_memset.c\
-        ft_bzero.c\
-        ft_memchr.c\
-        ft_memmove.c\
-		ft_memccpy.c\
-		ft_memcpy.c\
-		ft_isalnum.c\
-		ft_isalpha.c\
-		ft_isascii.c\
-		ft_isdigit.c\
-		ft_isprint.c\
-		ft_isspc.c\
-		ft_putchar.c\
-		ft_putchar_fd.c\
-		ft_putendl.c\
-		ft_putendl_fd.c\
-		ft_putnbr.c\
-		ft_putnbr_fd.c\
-		ft_putstr.c\
-		ft_putstr_fd.c\
-		ft_strcat.c\
-		ft_strchr.c\
-		ft_strclr.c\
-		ft_strcmp.c\
-		ft_strcpy.c\
-		ft_strdel.c\
-		ft_strdup.c\
-		ft_strequ.c\
-		ft_striter.c\
-		ft_striteri.c\
-		ft_strjoin.c\
-		ft_strlcat.c\
-		ft_strlen.c\
-		ft_strmap.c\
-		ft_strmapi.c\
-		ft_strncat.c\
-		ft_strncpy.c\
-		ft_strncmp.c\
-		ft_strnequ.c\
-		ft_strnew.c\
-		ft_strnstr.c\
-		ft_strrev.c\
-		ft_strrchr.c\
-		ft_strsplit.c\
-		ft_strstr.c\
-		ft_strsub.c\
-		ft_strtrim.c\
-		ft_tolower.c\
-		ft_toupper.c\
-		ft_lstnew.c\
-		ft_cntwrds.c\
-		ft_numlen.c\
-		ft_itoa.c\
-		ft_nxtwrdlen.c\
-		ft_lstdelone.c\
-		ft_lstadd.c\
-		ft_lstiter.c\
-		ft_lsteadd.c\
-		ft_lstmap.c\
-		ft_cnttotspc.c\
-		ft_cntbspc.c\
-		ft_lstdel.c
+
+CHAR_SRC =	char/ft_isalnum.c\
+			char/ft_isalpha.c\
+			char/ft_isascii.c\
+			char/ft_isdigit.c\
+			char/ft_isprint.c\
+			char/ft_isspc.c
+
+CNVRSN_SRC =	cnvrsn/ft_atoi.c\
+				cnvrsn/ft_itoa.c
+
+LST_SRC =	lst/ft_lstadd.c\
+			lst/ft_lstdel.c\
+			lst/ft_lstdelone.c\
+			lst/ft_lsteadd.c\
+			lst/ft_lstiter.c\
+			lst/ft_lstmap.c\
+			lst/ft_lstnew.c
+
+MEM_SRC =	mem/ft_bzero.c\
+			mem/ft_memalloc.c\
+			mem/ft_memccpy.c\
+			mem/ft_memchr.c\
+			mem/ft_memcmp.c\
+			mem/ft_memcpy.c\
+			mem/ft_memdel.c\
+			mem/ft_memmove.c\
+			mem/ft_memset.c
+
+NUM_SRC = 	num/ft_numlen.c
+
+PUT_SRC = 	put/ft_putchar.c\
+			put/ft_putchar_fd.c\
+			put/ft_putendl.c\
+			put/ft_putendl_fd.c\
+			put/ft_putnbr.c\
+			put/ft_putnbr_fd.c\
+			put/ft_putstr.c\
+			put/ft_putstr_fd.c
+
+STR_SRC = 	str/ft_cntbnespc.c\
+			str/ft_cntbspc.c\
+			str/ft_cnttotspc.c\
+			str/ft_cntwrds.c\
+			str/ft_isstralnum.c\
+			str/ft_isstralpha.c\
+			str/ft_isstrascii.c\
+			str/ft_isstrdigit.c\
+			str/ft_isstrprint.c\
+			str/ft_nxtwrdlen.c\
+			str/ft_strcat.c\
+			str/ft_strchr.c\
+			str/ft_strclr.c\
+			str/ft_strcmp.c\
+			str/ft_strcpy.c\
+			str/ft_strdel.c\
+			str/ft_strdup.c\
+			str/ft_strequ.c\
+			str/ft_striter.c\
+			str/ft_striteri.c\
+			str/ft_strjoin.c\
+			str/ft_strlcat.c\
+			str/ft_strlen.c\
+			str/ft_strmap.c\
+			str/ft_strmapi.c\
+			str/ft_strmapi.c\
+			str/ft_strncat.c\
+			str/ft_strncmp.c\
+			str/ft_strncpy.c\
+			str/ft_strnequ.c\
+			str/ft_strnew.c\
+			str/ft_strnstr.c\
+			str/ft_strrchr.c\
+			str/ft_strrev.c\
+			str/ft_strsplit.c\
+			str/ft_strstr.c\
+			str/ft_strsub.c\
+			str/ft_strtrim.c\
+			str/ft_tolower.c\
+			str/ft_toupper.c
+
+TBL_SRC = 	tbl/ft_tbldel.c\
+			tbl/ft_tbllen.c\
+			tbl/ft_tblnew.c\
+
+OBJ =		$(wildcard *.o)
 
 CCFLAGS = -I. -Wall -Werror -Wextra -c
 
@@ -159,14 +113,51 @@ ARCHIVE = ar rc $(NAME)
 INDEX = ranlib
 
 $(NAME):
-		$(CC) $(CCFLAGS) $(SRC)
+		$(CC) $(CCFLAGS) $(MEM_SRC)
+		$(CC) $(CCFLAGS) $(CHAR_SRC)
+		$(CC) $(CCFLAGS) $(STR_SRC)
+		$(CC) $(CCFLAGS) $(PUT_SRC)
+		$(CC) $(CCFLAGS) $(NUM_SRC)
+		$(CC) $(CCFLAGS) $(CNVRSN_SRC)
+		$(CC) $(CCFLAGS) $(LST_SRC)
+		$(CC) $(CCFLAGS) $(TBL_SRC)
 		$(ARCHIVE) $(OBJ)
 		$(INDEX) $(NAME)
 
 all:$(NAME)
 
-
-
+mem:
+		$(CC) $(CCFLAGS) $(MEM_SRC)
+		$(ARCHIVE) $(OBJ)
+		$(INDEX) $(NAME)
+char:
+		$(CC) $(CCFLAGS) $(CHAR_SRC)
+		$(ARCHIVE) $(OBJ)
+		$(INDEX) $(NAME)
+str:
+		$(CC) $(CCFLAGS) $(STR_SRC)
+		$(ARCHIVE) $(OBJ)
+		$(INDEX) $(NAME)
+put:
+		$(CC) $(CCFLAGS) $(PUT_SRC)
+		$(ARCHIVE) $(OBJ)
+		$(INDEX) $(NAME)
+num:
+		$(CC) $(CCFLAGS) $(NUM_SRC)
+		$(ARCHIVE) $(OBJ)
+		$(INDEX) $(NAME)
+cnvrsn:
+		$(CC) $(CCFLAGS) $(CNVRSN_SRC)
+		$(ARCHIVE) $(OBJ)
+		$(INDEX) $(NAME)
+lst:
+		$(CC) $(CCFLAGS) $(LST_SRC)
+		$(ARCHIVE) $(OBJ)
+		$(INDEX) $(NAME)
+tbl:
+		$(CC) $(CCFLAGS) $(TBL_SRC)
+		$(ARCHIVE) $(OBJ)
+		$(INDEX) $(NAME)
 clean:
 		$(RM) $(OBJ)
 

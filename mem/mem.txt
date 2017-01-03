@@ -1,0 +1,260 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/10 00:36:03 by rlutt             #+#    #+#             */
+/*   Updated: 2016/12/10 00:36:07 by rlutt            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void		ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, 0, n);
+	return ;
+}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/11 02:11:28 by rlutt             #+#    #+#             */
+/*   Updated: 2016/12/22 23:50:42 by rlutt            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void		*ft_memalloc(size_t size)
+{
+	void *res;
+
+	res = malloc(size);
+	if (!res)
+		return (NULL);
+	ft_bzero(res, size);
+	return (res);
+}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/09 02:22:33 by rlutt             #+#    #+#             */
+/*   Updated: 2016/12/09 03:06:07 by rlutt            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void				*ft_memccpy(void *s1, const void *s2, int c, size_t n)
+{
+	unsigned char	x;
+	unsigned char	*str1;
+	unsigned char	*str2;
+	size_t			i;
+
+	i = 0;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	x = (unsigned char)c;
+	while (i < n)
+	{
+		if ((*str1++ = *str2++) == x)
+			return (str1);
+		i++;
+	}
+	return (NULL);
+}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/10 01:01:18 by rlutt             #+#    #+#             */
+/*   Updated: 2016/12/10 01:01:31 by rlutt            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void			*ft_memchr(const void *s, int c, size_t n)
+{
+	size_t		i;
+	const char	*cp;
+
+	i = 0;
+	cp = s;
+	while (i < n)
+	{
+		if (cp[i] == (char)c)
+		{
+			cp = &cp[i];
+			return ((void *)cp);
+		}
+		i++;
+	}
+	return (NULL);
+}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/10 17:12:33 by rlutt             #+#    #+#             */
+/*   Updated: 2016/12/10 17:12:47 by rlutt            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int					ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	unsigned char	*s1cp;
+	unsigned char	*s2cp;
+
+	s1cp = (unsigned char*)s1;
+	s2cp = (unsigned char*)s2;
+	while (n > 0)
+	{
+		if (*s1cp != *s2cp)
+			return (*s1cp - *s2cp);
+		s1cp++;
+		s2cp++;
+		n--;
+	}
+	return (0);
+}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/05 16:57:42 by rlutt             #+#    #+#             */
+/*   Updated: 2016/12/09 02:32:41 by rlutt            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void			*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	unsigned char	*d;
+	const char		*s;
+
+	d = dst;
+	s = src;
+	while (n > 0)
+	{
+		*d = *s;
+		d++;
+		s++;
+		n--;
+	}
+	return (dst);
+}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/11 15:10:38 by rlutt             #+#    #+#             */
+/*   Updated: 2016/12/11 15:10:54 by rlutt            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void		ft_memdel(void **ap)
+{
+	if (ap)
+	{
+		*ap = NULL;
+		free(*ap);
+	}
+}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/09 22:03:03 by rlutt             #+#    #+#             */
+/*   Updated: 2016/12/09 22:03:19 by rlutt            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void		*ft_memmove(void *dst, const void *src, size_t len)
+{
+	char	*d;
+	char	*s;
+
+	d = (char *)dst;
+	s = (char *)src;
+	if (s < d)
+	{
+		s = s + len - 1;
+		d = d + len - 1;
+		while (len)
+		{
+			*d-- = *s--;
+			len--;
+		}
+		return (dst);
+	}
+	else
+	{
+		while (len)
+		{
+			*d++ = *s++;
+			len--;
+		}
+		return (dst);
+	}
+}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/10 01:00:48 by rlutt             #+#    #+#             */
+/*   Updated: 2016/12/10 01:01:01 by rlutt            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void		*ft_memset(void *b, int c, size_t len)
+{
+	char *x;
+
+	x = (char*)b;
+	while (len > 0)
+	{
+		*x = (char)c;
+		x++;
+		len--;
+	}
+	return (b);
+}

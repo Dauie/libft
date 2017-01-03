@@ -87,9 +87,16 @@ int					ft_isdigit(int c);
 int					ft_isascii(int c);
 int					ft_isalpha(int c);
 int					ft_isalnum(int c);
-int					ft_cnttrim(char const *s);
 int					ft_atoi(char *str);
 int					ft_cntbspc(char *str);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_strcmp(const char *s1, const char *s2);
+size_t				ft_tbllen(char **tbl);
+void				ft_tbldel(char **tbl);
+int					ft_isstralnum(char *str);
+int					ft_isstralpha(char *str);
+int					ft_isstrdigit(char *str);
+int					ft_isstrascii(char *str);
+int					ft_isstrprint(char *str);
+
 #endif

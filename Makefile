@@ -102,13 +102,13 @@ TBL_SRC = 	tbl/ft_tbldel.c\
 			tbl/ft_tbllen.c\
 			tbl/ft_tblnew.c\
 
-OBJ =		$(wildcard *.o)
+OBJ =		*.o
 
 CCFLAGS = -I. -Wall -Werror -Wextra -c
 
 RM = -rm -f
 
-ARCHIVE = ar rc $(NAME)
+ARCHIVE = ar rc
 
 INDEX = ranlib
 
@@ -121,42 +121,42 @@ $(NAME):
 		$(CC) $(CCFLAGS) $(CNVRSN_SRC)
 		$(CC) $(CCFLAGS) $(LST_SRC)
 		$(CC) $(CCFLAGS) $(TBL_SRC)
-		$(ARCHIVE) $(OBJ)
+		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 
 all:$(NAME)
 
 mem:
 		$(CC) $(CCFLAGS) $(MEM_SRC)
-		$(ARCHIVE) $(OBJ)
+		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 char:
 		$(CC) $(CCFLAGS) $(CHAR_SRC)
-		$(ARCHIVE) $(OBJ)
+		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 str:
 		$(CC) $(CCFLAGS) $(STR_SRC)
-		$(ARCHIVE) $(OBJ)
+		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 put:
 		$(CC) $(CCFLAGS) $(PUT_SRC)
-		$(ARCHIVE) $(OBJ)
+		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 num:
 		$(CC) $(CCFLAGS) $(NUM_SRC)
-		$(ARCHIVE) $(OBJ)
+		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 cnvrsn:
 		$(CC) $(CCFLAGS) $(CNVRSN_SRC)
-		$(ARCHIVE) $(OBJ)
+		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 lst:
 		$(CC) $(CCFLAGS) $(LST_SRC)
-		$(ARCHIVE) $(OBJ)
+		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 tbl:
 		$(CC) $(CCFLAGS) $(TBL_SRC)
-		$(ARCHIVE) $(OBJ)
+		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 clean:
 		$(RM) $(OBJ)

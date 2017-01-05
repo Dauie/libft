@@ -55,7 +55,9 @@ PUT_SRC = 	put/ft_putchar.c\
 			put/ft_putnbr.c\
 			put/ft_putnbr_fd.c\
 			put/ft_putstr.c\
-			put/ft_putstr_fd.c
+			put/ft_putstrrev.c\
+			put/ft_putstr_fd.c\
+			put/ft_putlst.c
 
 STR_SRC = 	str/ft_cntbnespc.c\
 			str/ft_cntbspc.c\

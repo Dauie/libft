@@ -10,19 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	t_list	*p;
+	t_list	*lptr;
 
-	p = lst;
-	if (p && f)
+	lptr = lst;
+	if (lptr && f)
 	{
-		while (p)
+		while (lptr)
 		{
-			(*f)(p);
-			p = p->next;
+			(*f)(lptr);
+			lptr = lptr->next;
 		}
 	}
 }

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 static char		*ft_xtrctnxtwrd(char *str, char c, size_t *i)
 {

@@ -37,6 +37,8 @@ void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putstr(char *str);
+void				ft_putstrrev(char *str);
+void				ft_putlst(t_list **lst);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putnbr(int n);
 void				ft_putendl_fd(char const *s, int fd);

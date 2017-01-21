@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_lstlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rlutt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/29 22:06:46 by rlutt             #+#    #+#             */
-/*   Updated: 2017/01/05 23:56:44 by rlutt            ###   ########.fr       */
+/*   Created: 2017/01/20 12:53:02 by rlutt             #+#    #+#             */
+/*   Updated: 2017/01/20 13:03:48 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char		*ft_strsub(char const *s, unsigned int start, size_t len)
+size_t		ft_lstlen(t_list *lst)
 {
-	char	*sub;
-	int		i;
+	size_t	i;
 
 	i = 0;
-	sub = (char *)ft_memalloc(sizeof(char) * len + 1);
-	if (sub == NULL)
-		return (NULL);
-	if (s != NULL)
+	if (lst)
 	{
-		while (len)
+		while (lst)
 		{
-			sub[i] = s[start];
+			lst = lst->next;
 			i++;
-			start++;
-			len--;
 		}
 	}
-	sub[i] = '\0';
-	return (sub);
+	return (i);
 }

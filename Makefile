@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2016/12/29 17:45:52 by rlutt            ###   ########.fr        #
+#    Updated: 2017/01/20 17:09:28 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,8 @@ LST_SRC =	lst/ft_lstadd.c\
 			lst/ft_lsteadd.c\
 			lst/ft_lstiter.c\
 			lst/ft_lstmap.c\
-			lst/ft_lstnew.c
+			lst/ft_lstnew.c\
+			lst/ft_lstlen.c
 
 MEM_SRC =	mem/ft_bzero.c\
 			mem/ft_memalloc.c\
@@ -44,7 +45,9 @@ MEM_SRC =	mem/ft_bzero.c\
 			mem/ft_memcpy.c\
 			mem/ft_memdel.c\
 			mem/ft_memmove.c\
-			mem/ft_memset.c
+			mem/ft_memset.c\
+			mem/ft_realloc.c\
+			mem/ft_calloc.c
 
 NUM_SRC = 	num/ft_numlen.c
 
@@ -57,7 +60,8 @@ PUT_SRC = 	put/ft_putchar.c\
 			put/ft_putstr.c\
 			put/ft_putstrrev.c\
 			put/ft_putstr_fd.c\
-			put/ft_putlst.c
+			put/ft_putnlst.c\
+			put/ft_putclst.c
 
 STR_SRC = 	str/ft_cntbnespc.c\
 			str/ft_cntbspc.c\
@@ -76,6 +80,7 @@ STR_SRC = 	str/ft_cntbnespc.c\
 			str/ft_strcpy.c\
 			str/ft_strdel.c\
 			str/ft_strdup.c\
+			str/ft_strndup.c\
 			str/ft_strequ.c\
 			str/ft_striter.c\
 			str/ft_striteri.c\
@@ -102,7 +107,9 @@ STR_SRC = 	str/ft_cntbnespc.c\
 
 TBL_SRC = 	tbl/ft_tbldel.c\
 			tbl/ft_tbllen.c\
-			tbl/ft_tblnew.c\
+			tbl/ft_tblcnew.c\
+			tbl/ft_tblnnew.c\
+			tbl/ft_tbllen.c
 
 OBJ =		*.o
 

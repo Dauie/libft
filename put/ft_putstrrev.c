@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tblnew.c                                        :+:      :+:    :+:   */
+/*   ft_putstrrev.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlutt <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/01 15:50:26 by rlutt             #+#    #+#             */
-/*   Updated: 2017/01/01 15:52:25 by rlutt            ###   ########.fr       */
+/*   Created: 2017/01/03 14:33:41 by rlutt             #+#    #+#             */
+/*   Updated: 2017/01/03 14:33:56 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char		**ft_tblnew(int len)
+void		ft_putstrrev(char *str)
 {
-	char **res;
+	char *res;
 
-	res = (char **)ft_memalloc(sizeof(char *) * (len + 1));
-	res[len + 1] = NULL;
-	return (res);
+	if (!(res = ft_strnew(sizeof(char) * ft_strlen(str))))
+		return ;
+	res = ft_strrev(str);
+	ft_putstr(res);
 }

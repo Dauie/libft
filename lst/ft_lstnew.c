@@ -6,7 +6,7 @@
 /*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 19:49:35 by rlutt             #+#    #+#             */
-/*   Updated: 2016/12/11 19:49:49 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/01/20 17:18:29 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_list		*ft_lstnew(void const *content, size_t content_size)
 		return (NULL);
 	if (content != NULL)
 	{
-		if (!(c_cp = ft_memalloc(content_size)))
+		if (!(c_cp = (void *)ft_strnew(content_size)))
 		{
 			free(res);
 			return (NULL);

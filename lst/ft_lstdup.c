@@ -6,13 +6,16 @@
 /*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/22 14:55:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/01/22 15:11:40 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/01/23 12:55:35 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_list		ft_lstdup(t_list *lst)
+#include "../libft.h"
+
+t_list		*ft_lstdup(t_list *lst)
 {
-	t_list *dup;
+	t_list	*dup;
+
 	if (!lst)
 		return (NULL);
 	if (!lst->next)

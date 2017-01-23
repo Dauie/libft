@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 11:53:10 by rlutt             #+#    #+#             */
-/*   Updated: 2017/01/20 17:05:49 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/01/23 12:53:14 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 typedef	struct		s_list
 {
+	int				rbyt;
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
@@ -43,7 +44,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
 size_t				ft_lstlen(t_list *lst);
 void				ft_memdel(void **ap);
-void 				*ft_realloc(void *mem, size_t memsz, size_t nsz);
+void				*ft_realloc(void *mem, size_t memsz, size_t nsz);
 void				*ft_memalloc(size_t size);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				ft_bzero(void *s, size_t n);
@@ -105,7 +106,5 @@ size_t				ft_tbllen(char **tbl);
 void				ft_tbldel(char **tbl);
 char				**tblcnew(size_t len);
 long				**tblnnew(size_t len);
-
-
 
 #endif

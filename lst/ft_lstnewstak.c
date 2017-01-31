@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tbllen.c                                        :+:      :+:    :+:   */
+/*   ft_lstnewstak.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/01 14:24:42 by rlutt             #+#    #+#             */
-/*   Updated: 2017/01/27 22:41:57 by rlutt            ###   ########.fr       */
+/*   Created: 2017/01/30 15:53:01 by rlutt             #+#    #+#             */
+/*   Updated: 2017/01/30 16:14:38 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-size_t		ft_tbllen(char **tbl)
+t_list		*ft_lstnewstak(void const *content, size_t content_size)
 {
-	size_t	i;
-	char	**tmp;
+	t_list		*res;
 
-	i = 0;
-	tmp = tbl;
-	while (*tmp)
+	if (!(res = (t_list*)ft_memalloc(sizeof(t_list))))
+		return (NULL);
+	if (content != NULL)
 	{
-		i++;
-		tmp++;
+		res->content = (void *)content;
+		res->content_size = content_size;
 	}
-	return (i);
+	else
+	{
+		res->content = NULL;
+		res->content_size = 0;
+	}
+	res->next = NULL;
+	return (res);
 }

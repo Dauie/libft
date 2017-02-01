@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 11:53:10 by rlutt             #+#    #+#             */
-/*   Updated: 2017/01/30 16:12:24 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/01/31 22:19:30 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 typedef	struct		s_list
 {
 	size_t			rbyt;
-	char			tag;
+	int				**crds;
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;

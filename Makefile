@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/01/30 16:12:41 by rlutt            ###   ########.fr        #
+#    Updated: 2017/02/02 13:43:34 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ STR_SRC = 	str/ft_cntbnespc.c str/ft_cntbspc.c str/ft_cnttotspc.c\
 			str/ft_toupper.c
 
 TBL_SRC = 	tbl/ft_tbldel.c tbl/ft_tbllen.c tbl/ft_tblcnew.c tbl/ft_tblnnew.c\
-			tbl/ft_tbllen.c
+			tbl/ft_tbllen.c tbl/ft_itbllen.c
 
 OBJ =		*.o
 

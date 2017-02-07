@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlen.c                                        :+:      :+:    :+:   */
+/*   ft_itbllen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/20 12:53:02 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/06 14:25:23 by rlutt            ###   ########.fr       */
+/*   Created: 2017/01/01 14:24:42 by rlutt             #+#    #+#             */
+/*   Updated: 2017/02/02 13:45:33 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-size_t		ft_lstlen(t_list *lst)
+size_t		ft_itbllen(int **tbl)
 {
-	t_list	*tmp;
 	size_t	i;
+	int		**tmp;
 
 	i = 0;
-	tmp = lst;
-	if (tmp)
+	tmp = tbl;
+	while (*tmp)
 	{
-		while (tmp)
-		{
-			tmp = tmp->next;
-			i++;
-		}
+		i++;
+		tmp++;
 	}
 	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 11:53:10 by rlutt             #+#    #+#             */
-/*   Updated: 2017/01/31 22:19:30 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/02/02 13:42:52 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ size_t				ft_nxtwrdlen(char *str, char c);
 size_t				ft_cnttotspc(char *str);
 int					ft_cntspc(char *str);
 size_t				ft_tbllen(char **tbl);
+size_t				ft_itbllen(int **tbl);
 void				ft_tbldel(char **tbl);
 char				**tblcnew(size_t len);
 long				**tblnnew(size_t len);

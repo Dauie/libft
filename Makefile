@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/02/02 13:43:34 by rlutt            ###   ########.fr        #
+#    Updated: 2017/02/11 15:19:04 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,8 @@ STR_SRC = 	str/ft_cntbnespc.c str/ft_cntbspc.c str/ft_cnttotspc.c\
 TBL_SRC = 	tbl/ft_tbldel.c tbl/ft_tbllen.c tbl/ft_tblcnew.c tbl/ft_tblnnew.c\
 			tbl/ft_tbllen.c tbl/ft_itbllen.c
 
+GNL_SRC =	gnl/gnl.c
+
 OBJ =		*.o
 
 CCFLAGS = -I. -Wall -Werror -Wextra -c
@@ -71,6 +73,7 @@ $(NAME):
 		$(CC) $(CCFLAGS) $(CNVRSN_SRC)
 		$(CC) $(CCFLAGS) $(LST_SRC)
 		$(CC) $(CCFLAGS) $(TBL_SRC)
+		$(CC) $(CCFLAGS) $(GNL_SRC)
 		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 

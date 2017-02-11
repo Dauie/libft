@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tbllen.c                                        :+:      :+:    :+:   */
+/*   gnl.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlutt <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 15:27:30 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/11 15:27:34 by rlutt            ###   ########.fr       */
+/*   Created: 2016/12/31 15:16:54 by rlutt             #+#    #+#             */
+/*   Updated: 2017/02/11 15:29:11 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#ifndef GNL_H
+# define GNL_H
 
-size_t		ft_tbllen(char **tbl)
-{
-	size_t	i;
-	char	**tmp;
+# define BUFF_SIZE 42
 
-	i = 0;
-	tmp = tbl;
-	while (*tmp)
-	{
-		i++;
-		tmp++;
-	}
-	return (i);
-}
+# include "../libft.h"
+# include <unistd.h>
+# include <stdlib.h>
+# include <string.h>
+# include <fcntl.h>
+
+int					get_next_line(const int fd, char **line);
+
+#endif

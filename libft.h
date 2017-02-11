@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 11:53:10 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/02 13:42:52 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/02/11 15:25:55 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
 
 typedef	struct		s_list
 {
-	size_t			rbyt;
-	int				**crds;
+	long long		rbyt;
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
@@ -109,5 +108,6 @@ size_t				ft_itbllen(int **tbl);
 void				ft_tbldel(char **tbl);
 char				**tblcnew(size_t len);
 long				**tblnnew(size_t len);
+int					gnl(const int fd, char **line);
 
 #endif

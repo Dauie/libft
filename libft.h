@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 11:53:10 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/11 15:25:55 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/02/11 16:23:46 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int					ft_isalpha(int c);
 int					ft_isalnum(int c);
 int					ft_atoi(char *str);
 char				*ft_itoa(int n);
+char				*ft_itoabse(int nbg, int bse);
 size_t				ft_numlen(long long nb, int bse);
 void				ft_lsteadd(t_list **alst, t_list *nw);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));

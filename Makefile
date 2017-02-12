@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/02/11 15:19:04 by rlutt            ###   ########.fr        #
+#    Updated: 2017/02/11 16:47:23 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ HEADDR = /srcs/libft.h
 CHAR_SRC =	char/ft_isalnum.c char/ft_isalpha.c char/ft_isascii.c\
 			char/ft_isdigit.c char/ft_isprint.c char/ft_isspc.c
 
-CNVRSN_SRC =	cnvrsn/ft_atoi.c cnvrsn/ft_itoa.c
+CNVRSN_SRC =	cnvrsn/ft_atoi.c cnvrsn/ft_itoa.c cnvrsn/ft_itoabse.c
 
 LST_SRC =	lst/ft_lstadd.c lst/ft_lstdel.c lst/ft_lstdelone.c lst/ft_lsteadd.c\
 			lst/ft_lstiter.c lst/ft_lstmap.c lst/ft_lstnew.c lst/ft_lstlen.c\
@@ -109,6 +109,10 @@ lst:
 		$(INDEX) $(NAME)
 tbl:
 		$(CC) $(CCFLAGS) $(TBL_SRC)
+		$(ARCHIVE) $(NAME) $(OBJ)
+		$(INDEX) $(NAME)
+gnl:
+		$(CC) $(CCFLAGS) $(GNL_SRC)
 		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 clean:

@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/02/11 16:47:23 by rlutt            ###   ########.fr        #
+#    Updated: 2017/02/16 12:43:26 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,49 +14,69 @@ NAME = libft.a
 
 CC = gcc
 
-HEADDR = /srcs/libft.h
+HEADDR = /incl/char.h /incl/cnvrsn.h /incl/mem.h /incl/num.h /incl/put.h \
+		/incl/str.h /incl/tbl.h /incl/bool.h /incl/gnl.h incl/primsz.h
 
-CHAR_SRC =	char/ft_isalnum.c char/ft_isalpha.c char/ft_isascii.c\
-			char/ft_isdigit.c char/ft_isprint.c char/ft_isspc.c
+CHAR_SRC =	src/primitive/char/ft_isalnum.c src/primitive/char/ft_isalpha.c \
+			src/primitive/char/ft_isascii.c src/primitive/char/ft_isdigit.c \
+			src/primitive/char/ft_isprint.c src/primitive/char/ft_isspc.c
 
-CNVRSN_SRC =	cnvrsn/ft_atoi.c cnvrsn/ft_itoa.c cnvrsn/ft_itoabse.c
+CNVRSN_SRC =	src/primitive/cnvrsn/ft_atoi.c src/primitive/cnvrsn/ft_itoa.c \
+				src/primitive/cnvrsn/ft_itoabse.c
 
-LST_SRC =	lst/ft_lstadd.c lst/ft_lstdel.c lst/ft_lstdelone.c lst/ft_lsteadd.c\
-			lst/ft_lstiter.c lst/ft_lstmap.c lst/ft_lstnew.c lst/ft_lstlen.c\
-			lst/ft_lstnewstak.c
+LST_SRC =	src/typedefined/lst/ft_lstadd.c \
+			src/typedefined/lst/ft_lstdel.c src/typedefined/lst/ft_lstdelone.c \
+			src/typedefined/lst/ft_lsteadd.c src/typedefined/lst/ft_lstiter.c \
+			src/typedefined/lst/ft_lstmap.c src/typedefined/lst/ft_lstnew.c \
+			src/typedefined/lst/ft_lstlen.c src/typedefined/lst/ft_lstnewstak.c
 
-MEM_SRC =	mem/ft_bzero.c mem/ft_memalloc.c mem/ft_memccpy.c mem/ft_memchr.c\
-			mem/ft_memcmp.c mem/ft_memcpy.c mem/ft_memdel.c mem/ft_memmove.c\
-			mem/ft_memset.c mem/ft_realloc.c mem/ft_calloc.c
+MEM_SRC =	src/primitive/mem//ft_bzero.c src/primitive/mem/ft_memalloc.c \
+			src/primitive/mem/ft_memccpy.c src/primitive/mem/ft_memchr.c \
+			src/primitive/mem/ft_memcmp.c src/primitive/mem/ft_memcpy.c \
+			src/primitive/mem/ft_memdel.c src/primitive/mem/ft_memmove.c \
+			src/primitive/mem/ft_memset.c src/primitive/mem/ft_realloc.c \
+			src/primitive/mem/ft_calloc.c
 
-NUM_SRC = 	num/ft_numlen.c
+NUM_SRC = 	src/primitive/num/ft_numlen.c
 
-PUT_SRC = 	put/ft_putchar.c put/ft_putchar_fd.c put/ft_putendl.c\
-			put/ft_putendl_fd.c put/ft_putnbr.c put/ft_putnbr_fd.c\
-			put/ft_putstr.c put/ft_putstrrev.c put/ft_putstr_fd.c\
-			put/ft_putnlst.c put/ft_putclst.c
+PUT_SRC = 	src/primitive/put/ft_putchar.c src/primitive/put/ft_putchar_fd.c \
+			src/primitive/put/ft_putendl.c src/primitive/put/ft_putendl_fd.c \
+			src/primitive/put/ft_putnbr.c src/primitive/put/ft_putnbr_fd.c \
+			src/primitive/put/ft_putstr.c src/primitive/put/ft_putstrrev.c \
+			src/primitive/put/ft_putstr_fd.c src/primitive/put/ft_putnlst.c \
+			src/primitive/put/ft_putclst.c
 
-STR_SRC = 	str/ft_cntbnespc.c str/ft_cntbspc.c str/ft_cnttotspc.c\
-			str/ft_cntwrds.c str/ft_isstralnum.c str/ft_isstralpha.c\
-			str/ft_isstrascii.c str/ft_isstrdigit.c str/ft_isstrprint.c\
-			str/ft_nxtwrdlen.c str/ft_strcat.c str/ft_strchr.c\
-			str/ft_strclr.c str/ft_strcmp.c str/ft_strcpy.c str/ft_strdel.c\
-			str/ft_strdup.c str/ft_strndup.c str/ft_strequ.c str/ft_striter.c\
-			str/ft_striteri.c str/ft_strjoin.c str/ft_strlcat.c str/ft_strlen.c\
-			str/ft_strmap.c str/ft_strmapi.c str/ft_strmapi.c str/ft_strncat.c\
-			str/ft_strncmp.c str/ft_strncpy.c str/ft_strnequ.c str/ft_strnew.c\
-			str/ft_strnstr.c str/ft_strrchr.c str/ft_strrev.c str/ft_strsplit.c\
-			str/ft_strstr.c str/ft_strsub.c str/ft_strtrim.c str/ft_tolower.c\
-			str/ft_toupper.c
+STR_SRC = 	src/primitive/str/ft_cntbnespc.c \
+			src/primitive/str/ft_cntbspc.c src/primitive/str/ft_cnttotspc.c \
+			src/primitive/str/ft_cntwrds.c src/primitive/str/ft_isstralnum.c \
+			src/primitive/str/ft_isstralpha.c src/primitive/str/ft_isstrascii.c \
+			src/primitive/str/ft_isstrdigit.c src/primitive/str/ft_isstrprint.c \
+			src/primitive/str/ft_nxtwrdlen.c src/primitive/str/ft_strcat.c \
+			src/primitive/str/ft_strchr.c src/primitive/str/ft_strclr.c \
+			src/primitive/str/ft_strcmp.c src/primitive/str/ft_strcpy.c \
+			src/primitive/str/ft_strdel.c src/primitive/str/ft_strdup.c \
+			src/primitive/str/ft_strndup.c src/primitive/str/ft_strequ.c \
+			src/primitive/str/ft_striter.c src/primitive/str/ft_striteri.c \
+			src/primitive/str/ft_strjoin.c src/primitive/str/ft_strlcat.c \
+			src/primitive/str/ft_strlen.c src/primitive/str/ft_strmap.c \
+			src/primitive/str/ft_strmapi.c src/primitive/str/ft_strmapi.c \
+			src/primitive/str/ft_strncat.c src/primitive/str/ft_strncmp.c \
+			src/primitive/str/ft_strncpy.c src/primitive/str/ft_strnequ.c \
+			src/primitive/str/ft_strnew.c src/primitive/str/ft_strnstr.c \
+			src/primitive/str/ft_strrchr.c src/primitive/str/ft_strrev.c \
+			src/primitive/str/ft_strsplit.c src/primitive/str/ft_strstr.c \
+			src/primitive/str/ft_strsub.c src/primitive/str/ft_strtrim.c \
+			src/primitive/str/ft_tolower.c src/primitive/str/ft_toupper.c
 
-TBL_SRC = 	tbl/ft_tbldel.c tbl/ft_tbllen.c tbl/ft_tblcnew.c tbl/ft_tblnnew.c\
-			tbl/ft_tbllen.c tbl/ft_itbllen.c
+TBL_SRC = 	src/primitive/tbl/ft_tbldel.c src/primitive/tbl/ft_tbllen.c \
+			src/primitive/tbl/ft_tblcnew.c src/primitive/tbl/ft_tblnnew.c \
+			src/primitive/tbl/ft_tbllen.c src/primitive/tbl/ft_itbllen.c
 
-GNL_SRC =	gnl/gnl.c
+GNL_SRC =	src/futil/gnl/gnl.c
 
 OBJ =		*.o
 
-CCFLAGS = -I. -Wall -Werror -Wextra -c
+CCFLAGS = -I.incl -Wall -Werror -Wextra -c
 
 RM = -rm -f
 

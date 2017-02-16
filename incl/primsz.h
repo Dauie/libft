@@ -6,12 +6,16 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 21:15:45 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:51:52 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/02/16 13:22:12 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRIMSZ_H
 # define PRIMSZ_H
 
+# include <stddef.h>
+
+typedef long long _INT64
+typedef long _INT32
 
 #endif

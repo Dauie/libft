@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:06:31 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/15 21:08:23 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/02/22 21:18:12 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define NUM_H
 
 # include <stddef.h>
+
+# define SQUARE(x) (x * x)
 
 size_t				ft_numlen(long long nb, int bse);
 

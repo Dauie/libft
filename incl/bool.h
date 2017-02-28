@@ -6,18 +6,17 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 21:15:52 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 13:08:56 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/02/22 21:46:47 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BOOL_H
 # define BOOL_H
 
-typedef enum d_bool
+typedef enum t_bool
 {
-	int FALSE = 0;
-	TRUE = !FALSE;
-
-}			t_bool;
+	FALSE,
+	TRUE
+}			blean;
 
 # endif

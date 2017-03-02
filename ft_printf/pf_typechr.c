@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   pf_typechr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/05 15:24:27 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/02 14:33:46 by rlutt            ###   ########.fr       */
+/*   Created: 2017/03/01 19:53:30 by rlutt             #+#    #+#             */
+/*   Updated: 2017/03/02 11:40:58 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../incl/mem.h"
+#include "../../incl/printf.h"
 
-void		*ft_realloc(void *mem, size_t memsz, size_t nsz)
+char 		*pf_typechr(char *phstrt)
 {
-	void	*res;
-	size_t	size;
+	char	*flg;
+	int		i;
 
-	size = memsz + nsz;
-	if (!(res = ft_memalloc(size)))
-		return (NULL);
-	ft_memmove(res, mem, memsz);
-	free(mem);
-	mem = NULL;
-	return (res);
+	i = -1;
+	flg = NULL;
+	while (phstrt[++i])
+	{
+		if (pf_istype(phstrt[i]))
+			return (flg = &phstrt[i]);
+	}
+	return (flg);
 }

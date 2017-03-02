@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   pf_puterror.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/05 15:24:27 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/02 14:33:46 by rlutt            ###   ########.fr       */
+/*   Created: 2017/02/21 15:34:15 by rlutt             #+#    #+#             */
+/*   Updated: 2017/03/02 11:41:22 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../incl/mem.h"
+#include "../../incl/printf.h"
 
-void		*ft_realloc(void *mem, size_t memsz, size_t nsz)
+int		puterror(int ecode)
 {
-	void	*res;
-	size_t	size;
-
-	size = memsz + nsz;
-	if (!(res = ft_memalloc(size)))
-		return (NULL);
-	ft_memmove(res, mem, memsz);
-	free(mem);
-	mem = NULL;
-	return (res);
+	ft_putstr(emsg[ecode]);
+	return (ecode);
 }

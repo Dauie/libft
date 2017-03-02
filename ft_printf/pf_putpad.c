@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   pf_putpad.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/05 15:24:27 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/02 14:33:46 by rlutt            ###   ########.fr       */
+/*   Created: 2017/03/01 19:54:40 by rlutt             #+#    #+#             */
+/*   Updated: 2017/03/02 11:41:15 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../incl/mem.h"
+#include "../../incl/printf.h"
 
-void		*ft_realloc(void *mem, size_t memsz, size_t nsz)
+void 		pf_putpad(attrib *ph, uiput *db)
 {
-	void	*res;
-	size_t	size;
+	int		len;
+	char	c;
 
-	size = memsz + nsz;
-	if (!(res = ft_memalloc(size)))
-		return (NULL);
-	ft_memmove(res, mem, memsz);
-	free(mem);
-	mem = NULL;
-	return (res);
+	len = ph->width - ph->aglen;
+	if (ph->zero)
+		c = '0';
+	else
+		c = ' ';
+	while (len-- > 0)
+	{
+		ft_putchar(c);
+		db->tot++;
+	}
 }

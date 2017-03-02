@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   pf_width.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/05 15:24:27 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/02 14:33:46 by rlutt            ###   ########.fr       */
+/*   Created: 2017/03/01 19:53:23 by rlutt             #+#    #+#             */
+/*   Updated: 2017/03/02 11:40:22 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../incl/mem.h"
+#include "../../incl/printf.h"
 
-void		*ft_realloc(void *mem, size_t memsz, size_t nsz)
+void 		pf_get_width(const char *frmt, attrib *ph, uiput *db)
 {
-	void	*res;
-	size_t	size;
+	ph->width = ft_atoi((char *)&frmt[db->inx]);
+	db->inx += ft_numlen(ph->width, 10);
+}
 
-	size = memsz + nsz;
-	if (!(res = ft_memalloc(size)))
-		return (NULL);
-	ft_memmove(res, mem, memsz);
-	free(mem);
-	mem = NULL;
-	return (res);
+int			pf_phlen(const char *frmt, uiput *db)
+{
+	char 	*strt;
+	char 	*flag;
+
+	strt = (char*)&frmt[db->inx];
+	flag = pf_typechr((char *)&frmt[db->inx]);
+	return (flag - strt);
 }

@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   pf_initstructs.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/05 15:24:27 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/02 14:33:46 by rlutt            ###   ########.fr       */
+/*   Created: 2017/03/01 19:41:25 by rlutt             #+#    #+#             */
+/*   Updated: 2017/03/02 14:24:31 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../incl/mem.h"
+#include "../../incl/printf.h"
 
-void		*ft_realloc(void *mem, size_t memsz, size_t nsz)
+void 		init_uinput(uiput *db)
 {
-	void	*res;
-	size_t	size;
+	db->inx = -1;
+	db->tot = 0;
+}
 
-	size = memsz + nsz;
-	if (!(res = ft_memalloc(size)))
-		return (NULL);
-	ft_memmove(res, mem, memsz);
-	free(mem);
-	mem = NULL;
-	return (res);
+void 		init_attrib(attrib *ipg)
+{
+	ipg->type = 0;
+	ipg->algn = FALSE;
+	ipg->sign = FALSE;
+	ipg->hash = FALSE;
+	ipg->zero = FALSE;
+	ipg->prec = 0;
+	ipg->width = 0;
+	ipg->len = 0;
+	ipg->aglen = 0;
 }

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 22:06:46 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:31:13 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/01 19:30:36 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (sub == NULL)
 		return (NULL);
 	if (s != NULL)
-	{
 		while (len)
 		{
 			sub[i] = s[start];
@@ -30,7 +29,6 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len)
 			start++;
 			len--;
 		}
-	}
 	sub[i] = '\0';
 	return (sub);
 }

@@ -6,17 +6,17 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 21:15:52 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/22 21:46:47 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/01 16:59:14 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BOOL_H
 # define BOOL_H
 
-typedef enum t_bool
+typedef	enum	e_lean
 {
 	FALSE,
 	TRUE
-}			blean;
+}				t_blean;
 
-# endif
+#endif

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 15:13:48 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:29:05 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/01 19:26:18 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,8 @@ void		ft_putstr(char *str)
 {
 	int i;
 
-	i = 0;
+	i = -1;
 	if (str != NULL)
-	{
-		while (str[i])
-		{
+		while (str[++i])
 			ft_putchar(str[i]);
-			i++;
-		}
-	}
 }

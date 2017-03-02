@@ -6,13 +6,23 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/02/16 12:43:26 by rlutt            ###   ########.fr        #
+#    Updated: 2017/03/02 13:41:10 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 CC = gcc
+
+OBJ = *.o
+
+CCFLAGS = -I.incl -Wall -Werror -Wextra -g -c
+
+RM = -rm -f
+
+ARCHIVE = ar rc
+
+INDEX = ranlib
 
 HEADDR = /incl/char.h /incl/cnvrsn.h /incl/mem.h /incl/num.h /incl/put.h \
 		/incl/str.h /incl/tbl.h /incl/bool.h /incl/gnl.h incl/primsz.h
@@ -74,15 +84,11 @@ TBL_SRC = 	src/primitive/tbl/ft_tbldel.c src/primitive/tbl/ft_tbllen.c \
 
 GNL_SRC =	src/futil/gnl/gnl.c
 
-OBJ =		*.o
-
-CCFLAGS = -I.incl -Wall -Werror -Wextra -c
-
-RM = -rm -f
-
-ARCHIVE = ar rc
-
-INDEX = ranlib
+PRINTF_SRC =src/ft_printf/ft_printf.c src/ft_printf/pf_initstructs.c \
+			src/ft_printf/pf_is.c src/ft_printf/pf_print_s.c \
+			src/ft_printf/pf_puterror.c src/ft_printf/pf_putpad.c \
+			src/ft_printf/pf_putstr.c src/ft_printf/pf_typechr.c \
+			src/ft_printf/pf_width.c
 
 $(NAME):
 		$(CC) $(CCFLAGS) $(MEM_SRC)
@@ -94,6 +100,7 @@ $(NAME):
 		$(CC) $(CCFLAGS) $(LST_SRC)
 		$(CC) $(CCFLAGS) $(TBL_SRC)
 		$(CC) $(CCFLAGS) $(GNL_SRC)
+		$(CC) $(CCFLAGS) $(PRINTF_SRC)
 		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 
@@ -133,6 +140,10 @@ tbl:
 		$(INDEX) $(NAME)
 gnl:
 		$(CC) $(CCFLAGS) $(GNL_SRC)
+		$(ARCHIVE) $(NAME) $(OBJ)
+		$(INDEX) $(NAME)
+printf:
+		$(CC) $(CCFLAGS) $(PRINTF_SRC)
 		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 clean:

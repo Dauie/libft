@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/02 14:24:21 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/02 15:46:50 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,15 +75,15 @@ int		pf_phmaster(attrib *ph, uiput *db)
 {
 	if (ph->type == 's' || ph->type == 'S')
 		return (pf_print_s(ph, db));
+	else if (ph->type == 'c' || ph->type == 'C')
+		return (pf_print_c(ph, db));
 	/*else if (ph->type == 'i' || ph->type == 'd' || ph->type == 'D')
 		return (pf_putnum(ph, db));
 	else if (ph->type == 'o' || ph->type == 'O')
 		return (pf_putoctal(ph, db));
 	else if (ph->type == 'x' || ph->type == 'X')
 		return (pf_puthex(ph, db));
-	else if (ph->type == 'c' || ph->type == 'C')
-		return (pf_putchar(ph, db));
-	else if (ph->type == 'p')
+		else if (ph->type == 'p')
 		return (pf_putvoid(ph, db));
 	else if (ph->type == 'u' || ph->type == 'U')
 		return (pf_putuint(ph, db));

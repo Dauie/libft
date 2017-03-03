@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/03/02 15:51:53 by rlutt            ###   ########.fr        #
+#    Updated: 2017/03/02 17:04:51 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 
 OBJ = *.o
 
-CCFLAGS = -I.incl -Wall -Werror -Wextra -c
+CCFLAGS = -I.incl -g -Wall -Werror -Wextra -c
 
 RM = -rm -f
 
@@ -25,7 +25,8 @@ ARCHIVE = ar rc
 INDEX = ranlib
 
 HEADDR = /incl/char.h /incl/cnvrsn.h /incl/mem.h /incl/num.h /incl/put.h \
-		/incl/str.h /incl/tbl.h /incl/bool.h /incl/gnl.h incl/primsz.h
+		/incl/str.h /incl/tbl.h /incl/bool.h /incl/gnl.h incl/primsz.h \
+		/incl/printf.h
 
 CHAR_SRC =	src/primitive/char/ft_isalnum.c src/primitive/char/ft_isalpha.c \
 			src/primitive/char/ft_isascii.c src/primitive/char/ft_isdigit.c \
@@ -88,7 +89,8 @@ PRINTF_SRC =src/ft_printf/ft_printf.c src/ft_printf/pf_initstructs.c \
 			src/ft_printf/pf_is.c src/ft_printf/pf_print_s.c \
 			src/ft_printf/pf_puterror.c src/ft_printf/pf_putpad.c \
 			src/ft_printf/pf_putstr.c src/ft_printf/pf_typechr.c \
-			src/ft_printf/pf_width.c src/ft_printf/pf_print_c.c
+			src/ft_printf/pf_width.c src/ft_printf/pf_print_c.c \
+			src/ft_printf/pf_putchar.c
 
 $(NAME):
 		$(CC) $(CCFLAGS) $(MEM_SRC)

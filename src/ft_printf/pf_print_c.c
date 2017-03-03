@@ -6,9 +6,11 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 15:34:02 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/02 15:43:47 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/02 16:30:41 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# include "../../incl/printf.h"
 
 int			pf_print_c(attrib *ph, uiput *db)
 {
@@ -16,10 +18,10 @@ int			pf_print_c(attrib *ph, uiput *db)
 	char	phc;
 
 	padlen = 0;
-	phc = va_arg(db->ap, char);
+	phc = (char)va_arg(db->ap, int);
 	if (ph->algn == TRUE)
 	{
-		db->tot += pf_putchar(phs);
+		db->tot += pf_putchar(phc);
 		if (ph->width)
 			pf_putpad(ph, db);
 	}
@@ -27,7 +29,7 @@ int			pf_print_c(attrib *ph, uiput *db)
 	{
 		if (ph->width)
 			pf_putpad(ph, db);
-		db->tot += pf_putchar(phs);
+		db->tot += pf_putchar(phc);
 	}
-	return (padlen);
+	return (0);
 }

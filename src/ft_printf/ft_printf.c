@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/04 10:43:03 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/04 11:03:24 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,12 @@ int		pf_pause_parse(const char *frmt, uiput *db)
 {
 	attrib		ph;
 
+	db->inx++;
 	init_attrib(&ph);
-	db->inx += pf_phlen(frmt, db);
+	ph.len = pf_phlen(frmt, db);
 	ph.type = frmt[db->inx + ph.len];
 	pf_get_attrib(frmt, &ph, db);
-	db->tot += pf_phmaster(&ph, db);
+	pf_phmaster(&ph, db);
 	return (0);
 }
 

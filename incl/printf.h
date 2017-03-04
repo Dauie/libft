@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/02 15:44:22 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/03 19:52:20 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,14 +93,16 @@ int				pf_istype(char c);
 int				pf_iswidth(int c);
 int				pf_print_s(attrib *ph, uiput *db);
 int				pf_print_c(attrib *ph, uiput *db);
+int				pf_print_i(attrib *ph, uiput *db);
 int				puterror(int ecode);
-void 			pf_putpad(attrib *ph, uiput *db);
+void 			pf_putpad_i(attrib *ph, uiput *db);
+void 			pf_putpad_c(attrib *ph, uiput *db);
 int				pf_putstr(char *str);
 char 			*pf_typechr(char *phstrt);
 void 			pf_get_width(const char *frmt, attrib *ph, uiput *db);
 int				pf_phlen(const char *frmt, uiput *db);
 int				pf_putchar(char c);
-
+int				pf_putnbr(int n);
 
 
 #endif

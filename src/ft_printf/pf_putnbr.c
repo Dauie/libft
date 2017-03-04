@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_print_s.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/01 19:54:13 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/03 19:42:35 by rlutt            ###   ########.fr       */
+/*   Created: 2016/11/29 15:32:35 by rlutt             #+#    #+#             */
+/*   Updated: 2017/03/03 19:33:25 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/printf.h"
+#include "../../incl/put.h"
+#include "../../incl/num.h"
 
-int			pf_print_s(attrib *ph, uiput *db)
+int			pf_putnbr(int n)
 {
-	int		padlen;
-	char	*phs;
+	long	tmp;
 
-	padlen = 0;
-	phs = va_arg(db->ap, char *);
-	if (ph->algn == TRUE)
+	tmp = n;
+	if (tmp < 0)
 	{
-		db->tot += pf_putstr(phs);
-		if (ph->width)
-			pf_putpad_c(ph, db);
+		tmp = -tmp;
+		ft_putchar('-');
+	}
+	if (tmp > 9)
+	{
+		ft_putnbr(tmp / 10);
+		ft_putnbr(tmp % 10);
 	}
 	else
-	{
-		if (ph->width)
-			pf_putpad_c(ph, db);
-		db->tot += pf_putstr(phs);
-	}
-	return (0);
+		ft_putchar(tmp + '0');
+	return (ft_numlen(n, 10));
 }

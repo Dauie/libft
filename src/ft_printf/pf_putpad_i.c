@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_print_s.c                                       :+:      :+:    :+:   */
+/*   pf_putpad_i.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/01 19:54:13 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/03 19:42:35 by rlutt            ###   ########.fr       */
+/*   Created: 2017/03/01 19:54:40 by rlutt             #+#    #+#             */
+/*   Updated: 2017/03/03 19:23:14 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-int			pf_print_s(attrib *ph, uiput *db)
+void 		pf_putpad_i(attrib *ph, uiput *db)
 {
-	int		padlen;
-	char	*phs;
+	int		len;
+	char	c;
 
-	padlen = 0;
-	phs = va_arg(db->ap, char *);
-	if (ph->algn == TRUE)
-	{
-		db->tot += pf_putstr(phs);
-		if (ph->width)
-			pf_putpad_c(ph, db);
-	}
+	len = ph->width - ph->aglen;
+	if (ph->zero)
+		c = '0';
 	else
+		c = ' ';
+	while (len-- > 0)
 	{
-		if (ph->width)
-			pf_putpad_c(ph, db);
-		db->tot += pf_putstr(phs);
+		ft_putchar(c);
+		db->tot++;
 	}
-	return (0);
 }

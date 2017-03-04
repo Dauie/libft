@@ -6,20 +6,17 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:54:13 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/04 10:37:40 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/04 10:45:05 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-int			pf_print_s(attrib *ph, uiput *db)
+int			pf_print_perc(attrib *ph, uiput *db)
 {
-	char	*phs;
-
-	phs = va_arg(db->ap, char *);
 	if (ph->algn == TRUE)
 	{
-		db->tot += pf_putstr(phs);
+		db->tot += pf_putchar('%');
 		if (ph->width)
 			pf_putpad_c(ph, db);
 	}
@@ -27,7 +24,8 @@ int			pf_print_s(attrib *ph, uiput *db)
 	{
 		if (ph->width)
 			pf_putpad_c(ph, db);
-		db->tot += pf_putstr(phs);
+		db->tot += pf_putchar('%');
 	}
+	db->inx += 1;
 	return (0);
 }

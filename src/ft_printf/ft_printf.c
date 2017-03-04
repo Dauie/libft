@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/03 19:52:30 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/04 10:43:03 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		pf_pause_parse(const char *frmt, uiput *db)
 	attrib		ph;
 
 	init_attrib(&ph);
-	ph.len = pf_phlen(frmt, db);
+	db->inx += pf_phlen(frmt, db);
 	ph.type = frmt[db->inx + ph.len];
 	pf_get_attrib(frmt, &ph, db);
 	db->tot += pf_phmaster(&ph, db);
@@ -73,7 +73,9 @@ void 	pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
 
 int		pf_phmaster(attrib *ph, uiput *db)
 {
-	if (ph->type == 's' || ph->type == 'S')
+	if (ph->type == '%')
+		return (pf_print_perc(ph, db));
+	else if (ph->type == 's' || ph->type == 'S')
 		return (pf_print_s(ph, db));
 	else if (ph->type == 'c' || ph->type == 'C')
 		return (pf_print_c(ph, db));

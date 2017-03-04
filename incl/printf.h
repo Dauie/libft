@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/04 10:22:23 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/04 11:11:28 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@
 #ifndef PRINTF_H
 # define PRINTF_H
 
+# include <string.h>
 # include <stdarg.h>
 # include "bool.h"
 # include "cnvrsn.h"

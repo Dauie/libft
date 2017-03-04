@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/03 20:11:27 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/04 11:17:53 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int			pf_print_i(attrib *ph, uiput *db)
 	phi = va_arg(db->ap, int);
 	if (ph->algn == TRUE)
 	{
+		if (ph->sign == TRUE && phi > 0)
+			db->tot += pf_putchar('+');
 		db->tot += pf_putnbr(phi);
 		if (ph->width)
 			pf_putpad_i(ph, db);
@@ -27,6 +29,8 @@ int			pf_print_i(attrib *ph, uiput *db)
 	{
 		if (ph->width)
 			pf_putpad_i(ph, db);
+		if (ph->sign == TRUE && phi > 0)
+			db->tot += pf_putchar('+');
 		db->tot += pf_putnbr(phi);
 	}
 	return (0);

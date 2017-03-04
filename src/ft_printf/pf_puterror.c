@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/21 15:34:15 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/02 11:41:22 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/04 15:54:41 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int		puterror(int ecode)
 {
-	ft_putstr(emsg[ecode]);
+	if (ecode == 1)
+		ft_putstr("General Fail");
 	return (ecode);
 }

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/04 11:12:46 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/04 15:57:19 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ void 	pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
 			ph->sign = TRUE;
 		else if (pf_isflag(frmt[db->inx]) == 5)
 			ph->zero = TRUE;
+		else if (pf_isflag(frmt[db->inx]) == 6)
+			ph->spc = TRUE;
 		db->inx++;
 	}
 }
@@ -91,6 +93,6 @@ int		pf_phmaster(attrib *ph, uiput *db)
 	else if (ph->type == 'u' || ph->type == 'U')
 		return (pf_putuint(ph, db));*/
 	else
-		return (puterror(1));
+		return (-1);
 	return (0);
 }

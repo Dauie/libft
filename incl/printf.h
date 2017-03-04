@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/04 11:11:28 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/04 15:53:28 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@
 # include "put.h"
 # include "tbl.h"
 
-static char *emsg[] = {"General Failure", "Input Error"};
-
 typedef struct	user_input
 {
 	int			inx;		/* Current index in format string */
@@ -76,6 +74,7 @@ typedef struct	format_info
 	t_blean		sign;		/* '+' Show sign (- , +) */
 	t_blean		hash;		/* Prepend w/ or leave '0', Always show decimal */
 	t_blean		zero;		/* Replace padding ' ' with '0' */
+	t_blean		spc;		/* Use ' ' on int instead of '0' */
 	int			prec;		/* Precision: Max # of output */
 	int			width;		/* Width : Minimum # of output */
 	int			len;		/* Placeholder Length (destroy?)*/

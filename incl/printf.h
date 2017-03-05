@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/05 13:00:14 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/05 14:07:28 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ typedef struct	user_input
 typedef struct	format_info
 {							/* sSpdDioOuUxXcC */
 	char		type;		/* Placeholder type */
+	t_blean		upper; 		/* Print placeholder in UPPERCASE */
 	t_blean		algn;		/* '-' Left align placeholder */
 	t_blean		sign;		/* '+' Show sign (- , +) */
 	t_blean		hash;		/* Prepend w/ or leave '0', Always show decimal */
@@ -78,7 +79,6 @@ typedef struct	format_info
 	int			prec;		/* Precision: Max # of output */
 	int			width;		/* Width : Minimum # of output */
 	int			len;		/* Placeholder Length (destroy?)*/
-	int			aglen;		/* Argument Length */
 }				attrib;
 
 int 			ft_printf(const char *frmt, ...);
@@ -103,6 +103,6 @@ void 			pf_get_width(const char *frmt, attrib *ph, uiput *db);
 int				pf_phlen(const char *frmt, uiput *db);
 int				pf_putchar(char c, attrib *ph, uiput *db);
 int				pf_putnbr(int n, attrib *ph, uiput *db);
-
+int				pf_isupper(int c);
 
 #endif

@@ -6,26 +6,34 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 15:35:54 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/05 13:16:39 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/05 14:47:54 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../../incl/char.h"
 #include	"../../incl/printf.h"
+
+static void 	spacedone(attrib *ph);
+static void 	signdone(attrib *ph);
 
 int		pf_putchar(char c, attrib *ph, uiput *db)
 {
-	if (c == ' ' && ph->algn == FALSE)
-	{
-		ph->spc = FALSE;
-		ph->width -= 1;
-	}
+	if (c == ' ')
+		spacedone(ph);
 	if (c == '-' || c == '+')
-	{
-		ph->sign = FALSE;
-		ph->width -= 1;
-	}
+		signdone(ph);
 	write(1, &c, 1);
 	db->tot += 1;
 	return (1);
+}
+
+static void spacedone(attrib *ph)
+{
+	ph->spc = FALSE;
+	ph->width -= 1;
+}
+
+static void signdone(attrib *ph)
+{
+	ph->sign = FALSE;
+	ph->width -= 1;
 }

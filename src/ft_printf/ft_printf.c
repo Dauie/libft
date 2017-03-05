@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/05 12:36:49 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/05 14:46:36 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ void		pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
 	int		i;
 
 	i = -1;
+	if (pf_isupper(ph->type))
+		ph->upper = TRUE;
 	while (++i < ph->len)
 	{
 		if (pf_isflag(frmt[db->inx]) == 1)

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:53:42 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/04 18:14:51 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/05 14:42:03 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,13 @@ int		pf_putstr(char *str, attrib *ph, uiput *db)
 
 	i = -1;
 	if (str != NULL)
-		while (str[++i])
-			pf_putchar(str[i], ph, db);
+	{
+		if (ph->upper == TRUE)
+			while (str[++i])
+				pf_putchar(ft_toupper(str[i]), ph, db);
+		else
+			while (str[++i])
+				pf_putchar(str[i], ph, db);
+	}
 	return (0);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   pf_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 15:32:35 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/05 13:10:48 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/05 15:03:15 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int			pf_putnbr(int n, attrib *ph, uiput *db)
 		pf_putchar(' ', ph, db);
 	if (ph->sign == TRUE && n > 0)
 		pf_putchar('+', ph, db);
-	if (ph->width && ph->algn == FALSE)
-		pf_putpad_c(ph, db);
 	if (tmp < 0)
 	{
 		tmp = -tmp;
 		pf_putchar('-', ph, db);
 	}
+	if (ph->width && ph->algn == FALSE)
+		pf_putpad_c(ph, db);
 	if (tmp > 9)
 	{
 		pf_putnbr(tmp / 10, ph, db);

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 15:32:35 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/04 18:38:13 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/04 18:49:57 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,13 @@ int			pf_putnbr(int n, attrib *ph, uiput *db)
 
 	tmp = n;
 	if (ph->sign == TRUE && n > 0)
-	{
 		pf_putchar('+', ph, db);
-		ph->width -= 1;
-	}
 	if (ph->width)
 		pf_putpad_c(ph, db);
 	if (tmp < 0)
 	{
 		tmp = -tmp;
-		ft_putchar('-');
+		pf_putchar('-', ph, db);
 	}
 	if (tmp > 9)
 	{

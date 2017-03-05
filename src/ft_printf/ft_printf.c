@@ -6,15 +6,15 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/04 18:18:32 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/05 12:36:49 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-int 			ft_printf(const char *frmt, ...)
+int 		ft_printf(const char *frmt, ...)
 {
-	uiput		db;
+	uiput	db;
 
 	init_uinput(&db);
 	va_start(db.ap, frmt);
@@ -38,9 +38,9 @@ void		pf_parse(const char *frmt, uiput *db)
 }
 
 /*%[flags][width][.precision][length]type*/
-int		pf_pause_parse(const char *frmt, uiput *db)
+int			pf_pause_parse(const char *frmt, uiput *db)
 {
-	attrib		ph;
+	attrib	ph;
 
 	db->inx++;
 	init_attrib(&ph);
@@ -51,9 +51,9 @@ int		pf_pause_parse(const char *frmt, uiput *db)
 	return (0);
 }
 
-void 	pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
+void		pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
 {
-	int			i;
+	int		i;
 
 	i = -1;
 	while (++i < ph->len)
@@ -74,7 +74,7 @@ void 	pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
 	}
 }
 
-int		pf_phmaster(attrib *ph, uiput *db)
+int			pf_phmaster(attrib *ph, uiput *db)
 {
 	if (ph->type == '%')
 		return (pf_print_perc(ph, db));

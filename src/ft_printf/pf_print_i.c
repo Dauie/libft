@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/05 15:03:26 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/05 15:18:52 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int			pf_print_i(attrib *ph, uiput *db)
 {
-	int		phi;
+	long	phi;
 
-	phi = va_arg(db->ap, int);
+	phi = (int)va_arg(db->ap, int);
 	ph->len = ft_numlen(phi, 10);
 	pf_putnbr(phi, ph, db);
 	if (ph->width)

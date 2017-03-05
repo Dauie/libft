@@ -6,18 +6,21 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 15:32:35 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/03 19:33:25 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/04 16:37:06 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../incl/printf.h"
 #include "../../incl/put.h"
 #include "../../incl/num.h"
 
-int			pf_putnbr(int n)
+int			pf_putnbr(attrib *ph, int n)
 {
 	long	tmp;
 
 	tmp = n;
+	if (ph->sign == TRUE && n > 0)
+		ft_putchar('+');
 	if (tmp < 0)
 	{
 		tmp = -tmp;

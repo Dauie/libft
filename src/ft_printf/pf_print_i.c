@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/04 17:04:22 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/04 18:25:29 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ int			pf_print_i(attrib *ph, uiput *db)
 	ph->len = ft_numlen(phi, 10);
 	if (ph->algn == TRUE)
 	{
-		db->tot += pf_putnbr(db, ph, phi);
+		pf_putnbr(phi, ph, db);
 		if (ph->width)
 			pf_putpad_c(ph, db);
 	}
 	else
-		pf_putnbr(db, ph, phi);
+		pf_putnbr(phi, ph, db);
 	return (0);
 }

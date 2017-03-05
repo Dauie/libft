@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/04 18:36:08 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/05 13:00:14 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ typedef struct	user_input
 {
 	int			inx;		/* Current index in format string */
 	int			tot;		/* Count of characters printed */
-	va_list		ap;		/* Argument List */
+	va_list		ap;			/* Argument List */
 }				uiput;
 
 typedef struct	format_info

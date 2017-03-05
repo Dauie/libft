@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/04 16:34:34 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/04 17:03:47 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ char 			*pf_typechr(char *phstrt);
 void 			pf_get_width(const char *frmt, attrib *ph, uiput *db);
 int				pf_phlen(const char *frmt, uiput *db);
 int				pf_putchar(char c);
-int				pf_putnbr(attrib *ph, int n);
+int				pf_putnbr(uiput *db, attrib *ph, int n);
 
 
 #endif

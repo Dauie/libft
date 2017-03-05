@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 15:35:54 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/05 13:14:17 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/05 13:16:39 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int		pf_putchar(char c, attrib *ph, uiput *db)
 {
-	if (c == ' ')
+	if (c == ' ' && ph->algn == FALSE)
 	{
 		ph->spc = FALSE;
 		ph->width -= 1;

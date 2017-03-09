@@ -6,11 +6,11 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/03/04 16:28:39 by rlutt            ###   ########.fr        #
+#    Updated: 2017/03/08 15:42:09 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+NAME = libft.a
 
 CC = gcc
 
@@ -81,7 +81,8 @@ STR_SRC = 	src/primitive/str/ft_cntbnespc.c \
 
 TBL_SRC = 	src/primitive/tbl/ft_tbldel.c src/primitive/tbl/ft_tbllen.c \
 			src/primitive/tbl/ft_tblcnew.c src/primitive/tbl/ft_tblnnew.c \
-			src/primitive/tbl/ft_tbllen.c src/primitive/tbl/ft_itbllen.c
+			src/primitive/tbl/ft_tbllen.c src/primitive/tbl/ft_itbllen.c \
+			src/primitive/tbl/ft_tbladdl.c
 
 GNL_SRC =	src/futil/gnl/gnl.c
 
@@ -92,7 +93,7 @@ PRINTF_SRC =src/ft_printf/ft_printf.c src/ft_printf/pf_initstructs.c \
 			src/ft_printf/pf_putstr.c src/ft_printf/pf_typechr.c \
 			src/ft_printf/pf_width.c src/ft_printf/pf_print_c.c \
 			src/ft_printf/pf_putchar.c src/ft_printf/pf_putnbr.c \
-			src/ft_printf/pf_print_perc.c 
+			src/ft_printf/pf_print_perc.c
 
 $(NAME):
 		$(CC) $(CCFLAGS) $(MEM_SRC)

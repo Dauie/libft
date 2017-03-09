@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:07:08 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:50:21 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/08 15:16:31 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define STR_H
 
 # include <stdlib.h>
-# include <string.h>
 # include "char.h"
 # include "mem.h"
 
@@ -52,6 +51,7 @@ int					ft_isstrdigit(char *str);
 int					ft_isstrascii(char *str);
 int					ft_isstrprint(char *str);
 int					ft_cntbspc(char *str);
+int					ft_cntspc(char *str);
 size_t				ft_cntwrds(char *str, char c);
 size_t				ft_nxtwrdlen(char *str, char c);
 size_t				ft_cnttotspc(char *str);

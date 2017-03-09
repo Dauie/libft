@@ -6,11 +6,11 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 15:35:54 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/05 15:18:51 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/06 15:19:30 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../../incl/printf.h"
+ #include	"../../incl/printf.h"
 
 static void 	spacedone(attrib *ph);
 static void 	signdone(attrib *ph);

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 14:12:45 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/04 12:40:25 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/08 13:02:15 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,40 @@ char		*ft_itoabse(int nbg, int bse)
 		res[0] = '-';
 	return (res);
 }
+
+int			get_base(char c)
+{
+	int base;
+
+	base = 0;
+	if (c == 'o' || c == 'O')
+		base = 8;
+	else if (c == 'x' || c == 'X')
+		base = 16;
+	return (base);
+}
+
+/*char		*pf_itoabase(t_print *all, intmax_t nbr, char c)
+{
+	char	buff[32];
+	int		i;
+	int		base;
+
+	i = 30;
+	base = get_base(c);
+	if (nbr == 0)
+		return (ft_strxnew('0', 1));
+	else if (nbr < 0 && (all->sign = -1))
+		nbr = nbr * -1;
+	while (nbr > 0 && i > 0)
+	{
+		if (c == 'o' || c == 'x')
+			buff[i] = "0123456789abcdef"[nbr % base];
+		else if (c == 'O' || c == 'X')
+			buff[i] = "0123456789ABCDEF"[nbr % base];
+		nbr = nbr / base;
+		--i;
+	}
+	buff[i] = '\0';
+	return (ft_strdup(buff + i + 1));
+}*/

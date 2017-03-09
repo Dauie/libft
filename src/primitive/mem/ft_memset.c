@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/10 01:00:48 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:28:13 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/08 13:08:33 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@ void		*ft_memset(void *b, int c, size_t len)
 	char *x;
 
 	x = (char*)b;
-	while (len > 0)
+	while (len-- > 0)
 	{
 		*x = (char)c;
 		x++;
-		len--;
 	}
 	return (b);
 }

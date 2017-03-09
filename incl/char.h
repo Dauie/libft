@@ -6,14 +6,12 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:06:01 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/02 17:06:26 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/08 14:56:56 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHAR_H
 # define CHAR_H
-
-# include <unistd.h>
 
 int					ft_toupper(int c);
 int					ft_tolower(int c);

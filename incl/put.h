@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:06:59 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:51:10 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/08 15:19:49 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUT_H
 
 # include <unistd.h>
+# include <stdlib.h>
 # include "lst.h"
 # include "str.h"
 

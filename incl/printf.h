@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/05 14:07:28 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/08 15:32:33 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,13 @@
 # include <stdarg.h>
 # include "bool.h"
 # include "cnvrsn.h"
+# include "gnl.h"
+# include "lst.h"
 # include "mem.h"
-# include "char.h"
-# include "str.h"
 # include "num.h"
+# include "printf.h"
 # include "put.h"
+# include "str.h"
 # include "tbl.h"
 
 typedef struct	user_input
@@ -69,7 +71,8 @@ typedef struct	user_input
 
 typedef struct	format_info
 {							/* sSpdDioOuUxXcC */
-	char		type;		/* Placeholder type */
+	char		type;
+	t_blean		actn;		/* Placeholder type */
 	t_blean		upper; 		/* Print placeholder in UPPERCASE */
 	t_blean		algn;		/* '-' Left align placeholder */
 	t_blean		sign;		/* '+' Show sign (- , +) */

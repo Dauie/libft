@@ -6,14 +6,13 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:07:38 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:49:09 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/08 15:33:21 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LST_H
 # define LST_H
 
-# include "mem.h"
 # include "str.h"
 
 typedef	struct		s_list

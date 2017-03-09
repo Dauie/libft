@@ -6,13 +6,14 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:06:59 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/08 15:19:49 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/09 12:49:59 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUT_H
 # define PUT_H
 
+# include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include "lst.h"

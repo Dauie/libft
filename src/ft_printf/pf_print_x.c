@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_print_i.c                                       :+:      :+:    :+:   */
+/*   pf_print_x.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/06 14:04:10 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/09 15:20:45 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-int			pf_print_i(attrib *ph, uiput *db)
+int			pf_print_x(attrib *ph, uiput *db)
 {
-	long	phi;
+	long	hold;
+	unsigned long phx;
 
-	phi = (int)va_arg(db->ap, int);
-	ph->len = ft_numlen(phi, 10);
-	pf_putnbr(phi, ph, db);
+	hold = (long)va_arg(db->ap, long);
+	if (hold < 0)
+	{
+		phx = -hold;
+		ph->sign = TRUE;
+	}
+	else
+		phx = hold;
+	ph->len = ft_numlen(phx, 16);
+	pf_putstr(ft_itoabse(phx, 16), ph, db);
 	if (ph->width)
 		pf_putpad_c(ph, db);
 	return (0);

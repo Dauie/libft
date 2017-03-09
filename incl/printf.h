@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/09 13:36:32 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/09 13:50:21 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ int				pf_print_s(attrib *ph, uiput *db);
 int				pf_print_c(attrib *ph, uiput *db);
 int				pf_print_i(attrib *ph, uiput *db);
 int				pf_print_o(attrib *ph, uiput *db);
+int				pf_print_x(attrib *ph, uiput *db);
 int				pf_print_perc(attrib *ph, uiput *db);
 int				puterror(int ecode);
 void 			pf_putpad_c(attrib *ph, uiput *db);
@@ -109,6 +110,5 @@ int				pf_phlen(const char *frmt, uiput *db);
 int				pf_putchar(char c, attrib *ph, uiput *db);
 int				pf_putnbr(int n, attrib *ph, uiput *db);
 int				pf_isupper(int c);
-
 
 #endif

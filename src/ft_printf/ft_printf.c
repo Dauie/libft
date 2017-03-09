@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/06 14:28:31 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/09 13:03:39 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ int 		ft_printf(const char *frmt, ...)
 	va_start(db.ap, frmt);
 	pf_parse(frmt, &db);
 	va_end(db.ap);
-	ft_putchar('\n');
-	ft_putnbr(db.tot);
 	return (db.tot);
 }
 

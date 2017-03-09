@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/03/09 12:47:16 by rlutt            ###   ########.fr        #
+#    Updated: 2017/03/09 13:37:31 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,7 +93,7 @@ PRINTF_SRC =src/ft_printf/ft_printf.c src/ft_printf/pf_initstructs.c \
 			src/ft_printf/pf_putstr.c src/ft_printf/pf_typechr.c \
 			src/ft_printf/pf_width.c src/ft_printf/pf_print_c.c \
 			src/ft_printf/pf_putchar.c src/ft_printf/pf_putnbr.c \
-			src/ft_printf/pf_print_perc.c
+			src/ft_printf/pf_print_perc.c src/ft_printf/pf_print_o.c
 
 $(NAME):
 		$(CC) $(CCFLAGS) $(MEM_SRC)

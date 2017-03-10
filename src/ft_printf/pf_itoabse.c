@@ -1,21 +1,26 @@
-char		*ft_itoabase(t_uiput *db, intmax_t nbr, int bse)
+char		*ft_itoabse(int nbg, int bse)
 {
-	char	buff[32];
-	int		i;
+	char	c;
+	long	nb;
+	int		sz;
+	char	*res;
+	char	*hex;
 
-	i = 30;
-	if (nbr == 0)
-		return (ft_strxnew('0', 1));
-	else if (nbr < 0 && (all->sign = -1))
-		nbr = nbr * -1;
-	while (nbr > 0 && i > 0)
+	nb = nbg;
+	hex = ft_strdup("0123456789abcdef");
+	sz = ft_numlen((long long)nbg, 10);
+	if (!(res = ((char *)ft_memalloc(sz-- + 1))))
+		return (NULL);
+	if (nbg == 0)
+		return (ft_strdup("0"));
+	if (nbg < 0)
+		nb = nb * -1;
+	while (nb)
 	{
-		if (c == 'o' || c == 'x')
-			buff[i] = "0123456789abcdef"[nbr % base];
-		else if (c == 'O' || c == 'X')
-			buff[i] = "0123456789ABCDEF"[nbr % base];
-		nbr = nbr / base;
-		--i;
+		res[sz--] = hex[nb % bse];
+		nb = nb / bse;
 	}
-	buff[i] = '\0';
-	return (ft_strdup(buff + i + 1));
+	if (nbg < 0)
+		res[0] = '-';
+	return (res);
+}

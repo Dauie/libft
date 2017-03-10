@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/09 15:20:45 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/09 18:49:18 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int			pf_print_x(attrib *ph, uiput *db)
 	unsigned long phx;
 
 	hold = (long)va_arg(db->ap, long);
+	if (ph->hash == TRUE)
+		ph->actn = TRUE;
 	if (hold < 0)
 	{
 		phx = -hold;

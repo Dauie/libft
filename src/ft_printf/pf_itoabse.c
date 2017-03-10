@@ -1,13 +1,18 @@
-char		*ft_itoabse(int nbg, int bse)
+#include "../../incl/printf.h"
+
+
+char		*pf_itoabse(int nbg, int bse, attrib *ph)
 {
-	char	c;
 	long	nb;
 	int		sz;
 	char	*res;
 	char	*hex;
 
+	if (ph->upper == TRUE)
+		hex = ft_strdup(UHEX);
+	else
+		hex = ft_strdup(LHEX);
 	nb = nbg;
-	hex = ft_strdup("0123456789abcdef");
 	sz = ft_numlen((long long)nbg, 10);
 	if (!(res = ((char *)ft_memalloc(sz-- + 1))))
 		return (NULL);

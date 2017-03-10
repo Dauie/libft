@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/09 18:42:49 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/09 19:24:47 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,9 @@
 # include "str.h"
 # include "tbl.h"
 
+# define LHEX "0123456789abcdef"
+# define UHEX "0123456789ABCDEF"
+
 typedef struct	user_input
 {
 	int			inx;		/* Current index in format string */
@@ -111,5 +114,6 @@ int				pf_putchar(char c, attrib *ph, uiput *db);
 int				pf_putnbr(int n, attrib *ph, uiput *db);
 int				pf_isupper(int c);
 int				pf_isox(int c);
+char			*pf_itoabse(int nbg, int bse, attrib *ph);
 
 #endif

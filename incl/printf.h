@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/10 16:45:24 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/11 10:39:59 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ int				pf_print_perc(attrib *ph, uiput *db);
 int				puterror(int ecode);
 void			pf_choosepad(attrib *ph, uiput *db);
 void 			pf_putpad_csdi(attrib *ph, uiput *db);
-void 			pf_putpad_x(attrib *ph, uiput *db);
+void 			pf_putpad_xo(attrib *ph, uiput *db);
 int				pf_putstr(char *str, attrib *ph, uiput *db);
 char 			*pf_typechr(char *phstrt);
 void 			pf_get_width(const char *frmt, attrib *ph, uiput *db);

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 15:35:54 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/10 19:26:43 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/11 11:43:30 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void		handel_hox(attrib *ph, uiput *db);
 
 int				pf_putchar(char c, attrib *ph, uiput *db)
 {
-	if (ph->actn == TRUE && pf_isoxdi(ph->type))
+	if (ph->actn == TRUE && (pf_isoxdi(ph->type) == 1 || pf_isoxdi(ph->type) == 2))
 		handel_hox(ph, db);
 	if (c == ' ')
 		spacedone(ph);
@@ -32,23 +32,15 @@ int				pf_putchar(char c, attrib *ph, uiput *db)
 
 static void handel_hox(attrib *ph, uiput *db)
 {
-	if (pf_isoxdi(ph->type) == 1)
-	{
+	hashdone(ph);
+	if (pf_isoxdi(ph->type) == 1 && ph->hash == TRUE)
 		pf_putstr("0x", ph, db);
-		hashdone(ph);
-	}
 	else if (pf_isoxdi(ph->type) == 2)
 	{
 		if (ph->zero == FALSE)
-		{
-			ph->actn = FALSE;
 			pf_putchar(' ', ph, db);
-		}
 		else if (ph->zero == TRUE)
-		{
-			ph->actn = FALSE;
 			pf_putchar('0', ph, db);
-		}
 	}
 }
 
@@ -56,7 +48,7 @@ static void 	hashdone(attrib *ph)
 {
 	ph->actn = FALSE;
 	if (ph->type == 'x' || ph->type == 'X')
-		ph->width -= 2;
+		ph->width -= 1;
 	else if (ph->type == 'o' || ph->type == 'O')
 		ph->width -= 1;
 }

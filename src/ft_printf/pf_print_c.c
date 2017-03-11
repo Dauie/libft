@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 15:34:02 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/04 18:25:34 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/10 16:35:26 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ int			pf_print_c(attrib *ph, uiput *db)
 	{
 		pf_putchar(phc, ph, db);
 		if (ph->width)
-			pf_putpad_c(ph, db);
+			pf_putpad_csdi(ph, db);
 	}
 	else
 	{
 		if (ph->width)
-			pf_putpad_c(ph, db);
+			pf_putpad_csdi(ph, db);
 		pf_putchar(phc, ph, db);
 	}
 	return (0);

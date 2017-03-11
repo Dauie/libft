@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 15:32:35 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/06 15:19:34 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/10 16:45:40 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int			pf_putnbr(int n, attrib *ph, uiput *db)
 		pf_putchar('-', ph, db);
 	}
 	if (ph->width && ph->algn == FALSE)
-		pf_putpad_c(ph, db);
+		pf_choosepad(ph, db);
 	if (tmp > 9)
 	{
 		pf_putnbr(tmp / 10, ph, db);
@@ -38,4 +38,12 @@ int			pf_putnbr(int n, attrib *ph, uiput *db)
 	else
 		pf_putchar(tmp + '0', ph, db);
 	return (0);
+}
+
+void		pf_choosepad(attrib *ph, uiput *db)
+{
+	if (pf_isoxdi(ph->type) == 2)
+		pf_putpad_x(ph, db);
+	else if(pf_isoxdi(ph->type) == 3)
+		pf_putpad_csdi(ph, db);
 }

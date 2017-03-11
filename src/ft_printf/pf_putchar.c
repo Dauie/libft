@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 15:35:54 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/10 15:32:25 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/10 19:26:43 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void		handel_hox(attrib *ph, uiput *db);
 
 int				pf_putchar(char c, attrib *ph, uiput *db)
 {
-	if (ph->actn == TRUE && pf_isox(ph->type))
+	if (ph->actn == TRUE && pf_isoxdi(ph->type))
 		handel_hox(ph, db);
 	if (c == ' ')
 		spacedone(ph);
@@ -32,17 +32,22 @@ int				pf_putchar(char c, attrib *ph, uiput *db)
 
 static void handel_hox(attrib *ph, uiput *db)
 {
-	if (pf_isox(ph->type) == 1)
+	if (pf_isoxdi(ph->type) == 1)
 	{
 		pf_putstr("0x", ph, db);
 		hashdone(ph);
 	}
-	else if (pf_isox(ph->type) == 2)
+	else if (pf_isoxdi(ph->type) == 2)
 	{
-		if (ph->hash == TRUE)
+		if (ph->zero == FALSE)
 		{
 			ph->actn = FALSE;
-			pf_putstr("0", ph, db);
+			pf_putchar(' ', ph, db);
+		}
+		else if (ph->zero == TRUE)
+		{
+			ph->actn = FALSE;
+			pf_putchar('0', ph, db);
 		}
 	}
 }

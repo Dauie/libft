@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/11 10:56:49 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/11 16:17:54 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int				pf_print_o(attrib *ph, uiput *db)
 	if (hold < 0)
 	{
 		pho = -hold;
-		ph->sign = TRUE;
+		ph->neg = TRUE;
 	}
 	else
 		pho = hold;

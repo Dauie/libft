@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 15:35:54 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/11 16:57:32 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/11 17:06:14 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ static void 	spacedone(attrib *ph)
 
 static void 	signdone(attrib *ph)
 {
+	ph->sign = FALSE;
 	ph->width -= 1;
 }

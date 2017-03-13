@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:41:25 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/11 16:17:04 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/13 12:06:27 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void 		init_uinput(uiput *db)
 void 		init_attrib(attrib *ipg)
 {
 	ipg->type = 0;
-	ipg->neg = FALSE;
+	ipg->mod = 0;
 	ipg->actn = FALSE;
-	ipg->upper = FALSE;
+	ipg->upper =  FALSE;
 	ipg->algn = FALSE;
 	ipg->sign = FALSE;
 	ipg->hash = FALSE;

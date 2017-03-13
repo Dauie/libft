@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/10 16:35:07 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/13 14:26:16 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void		pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
 			ph->zero = TRUE;
 		else if (pf_isflag(frmt[db->inx]) == 6)
 			ph->spc = TRUE;
+		else if (pf_ismod_pre(frmt, db))
+			ph->mod = pf_parse_mod(frmt, db, ph);
 		db->inx++;
 	}
 }

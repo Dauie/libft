@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/03/09 19:16:57 by rlutt            ###   ########.fr        #
+#    Updated: 2017/03/13 14:59:29 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -149,7 +149,7 @@ gnl:
 		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 printf:
-		$(CC) $(CCFLAGS) $(PRINTF_SRC)
+		$(CC) $(PRINTF_SRC)
 		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 clean:

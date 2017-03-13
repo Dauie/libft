@@ -1,0 +1,49 @@
+pf_print_c	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_print_c.c	/^int			pf_print_c(attrib *ph, uiput *db)$/;"	function	line:15	signature:(attrib *ph, uiput *db)
+pf_print_o	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_print_o.c	/^int				pf_print_o(attrib *ph, uiput *db)$/;"	function	line:15	signature:(attrib *ph, uiput *db)
+pf_putpad_o	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_print_o.c	/^void 		pf_putpad_o(attrib *ph, uiput *db)$/;"	function	line:34	signature:(attrib *ph, uiput *db)
+pf_print_i	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_print_i.c	/^int			pf_print_i(attrib *ph, uiput *db)$/;"	function	line:15	signature:(attrib *ph, uiput *db)
+ft_printf	/nfs/2016/r/rlutt/code/libft/src/ft_printf/ft_printf.c	/^int 		ft_printf(const char *frmt, ...)$/;"	function	line:15	signature:(const char *frmt, ...)
+pf_parse	/nfs/2016/r/rlutt/code/libft/src/ft_printf/ft_printf.c	/^void		pf_parse(const char *frmt, uiput *db)$/;"	function	line:26	signature:(const char *frmt, uiput *db)
+pf_pause_parse	/nfs/2016/r/rlutt/code/libft/src/ft_printf/ft_printf.c	/^int			pf_pause_parse(const char *frmt, uiput *db)$/;"	function	line:41	signature:(const char *frmt, uiput *db)
+pf_get_attrib	/nfs/2016/r/rlutt/code/libft/src/ft_printf/ft_printf.c	/^void		pf_get_attrib(const char *frmt, attrib *ph, uiput *db)$/;"	function	line:54	signature:(const char *frmt, attrib *ph, uiput *db)
+pf_phmaster	/nfs/2016/r/rlutt/code/libft/src/ft_printf/ft_printf.c	/^int			pf_phmaster(attrib *ph, uiput *db)$/;"	function	line:81	signature:(attrib *ph, uiput *db)
+pf_isflag	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_is.c	/^int			pf_isflag(int c)$/;"	function	line:15	signature:(int c)
+pf_ismod_pre	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_is.c	/^int			pf_ismod_pre(const char *frmt, uiput *db)$/;"	function	line:38	signature:(const char *frmt, uiput *db)
+pf_parse_mod	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_is.c	/^int			pf_parse_mod(const char *frmt, uiput *db, attrib *ph)$/;"	function	line:48	signature:(const char *frmt, uiput *db, attrib *ph)
+pf_istype	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_is.c	/^int			pf_istype(int c)$/;"	function	line:74	signature:(int c)
+pf_iswidth	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_is.c	/^int			pf_iswidth(int c)$/;"	function	line:85	signature:(int c)
+pf_isupper	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_is.c	/^int			pf_isupper(int c)$/;"	function	line:93	signature:(int c)
+pf_isoxdi	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_is.c	/^int			pf_isoxdi(int c)$/;"	function	line:102	signature:(int c)
+PRINTF_H	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^# define PRINTF_H$/;"	macro	line:50
+LHEX	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^# define LHEX /;"	macro	line:65
+UHEX	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^# define UHEX /;"	macro	line:66
+l	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	long 		l;$/;"	member	line:72	union:__anon1
+ll	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	long long	ll;$/;"	member	line:73	union:__anon1
+h	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	int			h;$/;"	member	line:74	union:__anon1
+hh	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	int			hh;$/;"	member	line:75	union:__anon1
+z	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	size_t		z;$/;"	member	line:76	union:__anon1
+j	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	intmax_t 	j;$/;"	member	line:77	union:__anon1
+data	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^}		data;$/;"	typedef	line:78	typeref:union:__anon1
+user_input	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^typedef struct	user_input$/;"	struct	line:80
+inx	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	int			inx;		\/* Current index in format string *\/$/;"	member	line:82	struct:user_input
+tot	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	int			tot;		\/* Count of characters printed *\/$/;"	member	line:83	struct:user_input
+ap	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	va_list		ap;			\/* Argument List *\/$/;"	member	line:84	struct:user_input
+uiput	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^}				uiput;$/;"	typedef	line:85	typeref:struct:user_input
+format_info	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^typedef struct	format_info$/;"	struct	line:87
+type	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	char		type;$/;"	member	line:89	struct:format_info
+mod	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	char		mod;$/;"	member	line:90	struct:format_info
+phd	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	data		phd;$/;"	member	line:91	struct:format_info
+actn	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	t_blean		actn;		\/* Placeholder type *\/$/;"	member	line:92	struct:format_info
+upper	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	t_blean		upper; 		\/* Print placeholder in UPPERCASE *\/$/;"	member	line:93	struct:format_info
+algn	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	t_blean		algn;		\/* '-' Left align placeholder *\/$/;"	member	line:94	struct:format_info
+sign	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	t_blean		sign;		\/* '+' Show sign (- , +) *\/$/;"	member	line:95	struct:format_info
+hash	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	t_blean		hash;		\/* Prepend w\/ or leave '0', Always show decimal *\/$/;"	member	line:96	struct:format_info
+zero	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	t_blean		zero;		\/* Replace padding ' ' with '0' *\/$/;"	member	line:97	struct:format_info
+spc	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	t_blean		spc;		\/* Use ' ' on int instead of '0' *\/$/;"	member	line:98	struct:format_info
+prec	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	int			prec;		\/* Precision: Max # of output *\/$/;"	member	line:99	struct:format_info
+width	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	int			width;		\/* Width : Minimum # of output *\/$/;"	member	line:100	struct:format_info
+len	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^	int			len;		\/* Placeholder Length (destroy?)*\/$/;"	member	line:101	struct:format_info
+attrib	/nfs/2016/r/rlutt/code/libft/incl/printf.h	/^}				attrib;$/;"	typedef	line:102	typeref:struct:format_info
+pf_get_width	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_width.c	/^void 		pf_get_width(const char *frmt, attrib *ph, uiput *db)$/;"	function	line:15	signature:(const char *frmt, attrib *ph, uiput *db)
+pf_phlen	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_width.c	/^int			pf_phlen(const char *frmt, uiput *db)$/;"	function	line:21	signature:(const char *frmt, uiput *db)
+pf_manage_lmod	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_width.c	/^void 		pf_manage_lmod(uiput *db, attrib *ph)$/;"	function	line:31	signature:(uiput *db, attrib *ph)

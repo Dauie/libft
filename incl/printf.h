@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/11 18:06:52 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/13 14:27:37 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,18 @@
 # define LHEX "0123456789abcdef"
 # define UHEX "0123456789ABCDEF"
 
+/* 'hh' (H), 'h', 'l', 'll'(L), 'j', 'z' */
+
+typedef union
+{
+	long 		l;
+	long long	ll;
+	int			h;
+	int			hh;
+	size_t		z;
+	intmax_t 	j;
+}		data;
+
 typedef struct	user_input
 {
 	int			inx;		/* Current index in format string */
@@ -75,7 +87,8 @@ typedef struct	user_input
 typedef struct	format_info
 {/* sSpdDioOuUxXcC */
 	char		type;
-	t_blean		neg;
+	char		mod;
+	data		phd;
 	t_blean		actn;		/* Placeholder type */
 	t_blean		upper; 		/* Print placeholder in UPPERCASE */
 	t_blean		algn;		/* '-' Left align placeholder */
@@ -95,8 +108,8 @@ void 			pf_get_attrib(const char *frmt, attrib *ph, uiput *db);
 int				pf_phmaster(attrib *ph, uiput *db);
 void 			init_uinput(uiput *db);
 void 			init_attrib(attrib *ipg);
-int				pf_isflag(char c);
-int				pf_istype(char c);
+int				pf_isflag(int c);
+int				pf_istype(int c);
 int				pf_iswidth(int c);
 int				pf_print_s(attrib *ph, uiput *db);
 int				pf_print_c(attrib *ph, uiput *db);
@@ -118,5 +131,8 @@ int				pf_putnbr(int n, attrib *ph, uiput *db);
 int				pf_isupper(int c);
 int				pf_isoxdi(int c);
 char			*pf_itoabse(int nbg, int bse, attrib *ph);
+int				pf_parse_mod(const char *frmt, uiput *db, attrib *ph);
+int				pf_ismod_pre(const char *frmt, uiput *db);
+void 			pf_manage_lmod(uiput *db, attrib *ph);
 
 #endif

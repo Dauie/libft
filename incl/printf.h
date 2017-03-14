@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/13 14:27:37 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/13 21:38:32 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@
 # include "str.h"
 # include "tbl.h"
 
-# define LHEX "0123456789abcdef"
-# define UHEX "0123456789ABCDEF"
-
 /* 'hh' (H), 'h', 'l', 'll'(L), 'j', 'z' */
+
+static char *LHEX = {"0123456789abcdef"};
+static char *UHEX = {"0123456789ABCDEF"};
 
 typedef union
 {
@@ -122,6 +122,7 @@ void			pf_choosepad(attrib *ph, uiput *db);
 void 			pf_putpad_csdi(attrib *ph, uiput *db);
 void 			pf_putpad_o(attrib *ph, uiput *db);
 void 			pf_putpad_x(attrib *ph, uiput *db);
+void 			pf_putpad_perc(attrib *ph, uiput *db);
 int				pf_putstr(char *str, attrib *ph, uiput *db);
 char 			*pf_typechr(char *phstrt);
 void 			pf_get_width(const char *frmt, attrib *ph, uiput *db);

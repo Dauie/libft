@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/13 14:26:16 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/13 21:42:40 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,22 +81,20 @@ void		pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
 int			pf_phmaster(attrib *ph, uiput *db)
 {
 	if (ph->type == '%')
-		return (pf_print_perc(ph, db));
+		pf_print_perc(ph, db);
 	else if (ph->type == 's' || ph->type == 'S')
-		return (pf_print_s(ph, db));
+		pf_print_s(ph, db);
 	else if (ph->type == 'c' || ph->type == 'C')
-		return (pf_print_c(ph, db));
+		pf_print_c(ph, db);
 	else if (ph->type == 'i' || ph->type == 'd' || ph->type == 'D')
-		return (pf_print_i(ph, db));
+		pf_print_i(ph, db);
 	else if (ph->type == 'o' || ph->type == 'O')
-		return (pf_print_o(ph, db));
+		pf_print_o(ph, db);
 	else if (ph->type == 'x' || ph->type == 'X')
-		return (pf_print_x(ph, db));
+		pf_print_x(ph, db);
 	/*else if (ph->type == 'p')
 		return (pf_putvoid(ph, db));
 	else if (ph->type == 'u' || ph->type == 'U')
 		return (pf_putuint(ph, db));*/
-	else
-		return (-1);
 	return (0);
 }

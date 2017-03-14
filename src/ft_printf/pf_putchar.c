@@ -6,23 +6,23 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 15:35:54 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/11 18:05:58 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/13 18:04:44 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
  #include	"../../incl/printf.h"
 
-static void 	spacedone(attrib *ph);
-static void 	signdone(attrib *ph);
+/*static void 	spacedone(attrib *ph);
+static void 	signdone(attrib *ph);*/
 /*static void 	hashdone(attrib *ph);*/
 /*static void		handel_hox(attrib *ph, uiput *db);*/
 
 int				pf_putchar(char c, attrib *ph, uiput *db)
 {
 	if (c == ' ')
-		spacedone(ph);
+		ph->spc = FALSE;
 	if (c == '-' || c == '+')
-		signdone(ph);
+		ph->sign = FALSE;
 	write(1, &c, 1);
 	db->tot += 1;
 	return (1);
@@ -43,7 +43,7 @@ int				pf_putchar(char c, attrib *ph, uiput *db)
 	}
 }*/
 
-static void 	spacedone(attrib *ph)
+/*static void 	spacedone(attrib *ph)
 {
 	ph->spc = FALSE;
 	ph->width -= 1;
@@ -52,5 +52,4 @@ static void 	spacedone(attrib *ph)
 static void 	signdone(attrib *ph)
 {
 	ph->sign = FALSE;
-	ph->width -= 1;
-}
+}*/

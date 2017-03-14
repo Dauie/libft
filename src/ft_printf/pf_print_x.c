@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/11 18:57:53 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/13 21:25:37 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,20 @@
 
 int				pf_print_x(attrib *ph, uiput *db)
 {
-	long		hold;
-	uintmax_t 	phx;
-
-	hold = (long)va_arg(db->ap, long);
-	if (hold < 0)
+	if (ph->mod)
+		pf_manage_lmod(db, ph);
+	else
+		ph->phd.l = (long)va_arg(db->ap, long);
+	if (ph->phd.l < 0)
 	{
-		phx = -hold;
+		ph->phd.l = -ph->phd.l;
 		ph->sign = TRUE;
 	}
-	else
-		phx = hold;
-	ph->len = ft_numlen(phx, 16);
+	ph->len = ft_numlen(ph->phd.l, 16);
 	if (ph->hash == TRUE)
 		ph->actn = TRUE;
 	pf_putpad_x(ph, db);
-	pf_putstr(pf_itoabse(phx, 16, ph), ph, db);
+	pf_putstr(pf_itoabse(ph->phd.l, 16, ph), ph, db);
 	return (0);
 }
 
@@ -37,13 +35,9 @@ void 		pf_putpad_x(attrib *ph, uiput *db)
 {
 	if (ph->hash == TRUE)
 		ph->width--;
-	else
-		ph->width++;
 	ph->width = ph->width - ph->len;
 	while (ph->width-- > 1)
 		pf_putchar(' ', ph, db);
 	if (ph->hash == TRUE)
 		pf_putstr("0x", ph, db);
-	else
-		pf_putchar(' ', ph, db);
 }

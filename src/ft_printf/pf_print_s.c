@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:54:13 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/13 21:53:44 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/15 20:12:43 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 int			pf_print_s(attrib *ph, uiput *db)
 {
+
 	char	*phs;
 
 	phs = va_arg(db->ap, char *);
 	ph->len = ft_strlen(phs);
+	if (ph->prec)
+		pf_makeprecise(phs, ph, db);
 	if (ph->algn == TRUE)
 	{
 		pf_putstr(phs, ph, db);

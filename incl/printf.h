@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/15 19:35:23 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/15 20:16:06 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,7 @@ int				pf_ismod_pre(const char *frmt, uiput *db);
 void 			pf_lmgmt_id(uiput *db, attrib *ph);
 void 			pf_lmgmt_oux(uiput *db, attrib *ph);
 void 			pf_get_prec(const char *frmt, attrib *ph, uiput *db);
+void 			pf_make_precise(char *str, attrib *ph);
 
 
 #endif

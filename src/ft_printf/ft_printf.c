@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/15 19:46:30 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/15 20:19:53 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 
 /*You are implementing precision on %s first*/
-
+/*Dosen't seem like precision is being recoreded correctly.
+Debug that in the AM*/
 
 int 		ft_printf(const char *frmt, ...)
 {

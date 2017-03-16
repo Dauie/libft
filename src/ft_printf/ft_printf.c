@@ -6,11 +6,15 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/13 22:03:49 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/15 19:46:30 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
+
+
+/*You are implementing precision on %s first*/
+
 
 int 		ft_printf(const char *frmt, ...)
 {
@@ -25,13 +29,13 @@ int 		ft_printf(const char *frmt, ...)
 
 void		pf_parse(const char *frmt, uiput *db)
 {
-	while (frmt[++db->inx])
+	while (frmt[db->inx])
 	{
-		if (frmt[db->inx] == '%')
+		if (frmt[db->inx] == '%' && frmt[db->inx + 1])
 			pf_pause_parse(frmt, db);
 		else
 		{
-			ft_putchar(frmt[db->inx]);
+			ft_putchar(frmt[db->inx++]);
 			db->tot++;
 		}
 	}
@@ -46,6 +50,8 @@ int			pf_pause_parse(const char *frmt, uiput *db)
 	init_attrib(&ph);
 	ph.len = pf_phlen(frmt, db);
 	ph.type = frmt[db->inx + ph.len];
+	if (pf_isupper(ph.type))
+		ph.upper = TRUE;
 	pf_get_attrib(frmt, &ph, db);
 	pf_phmaster(&ph, db);
 	return (0);
@@ -56,9 +62,7 @@ void		pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
 	int		i;
 
 	i = -1;
-	if (pf_isupper(ph->type))
-		ph->upper = TRUE;
-	while (++i < ph->len)
+	while (++i < ph->len - 1)
 	{
 		if (pf_isflag(frmt[db->inx]) == 1)
 			ph->algn = TRUE;
@@ -74,6 +78,8 @@ void		pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
 			ph->spc = TRUE;
 		else if (pf_ismod_pre(frmt, db))
 			ph->mod = pf_parse_mod(frmt, db, ph);
+		else if (pf_isflag(frmt[db->inx]) == 7)
+			pf_get_prec(frmt, ph, db);
 		db->inx++;
 	}
 }

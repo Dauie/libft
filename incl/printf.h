@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/13 21:38:32 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/15 19:35:23 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,19 @@ static char *UHEX = {"0123456789ABCDEF"};
 
 typedef union
 {
-	long 		l;
-	long long	ll;
-	int			h;
-	int			hh;
-	size_t		z;
-	intmax_t 	j;
+	int					i;
+	signed char			sc;
+	unsigned char 		uc;
+	short				s;
+	unsigned short 		us;
+	long 				l;
+	unsigned long		ul;
+	long long			ll;
+	size_t				st;
+	unsigned long long 	ull;
+	intmax_t			imt;
+	uintmax_t			uimt;
+
 }		data;
 
 typedef struct	user_input
@@ -134,6 +141,9 @@ int				pf_isoxdi(int c);
 char			*pf_itoabse(int nbg, int bse, attrib *ph);
 int				pf_parse_mod(const char *frmt, uiput *db, attrib *ph);
 int				pf_ismod_pre(const char *frmt, uiput *db);
-void 			pf_manage_lmod(uiput *db, attrib *ph);
+void 			pf_lmgmt_id(uiput *db, attrib *ph);
+void 			pf_lmgmt_oux(uiput *db, attrib *ph);
+void 			pf_get_prec(const char *frmt, attrib *ph, uiput *db);
+
 
 #endif

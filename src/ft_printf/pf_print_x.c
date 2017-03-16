@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/13 22:12:43 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/15 11:48:46 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int				pf_print_x(attrib *ph, uiput *db)
 {
 	if (ph->mod)
-		pf_manage_lmod(db, ph);
+		pf_lmgmt_oux(db, ph);
 	else
-		ph->phd.l = (long)va_arg(db->ap, long);
+		ph->phd.l = (long)va_arg(db->ap, int);
 	if (ph->phd.l < 0)
 	{
 		ph->phd.l = -ph->phd.l;

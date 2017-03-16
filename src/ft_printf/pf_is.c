@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:43:05 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/13 14:26:55 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/15 19:33:17 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int			pf_isflag(int c)
 			return (5);
 		else if (c == ' ')
 			return (6);
+		else if (c == '.')
+			return (7);
 	}
 	return (0);
 }
@@ -105,7 +107,7 @@ int			pf_isoxdi(int c)
 		return (1);
 	else if (c == 'o' || c == 'O')
 		return (2);
-	else if (c == 'i' || c == 'I' || c == 'd' || c == 'D')
+	else if (c == 'i' || c == 'd' || c == 'D')
 		return (3);
 	else
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/13 21:27:02 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/15 15:07:05 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int				pf_print_o(attrib *ph, uiput *db)
 {
 	if (ph->mod)
-		pf_manage_lmod(db, ph);
+		pf_lmgmt_oux(db, ph);
 	else
 		ph->phd.l = (long)va_arg(db->ap, long);
 	ph->len = ft_numlen(ph->phd.l, 8);
@@ -32,7 +32,7 @@ void 		pf_putpad_o(attrib *ph, uiput *db)
 	ph->width = ph->width - ph->len;
 	while (ph->width-- > 1)
 		pf_putchar(' ', ph, db);
-	if (ph->hash == TRUE)
+	if (ph->actn == TRUE)
 		pf_putchar('0', ph, db);
 	ph->width = 0;
 }

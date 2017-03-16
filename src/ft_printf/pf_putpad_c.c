@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:54:40 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/13 18:21:44 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/15 15:34:17 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void 		pf_putpad_csdi(attrib *ph, uiput *db)
 		c = ' ';
 	while (ph->width-- > 0)
 		pf_putchar(c, ph, db);
+	ph->width = 0;
 }

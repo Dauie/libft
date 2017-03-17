@@ -6,11 +6,13 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 15:34:02 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/13 13:49:12 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/16 19:54:38 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../../incl/printf.h"
+
+static void 	putpad_c(attrib *ph, uiput *db);
 
 int			pf_print_c(attrib *ph, uiput *db)
 {
@@ -22,13 +24,28 @@ int			pf_print_c(attrib *ph, uiput *db)
 	{
 		pf_putchar(phc, ph, db);
 		if (ph->width)
-			pf_putpad_csdi(ph, db);
+			putpad_c(ph, db);
 	}
 	else
 	{
 		if (ph->width)
-			pf_putpad_csdi(ph, db);
+			putpad_c(ph, db);
 		pf_putchar(phc, ph, db);
 	}
 	return (0);
+}
+
+static void 	putpad_c(attrib *ph, uiput *db)
+{
+	char	c;
+
+	ph->len = 1;
+	ph->width = ph->width - ph->len;
+	if (ph->zero == TRUE)
+		c = '0';
+	else
+		c = ' ';
+	while (ph->width-- > 0)
+		pf_putchar(c, ph, db);
+	ph->width = 0;
 }

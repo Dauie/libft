@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:53:23 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/15 19:34:32 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/16 19:17:26 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,21 @@
 
 void 		pf_get_width(const char *frmt, attrib *ph, uiput *db)
 {
+	if (!(ft_isdigit(frmt[db->inx])))
+		db->inx++;
 	ph->width = ft_atoi((char *)&frmt[db->inx]);
 	db->inx += ft_numlen(ph->width, 10);
 }
 
 void 	pf_get_prec(const char *frmt, attrib *ph, uiput *db)
 {
-	ph->prec = ft_atoi((char *)&frmt[db->inx]);
-	db->inx += ft_numlen(ph->width, 10);
+	if (frmt[db->inx] == '.')
+		db->inx++;
+	if (ft_isdigit(frmt[db->inx]))
+	{
+		ph->prec = ft_atoi((char *)&frmt[db->inx]);
+		db->inx += ft_numlen(ph->prec, 10);
+	}
 }
 
 int			pf_phlen(const char *frmt, uiput *db)

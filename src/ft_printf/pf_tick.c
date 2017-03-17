@@ -1,28 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_putpad_c.c                                      :+:      :+:    :+:   */
+/*   pf_tick.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/01 19:54:40 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/15 15:34:17 by rlutt            ###   ########.fr       */
+/*   Created: 2017/03/16 11:52:43 by rlutt             #+#    #+#             */
+/*   Updated: 2017/03/16 12:05:12 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-void 		pf_putpad_csdi(attrib *ph, uiput *db)
+void 		pf_tick_algn(attrib *ph, uiput *db)
 {
-	char	c;
+	ph->algn = TRUE;
+	db->inx++;
+}
 
-	if (ph->width)
-		ph->width = ph->width - ph->len;
-	if (ph->zero == TRUE)
-		c = '0';
-	else
-		c = ' ';
-	while (ph->width-- > 0)
-		pf_putchar(c, ph, db);
-	ph->width = 0;
+void 		pf_tick_hash(attrib *ph, uiput *db)
+{
+	ph->hash = TRUE;
+	db->inx++;
+}
+
+void 		pf_tick_sign(attrib *ph, uiput *db)
+{
+	ph->sign = TRUE;
+	db->inx++;
+}
+
+void 		pf_tick_zero(attrib *ph, uiput *db)
+{
+	ph->zero = TRUE;
+	db->inx++;
+}
+
+void 		pf_tick_spc(attrib *ph, uiput *db)
+{
+	ph->spc = TRUE;
+	db->inx++;
 }

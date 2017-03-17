@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/15 20:16:06 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/16 19:20:32 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ typedef struct	user_input
 }				uiput;
 
 typedef struct	format_info
-{/* sSpdDioOuUxXcC */
+{
 	char		type;
 	char		mod;
 	data		phd;
@@ -125,11 +125,6 @@ int				pf_print_o(attrib *ph, uiput *db);
 int				pf_print_x(attrib *ph, uiput *db);
 int				pf_print_perc(attrib *ph, uiput *db);
 int				puterror(int ecode);
-void			pf_choosepad(attrib *ph, uiput *db);
-void 			pf_putpad_csdi(attrib *ph, uiput *db);
-void 			pf_putpad_o(attrib *ph, uiput *db);
-void 			pf_putpad_x(attrib *ph, uiput *db);
-void 			pf_putpad_perc(attrib *ph, uiput *db);
 int				pf_putstr(char *str, attrib *ph, uiput *db);
 char 			*pf_typechr(char *phstrt);
 void 			pf_get_width(const char *frmt, attrib *ph, uiput *db);
@@ -144,7 +139,11 @@ int				pf_ismod_pre(const char *frmt, uiput *db);
 void 			pf_lmgmt_id(uiput *db, attrib *ph);
 void 			pf_lmgmt_oux(uiput *db, attrib *ph);
 void 			pf_get_prec(const char *frmt, attrib *ph, uiput *db);
-void 			pf_make_precise(char *str, attrib *ph);
-
+void 			pf_make_precise(char *strt, attrib *ph);
+void 			pf_tick_algn(attrib *ph, uiput *db);
+void 			pf_tick_hash(attrib *ph, uiput *db);
+void 			pf_tick_sign(attrib *ph, uiput *db);
+void 			pf_tick_zero(attrib *ph, uiput *db);
+void 			pf_tick_spc(attrib *ph, uiput *db);
 
 #endif

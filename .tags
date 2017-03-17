@@ -1,4 +1,0 @@
-pf_print_o	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_print_o.c	/^int				pf_print_o(attrib *ph, uiput *db)$/;"	function	line:15	signature:(attrib *ph, uiput *db)
-pf_putpad_o	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_print_o.c	/^void 		pf_putpad_o(attrib *ph, uiput *db)$/;"	function	line:29	signature:(attrib *ph, uiput *db)
-pf_putchar	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_putchar.c	/^int				pf_putchar(char c, attrib *ph, uiput *db)$/;"	function	line:20	signature:(char c, attrib *ph, uiput *db)
-pf_putpad_csdi	/nfs/2016/r/rlutt/code/libft/src/ft_printf/pf_putpad_c.c	/^void 		pf_putpad_csdi(attrib *ph, uiput *db)$/;"	function	line:15	signature:(attrib *ph, uiput *db)

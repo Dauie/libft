@@ -6,11 +6,13 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/15 15:07:05 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/16 15:14:06 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
+
+static void 	putpad_o(attrib *ph, uiput *db);
 
 int				pf_print_o(attrib *ph, uiput *db)
 {
@@ -21,12 +23,12 @@ int				pf_print_o(attrib *ph, uiput *db)
 	ph->len = ft_numlen(ph->phd.l, 8);
 	if (ph->hash == TRUE)
 		ph->actn = TRUE;
-	pf_putpad_o(ph, db);
+	putpad_o(ph, db);
 	pf_putstr(pf_itoabse(ph->phd.l, 8, ph), ph, db);
 	return (0);
 }
 
-void 		pf_putpad_o(attrib *ph, uiput *db)
+static void 	putpad_o(attrib *ph, uiput *db)
 {
 	ph->width++;
 	ph->width = ph->width - ph->len;

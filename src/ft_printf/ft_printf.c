@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/15 20:19:53 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/16 19:28:45 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ int			pf_pause_parse(const char *frmt, uiput *db)
 {
 	attrib	ph;
 
-	db->inx++;
+	if (frmt[db->inx] == '%')
+		db->inx++;
 	init_attrib(&ph);
 	ph.len = pf_phlen(frmt, db);
 	ph.type = frmt[db->inx + ph.len];
@@ -63,26 +64,28 @@ void		pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
 	int		i;
 
 	i = -1;
+	if(ph->type == '%')
+		ph->len += 1;
 	while (++i < ph->len - 1)
 	{
 		if (pf_isflag(frmt[db->inx]) == 1)
-			ph->algn = TRUE;
+			pf_tick_algn(ph, db);
 		else if (pf_isflag(frmt[db->inx]) == 2)
 			pf_get_width(frmt, ph, db);
 		else if (pf_isflag(frmt[db->inx]) == 3)
-			ph->hash = TRUE;
+			pf_tick_hash(ph, db);
 		else if (pf_isflag(frmt[db->inx]) == 4)
-			ph->sign = TRUE;
+			pf_tick_sign(ph, db);
 		else if (pf_isflag(frmt[db->inx]) == 5)
-			ph->zero = TRUE;
+			pf_tick_zero(ph, db);
 		else if (pf_isflag(frmt[db->inx]) == 6)
-			ph->spc = TRUE;
+			pf_tick_spc(ph, db);
 		else if (pf_ismod_pre(frmt, db))
 			ph->mod = pf_parse_mod(frmt, db, ph);
 		else if (pf_isflag(frmt[db->inx]) == 7)
 			pf_get_prec(frmt, ph, db);
-		db->inx++;
 	}
+	db->inx++;
 }
 
 int			pf_phmaster(attrib *ph, uiput *db)

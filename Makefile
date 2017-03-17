@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/03/13 14:59:29 by rlutt            ###   ########.fr        #
+#    Updated: 2017/03/16 15:01:06 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,12 +89,13 @@ GNL_SRC =	src/futil/gnl/gnl.c
 PRINTF_SRC =src/ft_printf/ft_printf.c src/ft_printf/pf_initstructs.c \
 			src/ft_printf/pf_is.c src/ft_printf/pf_print_s.c \
 			src/ft_printf/pf_print_i.c \
-			src/ft_printf/pf_puterror.c src/ft_printf/pf_putpad_c.c \
+			src/ft_printf/pf_puterror.c \
 			src/ft_printf/pf_putstr.c src/ft_printf/pf_typechr.c \
 			src/ft_printf/pf_width.c src/ft_printf/pf_print_c.c \
-			src/ft_printf/pf_putchar.c src/ft_printf/pf_putnbr.c \
+			src/ft_printf/pf_putchar.c \
 			src/ft_printf/pf_print_perc.c src/ft_printf/pf_print_o.c \
-			src/ft_printf/pf_print_x.c src/ft_printf/pf_itoabse.c
+			src/ft_printf/pf_print_x.c src/ft_printf/pf_itoabse.c \
+			src/ft_printf/pf_tick.c
 
 $(NAME):
 		$(CC) $(CCFLAGS) $(MEM_SRC)
@@ -149,7 +150,7 @@ gnl:
 		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 printf:
-		$(CC) $(PRINTF_SRC)
+		$(CC) $(CCFLAGS) $(PRINTF_SRC)
 		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 clean:

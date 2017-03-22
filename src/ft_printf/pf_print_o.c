@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/21 17:41:19 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/21 21:17:47 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,16 @@ static void 	putpad_o(attrib *ph, uiput *db)
 static void 	handel_hasho(attrib *ph, uiput *db)
 {
 	int c;
-	if (ph->algn == TRUE || (ph->zero == TRUE && ph->algn == FALSE ))
-		c = '0';
-	else
-		c = ' ';
-	if (ph->hash)
-		pf_putchar(c, ph, db);
+	c = '0';
+	pf_putchar(c, ph, db);
 }
 
 static void 	printo_ndel(attrib *ph, uiput *db)
 {
 	char		*ostr;
 
-	if (ph->hash == TRUE)
+
+	if (ph->actn == TRUE)
 		handel_hasho(ph, db);
 	ostr = pf_itoabse(ph->phd.l, 8, ph);
 	pf_putstr(ostr, ph, db);
@@ -49,7 +46,7 @@ static void 	printo_ndel(attrib *ph, uiput *db)
 // *need - DONT FUCKING TOUCH IT
 static void 	manage_oattrib(attrib *ph)
 {
-	if (ph->hash && ph->width)								//need
+	if (ph->hash == TRUE && ph->width)								//need
 	{
 		ph->width--;
 		ph->actn = TRUE;
@@ -60,19 +57,24 @@ static void 	manage_oattrib(attrib *ph)
 	{
 		if (ph->prec > ph->width)							//need
 		{
+			ph->actn = TRUE;
 			ph->zero = TRUE;
 			ph->algn = FALSE;
 			ph->width = ph->prec;
 		}
-		else if (ph->width > ph->prec && ph->zero == FALSE) //need
-			ph->zero = TRUE;
+		else if (ph->width > ph->prec)
+		{
+			ph->width--;
+			ph->actn = TRUE;
+			ph->hash = TRUE;
+			ph->zero = FALSE;
+		}
 		ph->width = ph->width - ph->len;
 	}
 	else if (ph->width && !ph->prec)
 		ph->width = ph->width - ph->len;
 	else if (ph->prec && !ph->width)
 		ph->width = ph->prec - ph->len;
-	ph->prec = 0;
 }
 
 int				pf_print_o(attrib *ph, uiput *db)

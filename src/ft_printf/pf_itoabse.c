@@ -3,10 +3,10 @@
 
 static char *pf_itoaz(attrib *ph)
 {
-	if ((!ph->width || !ph->prec) && ph->hash == FALSE)
-		return (ft_strdup(" "));
-	else
+	if (ph->hash == TRUE || ph->actn == TRUE)
 		return (ft_strdup("0"));
+	else
+		return (ft_strdup(" "));
 }
 
 char		*pf_itoabse(int nbg, int bse, attrib *ph)
@@ -35,5 +35,6 @@ char		*pf_itoabse(int nbg, int bse, attrib *ph)
 	}
 	if (nbg < 0)
 		res[0] = '-';
+	ft_strdel(&hex);
 	return (res);
 }

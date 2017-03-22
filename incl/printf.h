@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/16 19:20:32 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/21 13:35:30 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ typedef struct	format_info
 	t_blean		spc;		/* Use ' ' on int instead of '0' */
 	int			prec;		/* Precision: Max # of output */
 	int			width;		/* Width : Minimum # of output */
-	int			len;		/* Placeholder Length (destroy?)*/
+	int			len;		/* Placeholder Length */
 }				attrib;
 
 int 			ft_printf(const char *frmt, ...);

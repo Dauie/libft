@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/16 19:28:45 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/19 15:17:56 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void		pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
 	i = -1;
 	if(ph->type == '%')
 		ph->len += 1;
-	while (++i < ph->len - 1)
+	while (++i < ph->len)
 	{
 		if (pf_isflag(frmt[db->inx]) == 1)
 			pf_tick_algn(ph, db);

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 20:00:47 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:30:57 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/19 13:37:15 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 				plit++;
 			}
 			if (*plit == '\0')
-				return (char *)big;
+				return ((char *)big);
 		}
 		big++;
 		len--;

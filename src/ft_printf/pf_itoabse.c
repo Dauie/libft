@@ -1,6 +1,14 @@
 #include "../../incl/printf.h"
 
 
+static char *pf_itoaz(attrib *ph)
+{
+	if ((!ph->width || !ph->prec) && ph->hash == FALSE)
+		return (ft_strdup(" "));
+	else
+		return (ft_strdup("0"));
+}
+
 char		*pf_itoabse(int nbg, int bse, attrib *ph)
 {
 	long	nb;
@@ -17,7 +25,7 @@ char		*pf_itoabse(int nbg, int bse, attrib *ph)
 	if (!(res = ((char *)ft_memalloc(sz-- + 1))))
 		return (NULL);
 	if (nbg == 0)
-		return (ft_strdup("0"));
+		return (pf_itoaz(ph));
 	if (nbg < 0)
 		nb = nb * -1;
 	while (nb)

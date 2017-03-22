@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/22 13:20:02 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/22 14:29:28 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ int				pf_print_x(attrib *ph, uiput *db)
 		ph->actn = TRUE;
 	if (ph->algn == TRUE)
 	{
-		pf_putstr(pf_itoabse(ph->phd.l, 16, ph), ph, db);
+		pf_putstr(pf_itoabse(ph->phd.uimt, 16, ph), ph, db);
 		putpad_x(ph, db);
 	}
 	else
 	{
 		putpad_x(ph, db);
-		pf_putstr(pf_itoabse(ph->phd.l, 16, ph), ph, db);
+		pf_putstr(pf_itoabse(ph->phd.uimt, 16, ph), ph, db);
 	}
 	return (0);
 }
@@ -56,42 +56,47 @@ static void 	putpad_x(attrib *ph, uiput *db)
 
 void pf_xl(attrib *ph, uiput *db)
 {
-	ph->phd.l = (long)va_arg(db->ap, long);
+	ph->phd.l = va_arg(db->ap, long);
 	if (ph->phd.l < 0)
+	{
+		ph->phd.l = -ph->phd.l;
 		ph->wneg = TRUE;
+	}
 	ph->phd.uimt = (uintmax_t)ph->phd.l;
 }
 
 void pf_xll(attrib *ph, uiput *db)
 {
-	ph->phd.ll = (long long)va_arg(db->ap, long long);
+	ph->phd.ll = va_arg(db->ap, long long);
 	if (ph->phd.ll < 0)
+	{
+		ph->phd.ll = -ph->phd.ll;
 		ph->wneg = TRUE;
-	ph->phd.uimt = (uintmax_t)ph->phd.ll;
+	}
+	ph->phd.uimt = ph->phd.ll;
 }
 
 void pf_xh(attrib *ph, uiput *db)
 {
-	ph->phd.us = (unsigned short)va_arg(db->ap, long);
-	ph->phd.uimt = (uintmax_t)ph->phd.us;
+	ph->phd.us = va_arg(db->ap, int);
+	ph->phd.uimt = ph->phd.us;
 }
 
 void pf_xhh(attrib *ph, uiput *db)
 {
-	ph->phd.uc = (unsigned char)va_arg(db->ap, long);
-	ph->phd.uimt = (uintmax_t)ph->phd.uc;
+	ph->phd.uc = va_arg(db->ap, int);
+	ph->phd.uimt = ph->phd.uc;
 }
 
 void pf_xz(attrib *ph, uiput *db)
 {
-	ph->phd.st = (size_t)va_arg(db->ap, size_t);
-	ph->phd.uimt = (uintmax_t)ph->phd.st;
+	ph->phd.st = va_arg(db->ap, size_t);
+	ph->phd.uimt = ph->phd.st;
 }
 
 void pf_xj(attrib *ph, uiput *db)
 {
-	ph->phd.uimt = (uintmax_t)va_arg(db->ap, uintmax_t);
-	ph->phd.uimt = (uintmax_t)ph->phd.uimt;
+	ph->phd.uimt = va_arg(db->ap, uintmax_t);
 }
 
 void 		pf_lmgmt_oux(uiput *db, attrib *ph)

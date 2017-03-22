@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:53:23 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/16 19:17:26 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/22 13:12:37 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,22 +47,6 @@ void 		pf_lmgmt_id(uiput *db, attrib *ph)
 		ph->phd.l = (long)va_arg(db->ap, intmax_t);
 	else if (ph->mod == 'L')
 		ph->phd.ll = (unsigned long long)va_arg(db->ap, intmax_t);
-	else if (ph->mod == 'h')
-		ph->phd.i = (int)va_arg(db->ap, intmax_t);
-	else if (ph->mod == 'H')
-		ph->phd.i = (int)va_arg(db->ap, intmax_t);
-	else if (ph->mod == 'z')
-		ph->phd.st = (size_t)va_arg(db->ap, intmax_t);
-	else if (ph->mod == 'j')
-		ph->phd.imt = (intmax_t)va_arg(db->ap, intmax_t);
-}
-
-void 		pf_lmgmt_oux(uiput *db, attrib *ph)
-{
-	if (ph->mod == 'l')
-		ph->phd.l = (long)va_arg(db->ap, intmax_t);
-	else if (ph->mod == 'L')
-		ph->phd.ll = (long long)va_arg(db->ap, intmax_t);
 	else if (ph->mod == 'h')
 		ph->phd.i = (int)va_arg(db->ap, intmax_t);
 	else if (ph->mod == 'H')

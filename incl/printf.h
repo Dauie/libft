@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/21 20:55:25 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/22 13:00:29 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@
 
 #ifndef PRINTF_H
 # define PRINTF_H
+
 
 # include <string.h>
 # include <stdarg.h>
@@ -104,6 +105,7 @@ typedef struct	format_info
 	t_blean		hashz;		/* blean for zero */
 	t_blean		zero;		/* Replace padding ' ' with '0' */
 	t_blean		spc;		/* Use ' ' on int instead of '0' */
+	t_blean		wneg;		/* If number was negetive*/
 	int			prec;		/* Precision: Max # of output */
 	int			width;		/* Width : Minimum # of output */
 	int			len;		/* Placeholder Length */

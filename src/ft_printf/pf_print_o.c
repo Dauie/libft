@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/21 17:14:20 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/21 17:41:19 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void 	printo_ndel(attrib *ph, uiput *db)
 }
 
 
-// need (DONT FUCKING TOUCH IT)
+// *need - DONT FUCKING TOUCH IT
 static void 	manage_oattrib(attrib *ph)
 {
 	if (ph->hash && ph->width)								//need
@@ -54,7 +54,7 @@ static void 	manage_oattrib(attrib *ph)
 		ph->width--;
 		ph->actn = TRUE;
 	}
-	if (ph->algn)											//need
+	if (ph->algn && ph->zero == TRUE)						//need
 		ph->zero = FALSE;
 	if (ph->prec && ph->width)
 	{

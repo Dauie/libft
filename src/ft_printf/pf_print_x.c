@@ -6,35 +6,36 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/22 18:31:28 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/23 16:46:56 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-static void 	putpad_x(attrib *ph, uiput *db);
-
-int				pf_print_x(attrib *ph, uiput *db)
+static void 	actn_0x(attrib *ph, uiput *db)
 {
-	if (ph->mod)
-		pf_lmgmt_oux(db, ph);
-	else
-		ph->phd.l = (long)va_arg(db->ap, int);
-	ph->len = ft_numlen(ph->phd.l, 16);
-	if (ph->hash == TRUE)
+	ph->actn = FALSE;
+	pf_putstr("0x", ph, db);
+}
+
+static void 	manage_xattrib(attrib *ph)
+{
+	if (ph->hash == TRUE)							//need
 		ph->actn = TRUE;
 	if (ph->algn == TRUE)
+		ph->zero = FALSE;
+	if (ph->prec && ph->width)
 	{
-		pf_putstr(pf_itoabse(ph->phd.uimt, 16, ph), ph, db);
-		putpad_x(ph, db);
+		if (ph->prec > ph->width)					//need
+			ph->width = ph->prec;
+		ph->width = ph->width - ph->len;
 	}
-	else
-	{
-		putpad_x(ph, db);
-		pf_putstr(pf_itoabse(ph->phd.uimt, 16, ph), ph, db);
-	}
-	return (0);
+	else if (ph->width && !ph->prec)
+		ph->width = ph->width - ph->len;
+	else if (ph->prec && !ph->width)
+		ph->width = ph->prec - ph->len;
 }
+
 
 static void 	putpad_x(attrib *ph, uiput *db)
 {
@@ -44,13 +45,36 @@ static void 	putpad_x(attrib *ph, uiput *db)
 		c = '0';
 	else
 		c = ' ';
-	if (ph->hash == TRUE)
-		ph->width--;
-	else
-		ph->width++;
 	ph->width = ph->width - ph->len;
-	while (ph->width-- > 1)
+	while (ph->width-- > 0)
 		pf_putchar(c, ph, db);
-	if (ph->hash == TRUE)
-		pf_putstr("0x", ph, db);
+
+}
+
+int				pf_print_x(attrib *ph, uiput *db)
+{
+	if (ph->mod)
+		pf_lmgmt_oux(db, ph);
+	else
+		ph->phd.l = (long)va_arg(db->ap, int);
+	ph->len = ft_numlen(ph->phd.l, 16);
+	manage_xattrib(ph);
+	if (ph->algn == TRUE)
+	{
+
+		if (ph->actn == TRUE)
+			actn_0x(ph, db);
+		pf_putstr(pf_itoabse(ph->phd.uimt, 16, ph), ph, db);
+		putpad_x(ph, db);
+	}
+	else
+	{
+		if (ph->actn == TRUE && ph->width)
+			actn_0x(ph, db);
+		putpad_x(ph, db);
+		if (ph->actn == TRUE)
+			actn_0x(ph, db);
+		pf_putstr(pf_itoabse(ph->phd.uimt, 16, ph), ph, db);
+	}
+	return (0);
 }

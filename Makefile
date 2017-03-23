@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/03/16 15:01:06 by rlutt            ###   ########.fr        #
+#    Updated: 2017/03/22 18:43:15 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ HEADDR = /incl/char.h /incl/cnvrsn.h /incl/mem.h /incl/num.h /incl/put.h \
 
 CHAR_SRC =	src/primitive/char/ft_isalnum.c src/primitive/char/ft_isalpha.c \
 			src/primitive/char/ft_isascii.c src/primitive/char/ft_isdigit.c \
-			src/primitive/char/ft_isprint.c src/primitive/char/ft_isspc.c
+			src/primitive/char/ft_isprint.c src/primitive/char/ft_isspc.c \
+			src/primitive/char/ft_isupper.c src/primitive/char/ft_islower.c \
 
 CNVRSN_SRC =	src/primitive/cnvrsn/ft_atoi.c src/primitive/cnvrsn/ft_itoa.c \
 				src/primitive/cnvrsn/ft_itoabse.c
@@ -88,14 +89,15 @@ GNL_SRC =	src/futil/gnl/gnl.c
 
 PRINTF_SRC =src/ft_printf/ft_printf.c src/ft_printf/pf_initstructs.c \
 			src/ft_printf/pf_is.c src/ft_printf/pf_print_s.c \
-			src/ft_printf/pf_print_i.c \
+			src/ft_printf/pf_print_i.c src/ft_printf/pf_print_u.c\
 			src/ft_printf/pf_puterror.c \
 			src/ft_printf/pf_putstr.c src/ft_printf/pf_typechr.c \
 			src/ft_printf/pf_width.c src/ft_printf/pf_print_c.c \
 			src/ft_printf/pf_putchar.c \
 			src/ft_printf/pf_print_perc.c src/ft_printf/pf_print_o.c \
 			src/ft_printf/pf_print_x.c src/ft_printf/pf_itoabse.c \
-			src/ft_printf/pf_tick.c
+			src/ft_printf/pf_tick.c \
+			src/ft_printf/pf_cast_di.c src/ft_printf/pf_cast_oux.c \
 
 $(NAME):
 		$(CC) $(CCFLAGS) $(MEM_SRC)

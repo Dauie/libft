@@ -9,9 +9,9 @@ static char *pf_itoaz(attrib *ph)
 		return (ft_strdup(" "));
 }
 
-char		*pf_itoabse(int nbg, int bse, attrib *ph)
+char		*pf_itoabse(intmax_t nbg, int bse, attrib *ph)
 {
-	long	nb;
+	intmax_t	nb;
 	int		sz;
 	char	*res;
 	char	*hex;
@@ -21,7 +21,7 @@ char		*pf_itoabse(int nbg, int bse, attrib *ph)
 	else
 		hex = ft_strdup(LHEX);
 	nb = nbg;
-	sz = ft_numlen((long long)nbg, 10);
+	sz = ft_numlen((long long)nbg, bse);
 	if (!(res = ((char *)ft_memalloc(sz-- + 1))))
 		return (NULL);
 	if (nbg == 0)
@@ -33,7 +33,7 @@ char		*pf_itoabse(int nbg, int bse, attrib *ph)
 		res[sz--] = hex[nb % bse];
 		nb = nb / bse;
 	}
-	if (nbg < 0)
+	if (ph->wneg == TRUE)
 		res[0] = '-';
 	ft_strdel(&hex);
 	return (res);

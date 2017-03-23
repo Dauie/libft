@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:43:05 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/16 18:26:28 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/22 17:10:53 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,22 +54,26 @@ int			pf_parse_mod(const char *frmt, uiput *db, attrib *ph)
 		if (frmt[db->inx] == 'h')
 		{
 			if (frmt[db->inx + 1] != 'h')
-				return ('h');
+				ph->mod = 'h';
 			else
-				return ('H');
+				ph->mod = 'H';
 		}
 		else if (frmt[db->inx] == 'l')
 		{
 			if (frmt[db->inx + 1] != 'l')
-				return ('l');
+				ph->mod = 'l';
 			else
-				return ('L');
+				ph->mod = 'L';
 		}
 		else if (frmt[db->inx] == 'j')
-			return ('j');
+			ph->mod = 'j';
 		else if (frmt[db->inx] == 'z')
-			return ('z');
+			ph->mod = 'z';
 	}
+	if (ft_isupper(ph->mod))
+		db->inx += 2;
+	else
+		db->inx++;
 	return (ph->mod);
 }
 

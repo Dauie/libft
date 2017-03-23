@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:53:23 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/22 13:12:37 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/22 18:37:26 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,4 @@ int			pf_phlen(const char *frmt, uiput *db)
 	strt = (char*)&frmt[db->inx];
 	flag = pf_typechr((char *)&frmt[db->inx]);
 	return (flag - strt);
-}
-
-void 		pf_lmgmt_id(uiput *db, attrib *ph)
-{
-	if (ph->mod == 'l')
-		ph->phd.l = (long)va_arg(db->ap, intmax_t);
-	else if (ph->mod == 'L')
-		ph->phd.ll = (unsigned long long)va_arg(db->ap, intmax_t);
-	else if (ph->mod == 'h')
-		ph->phd.i = (int)va_arg(db->ap, intmax_t);
-	else if (ph->mod == 'H')
-		ph->phd.i = (int)va_arg(db->ap, intmax_t);
-	else if (ph->mod == 'z')
-		ph->phd.st = (size_t)va_arg(db->ap, intmax_t);
-	else if (ph->mod == 'j')
-		ph->phd.imt = (intmax_t)va_arg(db->ap, intmax_t);
 }

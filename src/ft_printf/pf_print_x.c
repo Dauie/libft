@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/22 14:29:28 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/22 18:31:28 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,6 @@ int				pf_print_x(attrib *ph, uiput *db)
 		pf_lmgmt_oux(db, ph);
 	else
 		ph->phd.l = (long)va_arg(db->ap, int);
-	if (ph->phd.l < 0)
-	{
-		ph->phd.l = -ph->phd.l;
-		ph->sign = TRUE;
-	}
 	ph->len = ft_numlen(ph->phd.l, 16);
 	if (ph->hash == TRUE)
 		ph->actn = TRUE;
@@ -43,74 +38,19 @@ int				pf_print_x(attrib *ph, uiput *db)
 
 static void 	putpad_x(attrib *ph, uiput *db)
 {
+	char		c;
+
+	if (ph->zero == TRUE)
+		c = '0';
+	else
+		c = ' ';
 	if (ph->hash == TRUE)
 		ph->width--;
 	else
 		ph->width++;
 	ph->width = ph->width - ph->len;
 	while (ph->width-- > 1)
-		pf_putchar(' ', ph, db);
+		pf_putchar(c, ph, db);
 	if (ph->hash == TRUE)
 		pf_putstr("0x", ph, db);
-}
-
-void pf_xl(attrib *ph, uiput *db)
-{
-	ph->phd.l = va_arg(db->ap, long);
-	if (ph->phd.l < 0)
-	{
-		ph->phd.l = -ph->phd.l;
-		ph->wneg = TRUE;
-	}
-	ph->phd.uimt = (uintmax_t)ph->phd.l;
-}
-
-void pf_xll(attrib *ph, uiput *db)
-{
-	ph->phd.ll = va_arg(db->ap, long long);
-	if (ph->phd.ll < 0)
-	{
-		ph->phd.ll = -ph->phd.ll;
-		ph->wneg = TRUE;
-	}
-	ph->phd.uimt = ph->phd.ll;
-}
-
-void pf_xh(attrib *ph, uiput *db)
-{
-	ph->phd.us = va_arg(db->ap, int);
-	ph->phd.uimt = ph->phd.us;
-}
-
-void pf_xhh(attrib *ph, uiput *db)
-{
-	ph->phd.uc = va_arg(db->ap, int);
-	ph->phd.uimt = ph->phd.uc;
-}
-
-void pf_xz(attrib *ph, uiput *db)
-{
-	ph->phd.st = va_arg(db->ap, size_t);
-	ph->phd.uimt = ph->phd.st;
-}
-
-void pf_xj(attrib *ph, uiput *db)
-{
-	ph->phd.uimt = va_arg(db->ap, uintmax_t);
-}
-
-void 		pf_lmgmt_oux(uiput *db, attrib *ph)
-{
-	if (ph->mod == 'l')
-		pf_xl(ph, db);
-	else if (ph->mod == 'L')
-		pf_xll(ph, db);
-	else if (ph->mod == 'h')
-		pf_xh(ph, db);
-	else if (ph->mod == 'H')
-		pf_xhh(ph, db);
-	else if (ph->mod == 'z')
-		pf_xz(ph, db);
-	else if (ph->mod == 'j')
-		pf_xj(ph, db);
 }

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:06:01 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/08 14:56:56 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/22 17:17:51 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,7 @@ int					ft_isdigit(int c);
 int					ft_isascii(int c);
 int					ft_isalpha(int c);
 int					ft_isalnum(int c);
+int					ft_isupper(int c);
+int					ft_islower(int c);
 
 #endif

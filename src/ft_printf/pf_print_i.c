@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/16 17:29:13 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/22 18:14:47 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int			pf_putnbr(int n, attrib *ph, uiput *db)
 	tmp = n;
 	if (ph->sign == TRUE && n > 0)
 		pf_putchar('+', ph, db);
-	if (tmp < 0)
+	if (tmp < 0 && ph->type != 'u')
 	{
 		tmp = -tmp;
 		pf_putchar('-', ph, db);

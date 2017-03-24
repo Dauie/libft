@@ -9,12 +9,12 @@ static char *pf_itoaz(attrib *ph)
 		return (ft_strdup(" "));
 }
 
-char		*pf_itoabse(intmax_t nbg, int bse, attrib *ph)
+char		*pf_itoabse(uintmax_t nbg, int bse, attrib *ph)
 {
 	intmax_t	nb;
-	int		sz;
-	char	*res;
-	char	*hex;
+	int			sz;
+	char		*res;
+	char		*hex;
 
 	if (ph->upper == TRUE)
 		hex = ft_strdup(UHEX);
@@ -26,8 +26,6 @@ char		*pf_itoabse(intmax_t nbg, int bse, attrib *ph)
 		return (NULL);
 	if (nbg == 0)
 		return (pf_itoaz(ph));
-	if (nbg < 0 && bse != 16 && bse != 8)
-		nb = nb * -1;
 	while (nb)
 	{
 		res[sz--] = hex[nb % bse];

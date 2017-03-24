@@ -3,7 +3,7 @@
 
 static char *pf_itoaz(attrib *ph)
 {
-	if (ph->hash == TRUE || ph->actn == TRUE)
+	if (ph->hash == TRUE || ph->actn == TRUE || ph->type == 'x' || ph->type == 'X')
 		return (ft_strdup("0"));
 	else
 		return (ft_strdup(" "));
@@ -26,7 +26,7 @@ char		*pf_itoabse(intmax_t nbg, int bse, attrib *ph)
 		return (NULL);
 	if (nbg == 0)
 		return (pf_itoaz(ph));
-	if (nbg < 0)
+	if (nbg < 0 && bse != 16 && bse != 8)
 		nb = nb * -1;
 	while (nb)
 	{

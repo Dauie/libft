@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/23 16:46:56 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/23 17:33:19 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ static void 	manage_xattrib(attrib *ph)
 		ph->actn = TRUE;
 	if (ph->algn == TRUE)
 		ph->zero = FALSE;
+	if (ph->width)
+		ph->width += ft_numlen(ph->phd.imt, 16);
 	if (ph->prec && ph->width)
 	{
 		if (ph->prec > ph->width)					//need
@@ -51,6 +53,15 @@ static void 	putpad_x(attrib *ph, uiput *db)
 
 }
 
+static void 	printx_ndel(attrib *ph, uiput *db)
+{
+	char		*ostr;
+
+	ostr = pf_itoabse(ph->phd.l, 16, ph);
+	pf_putstr(ostr, ph, db);
+	ft_strdel(&ostr);
+}
+
 int				pf_print_x(attrib *ph, uiput *db)
 {
 	if (ph->mod)
@@ -61,10 +72,9 @@ int				pf_print_x(attrib *ph, uiput *db)
 	manage_xattrib(ph);
 	if (ph->algn == TRUE)
 	{
-
 		if (ph->actn == TRUE)
 			actn_0x(ph, db);
-		pf_putstr(pf_itoabse(ph->phd.uimt, 16, ph), ph, db);
+		printx_ndel(ph, db);
 		putpad_x(ph, db);
 	}
 	else
@@ -74,7 +84,7 @@ int				pf_print_x(attrib *ph, uiput *db)
 		putpad_x(ph, db);
 		if (ph->actn == TRUE)
 			actn_0x(ph, db);
-		pf_putstr(pf_itoabse(ph->phd.uimt, 16, ph), ph, db);
+		printx_ndel(ph, db);
 	}
 	return (0);
 }

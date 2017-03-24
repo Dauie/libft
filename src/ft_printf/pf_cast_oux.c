@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 18:40:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/22 18:46:24 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/23 18:39:20 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,47 +14,32 @@
 
 static void pf_ouxl(attrib *ph, uiput *db)
 {
-	ph->phd.l = va_arg(db->ap, long);
-	if (ph->phd.l < 0)
-	{
-		ph->phd.l = -ph->phd.l;
-		ph->wneg = TRUE;
-	}
-	ph->phd.uimt = (uintmax_t)ph->phd.l;
+	ph->phd.uimt = va_arg(db->ap, unsigned long int);
 }
 
 static void pf_ouxll(attrib *ph, uiput *db)
 {
-	ph->phd.ll = va_arg(db->ap, long long);
-	if (ph->phd.ll < 0)
-	{
-		ph->phd.ll = -ph->phd.ll;
-		ph->wneg = TRUE;
-	}
-	ph->phd.uimt = ph->phd.ll;
+	ph->phd.uimt = va_arg(db->ap, unsigned long long int);
 }
 
 static void pf_ouxh(attrib *ph, uiput *db)
 {
-	ph->phd.us = va_arg(db->ap, int);
-	ph->phd.uimt = ph->phd.us;
+	ph->phd.uimt = va_arg(db->ap, unsigned int);
 }
 
 static void pf_ouxhh(attrib *ph, uiput *db)
 {
-	ph->phd.uc = va_arg(db->ap, int);
-	ph->phd.uimt = ph->phd.uc;
+	ph->phd.uimt = va_arg(db->ap, unsigned int);
 }
 
 static void pf_ouxz(attrib *ph, uiput *db)
 {
-	ph->phd.st = va_arg(db->ap, size_t);
-	ph->phd.uimt = ph->phd.st;
+	ph->phd.uimt = va_arg(db->ap, unsigned long long);
 }
 
 static void pf_ouxj(attrib *ph, uiput *db)
 {
-	ph->phd.uimt = va_arg(db->ap, uintmax_t);
+	ph->phd.uimt = va_arg(db->ap, unsigned int);
 }
 
 void 		pf_lmgmt_oux(uiput *db, attrib *ph)

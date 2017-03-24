@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/21 21:17:47 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/24 11:00:24 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int				pf_print_o(attrib *ph, uiput *db)
 	if (ph->mod)
 		pf_lmgmt_oux(db, ph);
 	else
-		ph->phd.l = (long)va_arg(db->ap, long);
+		ph->phd.imt = va_arg(db->ap, intmax_t);
 	ph->len = ft_numlen(ph->phd.l, 8);
 	manage_oattrib(ph);
 	if (ph->algn == FALSE)

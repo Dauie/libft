@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/22 18:14:47 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/23 18:46:10 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@ static void 	putpad_i(attrib *ph, uiput *db);
 
 int				pf_print_i(attrib *ph, uiput *db)
 {
-	long	phi;
 
-	phi = (int)va_arg(db->ap, int);
-	ph->len = ft_numlen(phi, 10);
-	pf_putnbr(phi, ph, db);
+	if (ph->mod)
+		pf_lmgmt_id(db, ph);
+	else
+		ph->phd.imt = (int)va_arg(db->ap, int);
+	ph->len = ft_numlen(ph->phd.imt, 10);
+	pf_putnbr(ph->phd.imt, ph, db);
 	if (ph->width)
 		putpad_i(ph, db);
 	return (0);

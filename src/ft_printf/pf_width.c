@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:53:23 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/22 18:37:26 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/24 12:00:57 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void 		pf_get_width(const char *frmt, attrib *ph, uiput *db)
 
 void 	pf_get_prec(const char *frmt, attrib *ph, uiput *db)
 {
+	ph->wprc = TRUE;
 	if (frmt[db->inx] == '.')
 		db->inx++;
 	if (ft_isdigit(frmt[db->inx]))

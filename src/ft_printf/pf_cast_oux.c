@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 18:40:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/24 10:44:32 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/24 15:22:51 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void pf_ouxz(attrib *ph, uiput *db)
 
 static void pf_ouxj(attrib *ph, uiput *db)
 {
-	ph->phd.imt = va_arg(db->ap, unsigned int);
+	ph->phd.uimt = va_arg(db->ap, unsigned int);
 }
 
 void 		pf_lmgmt_oux(uiput *db, attrib *ph)

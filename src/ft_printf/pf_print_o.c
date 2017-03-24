@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/24 11:15:50 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/24 15:32:39 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,10 @@ static void 	printo_ndel(attrib *ph, uiput *db)
 
 
 // *need - DONT FUCKING TOUCH IT
-static void 	manage_oattrib(attrib *ph)
+static int 		manage_oattrib(attrib *ph)
 {
+	if (ph->prec == 0 && ph->wprc == TRUE && !ph->width)
+		return (0);
 	if (ph->hash == TRUE && ph->width)								//need
 	{
 		ph->width--;
@@ -75,6 +77,7 @@ static void 	manage_oattrib(attrib *ph)
 		ph->width = ph->width - ph->len;
 	else if (ph->prec && !ph->width)
 		ph->width = ph->prec - ph->len;
+	return (1);
 }
 
 int				pf_print_o(attrib *ph, uiput *db)
@@ -97,5 +100,5 @@ int				pf_print_o(attrib *ph, uiput *db)
 		if (ph->width)
 			putpad_o(ph, db);
 	}
-	return (0);
+	return (1);
 }

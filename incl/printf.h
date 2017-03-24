@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/23 18:54:37 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/24 15:07:10 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,15 +106,16 @@ typedef struct	format_info
 	t_blean		zero;		/* Replace padding ' ' with '0' */
 	t_blean		spc;		/* Use ' ' on int instead of '0' */
 	t_blean		wneg;		/* If number was negetive*/
+	t_blean		wprc;
 	int			prec;		/* Precision: Max # of output */
 	int			width;		/* Width : Minimum # of output */
 	int			len;		/* Placeholder Length */
 }				attrib;
 
 int 			ft_printf(const char *frmt, ...);
-void	 		pf_parse(const char *frmt, uiput *db);
+int		 		pf_parse(const char *frmt, uiput *db);
 int				pf_pause_parse(const char *frmt, uiput *db);
-void 			pf_get_attrib(const char *frmt, attrib *ph, uiput *db);
+int 			pf_get_attrib(const char *frmt, attrib *ph, uiput *db);
 int				pf_phmaster(attrib *ph, uiput *db);
 void 			init_uinput(uiput *db);
 void 			init_attrib(attrib *ipg);

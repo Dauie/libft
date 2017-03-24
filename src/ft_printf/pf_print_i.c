@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/24 11:26:07 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/24 15:20:13 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int				pf_print_i(attrib *ph, uiput *db)
 	pf_putnbr(ph->phd.imt, ph, db);
 	if (ph->width)
 		putpad_i(ph, db);
-	return (0);
+	return (1);
 }
 
 static void 	putpad_i(attrib *ph, uiput *db)
@@ -64,5 +64,5 @@ int			pf_putnbr(int n, attrib *ph, uiput *db)
 	}
 	else
 		pf_putchar(tmp + '0', ph, db);
-	return (0);
+	return (1);
 }

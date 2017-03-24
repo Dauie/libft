@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/22 18:19:22 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/24 15:17:05 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,22 @@ int 		ft_printf(const char *frmt, ...)
 	return (db.tot);
 }
 
-void		pf_parse(const char *frmt, uiput *db)
+int			pf_parse(const char *frmt, uiput *db)
 {
 	while (frmt[db->inx])
 	{
 		if (frmt[db->inx] == '%' && frmt[db->inx + 1])
-			pf_pause_parse(frmt, db);
+		{
+			if (!(pf_pause_parse(frmt, db)))
+				return (0);
+		}
 		else
 		{
 			ft_putchar(frmt[db->inx++]);
 			db->tot++;
 		}
 	}
+	return (1);
 }
 
 /*%[flags][width][.precision][length]type*/
@@ -56,10 +60,10 @@ int			pf_pause_parse(const char *frmt, uiput *db)
 		ph.upper = TRUE;
 	pf_get_attrib(frmt, &ph, db);
 	pf_phmaster(&ph, db);
-	return (0);
+	return (1);
 }
 
-void		pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
+int			pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
 {
 	int		i;
 
@@ -86,6 +90,7 @@ void		pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
 			pf_get_prec(frmt, ph, db);
 	}
 	db->inx++;
+	return (1);
 }
 
 int			pf_phmaster(attrib *ph, uiput *db)
@@ -106,5 +111,5 @@ int			pf_phmaster(attrib *ph, uiput *db)
 		return (pf_putvoid(ph, db));*/
 	else if (ph->type == 'u' || ph->type == 'U')
 		pf_print_u(ph, db);
-	return (0);
+	return (1);
 }

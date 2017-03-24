@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:41:25 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/22 13:00:50 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/24 14:52:04 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void 		init_attrib(attrib *ipg)
 	ipg->zero = FALSE;
 	ipg->spc = FALSE;
 	ipg->wneg = FALSE;
+	ipg->wprc = FALSE;
 	ipg->prec = 0;
 	ipg->width = 0;
 	ipg->len = 0;

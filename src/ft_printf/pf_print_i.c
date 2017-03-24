@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/23 18:46:10 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/24 11:26:07 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int				pf_print_i(attrib *ph, uiput *db)
 	if (ph->mod)
 		pf_lmgmt_id(db, ph);
 	else
-		ph->phd.imt = (int)va_arg(db->ap, int);
+		ph->phd.imt = va_arg(db->ap, intmax_t);
 	ph->len = ft_numlen(ph->phd.imt, 10);
 	pf_putnbr(ph->phd.imt, ph, db);
 	if (ph->width)

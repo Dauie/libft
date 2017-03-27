@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/24 15:20:13 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/27 11:06:26 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ int				pf_print_i(attrib *ph, uiput *db)
 	else
 		ph->phd.imt = va_arg(db->ap, intmax_t);
 	ph->len = ft_numlen(ph->phd.imt, 10);
+	if (ph->width)
+		ph->width = ph->width - ph->len;
+	if (ph->width && ph->algn == TRUE)
+		putpad_i(ph, db);
 	pf_putnbr(ph->phd.imt, ph, db);
 	if (ph->width)
 		putpad_i(ph, db);
@@ -32,15 +36,11 @@ static void 	putpad_i(attrib *ph, uiput *db)
 {
 	char	c;
 
-	if (ph->width)
-		ph->width = ph->width - ph->len;
+	c = ' ';
 	if (ph->zero == TRUE)
 		c = '0';
-	else
-		c = ' ';
 	while (ph->width-- > 0)
 		pf_putchar(c, ph, db);
-	ph->width = 0;
 }
 
 int			pf_putnbr(int n, attrib *ph, uiput *db)
@@ -49,14 +49,20 @@ int			pf_putnbr(int n, attrib *ph, uiput *db)
 
 	tmp = n;
 	if (ph->sign == TRUE && n > 0)
+	{
 		pf_putchar('+', ph, db);
-	if (tmp < 0 && ph->type != 'u')
+		ph->width--;
+	}
+	if (tmp < 0)
 	{
 		tmp = -tmp;
 		pf_putchar('-', ph, db);
 	}
-	if (ph->width && ph->algn == FALSE)
+	if (ph->width)
+	{
+		ph->zero = TRUE;
 		putpad_i(ph, db);
+	}
 	if (tmp > 9)
 	{
 		pf_putnbr(tmp / 10, ph, db);

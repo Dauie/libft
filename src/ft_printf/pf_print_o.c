@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/24 15:32:39 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/27 10:58:25 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,13 @@ static void 	putpad_o(attrib *ph, uiput *db)
 		pf_putchar(c, ph, db);
 }
 
-static void 	handel_hasho(attrib *ph, uiput *db)
-{
-	int c;
-	c = '0';
-	pf_putchar(c, ph, db);
-}
-
 static void 	printo_ndel(attrib *ph, uiput *db)
 {
 	char		*ostr;
 
 
 	if (ph->actn == TRUE)
-		handel_hasho(ph, db);
+		pf_putchar('0', ph, db);
 	ostr = pf_itoabse(ph->phd.l, 8, ph);
 	pf_putstr(ostr, ph, db);
 	ft_strdel(&ostr);

@@ -6,29 +6,41 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/27 11:06:26 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/28 14:51:13 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-static void 	putpad_i(attrib *ph, uiput *db);
+//look at your casting.
 
-int				pf_print_i(attrib *ph, uiput *db)
+static int 	manage_iattrib(attrib *ph)
 {
-
-	if (ph->mod)
-		pf_lmgmt_id(db, ph);
-	else
-		ph->phd.imt = va_arg(db->ap, intmax_t);
-	ph->len = ft_numlen(ph->phd.imt, 10);
-	if (ph->width)
+	if (ph->sign == TRUE)
+		ph->width--;
+	if (ph->prec == 0 && ph->wprc == TRUE && !ph->width)
+		return (0);
+	if (ph->prec && ph->width)
+	{
+		if (ph->prec > ph->width)
+		{
+			ph->zero = TRUE;
+			ph->width = ph->prec;
+		}
+		else if (ph->width > ph->prec)
+		{
+			ph->hash = TRUE;
+			ph->width--;
+		}
 		ph->width = ph->width - ph->len;
-	if (ph->width && ph->algn == TRUE)
-		putpad_i(ph, db);
-	pf_putnbr(ph->phd.imt, ph, db);
-	if (ph->width)
-		putpad_i(ph, db);
+	}
+	else if (ph->width && !ph->prec)
+		ph->width = ph->width - ph->len;
+	else if (ph->prec && !ph->width)
+	{
+		ph->zero = TRUE;
+		ph->width = ph->prec - ph->len;
+	}
 	return (1);
 }
 
@@ -37,32 +49,39 @@ static void 	putpad_i(attrib *ph, uiput *db)
 	char	c;
 
 	c = ' ';
-	if (ph->zero == TRUE)
+	if (ph->zero == TRUE && ph->phd.uimt != 0)
 		c = '0';
 	while (ph->width-- > 0)
 		pf_putchar(c, ph, db);
 }
 
-int			pf_putnbr(int n, attrib *ph, uiput *db)
+void handel_isign(attrib *ph, uiput *db)
 {
-	long	tmp;
+	if (ph->actn == TRUE)
+	{
+		if (ph->sign == TRUE && ph->actn == TRUE && ph->wneg == FALSE)
+			pf_putchar('+', ph, db);
+		else if (ph->wneg == TRUE && ph->actn == TRUE)
+			pf_putchar('-', ph, db);
+		ph->actn = FALSE;
+	}
+	if (ph->hash == TRUE)
+	{
+		pf_putchar('0', ph, db);
+		ph->hash = FALSE;
+	}
+}
+
+
+int			pf_putnbr(uintmax_t n, attrib *ph, uiput *db)
+{
+	uintmax_t	tmp;
 
 	tmp = n;
-	if (ph->sign == TRUE && n > 0)
-	{
-		pf_putchar('+', ph, db);
-		ph->width--;
-	}
-	if (tmp < 0)
-	{
-		tmp = -tmp;
-		pf_putchar('-', ph, db);
-	}
-	if (ph->width)
-	{
-		ph->zero = TRUE;
+	if (ph->sign == TRUE || ph->wneg == TRUE || ph->hash == TRUE)
+		handel_isign(ph, db);
+	if (ph->width && ph->algn == FALSE)
 		putpad_i(ph, db);
-	}
 	if (tmp > 9)
 	{
 		pf_putnbr(tmp / 10, ph, db);
@@ -70,5 +89,25 @@ int			pf_putnbr(int n, attrib *ph, uiput *db)
 	}
 	else
 		pf_putchar(tmp + '0', ph, db);
+	return (1);
+}
+
+int				pf_print_i(attrib *ph, uiput *db)
+{
+	pf_lmgmt_id(db, ph);
+	ph->len = ft_numlen(ph->phd.uimt, 10);
+	manage_iattrib(ph);
+	if (ph->algn == TRUE)
+	{
+		pf_putnbr(ph->phd.uimt, ph, db);
+		if (ph->width)
+			putpad_i(ph, db);
+	}
+	else
+	{
+		if (ph->width)
+			putpad_i(ph, db);
+		pf_putnbr(ph->phd.uimt, ph, db);
+	}
 	return (1);
 }

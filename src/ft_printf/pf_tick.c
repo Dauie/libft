@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/16 11:52:43 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/23 10:53:31 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/28 13:25:44 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void 		pf_tick_hash(attrib *ph, uiput *db)
 void 		pf_tick_sign(attrib *ph, uiput *db)
 {
 	ph->sign = TRUE;
+	ph->actn = TRUE;
 	db->inx++;
 }
 

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:06:31 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/17 18:49:59 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/27 18:44:57 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@
 
 # define SQR(x) (x * x)
 
-size_t				ft_numlen(long long nb, int bse);
+size_t				ft_numlen(intmax_t nb, int bse);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/24 15:19:54 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/28 14:13:31 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,18 +60,15 @@ static void 	printx_ndel(attrib *ph, uiput *db)
 {
 	char		*ostr;
 
-	ostr = pf_itoabse(ph->phd.l, 16, ph);
+	ostr = pf_itoabse(ph->phd.uimt, 16, ph);
 	pf_putstr(ostr, ph, db);
 	ft_strdel(&ostr);
 }
 
 int				pf_print_x(attrib *ph, uiput *db)
 {
-	if (ph->mod)
-		pf_lmgmt_oux(db, ph);
-	else
-		ph->phd.imt = va_arg(db->ap, unsigned int);
-	ph->len = ft_numlen(ph->phd.l, 16);
+	pf_lmgmt_oux(db, ph);
+	ph->len = ft_numlen(ph->phd.uimt, 16);
 	if (!(manage_xattrib(ph)))
 		return (0);
 	if (ph->algn == TRUE)
@@ -85,7 +82,6 @@ int				pf_print_x(attrib *ph, uiput *db)
 	{
 		if (ph->actn == TRUE && ph->width && ph->zero == TRUE)
 			actn_0x(ph, db);
-
 		if (ph->width)
 			putpad_x(ph, db);
 		if (ph->actn == TRUE)

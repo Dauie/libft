@@ -6,13 +6,13 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 00:42:45 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:28:22 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/27 18:44:30 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/num.h"
 
-size_t		ft_numlen(long long nb, int bse)
+size_t		ft_numlen(intmax_t nb, int bse)
 {
 	size_t		i;
 

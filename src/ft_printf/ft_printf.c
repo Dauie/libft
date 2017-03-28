@@ -6,16 +6,13 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/24 15:17:05 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/27 18:43:27 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-
-/*You are implementing precision on %s first*/
-/*Dosen't seem like precision is being recoreded correctly.
-Debug that in the AM*/
+// have all functions checked to verify that they can take the maximum data type.
 
 int 		ft_printf(const char *frmt, ...)
 {

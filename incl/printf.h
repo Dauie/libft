@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/28 12:45:25 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/29 12:18:13 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,6 @@ typedef struct	format_info
 	t_blean		algn;		/* '-' Left align placeholder */
 	t_blean		sign;		/* '+' Show sign (- , +) */
 	t_blean		hash;		/* Prepend w/ or leave '0', Always show decimal */
-	t_blean		hashz;		/* blean for zero */
 	t_blean		zero;		/* Replace padding ' ' with '0' */
 	t_blean		spc;		/* Use ' ' on int instead of '0' */
 	t_blean		wneg;		/* If number was negetive*/

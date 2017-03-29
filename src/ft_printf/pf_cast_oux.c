@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 18:40:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/28 14:36:06 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/29 11:54:44 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void 		pf_lmgmt_oux(uiput *db, attrib *ph)
 {
 	if (ph->mod == 'l')
-		ph->phd.uimt = va_arg(db->ap, int);
+		ph->phd.uimt = va_arg(db->ap, unsigned long int);
 	else if (ph->mod == 'L')
 		ph->phd.uimt = va_arg(db->ap, unsigned long long int);
 	else if (ph->mod == 'h')

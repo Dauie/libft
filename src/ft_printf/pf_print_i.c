@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/28 14:51:13 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/29 12:23:15 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 
 static int 	manage_iattrib(attrib *ph)
 {
-	if (ph->sign == TRUE)
-		ph->width--;
 	if (ph->prec == 0 && ph->wprc == TRUE && !ph->width)
 		return (0);
+	if (ph->sign == TRUE)
+		ph->width--;
 	if (ph->prec && ph->width)
 	{
 		if (ph->prec > ph->width)
@@ -35,7 +35,11 @@ static int 	manage_iattrib(attrib *ph)
 		ph->width = ph->width - ph->len;
 	}
 	else if (ph->width && !ph->prec)
+	{
+		if (ph->algn == TRUE)
+			ph->zero = FALSE;
 		ph->width = ph->width - ph->len;
+	}
 	else if (ph->prec && !ph->width)
 	{
 		ph->zero = TRUE;
@@ -59,7 +63,7 @@ void handel_isign(attrib *ph, uiput *db)
 {
 	if (ph->actn == TRUE)
 	{
-		if (ph->sign == TRUE && ph->actn == TRUE && ph->wneg == FALSE)
+		if (ph->wneg == FALSE && ph->sign == TRUE)
 			pf_putchar('+', ph, db);
 		else if (ph->wneg == TRUE && ph->actn == TRUE)
 			pf_putchar('-', ph, db);
@@ -78,7 +82,7 @@ int			pf_putnbr(uintmax_t n, attrib *ph, uiput *db)
 	uintmax_t	tmp;
 
 	tmp = n;
-	if (ph->sign == TRUE || ph->wneg == TRUE || ph->hash == TRUE)
+	if (ph->actn == TRUE || ph->hash == TRUE)
 		handel_isign(ph, db);
 	if (ph->width && ph->algn == FALSE)
 		putpad_i(ph, db);
@@ -96,7 +100,8 @@ int				pf_print_i(attrib *ph, uiput *db)
 {
 	pf_lmgmt_id(db, ph);
 	ph->len = ft_numlen(ph->phd.uimt, 10);
-	manage_iattrib(ph);
+	if (!(manage_iattrib(ph)))
+		return (0);
 	if (ph->algn == TRUE)
 	{
 		pf_putnbr(ph->phd.uimt, ph, db);

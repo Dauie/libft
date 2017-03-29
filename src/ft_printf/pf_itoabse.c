@@ -3,11 +3,10 @@
 
 static char *pf_itoaz(attrib *ph)
 {
-	if (ph->wprc == FALSE && (ph->actn == TRUE
-		|| ph->type == 'x' || ph->type == 'X'))
-		return (ft_strdup("0"));
-	else
+	if (ph->wprc == TRUE && !(ph->type == 'x' || ph->type == 'X' || ph->type == 'o' || ph->type == 'O'))
 		return (ft_strdup(" "));
+	else
+		return (ft_strdup("0"));
 }
 
 size_t		pf_numlen(uintmax_t nb, int bse, attrib *ph)

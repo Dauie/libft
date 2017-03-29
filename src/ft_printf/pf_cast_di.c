@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 18:40:44 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/28 15:02:11 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/29 11:18:52 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void pf_dil(attrib *ph, uiput *db)
 
 static void pf_dill(attrib *ph, uiput *db)
 {
-	ph->phd.ll = va_arg(db->ap, long long int);
+	ph->phd.ll = va_arg(db->ap, long long);
 	if (ph->phd.ll < 0)
 	{
 		ph->phd.uimt = ph->phd.ll * -1;
@@ -105,10 +105,10 @@ void 		pf_lmgmt_id(uiput *db, attrib *ph)
 		pf_dij(ph, db);
 	else
 	{
-		ph->phd.imt = va_arg(db->ap, int);
+		ph->phd.imt = (int)va_arg(db->ap, int);
 		if (ph->phd.imt < 0)
 		{
-			ph->phd.uimt = ph->phd.imt * -1;
+			ph->phd.uimt = (int)ph->phd.imt * -1;
 			ph->wneg = TRUE;
 			ph->actn = TRUE;
 			ph->width--;

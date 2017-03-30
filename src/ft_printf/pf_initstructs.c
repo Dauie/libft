@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:41:25 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/24 14:52:04 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/29 16:53:30 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void 		init_attrib(attrib *ipg)
 	ipg->mod = 0;
 	ipg->phd.i = 0;
 	ipg->actn = FALSE;
-	ipg->upper =  FALSE;
+	ipg->upper = FALSE;
 	ipg->algn = FALSE;
 	ipg->sign = FALSE;
 	ipg->hash = FALSE;

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/29 12:08:22 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/29 18:06:41 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static void 	actn_0x(attrib *ph, uiput *db)
 
 static int 	manage_xattrib(attrib *ph)
 {
-	if (ph->prec == 0 && ph->wprc == TRUE && ph->width == 0)
+	if (ph->prec == 0 && ph->wprc == TRUE && !ph->width && ph->hash == TRUE)
 		return (0);
-	if (ph->phd.imt == 0)
+	if (ph->phd.imt == 0 && ph->hash && !ph->prec)
 		ph->hash = FALSE;
 	if (ph->hash == TRUE)							//need
 		ph->actn = TRUE;

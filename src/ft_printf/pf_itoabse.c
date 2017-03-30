@@ -3,8 +3,10 @@
 
 static char *pf_itoaz(attrib *ph)
 {
-	if (ph->wprc == TRUE && !(ph->type == 'x' || ph->type == 'X' || ph->type == 'o' || ph->type == 'O'))
+	if (ph->prec == 0 && ph->wprc == TRUE && ph->width == 0 && ph->hash == FALSE)
 		return (ft_strdup(" "));
+	else if (ph->hash == TRUE)
+		return (ft_strdup("0"));
 	else
 		return (ft_strdup("0"));
 }

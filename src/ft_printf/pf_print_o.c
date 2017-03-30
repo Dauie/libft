@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/27 13:55:48 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/29 18:07:10 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,14 @@ static void 	printo_ndel(attrib *ph, uiput *db)
 // *need - DONT FUCKING TOUCH IT
 static int 		manage_oattrib(attrib *ph)
 {
-	if (ph->prec == 0 && ph->wprc == TRUE && !ph->width)
+	if (ph->prec == 0 && ph->wprc == TRUE && !ph->width && ph->hash == FALSE)
 		return (0);
 	if (ph->hash == TRUE && ph->width)								//need
 	{
 		ph->width--;
 		ph->actn = TRUE;
 	}
-	if (ph->algn && ph->zero == TRUE)						//need
+	if (ph->algn == TRUE && ph->zero == TRUE)						//need
 		ph->zero = FALSE;
 	if (ph->prec && ph->width)
 	{
@@ -68,18 +68,19 @@ static int 		manage_oattrib(attrib *ph)
 	else if (ph->width && !ph->prec)
 		ph->width = ph->width - ph->len;
 	else if (ph->prec && !ph->width)
+	{
+		ph->zero = TRUE;
 		ph->width = ph->prec - ph->len;
+	}
 	return (1);
 }
 
 int				pf_print_o(attrib *ph, uiput *db)
 {
-	if (ph->mod)
-		pf_lmgmt_oux(db, ph);
-	else
-		ph->phd.imt = va_arg(db->ap, intmax_t);
+	pf_lmgmt_oux(db, ph);
 	ph->len = ft_numlen(ph->phd.l, 8);
-	manage_oattrib(ph);
+	if (!(manage_oattrib(ph)))
+		return (0);
 	if (ph->algn == FALSE)
 	{
 		if (ph->width)

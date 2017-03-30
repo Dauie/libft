@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/29 12:23:15 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/30 13:35:41 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,14 @@ static void 	putpad_i(attrib *ph, uiput *db)
 	c = ' ';
 	if (ph->zero == TRUE && ph->phd.uimt != 0)
 		c = '0';
+	if (ph->actn == TRUE)
+	{
+		if (ph->sign == TRUE && ph->wneg == FALSE)
+			pf_putchar('+', ph, db);
+		else if (ph->wneg == TRUE && ph->actn == TRUE)
+			pf_putchar('-', ph, db);
+		ph->actn = FALSE;
+	}
 	while (ph->width-- > 0)
 		pf_putchar(c, ph, db);
 }
@@ -63,7 +71,7 @@ void handel_isign(attrib *ph, uiput *db)
 {
 	if (ph->actn == TRUE)
 	{
-		if (ph->wneg == FALSE && ph->sign == TRUE)
+		if (ph->sign == TRUE && ph->wneg == FALSE)
 			pf_putchar('+', ph, db);
 		else if (ph->wneg == TRUE && ph->actn == TRUE)
 			pf_putchar('-', ph, db);
@@ -110,6 +118,10 @@ int				pf_print_i(attrib *ph, uiput *db)
 	}
 	else
 	{
+		if (ph->spc == TRUE && ph->width == 0)
+			pf_putchar(' ', ph, db);
+		if (ph->sign == TRUE)
+			ph->actn = TRUE;
 		if (ph->width)
 			putpad_i(ph, db);
 		pf_putnbr(ph->phd.uimt, ph, db);

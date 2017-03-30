@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/29 12:18:13 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/29 16:45:53 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ typedef struct	format_info
 	char		mod;
 	data		phd;
 	t_blean		actn;		/* Placeholder type */
+	t_blean 	sactn;
 	t_blean		upper; 		/* Print placeholder in UPPERCASE */
 	t_blean		algn;		/* '-' Left align placeholder */
 	t_blean		sign;		/* '+' Show sign (- , +) */

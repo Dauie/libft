@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 18:40:44 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/29 11:18:52 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/30 12:23:16 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,7 @@ void 		pf_lmgmt_id(uiput *db, attrib *ph)
 			ph->actn = TRUE;
 			ph->width--;
 		}
+		else
+			ph->phd.uimt = ph->phd.imt;
 	}
 }

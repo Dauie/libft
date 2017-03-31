@@ -70,8 +70,6 @@ int				pf_print_u(attrib *ph, uiput *db)
 	}
 	else
 	{
-		if (ph->spc == TRUE && ph->width == 0)
-			pf_putchar(' ', ph, db);
 		if (ph->sign == TRUE)
 			ph->actn = TRUE;
 		if (ph->width)

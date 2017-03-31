@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/30 13:35:41 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/30 17:41:20 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,6 @@ static void 	putpad_i(attrib *ph, uiput *db)
 	c = ' ';
 	if (ph->zero == TRUE && ph->phd.uimt != 0)
 		c = '0';
-	if (ph->actn == TRUE)
-	{
-		if (ph->sign == TRUE && ph->wneg == FALSE)
-			pf_putchar('+', ph, db);
-		else if (ph->wneg == TRUE && ph->actn == TRUE)
-			pf_putchar('-', ph, db);
-		ph->actn = FALSE;
-	}
 	while (ph->width-- > 0)
 		pf_putchar(c, ph, db);
 }
@@ -77,6 +69,10 @@ void handel_isign(attrib *ph, uiput *db)
 			pf_putchar('-', ph, db);
 		ph->actn = FALSE;
 	}
+}
+
+static void handel_ihash(attrib *ph, uiput *db)
+{
 	if (ph->hash == TRUE)
 	{
 		pf_putchar('0', ph, db);
@@ -84,16 +80,16 @@ void handel_isign(attrib *ph, uiput *db)
 	}
 }
 
-
 int			pf_putnbr(uintmax_t n, attrib *ph, uiput *db)
 {
 	uintmax_t	tmp;
 
 	tmp = n;
-	if (ph->actn == TRUE || ph->hash == TRUE)
-		handel_isign(ph, db);
-	if (ph->width && ph->algn == FALSE)
-		putpad_i(ph, db);
+	if (tmp == 0 && ph->prec == 0 && ph->wprc == TRUE)
+	{
+		pf_putchar(' ', ph, db);
+		return (1);
+	}
 	if (tmp > 9)
 	{
 		pf_putnbr(tmp / 10, ph, db);
@@ -110,8 +106,13 @@ int				pf_print_i(attrib *ph, uiput *db)
 	ph->len = ft_numlen(ph->phd.uimt, 10);
 	if (!(manage_iattrib(ph)))
 		return (0);
+
 	if (ph->algn == TRUE)
 	{
+		if (ph->hash == TRUE)
+			handel_ihash(ph, db);
+		if (ph->actn == TRUE)
+			handel_isign(ph, db);
 		pf_putnbr(ph->phd.uimt, ph, db);
 		if (ph->width)
 			putpad_i(ph, db);
@@ -120,10 +121,12 @@ int				pf_print_i(attrib *ph, uiput *db)
 	{
 		if (ph->spc == TRUE && ph->width == 0)
 			pf_putchar(' ', ph, db);
-		if (ph->sign == TRUE)
-			ph->actn = TRUE;
 		if (ph->width)
 			putpad_i(ph, db);
+		if (ph->actn == TRUE && ph->zero == FALSE)
+			handel_isign(ph, db);
+		if (ph->hash == TRUE)
+			handel_ihash(ph, db);
 		pf_putnbr(ph->phd.uimt, ph, db);
 	}
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/02 14:45:50 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/02 14:48:07 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void manage_widprec(attrib *ph)
 {
 	if (ph->width && ph->prec)
 	{
+		ph->zero = FALSE;
 		if (ph->prec > ph->len)
 			ph->prec = ph->prec - ph->len;
 		else

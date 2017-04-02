@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 18:40:44 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/02 15:02:02 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/02 16:24:40 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ static void pf_dij(attrib *ph, uiput *db)
 
 void 		pf_lmgmt_id(uiput *db, attrib *ph)
 {
-	if (ph->mod == 'l')
+	if (ph->mod == 'l' || ph->type == 'D')
 		pf_dil(ph, db);
 	else if (ph->mod == 'L')
 		pf_dill(ph, db);

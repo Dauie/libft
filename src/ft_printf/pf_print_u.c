@@ -32,7 +32,8 @@ static int 	manage_uattrib(attrib *ph)
 	else if (ph->prec && !ph->width)
 	{
 		ph->zero = TRUE;
-		ph->width = ph->prec - ph->len;
+		ph->len = ph->prec;
+		ph->width = 0;
 	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/31 16:29:11 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/02 14:10:55 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int 		manage_oattrib(attrib *ph)
 			ph->actn = TRUE;
 			ph->zero = TRUE;
 			ph->algn = FALSE;
-			ph->width = ph->prec;
+			ph->width = ph->prec - 1;
 		}
 		else if (ph->width > ph->prec)
 		{

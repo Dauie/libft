@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/31 16:30:30 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/02 14:03:03 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void 	actn_0x(attrib *ph, uiput *db)
 
 static int 	manage_xattrib(attrib *ph)
 {
-	if (ph->prec == 0 && ph->wprc == TRUE && !ph->width && ph->hash == TRUE)
+	if (ph->prec == 0 && ph->wprc == TRUE && !ph->width)
 		return (0);
 	if (ph->phd.imt == 0 && ph->hash && !ph->prec)
 		ph->hash = FALSE;
@@ -46,6 +46,7 @@ static int 	manage_xattrib(attrib *ph)
 static void 	putpad_x(attrib *ph, uiput *db)
 {
 	char		c;
+
 
 	if (ph->zero == TRUE)
 		c = '0';

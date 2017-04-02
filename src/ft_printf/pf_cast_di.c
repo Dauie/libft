@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 18:40:44 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/02 11:29:14 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/02 15:00:21 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 static void pf_dil(attrib *ph, uiput *db)
 {
-	ph->phd.imt = va_arg(db->ap, intmax_t);
+	ph->phd.l = va_arg(db->ap, long int);
 	if (ph->phd.l < 0)
 	{
-		ph->phd.uimt = ph->phd.imt * -1;
+		ph->phd.uimt = ph->phd.l * -1;
 		ph->wneg = TRUE;
 		ph->actn = TRUE;
 	}
 	else
-		ph->phd.uimt = ph->phd.imt;
+		ph->phd.uimt = ph->phd.l;
 
 }
 

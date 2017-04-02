@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/02 14:10:55 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/02 14:24:46 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ static int 		manage_oattrib(attrib *ph)
 		ph->width--;
 		ph->actn = TRUE;
 	}
+	if (ph->hash == TRUE && !ph->width && ph->wprc == FALSE)
+		ph->actn = TRUE;
 	if (ph->algn == TRUE && ph->zero == TRUE)						//need
 		ph->zero = FALSE;
 	if (ph->prec && ph->width)

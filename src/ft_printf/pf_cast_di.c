@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 18:40:44 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/30 16:52:48 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/02 11:29:14 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ static void pf_dil(attrib *ph, uiput *db)
 		ph->phd.uimt = ph->phd.imt * -1;
 		ph->wneg = TRUE;
 		ph->actn = TRUE;
-		ph->width--;
 	}
 	else
 		ph->phd.uimt = ph->phd.imt;
@@ -35,7 +34,6 @@ static void pf_dill(attrib *ph, uiput *db)
 		ph->phd.uimt = ph->phd.imt * -1;
 		ph->wneg = TRUE;
 		ph->actn = TRUE;
-		ph->width--;
 	}
 	else
 		ph->phd.uimt = ph->phd.imt;
@@ -49,7 +47,6 @@ static void pf_dih(attrib *ph, uiput *db)
 		ph->phd.uimt = (short)ph->phd.s * -1;
 		ph->wneg = TRUE;
 		ph->actn = TRUE;
-		ph->width--;
 	}
 	else
 		ph->phd.uimt = ph->phd.imt;
@@ -63,7 +60,6 @@ static void pf_dihh(attrib *ph, uiput *db)
 		ph->phd.uimt = ph->phd.imt * -1;
 		ph->wneg = TRUE;
 		ph->actn = TRUE;
-		ph->width--;
 	}
 	else
 		ph->phd.uimt = (signed char)ph->phd.imt;
@@ -77,7 +73,6 @@ static void pf_dij(attrib *ph, uiput *db)
 		ph->phd.uimt = ph->phd.imt * -1;
 		ph->wneg = TRUE;
 		ph->actn = TRUE;
-		ph->width--;
 	}
 	else
 		ph->phd.uimt = ph->phd.imt;
@@ -105,7 +100,6 @@ void 		pf_lmgmt_id(uiput *db, attrib *ph)
 			ph->phd.uimt = ph->phd.imt * -1;
 			ph->wneg = TRUE;
 			ph->actn = TRUE;
-			ph->width--;
 		}
 	}
 }

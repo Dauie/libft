@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:54:13 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/20 10:18:50 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/31 16:37:42 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ static void 	putpad_s(attrib *ph, uiput *db)
 	else
 		c = ' ';
 	while (ph->width-- > 0)
-		pf_putchar(c, ph, db);
+		pf_putchar(c, db);
 	ph->width = 0;
 }

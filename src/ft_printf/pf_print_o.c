@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/29 18:07:10 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/31 16:29:11 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void 	putpad_o(attrib *ph, uiput *db)
 	if (ph->zero)
 		c = '0';
 	while (ph->width--)
-		pf_putchar(c, ph, db);
+		pf_putchar(c, db);
 }
 
 static void 	printo_ndel(attrib *ph, uiput *db)
@@ -28,7 +28,7 @@ static void 	printo_ndel(attrib *ph, uiput *db)
 	char		*ostr;
 
 	if (ph->actn == TRUE)
-		pf_putchar('0', ph, db);
+		pf_putchar('0', db);
 	ostr = pf_itoabse(ph->phd.l, 8, ph);
 	pf_putstr(ostr, ph, db);
 	ft_strdel(&ostr);

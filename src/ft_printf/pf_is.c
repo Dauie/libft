@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:43:05 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/22 17:10:53 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/31 19:10:27 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,22 @@
 
 int			pf_isflag(int c)
 {
-	if (c == '#' || c == '-' || c == '+' ||
-		c == '0' || pf_iswidth(c) || c == ' ' || c == '.')
-	{
-		if (c == '-')
-			return (1);
-		else if (pf_iswidth(c))
-			return (2);
-		else if (c == '#')
-			return (3);
-		else if (c == '+')
-			return (4);
-		else if (c == '0')
-			return (5);
-		else if (c == ' ')
-			return (6);
-		else if (c == '.')
-			return (7);
-	}
-	return (0);
+	if (c == '-')
+		return (1);
+	else if (pf_iswidth(c))
+		return (2);
+	else if (c == '#')
+		return (3);
+	else if (c == '+')
+		return (4);
+	else if (c == '0')
+		return (5);
+	else if (c == ' ')
+		return (6);
+	else if (c == '.')
+		return (7);
+	else
+		return (0);
 }
 
 /*'hh', 'h', 'l', 'll', 'j', 'z', '+', '-', ' ', '#', '.'*/

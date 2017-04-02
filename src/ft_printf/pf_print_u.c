@@ -47,13 +47,13 @@ static void 	putpad_u(attrib *ph, uiput *db)
 	if (ph->actn == TRUE)
 	{
 		if (ph->sign == TRUE && ph->wneg == FALSE)
-			pf_putchar('+', ph, db);
+			pf_putchar('+', db);
 		else if (ph->wneg == TRUE && ph->actn == TRUE)
-			pf_putchar('-', ph, db);
+			pf_putchar('-', db);
 		ph->actn = FALSE;
 	}
 	while (ph->width-- > 0)
-		pf_putchar(c, ph, db);
+		pf_putchar(c, db);
 }
 
 int				pf_print_u(attrib *ph, uiput *db)

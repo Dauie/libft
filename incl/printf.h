@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/29 16:45:53 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/03/31 19:10:50 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,6 @@ typedef struct	format_info
 	char		mod;
 	data		phd;
 	t_blean		actn;		/* Placeholder type */
-	t_blean 	sactn;
 	t_blean		upper; 		/* Print placeholder in UPPERCASE */
 	t_blean		algn;		/* '-' Left align placeholder */
 	t_blean		sign;		/* '+' Show sign (- , +) */
@@ -135,7 +134,7 @@ int				pf_putstr(char *str, attrib *ph, uiput *db);
 char 			*pf_typechr(char *phstrt);
 void 			pf_get_width(const char *frmt, attrib *ph, uiput *db);
 int				pf_phlen(const char *frmt, uiput *db);
-int				pf_putchar(char c, attrib *ph, uiput *db);
+int				pf_putchar(char c, uiput *db);
 int				pf_putnbr(uintmax_t n, attrib *ph, uiput *db);
 int				pf_isupper(int c);
 int				pf_isoxdi(int c);
@@ -151,5 +150,6 @@ void 			pf_tick_hash(attrib *ph, uiput *db);
 void 			pf_tick_sign(attrib *ph, uiput *db);
 void 			pf_tick_zero(attrib *ph, uiput *db);
 void 			pf_tick_spc(attrib *ph, uiput *db);
+size_t			pf_numlen(uintmax_t nb, int bse, attrib *ph);
 
 #endif

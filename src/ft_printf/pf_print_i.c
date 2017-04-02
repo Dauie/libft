@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/02 13:32:09 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/02 14:45:50 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,10 @@ int				pf_print_i(attrib *ph, uiput *db)			// you fucked up your numlen.
 	else
 	{
 		if (ph->spc == TRUE && ph->wneg == FALSE && ph->sign == FALSE)
+		{
+			ph->width--;
 			pf_putchar(' ', db);
+		}
 		if (ph->actn == TRUE && ph->zero == TRUE && ph->width)
 			handel_isign(ph, db);
 		if (ph->width)

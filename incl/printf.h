@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/31 19:10:50 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/02 14:56:38 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,7 @@ int				pf_print_i(attrib *ph, uiput *db);
 int				pf_print_o(attrib *ph, uiput *db);
 int				pf_print_x(attrib *ph, uiput *db);
 int				pf_print_u(attrib *ph, uiput *db);
+int				pf_print_p(attrib *ph, uiput *db);
 void 			pf_lmgmt_oux(uiput *db, attrib *ph);
 int				pf_print_perc(attrib *ph, uiput *db);
 int				puterror(int ecode);

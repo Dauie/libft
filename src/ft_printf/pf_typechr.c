@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:53:30 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 12:03:54 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/03 12:15:36 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,4 @@ char 		*pf_typechr(char *phstrt)
 			return (flg = &phstrt[i]);
 	}
 	return (flg);
-}
-
-void 		pf_make_precise(char *strt, attrib *ph)
-{
-	char	*tmp;
-
-	tmp = ft_strrchr(strt, '\0');
-	while (ph->prec--)
-	{
-		*tmp = '\0';
-		tmp--;
-	}
-
 }

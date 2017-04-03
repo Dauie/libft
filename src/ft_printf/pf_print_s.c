@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:54:13 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 12:10:07 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/03 12:17:35 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int			pf_print_s(attrib *ph, uiput *db)
 	{
 		if (ph->width)
 			putpad_s(ph, db);
-		if (ph->prec < ph->len)
+		if (ph->prec < ph->len && ph->wprc == TRUE)
 			pf_putstrprec(phs, ph, db);
 		else
 			pf_putstr(phs, ph, db);

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:43:05 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/31 19:10:27 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/03 13:39:54 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,62 +32,12 @@ int			pf_isflag(int c)
 		return (0);
 }
 
-/*'hh', 'h', 'l', 'll', 'j', 'z', '+', '-', ' ', '#', '.'*/
-
-int			pf_ismod_pre(const char *frmt, uiput *db)
-{
-	if (frmt[db->inx] == 'h' || frmt[db->inx] == 'l'||
-		frmt[db->inx] == 'j' || frmt[db->inx] == 'z')
-		return (1);
-	else
-		return (0);
-
-}
-
-int			pf_parse_mod(const char *frmt, uiput *db, attrib *ph)
-{
-	if (!ph->mod)
-	{
-		if (frmt[db->inx] == 'h')
-		{
-			if (frmt[db->inx + 1] != 'h')
-				ph->mod = 'h';
-			else
-				ph->mod = 'H';
-		}
-		else if (frmt[db->inx] == 'l')
-		{
-			if (frmt[db->inx + 1] != 'l')
-				ph->mod = 'l';
-			else
-				ph->mod = 'L';
-		}
-		else if (frmt[db->inx] == 'j')
-			ph->mod = 'j';
-		else if (frmt[db->inx] == 'z')
-			ph->mod = 'z';
-	}
-	if (ft_isupper(ph->mod))
-		db->inx += 2;
-	else
-		db->inx++;
-	return (ph->mod);
-}
-
 int			pf_istype(int c)
 {
 	if (c == 'c' || c == 'C' || c == 's' || c == 'S'
 	|| c == 'd' || c == 'D' || c == 'i' || c == 'p'
 	|| c == 'o' || c == 'O' || c == 'u' || c == 'U'
 	|| c == 'x' || c == 'X' || c == '%')
-		return (1);
-	else
-		return (0);
-}
-
-int			pf_iswidth(int c)
-{
-	if (c >= '1' && c <= '9')
 		return (1);
 	else
 		return (0);

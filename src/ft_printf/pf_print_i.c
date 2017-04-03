@@ -6,13 +6,11 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 10:42:22 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/03 13:34:56 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
-
-
 
 static void handel_isign(attrib *ph, uiput *db)
 {
@@ -28,37 +26,16 @@ static void handel_isign(attrib *ph, uiput *db)
 
 static void handel_ihash(attrib *ph, uiput *db)
 {
-		pf_putchar('0', db);
-		ph->hash = FALSE;
-}
-
-int			pf_putnbr(uintmax_t n, attrib *ph, uiput *db)
-{
-	uintmax_t	tmp;
-
-	tmp = n;
-	if (ph->prec)
-		putprec(ph, db);
-	if (tmp == 0 && ph->prec == 0 && ph->wprc == TRUE)
-	{
-		pf_putchar(' ', db);
-		return (1);
-	}
-	if (tmp > 9)
-	{
-		pf_putnbr(tmp / 10, ph, db);
-		pf_putnbr(tmp % 10, ph, db);
-	}
-	else
-		pf_putchar(tmp + '0', db);
-	return (1);
+	pf_putchar('0', db);
+	ph->hash = FALSE;
 }
 
 static int 	manage_iattrib(attrib *ph)
 {
 	manage_isign(ph);
 	manage_iwidprec(ph);
-	if (ph->prec == 0 && ph->wprc == TRUE && !ph->width && ph->phd.uimt == 0)
+	if (ph->prec == 0 && ph->wprc == TRUE &&
+		 !ph->width && ph->phd.uimt == 0)
 		return (0);
 	if (ph->width && ph->prec)
 	{
@@ -69,7 +46,6 @@ static int 	manage_iattrib(attrib *ph)
 	{
 		if (ph->algn == TRUE)
 			ph->zero = FALSE;
-
 	}
 	else if (ph->prec && !ph->width)
 		ph->zero = TRUE;

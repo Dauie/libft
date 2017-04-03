@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:53:23 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/24 12:00:57 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/03 13:31:32 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@ void 		pf_get_width(const char *frmt, attrib *ph, uiput *db)
 		db->inx++;
 	ph->width = ft_atoi((char *)&frmt[db->inx]);
 	db->inx += ft_numlen(ph->width, 10);
+}
+
+int			pf_iswidth(int c)
+{
+	if (c >= '1' && c <= '9')
+		return (1);
+	else
+		return (0);
 }
 
 void 	pf_get_prec(const char *frmt, attrib *ph, uiput *db)

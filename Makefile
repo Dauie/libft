@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/04/03 10:40:07 by rlutt            ###   ########.fr        #
+#    Updated: 2017/04/03 13:40:21 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,11 +89,11 @@ GNL_SRC =	src/futil/gnl/gnl.c
 
 PRINTF_SRC =src/ft_printf/ft_printf.c src/ft_printf/pf_initstructs.c \
 			src/ft_printf/pf_is.c src/ft_printf/pf_print_s.c \
-			src/ft_printf/pf_print_i.c \
+			src/ft_printf/pf_print_i.c src/ft_printf/pf_mod.c\
 			src/ft_printf/pf_puterror.c src/ft_printf/pf_ihelp.c\
 			src/ft_printf/pf_putstr.c src/ft_printf/pf_typechr.c \
 			src/ft_printf/pf_width.c src/ft_printf/pf_print_c.c \
-			src/ft_printf/pf_putchar.c \
+			src/ft_printf/pf_putchar.c src/ft_printf/pf_putnbr.c\
 			src/ft_printf/pf_print_perc.c src/ft_printf/pf_print_o.c \
 			src/ft_printf/pf_print_x.c src/ft_printf/pf_itoabse.c \
 			src/ft_printf/pf_tick.c src/ft_printf/pf_print_p.c\

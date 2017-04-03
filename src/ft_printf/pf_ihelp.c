@@ -1,12 +1,6 @@
 
 #include "../../incl/printf.h"
 
-void 		manage_iwidprec(attrib *ph);
-void 		manage_isign(attrib *ph);
-void 		putprec(attrib *ph, uiput *db);
-void 		putpad_i(attrib *ph, uiput *db);
-size_t		pf_inumlen(uintmax_t nb, int bse);
-
 void 		manage_iwidprec(attrib *ph)
 {
 	if (ph->width && ph->prec)
@@ -65,10 +59,4 @@ void 		putpad_i(attrib *ph, uiput *db)
 		c = '0';
 	while (ph->width-- > 0)
 		pf_putchar(c, db);
-}
-
-void 		putprec(attrib *ph, uiput *db)
-{
-	while (ph->prec-- > 0)
-		pf_putchar('0', db);
 }

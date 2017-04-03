@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 09:08:35 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/03 10:38:47 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@
 
 static void handel_isign(attrib *ph, uiput *db)
 {
-	if (ph->sign == TRUE && ph->wneg == FALSE)
-		pf_putchar('+', db);
-	if (ph->wneg == TRUE)
-		pf_putchar('-', db);
-	ph->actn = FALSE;
+	if (ph->type == 'd' || ph->type == 'd'|| ph->type == 'D')
+	{
+		if (ph->sign == TRUE && ph->wneg == FALSE)
+			pf_putchar('+', db);
+		if (ph->wneg == TRUE)
+			pf_putchar('-', db);
+		ph->actn = FALSE;
+	}
 }
 
 static void handel_ihash(attrib *ph, uiput *db)
@@ -77,8 +80,11 @@ static void pf_print_irev(attrib *ph, uiput *db)
 {
 	if (ph->spc == TRUE && ph->wneg == FALSE && ph->sign == FALSE)
 	{
-		ph->width--;
-		pf_putchar(' ', db);
+		if (ph->type == 'd' || ph->type == 'i' || ph->type == 'D')
+		{
+			ph->width--;
+			pf_putchar(' ', db);
+		}
 	}
 	if (ph->actn == TRUE && ph->zero == TRUE && ph->width)
 		handel_isign(ph, db);
@@ -93,7 +99,10 @@ static void pf_print_irev(attrib *ph, uiput *db)
 
 int				pf_print_i(attrib *ph, uiput *db)			// you fucked up your numlen.
 {
-	pf_lmgmt_id(db, ph);
+	if (ph->type == 'd' || ph->type == 'i' || ph->type == 'D')
+		pf_lmgmt_id(db, ph);
+	else
+		pf_lmgmt_oux(db, ph);
 	ph->len = pf_inumlen(ph->phd.uimt, 10);
 	if (!(manage_iattrib(ph)))
 		return (0);

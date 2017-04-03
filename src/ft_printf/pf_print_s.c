@@ -6,12 +6,11 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:54:13 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 12:17:35 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/03 12:50:14 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
-#include <string.h>
 
 int		pf_putstrprec(char *str, attrib *ph, uiput *db)
 {
@@ -30,13 +29,11 @@ int		pf_putstrprec(char *str, attrib *ph, uiput *db)
 	return (0);
 }
 
-
 static void 	putpad_s(attrib *ph, uiput *db)
 {
 	char	c;
 
-	if (ph->width)
-		ph->width = ph->width - ph->len;
+
 	if (ph->zero == TRUE)
 		c = '0';
 	else
@@ -44,6 +41,19 @@ static void 	putpad_s(attrib *ph, uiput *db)
 	while (ph->width-- > 0)
 		pf_putchar(c, db);
 	ph->width = 0;
+}
+
+static void manage_swidprec(attrib *ph)
+{
+	if (ph->prec > ph->len)
+		ph->prec = 0;
+	if (ph->width && ph->prec)
+	{
+		ph->len = ph->len - ph->prec;
+		ph->width = ph->width - ph->len;
+	}
+	else if (ph->width)
+		ph->width = ph->width - ph->len;
 }
 
 int			pf_print_s(attrib *ph, uiput *db)
@@ -56,9 +66,10 @@ int			pf_print_s(attrib *ph, uiput *db)
 		return(0);
 	}
 	ph->len = ft_strlen(phs);
+	manage_swidprec(ph);
 	if (ph->algn == TRUE)
 	{
-		if (ph->prec < ph->len)
+		if (ph->prec && ph->wprc == TRUE)
 			pf_putstrprec(phs, ph, db);
 		else
 			pf_putstr(phs, ph, db);
@@ -69,7 +80,7 @@ int			pf_print_s(attrib *ph, uiput *db)
 	{
 		if (ph->width)
 			putpad_s(ph, db);
-		if (ph->prec < ph->len && ph->wprc == TRUE)
+		if (ph->prec && ph->wprc == TRUE)
 			pf_putstrprec(phs, ph, db);
 		else
 			pf_putstr(phs, ph, db);

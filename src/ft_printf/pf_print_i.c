@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 10:38:47 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/03 10:42:22 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static void handel_isign(attrib *ph, uiput *db)
 {
-	if (ph->type == 'd' || ph->type == 'd'|| ph->type == 'D')
+	if (ph->type == 'd' || ph->type == 'i'|| ph->type == 'D')
 	{
 		if (ph->sign == TRUE && ph->wneg == FALSE)
 			pf_putchar('+', db);

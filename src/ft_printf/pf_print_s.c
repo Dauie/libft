@@ -6,12 +6,30 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:54:13 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 11:47:19 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/03 12:10:07 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 #include <string.h>
+
+int		pf_putstrprec(char *str, attrib *ph, uiput *db)
+{
+	int i;
+
+	i = 0;
+	if (str != NULL)
+	{
+		if (ph->upper == TRUE)
+			while (ph->prec--)
+				pf_putchar(ft_toupper(str[i++]), db);
+		else
+			while (ph->prec--)
+				pf_putchar(str[i++], db);
+	}
+	return (0);
+}
+
 
 static void 	putpad_s(attrib *ph, uiput *db)
 {
@@ -38,11 +56,12 @@ int			pf_print_s(attrib *ph, uiput *db)
 		return(0);
 	}
 	ph->len = ft_strlen(phs);
-	if (ph->prec)
-		pf_make_precise(phs, ph);
 	if (ph->algn == TRUE)
 	{
-		pf_putstr(phs, ph, db);
+		if (ph->prec < ph->len)
+			pf_putstrprec(phs, ph, db);
+		else
+			pf_putstr(phs, ph, db);
 		if (ph->width)
 			putpad_s(ph, db);
 	}
@@ -50,7 +69,10 @@ int			pf_print_s(attrib *ph, uiput *db)
 	{
 		if (ph->width)
 			putpad_s(ph, db);
-		pf_putstr(phs, ph, db);
+		if (ph->prec < ph->len)
+			pf_putstrprec(phs, ph, db);
+		else
+			pf_putstr(phs, ph, db);
 	}
 	return (0);
 }

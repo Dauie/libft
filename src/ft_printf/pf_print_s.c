@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:54:13 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 12:50:14 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/03 12:57:41 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void manage_swidprec(attrib *ph)
 		ph->len = ph->len - ph->prec;
 		ph->width = ph->width - ph->len;
 	}
-	else if (ph->width)
+	else if (ph->width && !ph->prec)
 		ph->width = ph->width - ph->len;
 }
 

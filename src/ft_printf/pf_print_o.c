@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/02 14:26:53 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/03 09:27:23 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,11 @@ static void 	printo_ndel(attrib *ph, uiput *db)
 	ft_strdel(&ostr);
 }
 
-
-// *need - DONT FUCKING TOUCH IT
-static int 		manage_oattrib(attrib *ph)
+static void 	manage_owidprec(attrib *ph)
 {
-	if (ph->prec == 0 && ph->wprc == TRUE && !ph->width && ph->hash == FALSE)
-		return (0);
-	if (ph->hash == TRUE && ph->width)								//need
-	{
-		ph->width--;
-		ph->actn = TRUE;
-	}
-	if (ph->hash == TRUE && !ph->width && ph->wprc == FALSE && ph->phd.uimt != 0)
-		ph->actn = TRUE;
-	if (ph->algn == TRUE && ph->zero == TRUE)						//need
-		ph->zero = FALSE;
 	if (ph->prec && ph->width)
 	{
-		if (ph->prec > ph->width)							//need
+		if (ph->prec > ph->width)
 		{
 			ph->actn = TRUE;
 			ph->zero = TRUE;
@@ -74,6 +61,24 @@ static int 		manage_oattrib(attrib *ph)
 		ph->zero = TRUE;
 		ph->width = ph->prec - ph->len;
 	}
+}
+
+static int 		manage_oattrib(attrib *ph)
+{
+	if (ph->prec == 0 && ph->wprc == TRUE &&
+			!ph->width && ph->hash == FALSE)
+		return (0);
+	if (ph->hash == TRUE && ph->width)
+	{
+		ph->width--;
+		ph->actn = TRUE;
+	}
+	if (ph->hash == TRUE && !ph->width &&
+			ph->wprc == FALSE && ph->phd.uimt != 0)
+		ph->actn = TRUE;
+	if (ph->algn == TRUE && ph->zero == TRUE)
+		ph->zero = FALSE;
+	manage_owidprec(ph);
 	return (1);
 }
 

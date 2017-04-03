@@ -1,14 +1,9 @@
 #include "../../incl/printf.h"
 
-static int 	manage_uattrib(attrib *ph)
+
+
+static void 	manage_uwidprec(attrib *ph)
 {
-	if (ph->prec == 0 && ph->wprc == TRUE && !ph->width)
-		return (0);
-	if (ph->sign == TRUE)
-	{
-		ph->sign = FALSE;
-		ph->actn = FALSE;
-	}
 	if (ph->prec && ph->width)
 	{
 		if (ph->prec > ph->width)
@@ -35,6 +30,18 @@ static int 	manage_uattrib(attrib *ph)
 		ph->len = ph->prec;
 		ph->width = 0;
 	}
+}
+
+static int 	manage_uattrib(attrib *ph)
+{
+	if (ph->prec == 0 && ph->wprc == TRUE && !ph->width)
+		return (0);
+	if (ph->sign == TRUE)
+	{
+		ph->sign = FALSE;
+		ph->actn = FALSE;
+	}
+	manage_uwidprec(ph);
 	return (1);
 }
 

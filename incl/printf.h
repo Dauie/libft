@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/02 14:56:38 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/03 09:09:04 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,11 @@ int				pf_iswidth(int c);
 int				pf_print_s(attrib *ph, uiput *db);
 int				pf_print_c(attrib *ph, uiput *db);
 int				pf_print_i(attrib *ph, uiput *db);
+void 			manage_iwidprec(attrib *ph);
+void 			manage_isign(attrib *ph);
+size_t			pf_inumlen(uintmax_t nb, int bse);
+void 			putpad_i(attrib *ph, uiput *db);
+void 			putprec(attrib *ph, uiput *db);
 int				pf_print_o(attrib *ph, uiput *db);
 int				pf_print_x(attrib *ph, uiput *db);
 int				pf_print_u(attrib *ph, uiput *db);

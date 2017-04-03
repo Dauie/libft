@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:54:13 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 10:19:17 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/03 10:23:07 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int			pf_print_s(attrib *ph, uiput *db)
 {
 	char	*phs;
 
-	if (!(phs = ft_strdup(va_arg(db->ap, char *))))
+	if (!(phs = va_arg(db->ap, char *)))
 	{
 		pf_putstr("(null)", ph, db);
 		return(0);

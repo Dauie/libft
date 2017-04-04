@@ -6,17 +6,26 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 15:34:02 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/31 16:36:08 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/04 11:09:39 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../incl/printf.h"
+#include "../../incl/printf.h"
 
-static void 	putpad_c(attrib *ph, uiput *db);
-
-int			pf_print_c(attrib *ph, uiput *db)
+static void		putpad_c(attrib *ph, uiput *db)
 {
-	char	phc;
+	char		c;
+
+	ph->len = 1;
+	ph->width = ph->width - ph->len;
+	c = ' ';
+	while (ph->width-- > 0)
+		pf_putchar(c, db);
+}
+
+int				pf_print_c(attrib *ph, uiput *db)
+{
+	char		phc;
 
 	phc = (char)va_arg(db->ap, int);
 	if (ph->algn == TRUE)
@@ -32,15 +41,4 @@ int			pf_print_c(attrib *ph, uiput *db)
 		pf_putchar(phc, db);
 	}
 	return (0);
-}
-
-static void 	putpad_c(attrib *ph, uiput *db)
-{
-	char	c;
-
-	ph->len = 1;
-	ph->width = ph->width - ph->len;
-	c = ' ';
-	while (ph->width-- > 0)
-		pf_putchar(c, db);
 }

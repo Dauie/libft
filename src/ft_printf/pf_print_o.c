@@ -6,13 +6,13 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 09:27:23 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/04 11:17:29 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-static void 	putpad_o(attrib *ph, uiput *db)
+static void		putpad_o(attrib *ph, uiput *db)
 {
 	char	c;
 
@@ -23,7 +23,7 @@ static void 	putpad_o(attrib *ph, uiput *db)
 		pf_putchar(c, db);
 }
 
-static void 	printo_ndel(attrib *ph, uiput *db)
+static void		printo_ndel(attrib *ph, uiput *db)
 {
 	char		*ostr;
 
@@ -34,7 +34,7 @@ static void 	printo_ndel(attrib *ph, uiput *db)
 	ft_strdel(&ostr);
 }
 
-static void 	manage_owidprec(attrib *ph)
+static void		manage_owidprec(attrib *ph)
 {
 	if (ph->prec && ph->width)
 	{
@@ -63,7 +63,7 @@ static void 	manage_owidprec(attrib *ph)
 	}
 }
 
-static int 		manage_oattrib(attrib *ph)
+static int		manage_oattrib(attrib *ph)
 {
 	if (ph->prec == 0 && ph->wprc == TRUE &&
 			!ph->width && ph->hash == FALSE)

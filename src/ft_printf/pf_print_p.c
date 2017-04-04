@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pf_print_p.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlutt <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/04/04 11:18:00 by rlutt             #+#    #+#             */
+/*   Updated: 2017/04/04 11:18:16 by rlutt            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../incl/printf.h"
 
-static void 	putpad_p(attrib *ph, uiput *db)
+static void		putpad_p(attrib *ph, uiput *db)
 {
 	char		c;
 
@@ -13,7 +25,7 @@ static void 	putpad_p(attrib *ph, uiput *db)
 		pf_putchar(c, db);
 }
 
-static void 	printp_ndel(attrib *ph, uiput *db)
+static void		printp_ndel(attrib *ph, uiput *db)
 {
 	char		*ostr;
 

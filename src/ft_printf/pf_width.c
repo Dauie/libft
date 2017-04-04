@@ -6,13 +6,13 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:53:23 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 13:31:32 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/04 11:40:08 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-void 		pf_get_width(const char *frmt, attrib *ph, uiput *db)
+void		pf_get_width(const char *frmt, attrib *ph, uiput *db)
 {
 	if (!(ft_isdigit(frmt[db->inx])))
 		db->inx++;
@@ -28,7 +28,7 @@ int			pf_iswidth(int c)
 		return (0);
 }
 
-void 	pf_get_prec(const char *frmt, attrib *ph, uiput *db)
+void		pf_get_prec(const char *frmt, attrib *ph, uiput *db)
 {
 	ph->wprc = TRUE;
 	if (frmt[db->inx] == '.')
@@ -42,8 +42,8 @@ void 	pf_get_prec(const char *frmt, attrib *ph, uiput *db)
 
 int			pf_phlen(const char *frmt, uiput *db)
 {
-	char 	*strt;
-	char 	*flag;
+	char	*strt;
+	char	*flag;
 
 	strt = (char*)&frmt[db->inx];
 	flag = pf_typechr((char *)&frmt[db->inx]);

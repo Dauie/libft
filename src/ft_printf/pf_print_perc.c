@@ -6,15 +6,21 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:54:13 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/31 16:33:59 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/04 11:19:13 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-static void 	putpad_perc(attrib *ph, uiput *db);
+static void		putpad_perc(attrib *ph, uiput *db)
+{
+	ph->len = 1;
+	ph->width = ph->width - ph->len;
+	while (ph->width-- > 0)
+		pf_putchar(' ', db);
+}
 
-int			pf_print_perc(attrib *ph, uiput *db)
+int				pf_print_perc(attrib *ph, uiput *db)
 {
 	if (ph->algn == TRUE)
 	{
@@ -29,12 +35,4 @@ int			pf_print_perc(attrib *ph, uiput *db)
 		pf_putchar('%', db);
 	}
 	return (0);
-}
-
-static void 	putpad_perc(attrib *ph, uiput *db)
-{
-	ph->len = 1;
-	ph->width = ph->width - ph->len;
-	while (ph->width-- > 0)
-		pf_putchar(' ', db);
 }

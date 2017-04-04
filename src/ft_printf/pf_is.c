@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:43:05 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 13:39:54 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/04 10:58:09 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int			pf_istype(int c)
 int			pf_isupper(int c)
 {
 	if (c == 'S' || c == 'D' || c == 'O' ||
-	 	c == 'U' || c == 'X' || c == 'C')
+		c == 'U' || c == 'X' || c == 'C')
 		return (1);
 	else
 		return (0);
@@ -54,7 +54,7 @@ int			pf_isupper(int c)
 
 int			pf_isoxdi(int c)
 {
-	if (c == 'x' || c == 'X' )
+	if (c == 'x' || c == 'X')
 		return (1);
 	else if (c == 'o' || c == 'O')
 		return (2);

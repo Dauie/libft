@@ -6,15 +6,15 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 13:34:56 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/04 11:14:55 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-static void handel_isign(attrib *ph, uiput *db)
+static void		handel_isign(attrib *ph, uiput *db)
 {
-	if (ph->type == 'd' || ph->type == 'i'|| ph->type == 'D')
+	if (ph->type == 'd' || ph->type == 'i' || ph->type == 'D')
 	{
 		if (ph->sign == TRUE && ph->wneg == FALSE)
 			pf_putchar('+', db);
@@ -24,18 +24,18 @@ static void handel_isign(attrib *ph, uiput *db)
 	}
 }
 
-static void handel_ihash(attrib *ph, uiput *db)
+static void		handel_ihash(attrib *ph, uiput *db)
 {
 	pf_putchar('0', db);
 	ph->hash = FALSE;
 }
 
-static int 	manage_iattrib(attrib *ph)
+static int		manage_iattrib(attrib *ph)
 {
 	manage_isign(ph);
 	manage_iwidprec(ph);
 	if (ph->prec == 0 && ph->wprc == TRUE &&
-		 !ph->width && ph->phd.uimt == 0)
+		!ph->width && ph->phd.uimt == 0)
 		return (0);
 	if (ph->width && ph->prec)
 	{
@@ -52,7 +52,7 @@ static int 	manage_iattrib(attrib *ph)
 	return (1);
 }
 
-static void pf_print_irev(attrib *ph, uiput *db)
+static void		pf_print_irev(attrib *ph, uiput *db)
 {
 	if (ph->spc == TRUE && ph->wneg == FALSE && ph->sign == FALSE)
 	{
@@ -73,7 +73,7 @@ static void pf_print_irev(attrib *ph, uiput *db)
 	pf_putnbr(ph->phd.uimt, ph, db);
 }
 
-int				pf_print_i(attrib *ph, uiput *db)			// you fucked up your numlen.
+int				pf_print_i(attrib *ph, uiput *db)
 {
 	if (ph->type == 'd' || ph->type == 'i' || ph->type == 'D')
 		pf_lmgmt_id(db, ph);

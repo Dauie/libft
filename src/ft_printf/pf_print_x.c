@@ -6,25 +6,25 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/02 14:03:03 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/04 11:36:44 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-static void 	actn_0x(attrib *ph, uiput *db)
+static void		actn_0x(attrib *ph, uiput *db)
 {
 	ph->actn = FALSE;
 	pf_putstr("0x", ph, db);
 }
 
-static int 	manage_xattrib(attrib *ph)
+static int		manage_xattrib(attrib *ph)
 {
 	if (ph->prec == 0 && ph->wprc == TRUE && !ph->width)
 		return (0);
 	if (ph->phd.imt == 0 && ph->hash && !ph->prec)
 		ph->hash = FALSE;
-	if (ph->hash == TRUE)							//need
+	if (ph->hash == TRUE)
 		ph->actn = TRUE;
 	if (ph->algn == TRUE)
 		ph->zero = FALSE;
@@ -32,7 +32,7 @@ static int 	manage_xattrib(attrib *ph)
 		ph->width += ft_numlen(ph->phd.imt, 16);
 	if (ph->prec && ph->width)
 	{
-		if (ph->prec > ph->width)					//need
+		if (ph->prec > ph->width)
 			ph->width = ph->prec;
 		ph->width = ph->width - ph->len;
 	}
@@ -43,10 +43,9 @@ static int 	manage_xattrib(attrib *ph)
 	return (1);
 }
 
-static void 	putpad_x(attrib *ph, uiput *db)
+static void		putpad_x(attrib *ph, uiput *db)
 {
 	char		c;
-
 
 	if (ph->zero == TRUE)
 		c = '0';
@@ -57,7 +56,7 @@ static void 	putpad_x(attrib *ph, uiput *db)
 		pf_putchar(c, db);
 }
 
-static void 	printx_ndel(attrib *ph, uiput *db)
+static void		printx_ndel(attrib *ph, uiput *db)
 {
 	char		*ostr;
 

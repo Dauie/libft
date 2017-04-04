@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pf_ihelp.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlutt <ausdauerr@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/04/04 10:39:56 by rlutt             #+#    #+#             */
+/*   Updated: 2017/04/04 10:56:38 by rlutt            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-void 		manage_iwidprec(attrib *ph)
+void		manage_iwidprec(attrib *ph)
 {
 	if (ph->width && ph->prec)
 	{
@@ -26,7 +37,7 @@ void 		manage_iwidprec(attrib *ph)
 		ph->width = ph->width - ph->len;
 }
 
-void 		manage_isign(attrib *ph)
+void		manage_isign(attrib *ph)
 {
 	if (ph->width && ph->prec)
 	{
@@ -50,7 +61,7 @@ size_t		pf_inumlen(uintmax_t nb, int bse)
 	return (i);
 }
 
-void 		putpad_i(attrib *ph, uiput *db)
+void		putpad_i(attrib *ph, uiput *db)
 {
 	char	c;
 

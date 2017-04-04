@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pf_itoabse.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/04/04 10:42:15 by rlutt             #+#    #+#             */
+/*   Updated: 2017/04/04 11:49:21 by rlutt            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../incl/printf.h"
 
-
-static char *pf_itoaz(attrib *ph)
+static char	*pf_itoaz(attrib *ph)
 {
 	if (ph->prec == 0 && ph->wprc == TRUE &&
 		ph->hash == FALSE)
@@ -20,7 +31,7 @@ size_t		pf_numlen(uintmax_t nb, int bse, attrib *ph)
 	size_t		i;
 
 	i = 1;
-	if (ph->wneg == TRUE || ph->sign )
+	if (ph->wneg == TRUE || ph->sign)
 		i++;
 	while (nb /= bse)
 		i++;

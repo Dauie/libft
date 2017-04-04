@@ -6,15 +6,13 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 10:32:36 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/04 10:54:38 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-// have all functions checked to verify that they can take the maximum data type.
-
-int 		ft_printf(const char *frmt, ...)
+int			ft_printf(const char *frmt, ...)
 {
 	uiput	db;
 
@@ -43,7 +41,6 @@ int			pf_parse(const char *frmt, uiput *db)
 	return (1);
 }
 
-/*%[flags][width][.precision][length]type*/
 int			pf_pause_parse(const char *frmt, uiput *db)
 {
 	attrib	ph;
@@ -55,6 +52,8 @@ int			pf_pause_parse(const char *frmt, uiput *db)
 	ph.type = frmt[db->inx + ph.len];
 	if (pf_isupper(ph.type))
 		ph.upper = TRUE;
+	if (ph.type == '%')
+		ph.len += 1;
 	pf_get_attrib(frmt, &ph, db);
 	pf_phmaster(&ph, db);
 	return (1);
@@ -65,8 +64,6 @@ int			pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
 	int		i;
 
 	i = -1;
-	if(ph->type == '%')
-		ph->len += 1;
 	while (++i < ph->len)
 	{
 		if (pf_isflag(frmt[db->inx]) == 1)

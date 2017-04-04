@@ -6,13 +6,13 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 18:40:44 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 13:30:34 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/04 10:55:43 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-void 		pf_lmgmt_id(uiput *db, attrib *ph)
+void		pf_lmgmt_id(uiput *db, attrib *ph)
 {
 	if (ph->mod == 'l' || ph->type == 'D')
 		ph->phd.l = va_arg(db->ap, intmax_t);

@@ -6,13 +6,13 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:53:30 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 12:15:36 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/04 11:39:19 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-char 		*pf_typechr(char *phstrt)
+char		*pf_typechr(char *phstrt)
 {
 	char	*flg;
 	int		i;

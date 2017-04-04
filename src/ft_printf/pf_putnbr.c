@@ -12,13 +12,13 @@
 
 #include "../../incl/printf.h"
 
-void		putprec(attrib *ph, uiput *db)
+void		putprec(t_frmtnfo *ph, t_pfcore *db)
 {
 	while (ph->prec-- > 0)
 		pf_putchar('0', db);
 }
 
-int			pf_putnbr(uintmax_t n, attrib *ph, uiput *db)
+int			pf_putnbr(uintmax_t n, t_frmtnfo *ph, t_pfcore *db)
 {
 	uintmax_t	tmp;
 

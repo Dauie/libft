@@ -12,7 +12,7 @@
 
 #include "../../incl/printf.h"
 
-static void		putpad_c(attrib *ph, uiput *db)
+static void		putpad_c(t_frmtnfo *ph, t_pfcore *db)
 {
 	char		c;
 
@@ -23,7 +23,7 @@ static void		putpad_c(attrib *ph, uiput *db)
 		pf_putchar(c, db);
 }
 
-int				pf_print_c(attrib *ph, uiput *db)
+int				pf_print_c(t_frmtnfo *ph, t_pfcore *db)
 {
 	char		phc;
 

@@ -12,7 +12,7 @@
 
 #include "../../incl/printf.h"
 
-static void		putpad_o(attrib *ph, uiput *db)
+static void		putpad_o(t_frmtnfo *ph, t_pfcore *db)
 {
 	char	c;
 
@@ -23,7 +23,7 @@ static void		putpad_o(attrib *ph, uiput *db)
 		pf_putchar(c, db);
 }
 
-static void		printo_ndel(attrib *ph, uiput *db)
+static void		printo_ndel(t_frmtnfo *ph, t_pfcore *db)
 {
 	char		*ostr;
 
@@ -34,7 +34,7 @@ static void		printo_ndel(attrib *ph, uiput *db)
 	ft_strdel(&ostr);
 }
 
-static void		manage_owidprec(attrib *ph)
+static void		manage_owidprec(t_frmtnfo *ph)
 {
 	if (ph->prec && ph->width)
 	{
@@ -63,7 +63,7 @@ static void		manage_owidprec(attrib *ph)
 	}
 }
 
-static int		manage_oattrib(attrib *ph)
+static int		manage_ot_frmtnfo(t_frmtnfo *ph)
 {
 	if (ph->prec == 0 && ph->wprc == TRUE &&
 			!ph->width && ph->hash == FALSE)
@@ -82,11 +82,11 @@ static int		manage_oattrib(attrib *ph)
 	return (1);
 }
 
-int				pf_print_o(attrib *ph, uiput *db)
+int				pf_print_o(t_frmtnfo *ph, t_pfcore *db)
 {
 	pf_lmgmt_oux(db, ph);
 	ph->len = ft_numlen(ph->phd.l, 8);
-	if (!(manage_oattrib(ph)))
+	if (!(manage_ot_frmtnfo(ph)))
 		return (0);
 	if (ph->algn == FALSE)
 	{

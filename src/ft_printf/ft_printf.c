@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 19:55:04 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/04 10:54:38 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/04 15:18:48 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int			ft_printf(const char *frmt, ...)
 {
-	uiput	db;
+	t_pfcore	db;
 
 	init_uinput(&db);
 	va_start(db.ap, frmt);
@@ -23,7 +23,7 @@ int			ft_printf(const char *frmt, ...)
 	return (db.tot);
 }
 
-int			pf_parse(const char *frmt, uiput *db)
+int			pf_parse(const char *frmt, t_pfcore *db)
 {
 	while (frmt[db->inx])
 	{
@@ -41,25 +41,25 @@ int			pf_parse(const char *frmt, uiput *db)
 	return (1);
 }
 
-int			pf_pause_parse(const char *frmt, uiput *db)
+int			pf_pause_parse(const char *frmt, t_pfcore *db)
 {
-	attrib	ph;
+	t_frmtnfo	ph;
 
 	if (frmt[db->inx] == '%')
 		db->inx++;
-	init_attrib(&ph);
+	init_t_frmtnfo(&ph);
 	ph.len = pf_phlen(frmt, db);
 	ph.type = frmt[db->inx + ph.len];
 	if (pf_isupper(ph.type))
 		ph.upper = TRUE;
 	if (ph.type == '%')
 		ph.len += 1;
-	pf_get_attrib(frmt, &ph, db);
+	pf_frmtnfo(frmt, &ph, db);
 	pf_phmaster(&ph, db);
 	return (1);
 }
 
-int			pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
+int			pf_frmtnfo(const char *frmt, t_frmtnfo *ph, t_pfcore *db)
 {
 	int		i;
 
@@ -87,7 +87,7 @@ int			pf_get_attrib(const char *frmt, attrib *ph, uiput *db)
 	return (1);
 }
 
-int			pf_phmaster(attrib *ph, uiput *db)
+int			pf_phmaster(t_frmtnfo *ph, t_pfcore *db)
 {
 	if (ph->type == '%')
 		pf_print_perc(ph, db);

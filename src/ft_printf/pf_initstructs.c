@@ -12,13 +12,13 @@
 
 #include "../../incl/printf.h"
 
-void		init_uinput(uiput *db)
+void		init_uinput(t_pfcore *db)
 {
 	db->inx = 0;
 	db->tot = 0;
 }
 
-void		init_attrib(attrib *ipg)
+void		init_t_frmtnfo(t_frmtnfo *ipg)
 {
 	ipg->type = 0;
 	ipg->mod = 0;

@@ -12,32 +12,32 @@
 
 #include "../../incl/printf.h"
 
-void		pf_tick_algn(attrib *ph, uiput *db)
+void		pf_tick_algn(t_frmtnfo *ph, t_pfcore *db)
 {
 	ph->algn = TRUE;
 	db->inx++;
 }
 
-void		pf_tick_hash(attrib *ph, uiput *db)
+void		pf_tick_hash(t_frmtnfo *ph, t_pfcore *db)
 {
 	ph->hash = TRUE;
 	db->inx++;
 }
 
-void		pf_tick_sign(attrib *ph, uiput *db)
+void		pf_tick_sign(t_frmtnfo *ph, t_pfcore *db)
 {
 	ph->sign = TRUE;
 	ph->actn = TRUE;
 	db->inx++;
 }
 
-void		pf_tick_zero(attrib *ph, uiput *db)
+void		pf_tick_zero(t_frmtnfo *ph, t_pfcore *db)
 {
 	ph->zero = TRUE;
 	db->inx++;
 }
 
-void		pf_tick_spc(attrib *ph, uiput *db)
+void		pf_tick_spc(t_frmtnfo *ph, t_pfcore *db)
 {
 	ph->spc = TRUE;
 	db->inx++;

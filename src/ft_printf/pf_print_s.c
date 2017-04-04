@@ -12,7 +12,7 @@
 
 #include "../../incl/printf.h"
 
-int				pf_putstrprec(char *str, attrib *ph, uiput *db)
+int				pf_putstrprec(char *str, t_frmtnfo *ph, t_pfcore *db)
 {
 	int			i;
 
@@ -29,7 +29,7 @@ int				pf_putstrprec(char *str, attrib *ph, uiput *db)
 	return (0);
 }
 
-static void		putpad_s(attrib *ph, uiput *db)
+static void		putpad_s(t_frmtnfo *ph, t_pfcore *db)
 {
 	char		c;
 
@@ -42,7 +42,7 @@ static void		putpad_s(attrib *ph, uiput *db)
 	ph->width = 0;
 }
 
-static int		manage_swidprec(attrib *ph, uiput *db, char *phs)
+static int		manage_swidprec(t_frmtnfo *ph, t_pfcore *db, char *phs)
 {
 	if (!phs)
 	{
@@ -62,7 +62,7 @@ static int		manage_swidprec(attrib *ph, uiput *db, char *phs)
 	return (0);
 }
 
-int				pf_print_s(attrib *ph, uiput *db)
+int				pf_print_s(t_frmtnfo *ph, t_pfcore *db)
 {
 	char		*phs;
 

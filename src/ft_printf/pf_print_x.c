@@ -12,13 +12,13 @@
 
 #include "../../incl/printf.h"
 
-static void		actn_0x(attrib *ph, uiput *db)
+static void		actn_0x(t_frmtnfo *ph, t_pfcore *db)
 {
 	ph->actn = FALSE;
 	pf_putstr("0x", ph, db);
 }
 
-static int		manage_xattrib(attrib *ph)
+static int		manage_xt_frmtnfo(t_frmtnfo *ph)
 {
 	if (ph->prec == 0 && ph->wprc == TRUE && !ph->width)
 		return (0);
@@ -43,7 +43,7 @@ static int		manage_xattrib(attrib *ph)
 	return (1);
 }
 
-static void		putpad_x(attrib *ph, uiput *db)
+static void		putpad_x(t_frmtnfo *ph, t_pfcore *db)
 {
 	char		c;
 
@@ -56,7 +56,7 @@ static void		putpad_x(attrib *ph, uiput *db)
 		pf_putchar(c, db);
 }
 
-static void		printx_ndel(attrib *ph, uiput *db)
+static void		printx_ndel(t_frmtnfo *ph, t_pfcore *db)
 {
 	char		*ostr;
 
@@ -65,11 +65,11 @@ static void		printx_ndel(attrib *ph, uiput *db)
 	ft_strdel(&ostr);
 }
 
-int				pf_print_x(attrib *ph, uiput *db)
+int				pf_print_x(t_frmtnfo *ph, t_pfcore *db)
 {
 	pf_lmgmt_oux(db, ph);
 	ph->len = ft_numlen(ph->phd.uimt, 16);
-	if (!(manage_xattrib(ph)))
+	if (!(manage_xt_frmtnfo(ph)))
 		return (0);
 	if (ph->algn == TRUE)
 	{

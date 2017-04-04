@@ -12,7 +12,7 @@
 
 #include "../../incl/printf.h"
 
-int		pf_putstr(char *str, attrib *ph, uiput *db)
+int		pf_putstr(char *str, t_frmtnfo *ph, t_pfcore *db)
 {
 	int i;
 

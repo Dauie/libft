@@ -12,7 +12,7 @@
 
 #include "../../incl/printf.h"
 
-void		pf_lmgmt_oux(uiput *db, attrib *ph)
+void		pf_lmgmt_oux(t_pfcore *db, t_frmtnfo *ph)
 {
 	if (ph->type == 'U')
 		ph->mod = 'l';

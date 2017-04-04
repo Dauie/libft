@@ -12,7 +12,7 @@
 
 #include "../../incl/printf.h"
 
-int			pf_ismod_pre(const char *frmt, uiput *db)
+int			pf_ismod_pre(const char *frmt, t_pfcore *db)
 {
 	if (frmt[db->inx] == 'h' || frmt[db->inx] == 'l' ||
 		frmt[db->inx] == 'j' || frmt[db->inx] == 'z')
@@ -21,7 +21,7 @@ int			pf_ismod_pre(const char *frmt, uiput *db)
 		return (0);
 }
 
-int			pf_parse_mod(const char *frmt, uiput *db, attrib *ph)
+int			pf_parse_mod(const char *frmt, t_pfcore *db, t_frmtnfo *ph)
 {
 	if (!ph->mod)
 	{

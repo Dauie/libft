@@ -12,7 +12,7 @@
 
 #include "../../incl/printf.h"
 
-static void		putpad_p(attrib *ph, uiput *db)
+static void		putpad_p(t_frmtnfo *ph, t_pfcore *db)
 {
 	char		c;
 
@@ -25,7 +25,7 @@ static void		putpad_p(attrib *ph, uiput *db)
 		pf_putchar(c, db);
 }
 
-static void		printp_ndel(attrib *ph, uiput *db)
+static void		printp_ndel(t_frmtnfo *ph, t_pfcore *db)
 {
 	char		*ostr;
 
@@ -34,7 +34,7 @@ static void		printp_ndel(attrib *ph, uiput *db)
 	ft_strdel(&ostr);
 }
 
-int				pf_print_p(attrib *ph, uiput *db)
+int				pf_print_p(t_frmtnfo *ph, t_pfcore *db)
 {
 	ph->phd.uimt = va_arg(db->ap, uintmax_t);
 	ph->len = ft_numlen(ph->phd.uimt, 16);

@@ -12,7 +12,7 @@
 
 #include "../../incl/printf.h"
 
-static void		putpad_perc(attrib *ph, uiput *db)
+static void		putpad_perc(t_frmtnfo *ph, t_pfcore *db)
 {
 	ph->len = 1;
 	ph->width = ph->width - ph->len;
@@ -20,7 +20,7 @@ static void		putpad_perc(attrib *ph, uiput *db)
 		pf_putchar(' ', db);
 }
 
-int				pf_print_perc(attrib *ph, uiput *db)
+int				pf_print_perc(t_frmtnfo *ph, t_pfcore *db)
 {
 	if (ph->algn == TRUE)
 	{

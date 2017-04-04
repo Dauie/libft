@@ -12,7 +12,7 @@
 
 #include "../../incl/printf.h"
 
-int				pf_putchar(char c, uiput *db)
+int				pf_putchar(char c, t_pfcore *db)
 {
 	write(1, &c, 1);
 	db->tot += 1;

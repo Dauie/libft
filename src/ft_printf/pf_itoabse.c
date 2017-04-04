@@ -6,13 +6,13 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/04 10:42:15 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/04 11:49:21 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/04 15:10:24 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-static char	*pf_itoaz(attrib *ph)
+static char	*pf_itoaz(t_frmtnfo *ph)
 {
 	if (ph->prec == 0 && ph->wprc == TRUE &&
 		ph->hash == FALSE)
@@ -26,7 +26,7 @@ static char	*pf_itoaz(attrib *ph)
 		return (ft_strdup("0"));
 }
 
-size_t		pf_numlen(uintmax_t nb, int bse, attrib *ph)
+size_t		pf_numlen(uintmax_t nb, int bse, t_frmtnfo *ph)
 {
 	size_t		i;
 
@@ -38,7 +38,7 @@ size_t		pf_numlen(uintmax_t nb, int bse, attrib *ph)
 	return (i);
 }
 
-char		*pf_itoabse(uintmax_t nbg, int bse, attrib *ph)
+char		*pf_itoabse(uintmax_t nbg, int bse, t_frmtnfo *ph)
 {
 	uintmax_t	nb;
 	size_t		sz;
@@ -46,9 +46,9 @@ char		*pf_itoabse(uintmax_t nbg, int bse, attrib *ph)
 	char		*hex;
 
 	if (ph->upper == TRUE)
-		hex = ft_strdup(UHEX);
+		hex = ft_strdup(g_uhex);
 	else
-		hex = ft_strdup(LHEX);
+		hex = ft_strdup(g_lhex);
 	nb = nbg;
 	sz = pf_numlen(nbg, bse, ph);
 	if (!(res = ((char *)ft_memalloc(sz-- + 1))))

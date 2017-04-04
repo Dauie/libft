@@ -12,7 +12,7 @@
 
 #include "../../incl/printf.h"
 
-void		pf_lmgmt_id(uiput *db, attrib *ph)
+void		pf_lmgmt_id(t_pfcore *db, t_frmtnfo *ph)
 {
 	if (ph->mod == 'l' || ph->type == 'D')
 		ph->phd.l = va_arg(db->ap, intmax_t);

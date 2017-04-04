@@ -6,49 +6,12 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/03 09:09:04 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/04 15:18:27 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* %sSpdDioOuUxXcC
-------------------------------------
-'%': print '%' w/o flags, prec, len.
-'s': print null terminated string.
-'S': print capitalize null terminated string.
-'p': print void* Pointer to void.
-'c': print single character.
-'D':
-'d'/'i' : print int as a signed decimal.
-'o': print unsigned octal;
-'O': print unsigned ocatal capitalized.
-'u': print decimal unsigned int.
-'U':
-'x': print unsigned int as hex lowercase.
-'X': print unsigned int as hex uppercase.
- */
-/*%[flags][width][.precision][length]type*/
- /*'hh', 'h', 'l', 'll', 'j', 'z', '+', '-', ' ', '#', '.'*/
- /*
-    -      Left justify.
-    0  	  Field is padded with 0's instead of blanks.
-    +	  Sign of number always O/P.
-   ' '     Positive values begin with a blank.
-    # 	  Various uses:
- 	  %#o (Octal) 0 prefix inserted.
- 	  %#x (Hex)   0x prefix added to non-zero values.
- 	  %#X (Hex)   0X prefix added to non-zero values.
- 	  %#e         *Always show the decimal point.
- 	  %#E         *Always show the decimal point.
- 	  %#f         *Always show the decimal point.
- 	  %#g         *Always show the decimal point trailing
- 	  	      		zeros not removed.
- 	  %#G         *Always show the decimal point trailing
- 		      		zeros not removed	.
- */
-
 #ifndef PRINTF_H
 # define PRINTF_H
-
 
 # include <string.h>
 # include <stdarg.h>
@@ -63,99 +26,95 @@
 # include "str.h"
 # include "tbl.h"
 
-/* 'hh' (H), 'h', 'l', 'll'(L), 'j', 'z' */
-
-static char *LHEX = {"0123456789abcdef"};
-static char *UHEX = {"0123456789ABCDEF"};
+static char				*g_lhex = {"0123456789abcdef"};
+static char				*g_uhex = {"0123456789ABCDEF"};
 
 typedef union
 {
-	int					i;
-	signed char			sc;
-	unsigned char 		uc;
-	short				s;
-	unsigned short 		us;
-	long 				l;
-	unsigned long		ul;
-	long long			ll;
-	size_t				st;
-	unsigned long long 	ull;
-	intmax_t			imt;
-	uintmax_t			uimt;
+	int				i;
+	signed char		sc;
+	unsigned char	uc;
+	short			s;
+	unsigned short	us;
+	long			l;
+	unsigned long	ul;
+	long long		ll;
+	size_t			st;
+	intmax_t		imt;
+	uintmax_t		uimt;
+}					t_data;
 
-}		data;
-
-typedef struct	user_input
+typedef struct		s_pfcore
 {
-	int			inx;		/* Current index in format string */
-	int			tot;		/* Count of characters printed */
-	va_list		ap;			/* Argument List */
-}				uiput;
+	int				inx;
+	int				tot;
+	va_list			ap;
+}					t_pfcore;
 
-typedef struct	format_info
+typedef struct		s_frmtnfo
 {
-	char		type;
-	char		mod;
-	data		phd;
-	t_blean		actn;		/* Placeholder type */
-	t_blean		upper; 		/* Print placeholder in UPPERCASE */
-	t_blean		algn;		/* '-' Left align placeholder */
-	t_blean		sign;		/* '+' Show sign (- , +) */
-	t_blean		hash;		/* Prepend w/ or leave '0', Always show decimal */
-	t_blean		zero;		/* Replace padding ' ' with '0' */
-	t_blean		spc;		/* Use ' ' on int instead of '0' */
-	t_blean		wneg;		/* If number was negetive*/
-	t_blean		wprc;
-	int			prec;		/* Precision: Max # of output */
-	int			width;		/* Width : Minimum # of output */
-	int			len;		/* Placeholder Length */
-}				attrib;
+	char			type;
+	char			mod;
+	t_data			phd;
+	t_blean			actn;
+	t_blean			upper;
+	t_blean			algn;
+	t_blean			sign;
+	t_blean			hash;
+	t_blean			zero;
+	t_blean			spc;
+	t_blean			wneg;
+	t_blean			wprc;
+	int				prec;
+	int				width;
+	int				len;
+}					t_frmtnfo;
 
-int 			ft_printf(const char *frmt, ...);
-int		 		pf_parse(const char *frmt, uiput *db);
-int				pf_pause_parse(const char *frmt, uiput *db);
-int 			pf_get_attrib(const char *frmt, attrib *ph, uiput *db);
-int				pf_phmaster(attrib *ph, uiput *db);
-void 			init_uinput(uiput *db);
-void 			init_attrib(attrib *ipg);
-int				pf_isflag(int c);
-int				pf_istype(int c);
-int				pf_iswidth(int c);
-int				pf_print_s(attrib *ph, uiput *db);
-int				pf_print_c(attrib *ph, uiput *db);
-int				pf_print_i(attrib *ph, uiput *db);
-void 			manage_iwidprec(attrib *ph);
-void 			manage_isign(attrib *ph);
-size_t			pf_inumlen(uintmax_t nb, int bse);
-void 			putpad_i(attrib *ph, uiput *db);
-void 			putprec(attrib *ph, uiput *db);
-int				pf_print_o(attrib *ph, uiput *db);
-int				pf_print_x(attrib *ph, uiput *db);
-int				pf_print_u(attrib *ph, uiput *db);
-int				pf_print_p(attrib *ph, uiput *db);
-void 			pf_lmgmt_oux(uiput *db, attrib *ph);
-int				pf_print_perc(attrib *ph, uiput *db);
-int				puterror(int ecode);
-int				pf_putstr(char *str, attrib *ph, uiput *db);
-char 			*pf_typechr(char *phstrt);
-void 			pf_get_width(const char *frmt, attrib *ph, uiput *db);
-int				pf_phlen(const char *frmt, uiput *db);
-int				pf_putchar(char c, uiput *db);
-int				pf_putnbr(uintmax_t n, attrib *ph, uiput *db);
-int				pf_isupper(int c);
-int				pf_isoxdi(int c);
-char			*pf_itoabse(uintmax_t nbg, int bse, attrib *ph);
-int				pf_parse_mod(const char *frmt, uiput *db, attrib *ph);
-int				pf_ismod_pre(const char *frmt, uiput *db);
-void 			pf_lmgmt_id(uiput *db, attrib *ph);
-void 			pf_lmgmt_oux(uiput *db, attrib *ph);
-void 			pf_get_prec(const char *frmt, attrib *ph, uiput *db);
-void 			pf_make_precise(char *strt, attrib *ph);
-void 			pf_tick_algn(attrib *ph, uiput *db);
-void 			pf_tick_hash(attrib *ph, uiput *db);
-void 			pf_tick_sign(attrib *ph, uiput *db);
-void 			pf_tick_zero(attrib *ph, uiput *db);
-void 			pf_tick_spc(attrib *ph, uiput *db);
-size_t			pf_numlen(uintmax_t nb, int bse, attrib *ph);
+int					ft_printf(const char *frmt, ...);
+int					pf_parse(const char *frmt, t_pfcore *db);
+int					pf_pause_parse(const char *frmt, t_pfcore *db);
+int					pf_frmtnfo(const char *frmt, t_frmtnfo *ph, t_pfcore *db);
+int					pf_phmaster(t_frmtnfo *ph, t_pfcore *db);
+void				init_uinput(t_pfcore *db);
+void				init_t_frmtnfo(t_frmtnfo *ipg);
+int					pf_isflag(int c);
+int					pf_istype(int c);
+int					pf_iswidth(int c);
+int					pf_print_s(t_frmtnfo *ph, t_pfcore *db);
+int					pf_print_c(t_frmtnfo *ph, t_pfcore *db);
+int					pf_print_i(t_frmtnfo *ph, t_pfcore *db);
+void				manage_iwidprec(t_frmtnfo *ph);
+void				manage_isign(t_frmtnfo *ph);
+size_t				pf_inumlen(uintmax_t nb, int bse);
+void				putpad_i(t_frmtnfo *ph, t_pfcore *db);
+void				putprec(t_frmtnfo *ph, t_pfcore *db);
+int					pf_print_o(t_frmtnfo *ph, t_pfcore *db);
+int					pf_print_x(t_frmtnfo *ph, t_pfcore *db);
+int					pf_print_u(t_frmtnfo *ph, t_pfcore *db);
+int					pf_print_p(t_frmtnfo *ph, t_pfcore *db);
+void				pf_lmgmt_oux(t_pfcore *db, t_frmtnfo *ph);
+int					pf_print_perc(t_frmtnfo *ph, t_pfcore *db);
+int					puterror(int ecode);
+int					pf_putstr(char *str, t_frmtnfo *ph, t_pfcore *db);
+char				*pf_typechr(char *phstrt);
+void				pf_get_width(const char *frmt, t_frmtnfo *ph, t_pfcore *db);
+int					pf_phlen(const char *frmt, t_pfcore *db);
+int					pf_putchar(char c, t_pfcore *db);
+int					pf_putnbr(uintmax_t n, t_frmtnfo *ph, t_pfcore *db);
+int					pf_isupper(int c);
+int					pf_isoxdi(int c);
+char				*pf_itoabse(uintmax_t nbg, int bse, t_frmtnfo *ph);
+int					pf_parse_mod(const char *frmt, t_pfcore *db, t_frmtnfo *ph);
+int					pf_ismod_pre(const char *frmt, t_pfcore *db);
+void				pf_lmgmt_id(t_pfcore *db, t_frmtnfo *ph);
+void				pf_lmgmt_oux(t_pfcore *db, t_frmtnfo *ph);
+void				pf_get_prec(const char *frmt, t_frmtnfo *ph, t_pfcore *db);
+void				pf_make_precise(char *strt, t_frmtnfo *ph);
+void				pf_tick_algn(t_frmtnfo *ph, t_pfcore *db);
+void				pf_tick_hash(t_frmtnfo *ph, t_pfcore *db);
+void				pf_tick_sign(t_frmtnfo *ph, t_pfcore *db);
+void				pf_tick_zero(t_frmtnfo *ph, t_pfcore *db);
+void				pf_tick_spc(t_frmtnfo *ph, t_pfcore *db);
+size_t				pf_numlen(uintmax_t nb, int bse, t_frmtnfo *ph);
 
 #endif

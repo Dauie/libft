@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tbladdl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlutt <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/04 11:42:58 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/04 11:43:01 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/04 15:11:59 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 char		**ft_tbladdl(char **tbl, char *line)
 {
 	int		i;
-	int		len;
 	char	**res;
 	char	**tmp;
 
@@ -26,7 +25,7 @@ char		**ft_tbladdl(char **tbl, char *line)
 	{
 		res = (char **)ft_memalloc(sizeof(char *) * (ft_tbllen(tbl) + 1));
 		tmp = res;
-		while (++i < len)
+		while ((size_t)++i < ft_tbllen(tbl))
 		{
 			*tmp = ft_strdup(*tbl);
 			tbl++;

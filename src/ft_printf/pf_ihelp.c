@@ -12,7 +12,7 @@
 
 #include "../../incl/printf.h"
 
-void		manage_iwidprec(attrib *ph)
+void		manage_iwidprec(t_frmtnfo *ph)
 {
 	if (ph->width && ph->prec)
 	{
@@ -37,7 +37,7 @@ void		manage_iwidprec(attrib *ph)
 		ph->width = ph->width - ph->len;
 }
 
-void		manage_isign(attrib *ph)
+void		manage_isign(t_frmtnfo *ph)
 {
 	if (ph->width && ph->prec)
 	{
@@ -61,7 +61,7 @@ size_t		pf_inumlen(uintmax_t nb, int bse)
 	return (i);
 }
 
-void		putpad_i(attrib *ph, uiput *db)
+void		putpad_i(t_frmtnfo *ph, t_pfcore *db)
 {
 	char	c;
 

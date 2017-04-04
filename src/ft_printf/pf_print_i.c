@@ -12,7 +12,7 @@
 
 #include "../../incl/printf.h"
 
-static void		handel_isign(attrib *ph, uiput *db)
+static void		handel_isign(t_frmtnfo *ph, t_pfcore *db)
 {
 	if (ph->type == 'd' || ph->type == 'i' || ph->type == 'D')
 	{
@@ -24,13 +24,13 @@ static void		handel_isign(attrib *ph, uiput *db)
 	}
 }
 
-static void		handel_ihash(attrib *ph, uiput *db)
+static void		handel_ihash(t_frmtnfo *ph, t_pfcore *db)
 {
 	pf_putchar('0', db);
 	ph->hash = FALSE;
 }
 
-static int		manage_iattrib(attrib *ph)
+static int		manage_it_frmtnfo(t_frmtnfo *ph)
 {
 	manage_isign(ph);
 	manage_iwidprec(ph);
@@ -52,7 +52,7 @@ static int		manage_iattrib(attrib *ph)
 	return (1);
 }
 
-static void		pf_print_irev(attrib *ph, uiput *db)
+static void		pf_print_irev(t_frmtnfo *ph, t_pfcore *db)
 {
 	if (ph->spc == TRUE && ph->wneg == FALSE && ph->sign == FALSE)
 	{
@@ -73,14 +73,14 @@ static void		pf_print_irev(attrib *ph, uiput *db)
 	pf_putnbr(ph->phd.uimt, ph, db);
 }
 
-int				pf_print_i(attrib *ph, uiput *db)
+int				pf_print_i(t_frmtnfo *ph, t_pfcore *db)
 {
 	if (ph->type == 'd' || ph->type == 'i' || ph->type == 'D')
 		pf_lmgmt_id(db, ph);
 	else
 		pf_lmgmt_oux(db, ph);
 	ph->len = pf_inumlen(ph->phd.uimt, 10);
-	if (!(manage_iattrib(ph)))
+	if (!(manage_it_frmtnfo(ph)))
 		return (0);
 	if (ph->algn == TRUE)
 	{

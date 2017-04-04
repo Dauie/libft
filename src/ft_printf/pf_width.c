@@ -12,7 +12,7 @@
 
 #include "../../incl/printf.h"
 
-void		pf_get_width(const char *frmt, attrib *ph, uiput *db)
+void		pf_get_width(const char *frmt, t_frmtnfo *ph, t_pfcore *db)
 {
 	if (!(ft_isdigit(frmt[db->inx])))
 		db->inx++;
@@ -28,7 +28,7 @@ int			pf_iswidth(int c)
 		return (0);
 }
 
-void		pf_get_prec(const char *frmt, attrib *ph, uiput *db)
+void		pf_get_prec(const char *frmt, t_frmtnfo *ph, t_pfcore *db)
 {
 	ph->wprc = TRUE;
 	if (frmt[db->inx] == '.')
@@ -40,7 +40,7 @@ void		pf_get_prec(const char *frmt, attrib *ph, uiput *db)
 	}
 }
 
-int			pf_phlen(const char *frmt, uiput *db)
+int			pf_phlen(const char *frmt, t_pfcore *db)
 {
 	char	*strt;
 	char	*flag;

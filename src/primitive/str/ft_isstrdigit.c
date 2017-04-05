@@ -6,12 +6,12 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/01 15:58:49 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:29:37 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/05 11:33:53 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/str.h"
-
+/* make it work with spaces */
 int			ft_isstrdigit(char *str)
 {
 	int		i;

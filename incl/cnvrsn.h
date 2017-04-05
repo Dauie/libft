@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:06:19 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/08 14:42:28 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/05 10:15:44 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include "tbl.h"
 
 int					ft_atoi(char *str);
-char				*ft_itoa(int n);
-char				*ft_itoabse(int nbg, int bse);
+char				*ft_itoa(intmax_t n);
+char				*ft_itoabse(intmax_t nbg, int bse);
 
 #endif

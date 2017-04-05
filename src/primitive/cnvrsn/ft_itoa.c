@@ -6,17 +6,17 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 14:12:45 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:27:34 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/05 10:15:04 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/cnvrsn.h"
 
-char		*ft_itoa(int nbg)
+char		*ft_itoa(intmax_t nbg)
 {
-	long	nb;
-	int		sz;
-	char	*res;
+	intmax_t	nb;
+	size_t		sz;
+	char		*res;
 
 	nb = nbg;
 	sz = ft_numlen((long long)nbg, 10);

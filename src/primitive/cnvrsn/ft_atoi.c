@@ -6,17 +6,17 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 01:10:34 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:27:30 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/05 10:14:20 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/cnvrsn.h"
 
-int			ft_atoi(char *str)
+int				ft_atoi(char *str)
 {
-	int		sign;
-	int		cnt;
-	int		res;
+	int			sign;
+	size_t		cnt;
+	long long	res;
 
 	sign = 1;
 	res = 0;

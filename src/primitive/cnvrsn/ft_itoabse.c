@@ -6,18 +6,18 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 14:12:45 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/09 14:32:25 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/05 10:16:25 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/cnvrsn.h"
 
-char		*ft_itoabse(int nbg, int bse)
+char		*ft_itoabse(intmax_t nbg, int bse)
 {
-	long	nb;
-	int		sz;
-	char	*res;
-	char	*hex;
+	intmax_t	nb;
+	size_t		sz;
+	char		*res;
+	char		*hex;
 
 	nb = nbg;
 	hex = ft_strdup("0123456789ABCDEF");
@@ -37,16 +37,4 @@ char		*ft_itoabse(int nbg, int bse)
 	if (nbg < 0)
 		res[0] = '-';
 	return (res);
-}
-
-int			get_base(char c)
-{
-	int base;
-
-	base = 0;
-	if (c == 'o' || c == 'O')
-		base = 8;
-	else if (c == 'x' || c == 'X')
-		base = 16;
-	return (base);
 }

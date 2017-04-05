@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_mod.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlutt <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/04 10:42:28 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/04 11:07:19 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/05 11:12:13 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ int			pf_parse_mod(const char *frmt, t_pfcore *db, t_frmtnfo *ph)
 		else if (frmt[db->inx] == 'z')
 			ph->mod = 'z';
 	}
-	db->inx = (ft_isupper(ph->mod)) ? (db->inx += 2) : (db->inx += 1);
+	db->inx += (ft_isupper(ph->mod)) ? 2 : 1;
 	return (ph->mod);
 }

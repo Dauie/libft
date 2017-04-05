@@ -6,15 +6,15 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 15:32:35 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:28:52 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/05 10:45:01 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/put.h"
 
-void		ft_putnbr(int n)
+void		ft_putnbr(intmax_t n)
 {
-	long tmp;
+	intmax_t tmp;
 
 	tmp = n;
 	if (tmp < 0)

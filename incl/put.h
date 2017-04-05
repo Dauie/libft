@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:06:59 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/05 10:45:33 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/05 11:06:31 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include "lst.h"
 # include "str.h"
+# include "num.h"
 
 void				ft_putchar(char c);
 void				ft_putstr(char *str);

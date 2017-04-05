@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/05 11:04:47 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/05 11:09:14 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@
 # include "put.h"
 # include "str.h"
 # include "tbl.h"
-
-static char				*g_lhex = {"0123456789abcdef"};
-static char				*g_uhex = {"0123456789ABCDEF"};
 
 typedef union
 {

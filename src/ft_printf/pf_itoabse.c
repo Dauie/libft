@@ -6,11 +6,14 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/04 10:42:15 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/04 15:10:24 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/05 11:08:53 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
+
+static char				*g_lhex = {"0123456789abcdef"};
+static char				*g_uhex = {"0123456789ABCDEF"};
 
 static char	*pf_itoaz(t_frmtnfo *ph)
 {

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/05 10:58:13 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/05 10:59:56 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <string.h>
 # include <stdarg.h>
-# include <stddef.h>
+# include <stdint.h>
 # include "bool.h"
 # include "cnvrsn.h"
 # include "gnl.h"

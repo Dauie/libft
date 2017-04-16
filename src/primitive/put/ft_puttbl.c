@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bool.h                                             :+:      :+:    :+:   */
+/*   ft_puttbl.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cfu <cfu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/15 21:15:52 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/13 10:21:40 by rlutt            ###   ########.fr       */
+/*   Created: 2017/02/08 17:49:22 by cfu               #+#    #+#             */
+/*   Updated: 2017/04/14 21:18:41 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BOOL_H
-# define BOOL_H
+#include "../../../incl/put.h"
+#include "../../../incl/tbl.h"
 
-typedef	enum	e_lean
+void		ft_puttbl(char **tbl)
 {
-	FALSE,
-	TRUE
-}				t_blean;
+	int		i;
+	int		wid;
 
-#endif
+	i = 0;
+	wid = ft_tbllen(tbl);
+	while (i < wid)
+	{
+		ft_putendl(tbl[i]);
+		i++;
+	}
+}

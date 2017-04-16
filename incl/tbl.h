@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:07:17 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/08 15:23:16 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/14 21:21:49 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 size_t				ft_tbllen(char **tbl);
 size_t				ft_itbllen(int **tbl);
+char				**ft_tbldup(char **tbl, int len);
 void				ft_tbldel(char **tbl);
 char				**tblcnew(size_t len);
 long				**tblnnew(size_t len);

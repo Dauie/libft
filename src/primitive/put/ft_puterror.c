@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bool.h                                             :+:      :+:    :+:   */
+/*   ft_puterror.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/15 21:15:52 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/13 10:21:40 by rlutt            ###   ########.fr       */
+/*   Created: 2017/02/21 15:34:15 by rlutt             #+#    #+#             */
+/*   Updated: 2017/04/16 10:31:17 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BOOL_H
-# define BOOL_H
+#include "../../../incl/put.h"
 
-typedef	enum	e_lean
+int		ft_puterror(int ecode)
 {
-	FALSE,
-	TRUE
-}				t_blean;
-
-#endif
+	ft_printf("Exiting due to error: (ecode %d)\n", ecode);
+	if (ecode == -1)
+		ft_printf("General Failure\n");
+	else if (ecode == -2)
+		ft_printf("Please provide a directory.\n");
+	else if (ecode == -3)
+		ft_printf("SYSTEM: ** MALLOC FAILURE **");
+	else if (ecode == -4)
+		ft_printf("SYSTEM: ** FAILURE OPENING DIRECTORY **");
+	return (ecode);
+}

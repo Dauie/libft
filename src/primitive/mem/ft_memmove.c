@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 22:03:03 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/05 11:25:15 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/16 10:03:10 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,20 @@ void		*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		s = s + len - 1;
 		d = d + len - 1;
-		while (len--)
+		while (len)
+		{
 			*d-- = *s--;
+			len--;
+		}
 		return (dst);
 	}
 	else
 	{
-		while (len--)
+		while (len)
+		{
 			*d++ = *s++;
+			len--;
+		}
 		return (dst);
 	}
 }

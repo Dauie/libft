@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/04/03 13:40:21 by rlutt            ###   ########.fr        #
+#    Updated: 2017/04/16 10:20:48 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ CC = gcc
 
 OBJ = *.o
 
-CCFLAGS = -I.incl -g -Wall -Werror -Wextra -c
+CCFLAGS = -I.incl -g -Wall -Werror -Wextra -O3 -c
 
-RM = -rm -f
+RM = -rm -fr
 
 ARCHIVE = ar rc
 
@@ -56,7 +56,8 @@ PUT_SRC = 	src/primitive/put/ft_putchar.c src/primitive/put/ft_putchar_fd.c \
 			src/primitive/put/ft_putnbr.c src/primitive/put/ft_putnbr_fd.c \
 			src/primitive/put/ft_putstr.c src/primitive/put/ft_putstrrev.c \
 			src/primitive/put/ft_putstr_fd.c src/primitive/put/ft_putnlst.c \
-			src/primitive/put/ft_putclst.c
+			src/primitive/put/ft_putclst.c src/primitive/put/ft_puterror.c \
+			src/primitive/put/ft_puttbl.c
 
 STR_SRC = 	src/primitive/str/ft_cntbnespc.c \
 			src/primitive/str/ft_cntbspc.c src/primitive/str/ft_cnttotspc.c \
@@ -83,14 +84,14 @@ STR_SRC = 	src/primitive/str/ft_cntbnespc.c \
 TBL_SRC = 	src/primitive/tbl/ft_tbldel.c src/primitive/tbl/ft_tbllen.c \
 			src/primitive/tbl/ft_tblcnew.c src/primitive/tbl/ft_tblnnew.c \
 			src/primitive/tbl/ft_tbllen.c src/primitive/tbl/ft_itbllen.c \
-			src/primitive/tbl/ft_tbladdl.c
+			src/primitive/tbl/ft_tbladdl.c src/primitive/tbl/ft_tbldup.c
 
 GNL_SRC =	src/futil/gnl/gnl.c
 
 PRINTF_SRC =src/ft_printf/ft_printf.c src/ft_printf/pf_initstructs.c \
 			src/ft_printf/pf_is.c src/ft_printf/pf_print_s.c \
 			src/ft_printf/pf_print_i.c src/ft_printf/pf_mod.c\
-			src/ft_printf/pf_puterror.c src/ft_printf/pf_ihelp.c\
+			src/ft_printf/pf_ihelp.c\
 			src/ft_printf/pf_putstr.c src/ft_printf/pf_typechr.c \
 			src/ft_printf/pf_width.c src/ft_printf/pf_print_c.c \
 			src/ft_printf/pf_putchar.c src/ft_printf/pf_putnbr.c\

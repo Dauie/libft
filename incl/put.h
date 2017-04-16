@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:06:59 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/05 11:06:31 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/14 21:11:49 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 # include "str.h"
 # include "num.h"
 
+void				ft_puttbl(char **tbl);
+int					ft_printf(const char *frmt, ...);
+int					ft_puterror(int ecode);
 void				ft_putchar(char c);
 void				ft_putstr(char *str);
 void				ft_putstrrev(char *str);

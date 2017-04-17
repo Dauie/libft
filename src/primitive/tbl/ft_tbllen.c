@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:27:30 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/14 21:27:45 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/16 17:13:02 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ size_t		ft_tbllen(char **tbl)
 	char	**tmp;
 
 	i = 0;
-	tmp = tbl;
-	while (tmp[i] != '\0')
-		i++;
+	if (tbl)
+	{
+		tmp = tbl;
+		while (tmp[i])
+			i++;
+	}
 	return (i);
 }

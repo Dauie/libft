@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 17:57:11 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/16 10:01:00 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/16 17:23:28 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 char		*ft_strdup(const char *src)
 {
-	int		i;
 	char	*res;
+	int 	len;
 
-	i = -1;
-	if (!(res = ft_strnew(ft_strlen(src))))
+	len = ft_strlen(src);
+	if (!(res = ft_strnew(len)))
 		return (NULL);
-	while (src[++i])
-		res[i] = src[i];
-	res[i] = '\0';
+	ft_strcpy(res, (char *)src);
 	return (res);
 }

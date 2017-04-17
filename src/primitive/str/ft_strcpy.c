@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 14:06:09 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/05 11:32:54 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/04/16 17:21:39 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char		*ft_strcpy(char *dst, char *src)
 	int		i;
 
 	i = -1;
-	while (src[++i] != '\0')
+	while (src[++i])
 		dst[i] = src[i];
 	dst[i] = '\0';
 	return (dst);

@@ -6,22 +6,23 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/01 15:58:49 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/05 11:33:53 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/05/12 21:28:32 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/str.h"
-/* make it work with spaces */
+
 int			ft_isstrdigit(char *str)
 {
 	int		i;
 
-	i = 0;
-	while (str[i])
+	i = -1;
+	while (str[++i])
 	{
-		if (ft_isdigit(str[i]) == 0)
+		if (ft_isspc(str[i]))
+			continue;
+		if (!ft_isdigit(str[i]))
 			return (0);
-		i++;
 	}
 	return (1);
 }

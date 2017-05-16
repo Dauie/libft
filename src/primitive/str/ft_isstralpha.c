@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/01 15:59:15 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/05 11:34:18 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/05/12 21:23:13 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@ int			ft_isstralpha(char *str)
 {
 	int		i;
 
-	i = 0;
-	while (str[i])
+	i = -1;
+	while (str[++i])
 	{
+		if (ft_isspc(str[i]))
+			continue;
 		if (ft_isalpha(str[i]) == 0)
 			return (0);
-		i++;
 	}
 	return (1);
 }

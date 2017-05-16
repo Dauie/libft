@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/04/16 10:20:48 by rlutt            ###   ########.fr        #
+#    Updated: 2017/04/18 18:25:56 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 
 OBJ = *.o
 
-CCFLAGS = -I.incl -g -Wall -Werror -Wextra -O3 -c
+CCFLAGS = -I.incl -g -Wall -Werror -Wextra -O0 -c
 
 RM = -rm -fr
 

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 17:11:12 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/01 19:28:19 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/05/15 11:03:01 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 void		ft_putendl(char const *s)
 {
-	int i;
-
-	i = -1;
-	if (s != NULL)
-		while (s[++i])
-			ft_putchar(s[i]);
+	write(1, s, ft_strlen(s));
 	ft_putchar('\n');
 }

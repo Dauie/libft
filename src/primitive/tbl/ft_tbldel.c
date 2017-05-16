@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/01 14:24:02 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/16 11:06:50 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/05/12 21:11:18 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,21 @@
 
 void		ft_tbldel(char **tbl)
 {
-	char 	**tmp;
-	int 	i;
+	char	**tmp;
+	int		i;
 
 	i = 0;
-	tmp = tbl;
+	if (tbl)
+		tmp = tbl;
+	else
+		return ;
 	while (tmp[i])
 	{
-		free(tmp[i]);
+		if (tmp[i])
+		{
+			free(tmp[i]);
+			tmp[i] = NULL;
+		}
 		i++;
 	}
 	free(tbl);

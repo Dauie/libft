@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:06:01 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/22 17:17:51 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/05/12 21:16:15 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ int					ft_isalpha(int c);
 int					ft_isalnum(int c);
 int					ft_isupper(int c);
 int					ft_islower(int c);
+int					ft_isspc(int c);
 
 #endif

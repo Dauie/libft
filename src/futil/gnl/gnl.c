@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/29 11:59:54 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/04 11:44:58 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/05/18 21:34:47 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ static size_t		ft_xtrctline(t_list *db, char **line)
 	if (!(db->content = ft_strdup(ep + 1)))
 		return (-1);
 	ft_strdel(&bufftmp);
-	ft_strdel(&ep);
 	return (1);
 }
 

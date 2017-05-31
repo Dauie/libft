@@ -44,6 +44,6 @@ int			pf_parse_mod(const char *frmt, t_pfcore *db, t_frmtnfo *ph)
 		else if (frmt[db->inx] == 'z')
 			ph->mod = 'z';
 	}
-	db->inx = (ft_isupper(ph->mod)) ? (db->inx += 2) : (db->inx += 1);
+	db->inx += (ft_isupper(ph->mod)) ? 2 : 1;
 	return (ph->mod);
 }

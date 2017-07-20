@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tbl.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:07:17 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/16 17:14:07 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/07/20 12:23:47 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ void				ft_tbldel(char **tbl);
 char				**tblcnew(size_t len);
 long				**tblnnew(size_t len);
 char				**ft_tbladdl(char **tbl, char *line);
+char            	**ft_tblrmline(char **tbl, char *rm, int len);
+
 
 #endif

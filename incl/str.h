@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:07:08 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/08 15:16:31 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/05/21 20:37:18 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ char				*ft_strncat(char *s1, const char *s2, size_t n);
 char				*ft_strmapi(char const *s, char(*f)(unsigned int, char));
 char				*ft_strchr(const char *s, int c);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_dirjoin(const char *s1, const char *s2);
 char				*ft_strmap(char const *s, char(*f)(char));
 char				*ft_strdup(const char *src);
 char				*ft_strndup(const char *src, size_t len);

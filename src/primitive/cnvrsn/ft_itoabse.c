@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 14:12:45 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/05 10:16:25 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/05/23 08:29:02 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ char		*ft_itoabse(intmax_t nbg, int bse)
 	char		*hex;
 
 	nb = nbg;
-	hex = ft_strdup("0123456789ABCDEF");
-	sz = ft_numlen((long long)nbg, 10);
+	hex = "0123456789ABCDEF";
+	sz = ft_numlen((long long)nbg, bse);
 	if (!(res = ((char *)ft_memalloc(sz-- + 1))))
 		return (NULL);
 	if (nbg == 0)

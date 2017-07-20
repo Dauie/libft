@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+         #
+#    By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/04/18 18:25:56 by rlutt            ###   ########.fr        #
+#    Updated: 2017/07/20 12:25:34 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,12 +79,14 @@ STR_SRC = 	src/primitive/str/ft_cntbnespc.c \
 			src/primitive/str/ft_strrchr.c src/primitive/str/ft_strrev.c \
 			src/primitive/str/ft_strsplit.c src/primitive/str/ft_strstr.c \
 			src/primitive/str/ft_strsub.c src/primitive/str/ft_strtrim.c \
-			src/primitive/str/ft_tolower.c src/primitive/str/ft_toupper.c
+			src/primitive/str/ft_tolower.c src/primitive/str/ft_toupper.c \
+			src/primitive/str/ft_dirjoin.c
 
 TBL_SRC = 	src/primitive/tbl/ft_tbldel.c src/primitive/tbl/ft_tbllen.c \
 			src/primitive/tbl/ft_tblcnew.c src/primitive/tbl/ft_tblnnew.c \
 			src/primitive/tbl/ft_tbllen.c src/primitive/tbl/ft_itbllen.c \
-			src/primitive/tbl/ft_tbladdl.c src/primitive/tbl/ft_tbldup.c
+			src/primitive/tbl/ft_tbladdl.c src/primitive/tbl/ft_tbldup.c \
+			src/primitive/tbl/ft_tblrmline.c
 
 GNL_SRC =	src/futil/gnl/gnl.c
 

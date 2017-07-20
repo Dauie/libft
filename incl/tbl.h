@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:07:17 by rlutt             #+#    #+#             */
-/*   Updated: 2017/07/20 12:23:47 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/07/20 13:57:42 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char				**tblcnew(size_t len);
 long				**tblnnew(size_t len);
 char				**ft_tbladdl(char **tbl, char *line);
 char            	**ft_tblrmline(char **tbl, char *rm, int len);
+int					ft_tblrepline(char **tbl, char *substr, char *repline);
 
 
 #endif

@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/07/20 12:25:34 by rlutt            ###   ########.fr        #
+#    Updated: 2017/07/20 13:59:21 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,7 +86,7 @@ TBL_SRC = 	src/primitive/tbl/ft_tbldel.c src/primitive/tbl/ft_tbllen.c \
 			src/primitive/tbl/ft_tblcnew.c src/primitive/tbl/ft_tblnnew.c \
 			src/primitive/tbl/ft_tbllen.c src/primitive/tbl/ft_itbllen.c \
 			src/primitive/tbl/ft_tbladdl.c src/primitive/tbl/ft_tbldup.c \
-			src/primitive/tbl/ft_tblrmline.c
+			src/primitive/tbl/ft_tblrmline.c src/primitive/tbl/ft_tblrepline.c
 
 GNL_SRC =	src/futil/gnl/gnl.c
 

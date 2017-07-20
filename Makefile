@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2017/07/20 13:59:21 by rlutt            ###   ########.fr        #
+#    Updated: 2017/07/20 14:59:09 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,7 @@ STR_SRC = 	src/primitive/str/ft_cntbnespc.c \
 			src/primitive/str/ft_strsplit.c src/primitive/str/ft_strstr.c \
 			src/primitive/str/ft_strsub.c src/primitive/str/ft_strtrim.c \
 			src/primitive/str/ft_tolower.c src/primitive/str/ft_toupper.c \
-			src/primitive/str/ft_dirjoin.c
+			src/primitive/str/ft_dirjoin.c src/primitive/str/ft_strstrip.c
 
 TBL_SRC = 	src/primitive/tbl/ft_tbldel.c src/primitive/tbl/ft_tbllen.c \
 			src/primitive/tbl/ft_tblcnew.c src/primitive/tbl/ft_tblnnew.c \

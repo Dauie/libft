@@ -3,33 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tbldel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/01 14:24:02 by rlutt             #+#    #+#             */
-/*   Updated: 2017/05/12 21:11:18 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/07/21 13:38:18 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/tbl.h"
-
-void		ft_tbldel(char **tbl)
+#include "../../../incl/printf.h"
+void		ft_tbldel(char **tbl, int len)
 {
 	char	**tmp;
 	int		i;
 
-	i = 0;
-	if (tbl)
+	i = -1;
+	if (tbl && *tbl)
 		tmp = tbl;
 	else
 		return ;
-	while (tmp[i])
-	{
-		if (tmp[i])
-		{
-			free(tmp[i]);
-			tmp[i] = NULL;
-		}
-		i++;
+	while (++i < len && tmp[i])
+	{	
+		free(tmp[i]);
+		tmp[i] = NULL;
 	}
 	free(tbl);
 	tbl = NULL;

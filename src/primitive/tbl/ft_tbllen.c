@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tbllen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:27:30 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/16 17:13:02 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/07/21 12:16:57 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 size_t		ft_tbllen(char **tbl)
 {
 	size_t	i;
-	char	**tmp;
 
 	i = 0;
-	if (tbl)
+	if (tbl && *tbl)
 	{
-		tmp = tbl;
-		while (tmp[i])
+		while (tbl[i])
 			i++;
 	}
 	return (i);

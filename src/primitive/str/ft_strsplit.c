@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 16:48:19 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:31:03 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/07/21 10:51:12 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char			**ft_strsplit(char const *s, char c)
 	if (!s || !c)
 		return (NULL);
 	wcnt = ft_cntwrds((char*)s, c);
-	if (!(res = (char **)ft_memalloc(sizeof(char *) * (wcnt + 1))))
+	if (!(res = (char **)ft_memalloc(sizeof(char *) * (wcnt + 2))))
 		return (NULL);
 	while (s[i] && s[i] == c)
 		i++;

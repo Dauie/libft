@@ -108,6 +108,7 @@ ft_strcat	src/primitive/str/ft_strcat.c	/^char	*ft_strcat(char *s1, const char *
 ft_strchr	src/primitive/str/ft_strchr.c	/^char		*ft_strchr(const char *s, int c)$/;"	f
 ft_strclr	src/primitive/str/ft_strclr.c	/^void	ft_strclr(char *s)$/;"	f
 ft_strcmp	src/primitive/str/ft_strcmp.c	/^int				ft_strcmp(const char *s1, const char *s2)$/;"	f
+ft_strcntchar	src/primitive/str/ft_strstrip.c	/^static int ft_strcntchar(char *str, int c)$/;"	f	file:
 ft_strcpy	src/primitive/str/ft_strcpy.c	/^char		*ft_strcpy(char *dst, char *src)$/;"	f
 ft_strdel	src/primitive/str/ft_strdel.c	/^void		ft_strdel(char **as)$/;"	f
 ft_strdup	src/primitive/str/ft_strdup.c	/^char		*ft_strdup(const char *src)$/;"	f
@@ -130,6 +131,7 @@ ft_strrchr	src/primitive/str/ft_strrchr.c	/^char		*ft_strrchr(const char *s, int
 ft_strrev	src/primitive/str/ft_strrev.c	/^char	*ft_strrev(char *str)$/;"	f
 ft_strsplit	src/primitive/str/ft_strsplit.c	/^char			**ft_strsplit(char const *s, char c)$/;"	f
 ft_strstr	src/primitive/str/ft_strstr.c	/^char				*ft_strstr(const char *big, const char *little)$/;"	f
+ft_strstrip	src/primitive/str/ft_strstrip.c	/^void ft_strstrip(char *str, int c)$/;"	f
 ft_strsub	src/primitive/str/ft_strsub.c	/^char		*ft_strsub(char const *s, unsigned int start, size_t len)$/;"	f
 ft_strtrim	src/primitive/str/ft_strtrim.c	/^char			*ft_strtrim(char const *s)$/;"	f
 ft_tbladdl	src/primitive/tbl/ft_tbladdl.c	/^char		**ft_tbladdl(char **tbl, char *line)$/;"	f
@@ -138,7 +140,8 @@ ft_tbldel	src/primitive/tbl/ft_tbldel.c	/^void		ft_tbldel(char **tbl)$/;"	f
 ft_tbldup	src/primitive/tbl/ft_tbldup.c	/^char		**ft_tbldup(char **tbl, int len)$/;"	f
 ft_tbllen	src/primitive/tbl/ft_tbllen.c	/^size_t		ft_tbllen(char **tbl)$/;"	f
 ft_tblnnew	src/primitive/tbl/ft_tblnnew.c	/^long		**ft_tblnnew(int len)$/;"	f
-ft_tblrmline	src/primitive/tbl/ft_tblrmline.c	/^char            **ft_tblrmline(char **tbl, char *rm, int len)$/;"	f
+ft_tblrepline	src/primitive/tbl/ft_tblrepline.c	/^int		ft_tblrepline(char **tbl, char *substr, char *repline)$/;"	f
+ft_tblrmline	src/primitive/tbl/ft_tblrmline.c	/^char			**ft_tblrmline(char **tbl, char *rm, int len)$/;"	f
 ft_tolower	src/primitive/str/ft_tolower.c	/^int		ft_tolower(int c)$/;"	f
 ft_toupper	src/primitive/str/ft_toupper.c	/^int		ft_toupper(int c)$/;"	f
 ft_xtrctline	src/futil/gnl/gnl.c	/^static size_t		ft_xtrctline(t_list *db, char **line)$/;"	f	file:

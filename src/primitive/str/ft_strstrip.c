@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 14:18:12 by rlutt             #+#    #+#             */
-/*   Updated: 2017/07/20 21:58:07 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/07/22 12:19:04 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,40 +28,21 @@ static int ft_strcntchar(char *str, int c)
 	return (cnt);
 }
 
-void ft_strstrip(char **str, int c)
+char 	*ft_strstrip(char *str, int c)
 {
-	int 	i;
-	int 	j;
-	char 	*rep;
+	char *res;
+	int i;
+	int j;
 
-	rep = NULL;
-	// i = -1;
-	// j = -1;
-	// ft_printf("got in\n");
-	if (!str || !c) {
-		// ft_printf("test\n");
-		return ;
-	}
-	if (!(rep = ft_strnew(ft_strlen(*str) -  ft_strcntchar(*str, c))))
+	i = -1;
+	j = -1;
+	res = NULL;
+	if (!(res = ft_strnew(ft_strlen(str) - ft_strcntchar(str, c))))
+		return (NULL);
+	while(str[++i])
 	{
-		// ft_printf("yup\n");
-		return ;
-		}
-		printf("%p\n", *str);
-		ft_printf("%s\n", *str);
-	j = 0;
-	i = 0;
-	while (*str[j])
-	{
-		if (*str[j] != c) {
-			rep[i] = *str[j];
-			i++;
-		}
-		j++;
+		if (str[i] != (char)c)
+			res[++j] = str[i];
 	}
-	ft_strcpy(rep, *str);
-	// ft_printf("%s\n", rep);
-	// free(str);
-	ft_printf("%p", *str);
-	*str = rep;
+	return(res);
 }

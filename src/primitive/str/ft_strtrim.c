@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:33:00 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:31:17 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/07/23 17:55:09 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,25 @@ char			*ft_strtrim(char const *s)
 	char		*ec;
 	char		*res;
 	size_t		i;
+	char 		*tmp;
+
 
 	i = 0;
-	if (!s)
+	tmp = (char*)s;
+	if (!tmp)
 		return (NULL);
-	if (ft_cnttotspc((char *)s) == ft_strlen(s))
+	if (ft_cnttotspc((char *)tmp) == ft_strlen(tmp))
 		return (ft_strdup(""));
-	ec = (char *)s + (ft_strlen(s) - 1);
-	while ((*ec == ' ' || *ec == '\n' || *ec == '\t') && *s)
+	ec = (char *)tmp + (ft_strlen(tmp) - 1);
+	while ((*ec == ' ' || *ec == '\n' || *ec == '\t'))
 		ec--;
 	ec++;
-	while ((*s == ' ' || *s == '\n' || *s == '\t') && *s)
-		s++;
-	res = ft_strnew(ec - s);
-	if (!res)
+	while ((*tmp == ' ' || *tmp == '\n' || *tmp == '\t') && *tmp)
+		tmp++;
+	if (!(res = ft_strnew(ec - tmp)))
 		return (NULL);
-	while ((s < ec) && *s)
-		res[i++] = *s++;
+	while ((tmp < ec) && *tmp)
+		res[i++] = *tmp++;
 	res[i] = '\0';
 	return (res);
 }

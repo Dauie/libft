@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 12:22:57 by rlutt             #+#    #+#             */
-/*   Updated: 2017/07/22 11:47:14 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/07/24 14:21:24 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ char			**ft_tblrmline(char **tbl, char *rm, int len)
 			*tmp = ft_strdup(tbl[i]);
 			tmp++;
 		}
+		tmp = 0;
 	}
 	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 12:22:57 by rlutt             #+#    #+#             */
-/*   Updated: 2017/07/24 14:21:24 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/07/24 15:42:39 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ char			**ft_tblrmline(char **tbl, char *rm, int len)
 	if (!(res = (char **)ft_memalloc(sizeof(char *) * len)))
 		return (NULL);
 	tmp = res;
-	while (++i < len)
+	while (++i < len && tbl[i])
 	{
 		if (ft_strncmp(tbl[i], rm, ft_strlen(rm)) != 0)
 		{
 			*tmp = ft_strdup(tbl[i]);
 			tmp++;
 		}
-		tmp = 0;
+		*tmp = 0;
 	}
 	return (res);
 }

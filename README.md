@@ -249,7 +249,7 @@ the contents excluding lines identically matching char *rm.
 
 #### ft_crafttbl
 
-This is a variatic function that will take in an int len, and len
+This is a variadic function that will take in an int len, and len
 number of char *s. A new char ** will be allocated the length of len
 and all char *s entered as arguments will be copied into the table
 and returned.

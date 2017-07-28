@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 16:48:19 by rlutt             #+#    #+#             */
-/*   Updated: 2017/07/24 16:11:49 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/07/26 13:57:35 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char			**ft_strsplit(char const *s, char c)
 	if (!s || !c)
 		return (NULL);
 	wcnt = ft_cntwrds((char*)s, c);
-	if (!(res = (char **)ft_memalloc(sizeof(char *) * (wcnt + 2))))
+	if (!(res = (char **)ft_memalloc(sizeof(char *) * (wcnt + 1))))
 		return (NULL);
 	while (s[i] && s[i] == c)
 		i++;

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:07:17 by rlutt             #+#    #+#             */
-/*   Updated: 2017/07/21 11:49:53 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/07/27 19:19:31 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void				ft_tbldel(char **tbl, int len);
 char				**tblcnew(size_t len);
 long				**tblnnew(size_t len);
 char				**ft_tbladdl(char **tbl, char *line);
-char            	**ft_tblrmline(char **tbl, char *rm, int len);
+char				**ft_tblrmline(char **tbl, char *rm, int len);
 int					ft_tblrepline(char **tbl, char *substr, char *repline);
-
+char				**ft_crafttbl(size_t amt, ...);
 
 #endif

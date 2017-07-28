@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:07:38 by rlutt             #+#    #+#             */
-/*   Updated: 2017/03/08 15:33:21 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/07/27 17:20:32 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 typedef	struct		s_list
 {
 	long long		rbyt;
-	void			*content;
+	char			*content;
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 12:22:57 by rlutt             #+#    #+#             */
-/*   Updated: 2017/07/24 15:42:39 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/07/27 19:24:30 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "../../../incl/printf.h"
 
 char			**ft_tblrmline(char **tbl, char *rm, int len)
-{	
+{
 	int		i;
 	char	**res;
 	char	**tmp;
@@ -31,6 +31,8 @@ char			**ft_tblrmline(char **tbl, char *rm, int len)
 			*tmp = ft_strdup(tbl[i]);
 			tmp++;
 		}
+		else
+			ft_strdel(&tbl[i]);
 		*tmp = 0;
 	}
 	return (res);

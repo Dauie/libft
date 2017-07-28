@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 13:49:03 by rlutt             #+#    #+#             */
-/*   Updated: 2017/07/20 14:00:00 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/07/27 19:27:19 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		ft_tblrepline(char **tbl, char *substr, char *repline)
 {
 	int i;
-	
+
 	i = -1;
 	if (tbl && substr && repline)
 	{

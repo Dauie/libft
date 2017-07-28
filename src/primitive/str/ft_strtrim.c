@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:33:00 by rlutt             #+#    #+#             */
-/*   Updated: 2017/07/23 17:55:09 by rlutt            ###   ########.fr       */
+/*   Updated: 2017/07/27 19:31:30 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ char			*ft_strtrim(char const *s)
 	char		*ec;
 	char		*res;
 	size_t		i;
-	char 		*tmp;
-
+	char		*tmp;
 
 	i = 0;
 	tmp = (char*)s;

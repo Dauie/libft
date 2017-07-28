@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnl.h                                              :+:      :+:    :+:   */
+/*   ft_crafttbl.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/31 15:16:54 by rlutt             #+#    #+#             */
-/*   Updated: 2017/07/27 19:20:26 by rlutt            ###   ########.fr       */
+/*   Created: 2017/07/25 14:41:42 by rlutt             #+#    #+#             */
+/*   Updated: 2017/07/27 19:25:47 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GNL_H
-# define GNL_H
+#include "../../../incl/tbl.h"
+#include <stdarg.h>
 
-# define BUFF_SIZE 256
+char		**ft_crafttbl(size_t amt, ...)
+{
+	int		i;
+	char	**res;
+	char	*tmp;
+	va_list	ap;
 
-# include <fcntl.h>
-# include <unistd.h>
-# include "char.h"
-# include "bool.h"
-# include "cnvrsn.h"
-# include "gnl.h"
-# include "lst.h"
-# include "mem.h"
-# include "num.h"
-# include "printf.h"
-# include "put.h"
-# include "str.h"
-# include "tbl.h"
-
-int				gnl(const int fd, char **line);
-
-#endif
+	va_start(ap, amt);
+	i = -1;
+	res = NULL;
+	tmp = NULL;
+	if (!(res = ft_memalloc(sizeof(char *) * (amt + 1))))
+		return (NULL);
+	while (++i < (int)amt)
+	{
+		tmp = va_arg(ap, char *);
+		if (!(res[i] = ft_strdup(tmp)))
+			return (NULL);
+	}
+	va_end(ap);
+	return (res);
+}

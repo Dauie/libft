@@ -109,7 +109,7 @@ if strings are identical to each other, one if the comparison fails.
 
 #### ft_strncmp:
 
-lexicographically comparison of string one and string two for n
+lexicographical comparison of string one and string two for n
 bytes. Returns 0 if strings are identical to each other, one if the comparison
 fails.
 
@@ -233,6 +233,55 @@ new array of chars.
 #### ft_putchar:
 
 Function puts single character to the standard output.
+
+#### ft_tbldup:
+
+Function receives a char** and a length. ft_tbldup will then allocate a new
+memory space the same size as the table given, copy over the contents, and
+return a pointer at the beginning of the new table.
+
+#### ft_tblrmline:
+
+Table manipulation function that will take a char** tbl, a char *rm,
+and an int len. ft_tblrmline will allocate a new space the size
+of the table given minus one line, then proceed to copy over 
+the contents excluding lines identically matching char *rm.
+
+#### ft_crafttbl
+
+This is a variatic function that will take in an int len, and len
+number of char *s. A new char ** will be allocated the length of len
+and all char *s entered as arguments will be copied into the table
+and returned.
+
+#### ft_tbllen
+
+Function will take a char** as an argument and return an int representing
+the length of the table.
+
+#### ft_tblrepline
+
+ft_tblrepline will will take in a char **tbl, a char *substr, and a char*
+repline. If char *substr is found in char **tbl, it will be replaced in-place.
+Nothing is returned.
+
+#### ft_printf
+
+see 'man printf'
+
+#### gnl
+
+The gnl function will take a const int fd, and a char **line.
+gnl will open the file descriptor given, and read from it until
+a newline character is found. Content up to the newline character
+will be given to 'line'.
+Either a 1, 0, or -1 will be returned.
+1 in the case there is more content to be had from fd.
+0 in the case of EOF or end of file.
+-1 in the case of error.
+
+
+## slowly going to get all of the documentation done.
 
 /***
 This code is unlicensed.

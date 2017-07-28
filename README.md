@@ -261,7 +261,7 @@ the length of the table.
 
 #### ft_tblrepline
 
-ft_tblrepline will will take in a char **tbl, a char *substr, and a char*
+ft_tblrepline will will take in a char **tbl, a char * substr, and a char *
 repline. If char *substr is found in char **tbl, it will be replaced in-place.
 Nothing is returned.
 

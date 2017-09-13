@@ -1,11 +1,6 @@
 # libft
 
-This started as my 1st Project @ 42USA but is now just a continuously growing
-library that is product of my time here at 42.
-Please use my code for anything you like. Modify it for your own use, etc.
-If you have suggestions for improvements, those are welcome just the same.
-My email can be found at the top of each file and at the bottom of this
-document.
+Libft is a personal 'standard' library written in C. I am continuously adding to it as I write the majority of my projects for school with this library. If you're insane and you like reviewing C code, please let me know if you think I've made a mistake, or you think I can improve in any way. 
 
 #Libft - Descriptions
 
@@ -32,9 +27,9 @@ of data type. Function returns string one.
 
 #### ft_memchr:
 
-searches given string for n bytes and locates first occurrence of
-character c. Function returns pointer to the first found occurrence character c
-or  pointer to NULL.
+searches the given string for n bytes and locates the first occurrence of
+character c. The function returns pointer to the first found occurrence character c
+or pointer to NULL.
 
 #### ft_memcmp:
 
@@ -43,7 +38,7 @@ the strings are identical, or difference between first two differing bytes.
 
 #### ft_strlen:
 
-Takes in a string and returns an count of characters until a
+Takes in a string and returns a count of characters until a
 terminating '\0' character.
 
 #### ft_strdup:
@@ -53,14 +48,14 @@ string, does the copy, and returns a pointer to it.
 
 #### ft_strcpy:
 
-copies string two into string on (including terminating '\0'
-character). Function returns string one.
+copies string two into the string on (including terminating '\0'
+character). The function returns string one.
 
 #### ft_strncpy:
 
 copies n characters from string two into string one. If the length
 string two is less than string one the remainder of string one is filled with
-'\0' characters. else string one is not terminated. Function returns s1.
+'\0' characters. else string one is not terminated. The function returns s1.
 
 #### ft_strcat:
 
@@ -70,35 +65,35 @@ of null-terminated string one then adds a '\0' character.
 #### ft_strncat:
 
 Function appends n characters of string two to string one and
-terminate. Function returns string one.
+terminate. The function returns string one.
 
 #### ft_strlcat:
 
-Functions appends at max (size - strlen(dst) - 1) characters of
+Functions append at max (size - strlen(dst) - 1) characters of
 dst string to src string and NULL-terminates the string. Function return total
 length of string it tried to create.
 
 #### ft_strchr:
 
-locates first occurrence of character c within s string. null
+locates the first occurrence of character c within s string. A null
 character is part of the string. Return pointer to the first occurrence of c
 character or NULL.
 
 #### ft_strrchr:
 
-locates last occurrence of character c within s string. null
-character is part of string. Function return pointer to last occurrence of
+locates the last occurrence of character c within s string. a null
+character is part of the string. Function return pointer to the last occurrence of
 character c or NULL.
 
 #### ft_strstr:
 
-Locates first occurrence of string two inside of string one. Returns
+Locates the first occurrence of string two inside of string one. Returns
 string one if string two is empty. Returns NULL if no match, else pointer to
 start of string one.
 
 #### ft_strnstr:
 
-Locates first occurrence of string two inside of string one for n
+Locates the first occurrence of string two inside of string one for n
 bytes of string two. Returns string one if string two is empty. Returns NULL if
 no match, else pointer to start of string one.
 
@@ -119,7 +114,7 @@ Function converts given string to integer.
 
 #### ft_isalpha:
 
-Function tests for any character in alphabet, upper or lower case.
+Function tests for any character in the alphabet, upper or lower case.
 
 #### ft_isdigit:
 
@@ -148,8 +143,8 @@ Function converts upper-case alpha to lower-case
 
 #### ft_memalloc:
 
-Function allocates memory equal to size of 'size'. Returns a
-pointer to new address of allocated space.
+The function allocates memory equal to the size of 'size'. Returns a
+pointer to the new address of allocated space.
 
 #### ft_memdel:
 
@@ -158,7 +153,7 @@ Function utilizes free() to return memory that is pointed to by
 
 #### ft_strnew:
 
-Function allocates new memory space of size 'size' and fills it
+The function allocates new memory space of size 'size' and fills it
 with '\0'. Returns pointer to new space.
 
 #### ft_strdel:
@@ -182,61 +177,61 @@ array s. No return.
 
 #### ft_strmap:
 
-Function applies *f(char) to every character in array and creates
-a fresh string to store the return of *f() on each character. Function returns
-a pointer to new string.
+The function applies *f(char) to every character in the array and creates
+a fresh string to store the return of *f() on each character. The function returns
+a pointer to the new string.
 
 #### ft_strmapi:
 
 Function applies f*(unsigned int, char) to every character in
-array and creates fresh string to store the return of *f() on each character.
-Function returns pointer to the fresh string.
+array and creates a fresh string to store the return of *f() on each character.
+The function returns a pointer to the fresh string.
 
 #### ft_strequ:
 
-Function does lexicographical comparison between string one and
+The function does a lexicographical comparison between string one and
 string two. Function returns (1) if strings equal, else returns (0).
 
 #### ft_strnequ:
 
-Function does lexicographical comparison of strings for n byres.
+The function does a lexicographical comparison of strings for n byres.
 Function returns (1) if strings are equal, else returns (0).
 
 #### ft_strsub:
 
-Function allocates memory equal to size of s, and copies n bytes.
+The function allocates memory equal to size of s, and copies n bytes.
 Return copy of s.
 
 #### ft_strjoin:
 
-Function allocates memory equal to the size of the combined
+The function allocates memory equal to the size of the combined
 lengths of the strings and returns the string one and string two concatenated
 and null-terminated. Returns result or NULL.
 
 #### ft_strtrim:
 
-Function allocates memory equal to the size of the given string
+The function allocates memory equal to the size of the given string
 without space at the beginning or end, then copies the string without space at
 the beginning or end. Returns the trimmed string, or NULL.
 
 #### ft_strsplit:
 
-Function takes in a string, separates it into entities according
-to the delimeter c and returns list of arrays. if no c, list is composed of
-single array. Return new array or NULL.
+The function takes in a string, separates it into entities according
+to the delimiter c and returns a list of arrays. if no c, the list is  
+composed of a single array. Return new array or NULL.
 
 #### ft_itoa:
 
 Function takes int n converts it to a character string and returns
-new array of chars.
+a new array of chars.
 
 #### ft_putchar:
 
-Function puts single character to the standard output.
+Function puts the single character to the standard output.
 
 #### ft_tbldup:
 
-Function receives a char** and a length. ft_tbldup will then allocate a new
+The function receives a char** and a length. ft_tbldup will then allocate a new
 memory space the same size as the table given, copy over the contents, and
 return a pointer at the beginning of the new table.
 
@@ -261,7 +256,7 @@ the length of the table.
 
 #### ft_tblrepline
 
-ft_tblrepline will will take in a char **tbl, a char * substr, and a char *
+ft_tblrepline will take in a char **tbl, a char * substr, and a char *
 repline. If char *substr is found in char **tbl, it will be replaced in-place.
 Nothing is returned.
 
@@ -277,7 +272,7 @@ a newline character is found. Content up to the newline character
 will be given to 'line'.
 Either a 1, 0, or -1 will be returned.
 1 in the case there is more content to be had from fd.
-0 in the case of EOF or end of file.
+0 in the case of EOF or end of the file.
 -1 in the case of error.
 
 
@@ -285,6 +280,6 @@ Either a 1, 0, or -1 will be returned.
 
 /***
 This code is unlicensed.
-Code is free to be used and modified, but please pay mention to its author.
+The code is free to be used and modified, but please pay mention to its author.
 All code authored by Robert Wyatt Lutt - Ausdauerr@gmail.com
 ***/

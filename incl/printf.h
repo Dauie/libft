@@ -22,7 +22,6 @@
 # include "lst.h"
 # include "mem.h"
 # include "num.h"
-# include "printf.h"
 # include "put.h"
 # include "str.h"
 # include "tbl.h"

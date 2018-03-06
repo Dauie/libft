@@ -46,8 +46,7 @@ MEM_SRC =	src/primitive/mem//ft_bzero.c src/primitive/mem/ft_memalloc.c \
 			src/primitive/mem/ft_memccpy.c src/primitive/mem/ft_memchr.c \
 			src/primitive/mem/ft_memcmp.c src/primitive/mem/ft_memcpy.c \
 			src/primitive/mem/ft_memdel.c src/primitive/mem/ft_memmove.c \
-			src/primitive/mem/ft_memset.c src/primitive/mem/ft_realloc.c \
-			src/primitive/mem/ft_calloc.c
+			src/primitive/mem/ft_memset.c
 
 NUM_SRC = 	src/primitive/num/ft_numlen.c
 

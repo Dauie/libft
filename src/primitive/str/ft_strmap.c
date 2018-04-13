@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 21:58:40 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:30:29 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/04/13 13:32:46 by dauie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char		*ft_strmap(char const *s, char (*f)(char))
 {
-	char	*res;
-	int		len;
-	int		i;
+	char		*res;
+	size_t		len;
+	int			i;
 
 	i = 0;
 	len = 0;

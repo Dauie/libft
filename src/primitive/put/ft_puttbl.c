@@ -6,7 +6,7 @@
 /*   By: cfu <cfu@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 17:49:22 by cfu               #+#    #+#             */
-/*   Updated: 2017/04/14 21:18:41 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/04/13 13:41:36 by dauie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 void		ft_puttbl(char **tbl)
 {
 	int		i;
-	int		wid;
+	size_t	wid;
 
 	i = 0;
 	wid = ft_tbllen(tbl);
-	while (i < wid)
+	while (i < (int)wid)
 	{
 		ft_putendl(tbl[i]);
 		i++;

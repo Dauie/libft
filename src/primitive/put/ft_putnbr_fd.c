@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 05:10:18 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/05 10:45:51 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/04/13 13:32:46 by dauie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ void			ft_putnbr_fd(intmax_t n, int fd)
 		ft_putnbr_fd(x % 10, fd);
 	}
 	else
-		ft_putchar_fd(x + '0', fd);
+		ft_putchar_fd((char)(x + '0'), fd);
 }

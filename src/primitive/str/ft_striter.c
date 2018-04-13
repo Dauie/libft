@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 13:42:03 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:30:14 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/04/13 13:32:46 by dauie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 void		ft_striter(char *s, void (*f)(char *))
 {
-	int i;
-	int z;
+	size_t i;
+	size_t z;
 
 	i = 0;
-	z = 0;
 	if (s && f)
 	{
 		z = ft_strlen(s);

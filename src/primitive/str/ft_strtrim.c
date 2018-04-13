@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 17:33:00 by rlutt             #+#    #+#             */
-/*   Updated: 2017/07/27 19:31:30 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/04/13 13:32:46 by dauie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ char			*ft_strtrim(char const *s)
 	tmp = (char*)s;
 	if (!tmp)
 		return (NULL);
-	if (ft_cnttotspc((char *)tmp) == ft_strlen(tmp))
+	if (ft_cnttotspc(tmp) == ft_strlen(tmp))
 		return (ft_strdup(""));
-	ec = (char *)tmp + (ft_strlen(tmp) - 1);
+	ec = tmp + (ft_strlen(tmp) - 1);
 	while ((*ec == ' ' || *ec == '\n' || *ec == '\t'))
 		ec--;
 	ec++;

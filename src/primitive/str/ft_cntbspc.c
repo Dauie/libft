@@ -6,15 +6,15 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 13:04:48 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:29:17 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/04/13 13:41:36 by dauie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/str.h"
 
-int			ft_cntbspc(char *str)
+size_t		ft_cntbspc(const char *str)
 {
-	int		cnt;
+	size_t	cnt;
 
 	cnt = 0;
 	while (str[cnt] == ' ' || str[cnt] == '\n' || str[cnt] == '\t' ||

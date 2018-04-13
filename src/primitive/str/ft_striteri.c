@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 23:30:21 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:30:17 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/04/13 13:32:46 by dauie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 void		ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int i;
-	int y;
+	size_t 			i;
+	unsigned int 	y;
 
-	i = 0;
 	y = 0;
 	if (s != NULL && f != NULL)
 	{

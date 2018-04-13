@@ -6,17 +6,17 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 21:58:40 by rlutt             #+#    #+#             */
-/*   Updated: 2017/02/16 12:30:33 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/04/13 13:32:46 by dauie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/str.h"
 
-char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char		*res;
-	size_t		i;
-	size_t		len;
+	char			*res;
+	unsigned int	i;
+	size_t			len;
 
 	i = 0;
 	len = 0;
@@ -27,7 +27,7 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	if (s && f)
 	{
-		if (s && res && (ft_strlen(s) != 0))
+		if ((ft_strlen(s) != 0))
 			res = ft_strncpy(res, (char *)s, len + 1);
 		while (i < len)
 		{

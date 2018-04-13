@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_strconcat.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dauie <dauie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/06 14:12:23 by rlutt             #+#    #+#             */
-/*   Updated: 2018/04/13 13:41:36 by dauie            ###   ########.fr       */
+/*   Created: 2018/04/10 15:01:59 by dauie             #+#    #+#             */
+/*   Updated: 2018/04/13 13:32:46 by dauie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/str.h"
 
-char	*ft_strrev(char *str)
+char 		*ft_strconcat(char *stra, char *strb)
 {
-	int		i;
-	int 	len;
-	char	buff;
+	char 	*ret;
+	size_t 	len;
 
-	i = 0;
-	len = (int)ft_strlen(str);
-	while (len - 1 > i)
-	{
-		buff = str[i];
-		str[i] = str[len - 1];
-		str[len - 1] = buff;
-		len--;
-		i++;
-	}
-	return (str);
+	len = (ft_strlen(stra) + ft_strlen(strb));
+	if (len <= 0)
+		return (NULL);
+	if (!(ret = ft_strnew(len)))
+		return (NULL);
+	ft_strcpy(ret, stra);
+	ft_strcat(&ret[ft_strlen(stra)], strb);
+	return (ret);
 }

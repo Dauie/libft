@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:07:08 by rlutt             #+#    #+#             */
-/*   Updated: 2017/07/27 19:20:59 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/04/13 13:41:36 by dauie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,12 @@ int					ft_isstralpha(char *str);
 int					ft_isstrdigit(char *str);
 int					ft_isstrascii(char *str);
 int					ft_isstrprint(char *str);
-int					ft_cntbspc(char *str);
+size_t				ft_cntbspc(const char *str);
 int					ft_cntspc(char *str);
 size_t				ft_cntwrds(char *str, char c);
 size_t				ft_nxtwrdlen(char *str, char c);
-size_t				ft_cnttotspc(char *str);
+size_t				ft_cnttotspc(const char *str);
 char				*ft_strstrip(char *str, int c);
+char 				*ft_strconcat(char *stra, char *strb);
 
 #endif

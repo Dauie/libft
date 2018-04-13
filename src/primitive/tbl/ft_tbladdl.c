@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/04 11:42:58 by rlutt             #+#    #+#             */
-/*   Updated: 2017/07/24 14:16:26 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/04/13 13:39:38 by dauie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 char		**ft_tbladdl(char **tbl, char *line)
 {
 	int		i;
-	int		len;
+	size_t	len;
 	char	**res;
 	char	**tmp;
 
@@ -25,7 +25,7 @@ char		**ft_tbladdl(char **tbl, char *line)
 	len = ft_tbllen(tbl);
 	res = (char **)ft_memalloc(sizeof(char *) * (len + 2));
 	tmp = res;
-	while (++i < len)
+	while (++i < (int)len)
 	{
 		*tmp = ft_strdup(*tbl);
 		tbl++;

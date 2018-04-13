@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 16:57:42 by rlutt             #+#    #+#             */
-/*   Updated: 2017/04/05 11:24:00 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/04/13 13:32:46 by dauie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void			*ft_memcpy(void *dst, const void *src, size_t n)
 	s = src;
 	while (n > 0)
 	{
-		*d = *s;
+		*d = (unsigned char)*s;
 		d++;
 		s++;
 		n--;

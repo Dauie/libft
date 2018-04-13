@@ -6,28 +6,26 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/01 14:24:02 by rlutt             #+#    #+#             */
-/*   Updated: 2017/07/27 19:26:48 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/04/13 13:39:38 by dauie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/tbl.h"
-#include "../../../incl/printf.h"
 
-void		ft_tbldel(char **tbl, int len)
+void		ft_tbldel(char **tbl, size_t len)
 {
-	char	**tmp;
-	int		i;
+	char		**tmp;
+	int			i;
 
 	i = -1;
 	if (tbl && *tbl)
 		tmp = tbl;
 	else
 		return ;
-	while (++i < len && tmp[i])
+	while (++i < (int)len && tmp[i])
 	{
 		free(tmp[i]);
 		tmp[i] = NULL;
 	}
 	free(tbl);
-	tbl = NULL;
 }

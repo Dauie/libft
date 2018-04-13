@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 16:48:19 by rlutt             #+#    #+#             */
-/*   Updated: 2017/07/26 13:57:35 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/04/13 13:32:46 by dauie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,11 @@ static char		*ft_xtrctnxtwrd(char *str, char c, size_t *i)
 	len = ft_nxtwrdlen(&str[*i], c);
 	if (!(res = (char *)ft_memalloc(sizeof(char) * len + 1)))
 		return (NULL);
-	if (str != NULL)
+	while (str[*i] != c && str[*i])
 	{
-		while (str[*i] != c && str[*i])
-		{
-			res[y] = str[*i];
-			y++;
-			*i += 1;
-		}
+		res[y] = str[*i];
+		y++;
+		*i += 1;
 	}
 	res[y] = '\0';
 	return (res);

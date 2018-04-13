@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:26:49 by rlutt             #+#    #+#             */
-/*   Updated: 2017/07/24 14:43:47 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/04/13 13:39:38 by dauie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 #include "../../../incl/str.h"
 #include "../../../incl/mem.h"
 
-char		**ft_tbldup(char **tbl, int len)
+char			**ft_tbldup(char **tbl, size_t len)
 {
-	int		i;
-	char	**res;
-	char	**tmp;
+	int			i;
+	char		**res;
+	char		**tmp;
 
 	i = -1;
-	res = (char **)ft_memalloc(sizeof(char *) * (len + 1));
+	if (!(res = (char **)ft_memalloc(sizeof(char *) * (len + 1))))
+		return (NULL);
 	tmp = res;
-	while (++i < len && tbl && *tbl)
+	while (++i < (int)len && tbl && *tbl)
 	{
 		*tmp = ft_strdup(*tbl);
 		tbl++;

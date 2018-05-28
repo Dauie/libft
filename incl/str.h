@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:07:08 by rlutt             #+#    #+#             */
-/*   Updated: 2018/04/13 13:41:36 by dauie            ###   ########.fr       */
+/*   Updated: 2018/05/27 18:57:59 by dauie            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define STR_H
 
 # include <stdlib.h>
+# include <stdarg.h>
 # include "char.h"
 # include "mem.h"
 
@@ -34,6 +35,7 @@ char				*ft_strncat(char *s1, const char *s2, size_t n);
 char				*ft_strmapi(char const *s, char(*f)(unsigned int, char));
 char				*ft_strchr(const char *s, int c);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strjoinn(int n, ...);
 char				*ft_dirjoin(const char *s1, const char *s2);
 char				*ft_strmap(char const *s, char(*f)(char));
 char				*ft_strdup(const char *src);

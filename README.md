@@ -1,6 +1,6 @@
 # libft
 
-Libft is a personal 'standard' library written in C. I am continuously adding to it as I write the majority of my projects for school with this library. If you're insane and you like reviewing C code, please let me know if you think I've made a mistake, or you think I can improve in any way. 
+Libft is a personal standard library written in C. I am continuously adding to it as I write the majority of my projects with it. The reason I did this is to learn from the ground up the basics of the C programming language. I've written it all with the intent of it being as human readable as possible, but you can find a description for the majority of the function below. 
 
 #Libft - Descriptions
 

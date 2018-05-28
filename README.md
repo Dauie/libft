@@ -1,6 +1,15 @@
 # libft
 
-Libft is a personal standard library written in C. I am continuously adding to it as I write the majority of my projects with it. The reason I did this is to learn from the ground up the basics of the C programming language. I've written it all with the intent of it being as human readable as possible, but you can find a description for the majority of the function below. 
+Libft is a personal standard library written in C. I am continuously adding to it as I write the majority of my
+projects with it.
+
+My libft currently contains many string, table, and mem manipulation functions, its own implementation
+of the classic printf() function (which mimics the original completely), a getline() function, and quite
+a bit more.
+
+The reason I did this is to learn, from the ground up, the basics of the C programming language. I've written it all
+with the intent that the code be as human readable as possible, but you can find a description for the majority of
+the function below. (I need to make more time to fill the rest in.)
 
 #Libft - Descriptions
 

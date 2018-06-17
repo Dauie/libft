@@ -14,7 +14,7 @@
 
 size_t		ft_cnttotspc(const char *string)
 {
-	size_t 	i;
+	size_t	i;
 	char	*str;
 
 	i = 0;

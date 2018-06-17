@@ -6,16 +6,16 @@
 /*   By: dauie <dauie@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 15:01:59 by dauie             #+#    #+#             */
-/*   Updated: 2018/05/21 15:45:30 by dauie            ###   ########.fr       */
+/*   Updated: 2018/06/16 18:57:43 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../incl/str.h"
 
-char 		*ft_strconcat(char *stra, char *strb)
+char		*ft_strconcat(char *stra, char *strb)
 {
-	char 	*ret;
-	size_t 	len;
+	char	*ret;
+	size_t	len;
 
 	len = (ft_strlen(stra) + ft_strlen(strb));
 	if (len <= 0)

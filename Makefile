@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2018/05/27 19:04:32 by dauie            ###   ########.fr        #
+#    Updated: 2018/06/26 10:58:04 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 
 OBJ = *.o
 
-CCFLAGS = -I.incl -Wall -Werror -Wextra -Os -c
+CCFLAGS = -I.incl -Wall -Werror -Wextra -Os -c -g
 
 RM = -rm -fr
 
@@ -165,6 +165,3 @@ fclean:clean
 		$(RM) $(NAME)
 
 re:fclean $(NAME)
-
-dau: re
-		$(RM) $(OBJ)

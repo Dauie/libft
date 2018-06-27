@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 15:09:24 by rlutt             #+#    #+#             */
-/*   Updated: 2018/05/21 15:45:30 by dauie            ###   ########.fr       */
+/*   Updated: 2018/06/26 10:58:05 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t		ft_cnttotspc(const char *string)
 {
-	size_t 	i;
+	size_t	i;
 	char	*str;
 
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:07:08 by rlutt             #+#    #+#             */
-/*   Updated: 2018/05/27 18:57:59 by dauie            ###   ########.fr       */
+/*   Updated: 2018/06/26 10:58:04 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ size_t				ft_cntwrds(char *str, char c);
 size_t				ft_nxtwrdlen(char *str, char c);
 size_t				ft_cnttotspc(const char *str);
 char				*ft_strstrip(char *str, int c);
-char 				*ft_strconcat(char *stra, char *strb);
+char				*ft_strconcat(char *stra, char *strb);
 
 #endif

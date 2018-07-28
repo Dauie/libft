@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2018/05/27 19:04:32 by dauie            ###   ########.fr        #
+#    Updated: 2018/07/28 00:21:27 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,8 @@ ARCHIVE = ar rc
 
 INDEX = ranlib
 
-HEADDR = /incl/char.h /incl/cnvrsn.h /incl/mem.h /incl/num.h /incl/put.h \
-		/incl/str.h /incl/tbl.h /incl/bool.h /incl/gnl.h incl/primsz.h \
-		/incl/printf.h
+HEADDR = /incl/char.h /incl/cnvrsn.h /incl/mem.h /incl/num.h /incl/put.h
+HEADDR += /incl/str.h /incl/tbl.h /incl/bool.h /incl/gnl.h /incl/printf.h /incl/net.h
 
 CHAR_FILES = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_isspc.c
 CHAR_FILES += ft_isupper.c ft_islower.c
@@ -60,6 +59,8 @@ PRINTF_FILES = ft_printf.c  pf_initstructs.c pf_is.c  pf_print_s.c pf_print_i.c 
 PRINTF_FILES += pf_typechr.c pf_width.c  pf_print_c.c pf_putchar.c  pf_putnbr.c pf_print_perc.c  pf_print_o.c
 PRINTF_FILES += pf_print_x.c  pf_itoabse.c pf_tick.c  pf_print_p.c pf_cast_di.c  pf_cast_oux.c
 
+NET_FILES = ft_domtoip.c ft_gethstaddr.c
+
 CHAR_DIR = src/char
 CNVRSN_DIR = src/cnvrsn
 LST_DIR = src/lst
@@ -70,7 +71,7 @@ STR_DIR = src/str
 TBL_DIR = src/tbl
 GNL_DIR = src/gnl
 PRINTF_DIR = src/ft_printf
-
+NET_DIR = src/net
 
 CHAR_SRC = $(addprefix $(CHAR_DIR)/, $(CHAR_FILES))
 CNVRSN_SRC = $(addprefix $(CNVRSN_DIR)/, $(CNVRSN_FILES))
@@ -82,6 +83,7 @@ STR_SRC = $(addprefix $(STR_DIR)/, $(STR_FILES))
 TBL_SRC = $(addprefix $(TBL_DIR)/, $(TBL_FILES))
 GNL_SRC = $(addprefix $(GNL_DIR)/, $(GNL_FILES))
 PRINTF_SRC = $(addprefix $(PRINTF_DIR)/, $(PRINTF_FILES))
+NET_SRC = $(addprefix $(NET_DIR)/, $(NET_FILES))
 
 objdir: $(shell mkdir obj)
 
@@ -96,6 +98,7 @@ $(NAME): objdir
 		$(CC) $(CCFLAGS) $(TBL_SRC)
 		$(CC) $(CCFLAGS) $(GNL_SRC)
 		$(CC) $(CCFLAGS) $(PRINTF_SRC)
+		$(CC) $(CCFLAGS) $(NET_SRC)
 		mv *.o obj
 		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)

@@ -26,8 +26,10 @@
 # define IPV4_HDRLEN 20
 # define IP_MAXPACKET 65535
 # define DOMAIN_NAME_LEN 253
+# define IPV4_ADDR_LEN 14
 
-int		ft_domtoip(char *domain, char *addrbuff, size_t addrbuffsz);
-int		ft_gethstaddr(char *addrbuff, size_t buffsz);
-
+int		ft_domtoip(char *domain, char *addrbuff);
+int		ft_gethstaddr(char *addrbuff);
+int		ft_getifaceaddr(char *ifacename, char *addrbuff);
+int 	ft_isaddrset(char *addr);
 #endif

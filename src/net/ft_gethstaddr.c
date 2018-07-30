@@ -15,15 +15,20 @@ static struct ifaddrs	*find_useable(struct ifaddrs *addrs)
     return (NULL);
 }
 
-int		ft_gethstaddr(char *addrbuff, size_t buffsz)
+int		ft_gethstaddr(char *addrbuff)
 {
     struct ifaddrs	*addrs;
     struct ifaddrs	*src;
 
-    if (getifaddrs(&addrs) != 0 || !(src = find_useable(addrs)))
+    if (getifaddrs(&addrs) != 0)
         return (FAILURE);
+	if (!(src = find_useable(addrs)))
+	{
+		freeifaddrs(addrs);
+		exit(FAILURE);
+	}
     inet_ntop(AF_INET, &((struct sockaddr_in *) src->ifa_addr)->sin_addr,
-              addrbuff, (socklen_t)buffsz);
+              addrbuff, IPV4_ADDR_LEN);
     freeifaddrs(addrs);
     return (SUCCESS);
 }

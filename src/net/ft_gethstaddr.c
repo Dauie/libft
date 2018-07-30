@@ -17,18 +17,18 @@ static struct ifaddrs	*find_useable(struct ifaddrs *addrs)
 
 int		ft_gethstaddr(char *addrbuff)
 {
-    struct ifaddrs	*addrs;
-    struct ifaddrs	*src;
+	struct ifaddrs	*addrs;
+	struct ifaddrs	*src;
 
-    if (getifaddrs(&addrs) != 0)
-        return (FAILURE);
+	if (getifaddrs(&addrs) != 0)
+		return (FAILURE);
 	if (!(src = find_useable(addrs)))
 	{
 		freeifaddrs(addrs);
 		exit(FAILURE);
 	}
-    inet_ntop(AF_INET, &((struct sockaddr_in *) src->ifa_addr)->sin_addr,
-              addrbuff, IPV4_ADDR_LEN);
-    freeifaddrs(addrs);
-    return (SUCCESS);
+	inet_ntop(AF_INET, &((struct sockaddr_in *) src->ifa_addr)->sin_addr,
+			addrbuff, IPV4_ADDR_LEN);
+	freeifaddrs(addrs);
+	return (SUCCESS);
 }

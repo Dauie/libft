@@ -26,7 +26,6 @@
 # define IPV4_HDRLEN 20
 # define IP_MAXPACKET 65535
 # define DOMAIN_NAME_LEN 253
-# define IPV4_ADDR_LEN sizeof(struct sockaddr_in)
 
 int		ft_domtoip(char *domain, char *addrbuff);
 int		ft_gethstaddr(char *addrbuff);

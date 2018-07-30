@@ -28,7 +28,7 @@ int		ft_gethstaddr(char *addrbuff)
 		exit(FAILURE);
 	}
 	inet_ntop(AF_INET, &((struct sockaddr_in *) src->ifa_addr)->sin_addr,
-			addrbuff, IPV4_ADDR_LEN);
+			addrbuff, INET_ADDRSTRLEN);
 	freeifaddrs(addrs);
 	return (SUCCESS);
 }

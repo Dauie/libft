@@ -10,7 +10,7 @@ static struct ifaddrs	*find_addr_inuse(struct ifaddrs *addrs, char *req_addr)
 	{
 		if (addrs->ifa_addr && (addrs->ifa_flags & IFF_UP))
 		{
-			if (((struct sockaddr_in *) addrs->ifa_addr)->sin_addr.s_addr == req->sin_addr.s_addr)
+			if (((struct sockaddr_in *) addrs->ifa_addr)->sin_addr.s_addr == req.sin_addr.s_addr)
 				return (addrs);
 		}
 		addrs = addrs->ifa_next;

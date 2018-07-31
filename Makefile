@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2018/07/28 02:04:43 by rlutt            ###   ########.fr        #
+#    Updated: 2018/07/31 13:34:41 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ PRINTF_FILES = ft_printf.c  pf_initstructs.c pf_is.c  pf_print_s.c pf_print_i.c 
 PRINTF_FILES += pf_typechr.c pf_width.c  pf_print_c.c pf_putchar.c  pf_putnbr.c pf_print_perc.c  pf_print_o.c
 PRINTF_FILES += pf_print_x.c  pf_itoabse.c pf_tick.c  pf_print_p.c pf_cast_di.c  pf_cast_oux.c
 
-NET_FILES = ft_domtoip.c ft_gethstaddr.c
+NET_FILES = ft_domtoip.c ft_gethstaddr.c ft_getifaceaddr.c ft_isaddrset.c
 
 CHAR_DIR = src/char
 CNVRSN_DIR = src/cnvrsn

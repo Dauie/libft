@@ -19,7 +19,7 @@
 size_t				ft_tbllen(char **tbl);
 size_t				ft_itbllen(int **tbl);
 char				**ft_tbldup(char **tbl, size_t len);
-void				ft_tbldel(char **tbl, size_t len);
+void				ft_tbldel(char ***tbl);
 char				**tblcnew(size_t len);
 long				**tblnnew(size_t len);
 char				**ft_tbladdl(char **tbl, char *line);

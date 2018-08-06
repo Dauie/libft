@@ -12,20 +12,21 @@
 
 #include "../../incl/tbl.h"
 
-void		ft_tbldel(char **tbl, size_t len)
+void		ft_tbldel(char ***tbl)
 {
 	char		**tmp;
 	int			i;
 
 	i = -1;
-	if (tbl && *tbl)
-		tmp = tbl;
+	if (tbl && **tbl)
+		tmp = *tbl;
 	else
 		return ;
-	while (++i < (int)len && tmp[i])
+	while (tmp[i])
 	{
 		free(tmp[i]);
 		tmp[i] = NULL;
 	}
-	free(tbl);
+	free(*tbl);
+	*tbl = NULL;
 }

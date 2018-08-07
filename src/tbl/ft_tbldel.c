@@ -22,7 +22,7 @@ void		ft_tbldel(char ***tbl)
 		tmp = *tbl;
 	else
 		return ;
-	while (tmp[i])
+	while (tmp[++i])
 	{
 		free(tmp[i]);
 		tmp[i] = NULL;

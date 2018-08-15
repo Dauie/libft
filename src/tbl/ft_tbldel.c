@@ -18,7 +18,7 @@ void		ft_tbldel(char ***tbl)
 	int			i;
 
 	i = -1;
-	if (tbl && **tbl)
+	if (tbl && *tbl)
 		tmp = *tbl;
 	else
 		return ;

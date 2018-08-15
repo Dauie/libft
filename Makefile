@@ -51,7 +51,7 @@ STR_FILES += ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strrev.c ft_strsplit.c ft_
 STR_FILES += ft_tolower.c ft_toupper.c ft_dirjoin.c ft_strstrip.c ft_strconcat.c ft_strjoinn.c
 
 TBL_FILES = ft_tbldel.c ft_tbllen.c ft_tbllen.c ft_itbllen.c ft_tbladdl.c ft_tbldup.c ft_tblrmline.c ft_tblrepline.c
-TBL_FILES += ft_crafttbl.c
+TBL_FILES += ft_crafttbl.c ft_getenvar.c
 
 GNL_FILES =	gnl.c
 

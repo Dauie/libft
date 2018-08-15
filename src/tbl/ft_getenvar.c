@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   return_types.h                                     :+:      :+:    :+:   */
+/*   ft_getenvar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/14 17:51:16 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/14 18:13:51 by rlutt            ###   ########.fr       */
+/*   Created: 2018/08/14 15:03:10 by rlutt             #+#    #+#             */
+/*   Updated: 2018/08/14 15:03:33 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RETURN_TYPES_H
-# define RETURN_TYPES_H
+#include "../../incl/tbl.h"
 
-typedef enum	e_rtypes
+char			*ft_getenvar(char **env, char *qry, size_t qlen)
 {
-	FAILURE = -1,
-	SUCCESS = 0,
-}				t_rtypes;
+	char			*res;
+	int				i;
 
-#endif
+	i = -1;
+	res = NULL;
+	while (env[++i])
+	{
+		if (ft_strncmp(env[i], qry, qlen) == 0 &&
+			env[i][qlen] == '=')
+			if (!(res = ft_strdup(env[i])))
+				return (NULL);
+	}
+	return (res);
+}

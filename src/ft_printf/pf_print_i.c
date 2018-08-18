@@ -6,13 +6,13 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 19:19:24 by rlutt             #+#    #+#             */
-/*   Updated: 2018/06/26 10:58:04 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/17 20:49:10 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/printf.h"
 
-static void		handel_isign(t_frmtnfo *ph, t_pfcore *db)
+static void		handle_isign(t_frmtnfo *ph, t_pfcore *db)
 {
 	if (ph->type == 'd' || ph->type == 'i' || ph->type == 'D')
 	{
@@ -24,7 +24,7 @@ static void		handel_isign(t_frmtnfo *ph, t_pfcore *db)
 	}
 }
 
-static void		handel_ihash(t_frmtnfo *ph, t_pfcore *db)
+static void		handle_ihash(t_frmtnfo *ph, t_pfcore *db)
 {
 	pf_putchar('0', db);
 	ph->hash = FALSE;
@@ -63,13 +63,13 @@ static void		pf_print_irev(t_frmtnfo *ph, t_pfcore *db)
 		}
 	}
 	if (ph->actn == TRUE && ph->zero == TRUE && ph->width)
-		handel_isign(ph, db);
+		handle_isign(ph, db);
 	if (ph->width)
 		putpad_i(ph, db);
 	if (ph->actn == TRUE)
-		handel_isign(ph, db);
+		handle_isign(ph, db);
 	if (ph->hash == TRUE)
-		handel_ihash(ph, db);
+		handle_ihash(ph, db);
 	pf_putnbr(ph->phd.uimt, ph, db);
 }
 
@@ -85,9 +85,9 @@ int				pf_print_i(t_frmtnfo *ph, t_pfcore *db)
 	if (ph->algn == TRUE)
 	{
 		if (ph->hash == TRUE)
-			handel_ihash(ph, db);
+			handle_ihash(ph, db);
 		if (ph->actn == TRUE)
-			handel_isign(ph, db);
+			handle_isign(ph, db);
 		pf_putnbr(ph->phd.uimt, ph, db);
 		if (ph->width)
 			putpad_i(ph, db);

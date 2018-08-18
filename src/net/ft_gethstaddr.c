@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 18:05:01 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/14 18:05:46 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/17 20:49:10 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ static struct ifaddrs	*find_useable(struct ifaddrs *addrs)
 	return (NULL);
 }
 
-int						ft_gethstaddr(char *addrbuff)
+int		ft_gethstaddr(char *addrbuff)
 {
-	struct ifaddrs		*addrs;
-	struct ifaddrs		*src;
+	struct ifaddrs	*addrs;
+	struct ifaddrs	*src;
 
 	if (getifaddrs(&addrs) != 0)
 		return (FAILURE);
@@ -40,7 +40,7 @@ int						ft_gethstaddr(char *addrbuff)
 		freeifaddrs(addrs);
 		exit(FAILURE);
 	}
-	inet_ntop(AF_INET, &((struct sockaddr_in *)src->ifa_addr)->sin_addr,
+	inet_ntop(AF_INET, &((struct sockaddr_in *) src->ifa_addr)->sin_addr,
 			addrbuff, INET_ADDRSTRLEN);
 	freeifaddrs(addrs);
 	return (SUCCESS);

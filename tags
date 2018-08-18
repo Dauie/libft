@@ -149,8 +149,8 @@ ft_xtrctnxtwrd	src/primitive/str/ft_strsplit.c	/^static char		*ft_xtrctnxtwrd(ch
 g_lhex	src/ft_printf/pf_itoabse.c	/^static char				*g_lhex = {"0123456789abcdef"};$/;"	v	file:
 g_uhex	src/ft_printf/pf_itoabse.c	/^static char				*g_uhex = {"0123456789ABCDEF"};$/;"	v	file:
 gnl	src/futil/gnl/gnl.c	/^int					gnl(const int fd, char **line)$/;"	f
-handel_ihash	src/ft_printf/pf_print_i.c	/^static void		handel_ihash(t_frmtnfo *ph, t_pfcore *db)$/;"	f	file:
-handel_isign	src/ft_printf/pf_print_i.c	/^static void		handel_isign(t_frmtnfo *ph, t_pfcore *db)$/;"	f	file:
+handle_ihash	src/ft_printf/pf_print_i.c	/^static void		handle_ihash(t_frmtnfo *ph, t_pfcore *db)$/;"	f	file:
+handle_isign	src/ft_printf/pf_print_i.c	/^static void		handle_isign(t_frmtnfo *ph, t_pfcore *db)$/;"	f	file:
 hash	incl/printf.h	/^	t_blean			hash;$/;"	m	struct:s_frmtnfo
 i	incl/printf.h	/^	int				i;$/;"	m	union:__anon1
 imt	incl/printf.h	/^	intmax_t		imt;$/;"	m	union:__anon1

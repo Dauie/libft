@@ -22,15 +22,11 @@ typedef struct			s_echopkt
 {
 	struct ip			iphdr;
 	t_echohdr			phdr;
-	struct timeval		time;
-	uint8_t				data[256];
+	uint8_t				*data;
 	u_short				datalen;
+	struct timeval		sent;
+	struct timeval		recvd;
 }						t_echopkt;
-
-typedef struct			s_echoreq
-{
-
-}						t_echoreq;
 
 int					ft_makerawsock(int proto);
 int					ft_sockoptraw(int sock);

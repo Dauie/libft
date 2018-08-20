@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/27 23:53:41 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/19 22:26:36 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/20 15:12:55 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 
 # define IPV4_HDRLEN 20
 # define IP_MAXPACKET 65535
+# define IP_MAXPKTDATA (IP_MAXPACKET - (IPV4_HDRLEN + 20))
 # define DOMAIN_NAME_LEN 253
 
 struct in_addr		*ft_domtoip(char *domain, char *addrbuff, int fillbuff);

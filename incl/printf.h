@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:57:51 by rlutt             #+#    #+#             */
-/*   Updated: 2018/06/26 10:58:04 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/19 22:26:36 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,18 +50,18 @@ typedef struct		s_pfcore
 
 typedef struct		s_frmtnfo
 {
+	t_bool			actn: 1;
+	t_bool			upper: 1;
+	t_bool			algn: 1;
+	t_bool			sign: 1;
+	t_bool			hash: 1;
+	t_bool			zero: 1;
+	t_bool			spc: 1;
+	t_bool			wneg: 1;
+	t_bool			wprc: 1;
 	char			type;
 	char			mod;
 	t_data			phd;
-	t_blean			actn;
-	t_blean			upper;
-	t_blean			algn;
-	t_blean			sign;
-	t_blean			hash;
-	t_blean			zero;
-	t_blean			spc;
-	t_blean			wneg;
-	t_blean			wprc;
 	int				prec;
 	int				width;
 	int				len;
@@ -87,11 +87,9 @@ void				putpad_i(t_frmtnfo *ph, t_pfcore *db);
 void				putprec(t_frmtnfo *ph, t_pfcore *db);
 int					pf_print_o(t_frmtnfo *ph, t_pfcore *db);
 int					pf_print_x(t_frmtnfo *ph, t_pfcore *db);
-int					pf_print_u(t_frmtnfo *ph, t_pfcore *db);
 int					pf_print_p(t_frmtnfo *ph, t_pfcore *db);
 void				pf_lmgmt_oux(t_pfcore *db, t_frmtnfo *ph);
 int					pf_print_perc(t_frmtnfo *ph, t_pfcore *db);
-int					puterror(int ecode);
 int					pf_putstr(char *str, t_frmtnfo *ph, t_pfcore *db);
 char				*pf_typechr(char *phstrt);
 void				pf_get_width(const char *frmt, t_frmtnfo *ph, t_pfcore *db);
@@ -99,14 +97,12 @@ int					pf_phlen(const char *frmt, t_pfcore *db);
 int					pf_putchar(char c, t_pfcore *db);
 int					pf_putnbr(uintmax_t n, t_frmtnfo *ph, t_pfcore *db);
 int					pf_isupper(int c);
-int					pf_isoxdi(int c);
 char				*pf_itoabse(uintmax_t nbg, int bse, t_frmtnfo *ph);
 int					pf_parse_mod(const char *frmt, t_pfcore *db, t_frmtnfo *ph);
 int					pf_ismod_pre(const char *frmt, t_pfcore *db);
 void				pf_lmgmt_id(t_pfcore *db, t_frmtnfo *ph);
 void				pf_lmgmt_oux(t_pfcore *db, t_frmtnfo *ph);
 void				pf_get_prec(const char *frmt, t_frmtnfo *ph, t_pfcore *db);
-void				pf_make_precise(char *strt, t_frmtnfo *ph);
 void				pf_tick_algn(t_frmtnfo *ph, t_pfcore *db);
 void				pf_tick_hash(t_frmtnfo *ph, t_pfcore *db);
 void				pf_tick_sign(t_frmtnfo *ph, t_pfcore *db);

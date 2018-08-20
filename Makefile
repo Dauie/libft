@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2018/08/15 11:28:07 by rlutt            ###   ########.fr        #
+#    Updated: 2018/08/19 01:40:02 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,8 @@ PRINTF_FILES += pf_typechr.c pf_width.c  pf_print_c.c pf_putchar.c  pf_putnbr.c 
 PRINTF_FILES += pf_print_x.c  pf_itoabse.c pf_tick.c  pf_print_p.c pf_cast_di.c  pf_cast_oux.c
 
 NET_FILES = ft_domtoip.c ft_gethstaddr.c ft_getifaceaddr.c ft_isaddrset.c
+NET_FILES += ft_makerawsock.c ft_packet_header.c ft_setsock_timeout.c
+NET_FILES += ft_sockoptraw.c
 
 CHAR_DIR = src/char
 CNVRSN_DIR = src/cnvrsn

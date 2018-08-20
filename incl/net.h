@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/27 23:53:41 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/15 11:28:07 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/19 22:26:36 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include "str.h"
 # include "mem.h"
 # include "return_types.h"
+# include "bool.h"
+
+# include <unistd.h>
+# include <stdio.h>
 # include <sys/types.h>
 # include <sys/socket.h>
 # include <netdb.h>
@@ -27,9 +31,9 @@
 # define IP_MAXPACKET 65535
 # define DOMAIN_NAME_LEN 253
 
-int		ft_domtoip(char *domain, char *addrbuff);
-int		ft_gethstaddr(char *addrbuff);
-int		ft_getifaceaddr(char *ifacename, char *addrbuff);
-int		ft_isaddrset(char *addr);
-
+struct in_addr		*ft_domtoip(char *domain, char *addrbuff, int fillbuff);
+struct in_addr		*ft_gethstaddr(char *addrbuff, int fillbuff);
+struct in_addr		*ft_getifaceaddr(char *ifacename, char *addrbuff,
+									int fill_buff);
+int					ft_isaddrset(char *addr);
 #endif

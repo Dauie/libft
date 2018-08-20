@@ -6,14 +6,13 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:07:08 by rlutt             #+#    #+#             */
-/*   Updated: 2018/06/26 10:58:04 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/19 22:26:36 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STR_H
 # define STR_H
 
-# include <stdlib.h>
 # include <stdarg.h>
 # include "char.h"
 # include "mem.h"

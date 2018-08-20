@@ -6,13 +6,14 @@
 /*   By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:07:17 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/15 11:28:07 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/19 22:26:36 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TBL_H
 # define TBL_H
 
+# include <stdlib.h>
 # include "str.h"
 # include "num.h"
 

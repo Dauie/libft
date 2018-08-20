@@ -6,16 +6,15 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 20:06:59 by rlutt             #+#    #+#             */
-/*   Updated: 2018/06/26 10:58:04 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/19 22:26:36 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUT_H
 # define PUT_H
 
-# include <string.h>
 # include <unistd.h>
-# include <stdlib.h>
+# include <mm_malloc.h>
 # include "lst.h"
 # include "str.h"
 # include "num.h"

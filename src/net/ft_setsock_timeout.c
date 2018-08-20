@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bool.h                                             :+:      :+:    :+:   */
+/*   ft_setsock_timeout.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/15 21:15:52 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/19 01:39:47 by rlutt            ###   ########.fr       */
+/*   Created: 2018/08/18 15:35:53 by rlutt             #+#    #+#             */
+/*   Updated: 2018/08/18 15:51:03 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BOOL_H
-# define BOOL_H
+#include "../../incl/net.h"
 
-typedef	enum	e_bool
+/**
+** type will either be SO_SNDTIMEO or SO_RCVTIMEO
+**/
+
+int		setsock_timeout(int sock, int type, struct timeval *tout)
 {
-	FALSE,
-	TRUE
-}				t_bool;
-
-#endif
+	if (setsockopt(sock, SOL_SOCKET, type, tout, sizeof(struct timeval)) < 0)
+	{
+		dprintf(STDERR_FILENO, "Error setsockopt()\n");
+		exit(FAILURE);
+	}
+	return (SUCCESS);
+}

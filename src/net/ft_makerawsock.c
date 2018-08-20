@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bool.h                                             :+:      :+:    :+:   */
+/*   ft_makerawsock.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/15 21:15:52 by rlutt             #+#    #+#             */
+/*   Created: 2018/08/18 15:51:40 by rlutt             #+#    #+#             */
 /*   Updated: 2018/08/19 01:39:47 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BOOL_H
-# define BOOL_H
+#include "../../incl/net.h"
 
-typedef	enum	e_bool
+/**
+** proto will either be IPPROTO_RAW or IPPROTO_UDP
+**/
+
+int				ft_makerawsock(int proto)
 {
-	FALSE,
-	TRUE
-}				t_bool;
+	int			sock;
 
-#endif
+	if ((sock = socket(AF_INET, SOCK_RAW, proto)) < 0)
+	{
+		dprintf(STDERR_FILENO, "Error socket().\n");
+		exit(FAILURE);
+	}
+	return (sock);
+}

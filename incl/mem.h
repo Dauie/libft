@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 12:52:24 by rlutt             #+#    #+#             */
-/*   Updated: 2018/06/26 10:58:04 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/19 22:26:36 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define MEM_H
 
 # include <stdlib.h>
+# include <stddef.h>
 
 void				ft_memdel(void **ap);
 void				*ft_realloc(void *mem, size_t memsz, size_t nsz);

@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bool.h                                             :+:      :+:    :+:   */
+/*   ft_setsockopt.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/15 21:15:52 by rlutt             #+#    #+#             */
+/*   Created: 2018/08/18 15:40:33 by rlutt             #+#    #+#             */
 /*   Updated: 2018/08/19 01:39:47 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BOOL_H
-# define BOOL_H
+#include "../../incl/ping.h"
 
-typedef	enum	e_bool
+int					ft_sockoptraw(int sock)
 {
-	FALSE,
-	TRUE
-}				t_bool;
+	int				on;
 
-#endif
+	on = 1;
+	if (setsockopt(sock, IPPROTO_IP, IP_HDRINCL, &on, sizeof(on)) < 0)
+	{
+		dprintf(STDERR_FILENO, "Error setsockopt()\n");
+		exit(FAILURE);
+	}
+	return (SUCCESS);
+}

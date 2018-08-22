@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 18:05:18 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/19 22:36:25 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/22 15:03:05 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,16 @@ static struct ifaddrs	*find_iface(struct ifaddrs *addrs, char *ifacename)
 	return (NULL);
 }
 
-struct in_addr			*ft_getifaceaddr(char *ifacename, char *addrbuff,
+in_addr_t				ft_getifaceaddr(char *ifacename, char *addrbuff,
 										int fill_buff)
 {
 	struct ifaddrs		*addrs;
 	struct ifaddrs		*src;
-	struct in_addr		*ret;
+	in_addr_t			ret;
 
-	if (!(ret = ft_memalloc(sizeof(struct in_addr))))
-		return (NULL);
 	if (getifaddrs(&addrs) != 0 || !(src = find_iface(addrs, ifacename)))
-		return (NULL);
-	*ret = ((struct sockaddr_in *) src->ifa_addr)->sin_addr;
+		return (0);
+	ret = ((struct sockaddr_in *)src->ifa_addr)->sin_addr.s_addr;
 	if (fill_buff == TRUE)
 		inet_ntop(AF_INET, &ret, addrbuff, INET_ADDRSTRLEN);
 	freeifaddrs(addrs);

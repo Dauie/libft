@@ -6,25 +6,23 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 17:53:15 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/19 22:36:25 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/22 15:23:23 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/net.h"
 
-struct in_addr		*ft_domtoip(char *domain, char *addrbuff, int fillbuff)
+in_addr_t			ft_domtoip(char *domain, char *addrbuff, int fillbuff)
 {
 	struct addrinfo	hints;
 	struct addrinfo	*infoptr;
-	struct in_addr *ret;
+	in_addr_t 		ret;
 
-	if (!(ret = ft_memalloc(sizeof(struct in_addr))))
-		return (NULL);
 	ft_memset(&hints, 0, sizeof(hints));
 	hints.ai_family = AF_INET;
 	if (getaddrinfo(domain, 0, &hints, &infoptr) != 0)
-		return (NULL);
-	*ret = ((struct sockaddr_in *)infoptr->ai_addr)->sin_addr;
+		return (0);
+	ret = ((struct sockaddr_in *)infoptr->ai_addr)->sin_addr.s_addr;
 	if (fillbuff == TRUE)
 		inet_ntop(AF_INET, &ret, addrbuff, INET_ADDRSTRLEN);
 	freeaddrinfo(infoptr);

@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/27 23:53:41 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/20 15:12:55 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/22 15:23:23 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@
 # define IP_MAXPKTDATA (IP_MAXPACKET - (IPV4_HDRLEN + 20))
 # define DOMAIN_NAME_LEN 253
 
-struct in_addr		*ft_domtoip(char *domain, char *addrbuff, int fillbuff);
-struct in_addr		*ft_gethstaddr(char *addrbuff, int fillbuff);
-struct in_addr		*ft_getifaceaddr(char *ifacename, char *addrbuff,
+in_addr_t			ft_domtoip(char *domain, char *addrbuff, int fillbuff);
+in_addr_t			ft_gethstaddr(char *addrbuff, int fillbuff);
+in_addr_t			ft_getifaceaddr(char *ifacename, char *addrbuff,
 									int fill_buff);
 int					ft_isaddrset(char *addr);
+
 #endif

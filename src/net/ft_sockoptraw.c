@@ -12,7 +12,7 @@
 
 #include "../../incl/ping.h"
 
-int					ft_sockoptraw(int sock)
+int					ft_sock_hdrincl(int sock)
 {
 	int				on;
 

@@ -29,7 +29,7 @@ typedef struct			s_echopkt
 }						t_echopkt;
 
 int					ft_makerawsock(int proto);
-int					ft_sockoptraw(int sock);
+int					ft_sock_hdrincl(int sock);
 void				ft_seticmp_hdr(struct icmp *icmp, int seq, int pid);
 void				ft_setip_hdr(struct ip *ip, int ttl, int proto,
 								 int datalen);

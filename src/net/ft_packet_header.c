@@ -6,11 +6,11 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/18 17:42:07 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/22 16:10:14 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/22 16:22:45 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/ping.h"
+#include "../../incl/net_ping.h"
 
 void		ft_seticmp_hdr(struct icmp *icmp, int seq, int pid)
 {

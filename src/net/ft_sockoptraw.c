@@ -6,11 +6,11 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/18 15:40:33 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/22 16:10:14 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/22 16:22:13 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/ping.h"
+#include "../../incl/net.h"
 
 int					ft_sock_hdrincl(int sock)
 {

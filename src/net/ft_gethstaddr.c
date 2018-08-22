@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 18:05:01 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/22 15:23:23 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/22 16:10:14 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ in_addr_t				ft_gethstaddr(char *addrbuff, int fillbuff)
 		exit(FAILURE);
 	ret = ((struct sockaddr_in *)src->ifa_addr)->sin_addr.s_addr;
 	if (fillbuff == TRUE)
-	inet_ntop(AF_INET, &ret, addrbuff, INET_ADDRSTRLEN);
+		inet_ntop(AF_INET, &ret, addrbuff, INET_ADDRSTRLEN);
 	freeifaddrs(addrs);
 	return (ret);
 }

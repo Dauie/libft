@@ -6,15 +6,15 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/18 15:51:40 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/19 01:39:47 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/22 16:10:14 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/net.h"
 
-/**
+/*
 ** proto will either be IPPROTO_RAW or IPPROTO_UDP
-**/
+*/
 
 int				ft_makerawsock(int proto)
 {

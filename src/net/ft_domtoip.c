@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 17:53:15 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/22 15:23:23 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/22 16:10:14 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ in_addr_t			ft_domtoip(char *domain, char *addrbuff, int fillbuff)
 {
 	struct addrinfo	hints;
 	struct addrinfo	*infoptr;
-	in_addr_t 		ret;
+	in_addr_t		ret;
 
 	ft_memset(&hints, 0, sizeof(hints));
 	hints.ai_family = AF_INET;

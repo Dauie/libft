@@ -6,15 +6,15 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/18 15:35:53 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/18 15:51:03 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/22 16:10:14 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/net.h"
 
-/**
+/*
 ** type will either be SO_SNDTIMEO or SO_RCVTIMEO
-**/
+*/
 
 int		setsock_timeout(int sock, int type, struct timeval *tout)
 {

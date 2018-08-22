@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/18 17:42:07 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/22 15:23:23 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/22 16:10:14 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void		ft_setip_hdr(struct ip *ip, int ttl, int proto, int datalen)
 	ip->ip_v = 4;
 	ip->ip_tos = 0;
 	ip->ip_len = htons(IPV4_HDRLEN + DEF_HDRLEN + sizeof(struct timeval) +
-					   datalen);
+					datalen);
 	ip->ip_id = htons(0);
 	ip->ip_off = htons(0);
 	ip->ip_ttl = (u_char)ttl;
@@ -41,7 +41,8 @@ void		ft_setudp_hdr(struct udphdr *udp, int port, int datalen)
 	udp->uh_sum = 0;
 }
 
-void		ft_setip_dstsrc(struct ip *ip, struct in_addr *src, struct in_addr *dst)
+void		ft_setip_dstsrc(struct ip *ip, struct in_addr *src,
+							struct in_addr *dst)
 {
 	if (src)
 		ip->ip_src.s_addr = src->s_addr;

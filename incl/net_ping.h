@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/22 16:03:04 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/22 16:07:22 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/23 16:46:12 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,11 @@ typedef struct			s_echopkt
 
 int						ft_makerawsock(int proto);
 int						ft_sock_hdrincl(int sock);
-void					ft_seticmp_hdr(struct icmp *icmp, int seq, int pid);
+void					ft_seticmp_hdr(struct icmp *icmp, int code, int seq, int id);
 void					ft_setip_hdr(struct ip *ip, int ttl, int proto,
 								int datalen);
 void					ft_setip_dstsrc(struct ip *ip, struct in_addr *src,
 									struct in_addr *dst);
-void					ft_setudp_hdr(struct udphdr *udp, int port,
-									int datalen);
+void					ft_setudp_hdr(struct udphdr *udp, int sport, int dport, int datalen);
 
 #endif

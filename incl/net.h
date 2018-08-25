@@ -32,7 +32,8 @@
 # define IP_MAXPKTDATA (IP_MAXPACKET - (IPV4_HDRLEN + 20))
 # define DOMAIN_NAME_LEN 253
 
-in_addr_t			ft_domtoip(char *domain, char *addrbuff, int fillbuff);
+in_addr_t			ft_domtoip(char *domain, char *addrbuff);
+int					ft_iptodom(in_addr_t addr, char *dombuff);
 in_addr_t			ft_gethstaddr(char *addrbuff, int fillbuff);
 in_addr_t			ft_getifaceaddr(char *ifacename, char *addrbuff,
 									int fill_buff);

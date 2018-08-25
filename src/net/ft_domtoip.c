@@ -12,7 +12,7 @@
 
 #include "../../incl/net.h"
 
-in_addr_t			ft_domtoip(char *domain, char *addrbuff, int fillbuff)
+in_addr_t			ft_domtoip(char *domain, char *addrbuff)
 {
 	struct addrinfo	hints;
 	struct addrinfo	*infoptr;
@@ -23,8 +23,20 @@ in_addr_t			ft_domtoip(char *domain, char *addrbuff, int fillbuff)
 	if (getaddrinfo(domain, 0, &hints, &infoptr) != 0)
 		return (0);
 	ret = ((struct sockaddr_in *)infoptr->ai_addr)->sin_addr.s_addr;
-	if (fillbuff == TRUE)
+	if (addrbuff)
 		inet_ntop(AF_INET, &ret, addrbuff, INET_ADDRSTRLEN);
 	freeaddrinfo(infoptr);
 	return (ret);
+}
+
+int					ft_iptodom(in_addr_t ip, char *dombuff)
+{
+	struct sockaddr_in addr;
+
+	addr.sin_addr.s_addr = ip;
+	addr.sin_family = AF_INET;
+	if (getnameinfo((struct sockaddr *)&addr, sizeof(struct sockaddr),
+			dombuff, DOMAIN_NAME_LEN, NULL, 0 , 0) == 0)
+		return (FAILURE);
+	return (SUCCESS);
 }

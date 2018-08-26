@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/22 16:03:04 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/23 16:46:12 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/25 17:20:40 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "net.h"
 
-# include <sys/time.h>
 # include <netinet/ip.h>
 # include <netinet/ip_icmp.h>
 # include <netinet/udp.h>
@@ -40,6 +39,7 @@ typedef struct			s_echopkt
 	struct timeval		recvd;
 }						t_echopkt;
 
+u_int16_t				ft_checksum(void *data, size_t len);
 int						ft_makerawsock(int proto);
 int						ft_sock_hdrincl(int sock);
 void					ft_seticmp_hdr(struct icmp *icmp, int code, int seq, int id);

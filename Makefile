@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2018/08/19 01:40:02 by rlutt            ###   ########.fr        #
+#    Updated: 2018/08/25 17:31:09 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 
 OBJ = obj/*.o
 
-CCFLAGS = -I.incl -Wall -Wextra -c -g
+CCFLAGS = -I.incl -Wall -Wextra -c
 
 RM = -rm -fr
 
@@ -38,15 +38,15 @@ LST_FILES += ft_lstlen.c ft_lstnewstak.c
 MEM_FILES =	ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memdel.c ft_memmove.c
 MEM_FILES += ft_memset.c
 
-NUM_FILES = ft_numlen.c
+NUM_FILES = ft_numlen.c ft_timediff.c ft_getpercent.c
 
 PUT_FILES = ft_putchar.c ft_putchar_fd.c ft_putendl.c ft_putendl_fd.c ft_putnbr.c ft_putnbr_fd.c ft_putstr.c
-PUT_FILES += ft_putstrrev.c ft_putstr_fd.c ft_putnlst.c ft_putclst.c ft_puterror.c ft_puttbl.c
+PUT_FILES += ft_putstrrev.c ft_putstr_fd.c ft_putnlst.c ft_putclst.c ft_puterror.c ft_puttbl.c ft_hexdump.c
 
 STR_FILES = ft_cntbnespc.c ft_cntbspc.c ft_cnttotspc.c ft_cntwrds.c ft_isstralnum.c ft_isstralpha.c ft_isstrascii.c
 STR_FILES += ft_isstrdigit.c ft_isstrprint.c ft_nxtwrdlen.c ft_strcat.c ft_strchr.c ft_strclr.c ft_strcmp.c ft_strcpy.c
 STR_FILES += ft_strdel.c ft_strdup.c ft_strndup.c ft_strequ.c ft_striter.c ft_striteri.c ft_strjoin.c ft_strlcat.c
-STR_FILES += ft_strlen.c ft_strmap.c ft_strmapi.c ft_strmapi.c ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c
+STR_FILES += ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c
 STR_FILES += ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strrev.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c
 STR_FILES += ft_tolower.c ft_toupper.c ft_dirjoin.c ft_strstrip.c ft_strconcat.c ft_strjoinn.c
 
@@ -61,7 +61,7 @@ PRINTF_FILES += pf_print_x.c  pf_itoabse.c pf_tick.c  pf_print_p.c pf_cast_di.c 
 
 NET_FILES = ft_domtoip.c ft_gethstaddr.c ft_getifaceaddr.c ft_isaddrset.c
 NET_FILES += ft_makerawsock.c ft_packet_header.c ft_setsock_timeout.c
-NET_FILES += ft_sockoptraw.c
+NET_FILES += ft_sockoptraw.c ft_checksum.c
 
 CHAR_DIR = src/char
 CNVRSN_DIR = src/cnvrsn

@@ -36,7 +36,7 @@ int					ft_iptodom(in_addr_t ip, char *dombuff)
 	addr.sin_addr.s_addr = ip;
 	addr.sin_family = AF_INET;
 	if (getnameinfo((struct sockaddr *)&addr, sizeof(struct sockaddr),
-			dombuff, DOMAIN_NAME_LEN, NULL, 0 , 0) == 0)
+			dombuff, DOMAIN_NAME_LEN, NULL, 0, 0) == 0)
 		return (FAILURE);
 	return (SUCCESS);
 }

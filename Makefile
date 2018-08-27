@@ -6,7 +6,7 @@
 #    By: rlutt <rlutt@student.42.us.org>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 13:28:20 by rlutt             #+#    #+#              #
-#    Updated: 2018/08/25 17:31:09 by rlutt            ###   ########.fr        #
+#    Updated: 2018/08/27 14:06:17 by rlutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,9 +87,8 @@ GNL_SRC = $(addprefix $(GNL_DIR)/, $(GNL_FILES))
 PRINTF_SRC = $(addprefix $(PRINTF_DIR)/, $(PRINTF_FILES))
 NET_SRC = $(addprefix $(NET_DIR)/, $(NET_FILES))
 
-objdir: $(shell mkdir obj)
-
-$(NAME): objdir
+$(NAME):
+		$(shell mkdir obj)
 		$(CC) $(CCFLAGS) $(MEM_SRC)
 		$(CC) $(CCFLAGS) $(CHAR_SRC)
 		$(CC) $(CCFLAGS) $(STR_SRC)
@@ -105,7 +104,7 @@ $(NAME): objdir
 		$(ARCHIVE) $(NAME) $(OBJ)
 		$(INDEX) $(NAME)
 
-all:$(NAME)
+all: $(NAME)
 
 mem:
 		$(CC) $(CCFLAGS) $(MEM_SRC)

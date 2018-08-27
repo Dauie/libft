@@ -6,7 +6,7 @@
 /*   By: rlutt <rlutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/22 16:03:04 by rlutt             #+#    #+#             */
-/*   Updated: 2018/08/25 17:20:40 by rlutt            ###   ########.fr       */
+/*   Updated: 2018/08/27 13:30:38 by rlutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,19 @@ typedef struct			s_echopkt
 	struct timeval		recvd;
 }						t_echopkt;
 
-u_int16_t				ft_icmp_checksum(void *data, size_t len);
-u_int16_t				ft_udp_checksum(uint16_t *pkt, size_t pktlen, in_addr_t src, in_addr_t dst);
+u_int16_t				ft_checksum(void *data, unsigned int len,
+									t_bool compliment);
+u_int16_t				ft_udp_checksum(uint16_t *pkt, unsigned int pktlen,
+										in_addr_t src, in_addr_t dst);
 int						ft_makerawsock(int proto);
 int						ft_sock_hdrincl(int sock);
-void					ft_seticmp_hdr(struct icmp *icmp, int code, int seq, int id);
+void					ft_seticmp_hdr(struct icmp *icmp, int code,
+									int seq, int id);
 void					ft_setip_hdr(struct ip *ip, int ttl, int proto,
 								int datalen);
 void					ft_setip_dstsrc(struct ip *ip, struct in_addr *src,
 									struct in_addr *dst);
-void					ft_setudp_hdr(struct udphdr *udp, int sport, int dport, int datalen);
+void					ft_setudp_hdr(struct udphdr *udp, int sport,
+									int dport, int datalen);
 
 #endif

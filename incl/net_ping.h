@@ -39,7 +39,8 @@ typedef struct			s_echopkt
 	struct timeval		recvd;
 }						t_echopkt;
 
-u_int16_t				ft_checksum(void *data, size_t len);
+u_int16_t				ft_icmp_checksum(void *data, size_t len);
+u_int16_t				ft_udp_checksum(uint16_t *pkt, size_t pktlen, in_addr_t src, in_addr_t dst);
 int						ft_makerawsock(int proto);
 int						ft_sock_hdrincl(int sock);
 void					ft_seticmp_hdr(struct icmp *icmp, int code, int seq, int id);

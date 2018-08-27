@@ -12,7 +12,7 @@
 
 #include "../../incl/net.h"
 
-u_int16_t			ft_checksum(void *data, size_t len)
+u_int16_t			ft_icmp_checksum(void *data, unsigned int len)
 {
 	u_int16_t		word;
 	u_int32_t		accum;
@@ -36,5 +36,43 @@ u_int16_t			ft_checksum(void *data, size_t len)
 		if (accum > 0xffff)
 			accum -= 0xffff;
 	}
-	return (ntohs(~accum));
+	return ((uint16_t)~accum);
+}
+
+u_int16_t			ft_udp_checksum(uint16_t *pkt, size_t len, in_addr_t src, in_addr_t dst)
+{
+	u_int32_t		accum;
+	u_int16_t		word;
+	u_int16_t		*ipptr;
+	size_t			i;
+
+	accum = 0xffff;
+	i = 0;
+	while (i + 1 < len)
+	{
+		ft_memcpy(&word, (uint8_t *)pkt + i, 2);
+		accum += ntohs(word);
+		if (accum > 0xffff)
+			accum -= 0xffff;
+		i += 2;
+	}
+	if (len & 1)
+	{
+		word = 0;
+		ft_memcpy(&word, (uint8_t *)pkt + len - 1, 1);
+		accum += ntohs(word);
+		if (accum > 0xffff)
+			accum -= 0xffff;
+	}
+	ipptr = (uint16_t*)&src;
+	accum += *(ipptr++);
+	accum += *ipptr;
+	ipptr = (uint16_t*)&dst;
+	accum += *(ipptr++);
+	accum += *ipptr;
+	accum += htons(IPPROTO_UDP);
+	accum += htons(len);
+	while (accum >> 16)
+		accum = (accum & 0xffff) + (accum >> 16);
+	return ((uint16_t)~accum);
 }

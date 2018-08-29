@@ -16,7 +16,7 @@
 ** type will either be SO_SNDTIMEO or SO_RCVTIMEO
 */
 
-int		setsock_timeout(int sock, int type, struct timeval *tout)
+int		ft_setsock_timeout(int sock, int type, struct timeval *tout)
 {
 	if (setsockopt(sock, SOL_SOCKET, type, tout, sizeof(struct timeval)) < 0)
 	{

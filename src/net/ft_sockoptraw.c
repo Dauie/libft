@@ -12,7 +12,7 @@
 
 #include "../../incl/net.h"
 
-int					ft_sock_hdrincl(int sock)
+int					ft_setsock_hdrincl(int sock)
 {
 	int				on;
 

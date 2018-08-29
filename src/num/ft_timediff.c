@@ -23,6 +23,6 @@ long double			ft_timediff_ms(struct timeval *then, struct timeval *now)
 
 long double			ft_timediff_sec(struct timeval *then, struct timeval *now)
 {
-	return ((now->tv_sec - (1.0 / 1000000) * now->tv_usec) -
-			(then->tv_sec + (1.0 / 1000000) * then->tv_usec));
+	return ((then->tv_sec - now->tv_sec) +
+			((then->tv_usec - now->tv_usec) * 1000000));
 }

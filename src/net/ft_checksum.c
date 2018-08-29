@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../incl/net_ping.h"
+#include <string.h>
 
 u_int16_t			ft_udp_checksum(uint16_t *pkt, unsigned int len,
 									in_addr_t src, in_addr_t dst)
@@ -20,16 +21,16 @@ u_int16_t			ft_udp_checksum(uint16_t *pkt, unsigned int len,
 
 	accum = ft_checksum(pkt, len, FALSE);
 	ipptr = (uint16_t*)&src;
-	accum += htons(*(ipptr++));
-	accum += htons(*ipptr);
+	accum += ntohs(*(ipptr++));
+	accum += ntohs(*ipptr);
 	ipptr = (uint16_t*)&dst;
-	accum += htons(*(ipptr++));
-	accum += htons(*ipptr);
-	accum += htons(IPPROTO_UDP);
-	accum += htons(len);
+	accum += ntohs(*(ipptr++));
+	accum += ntohs(*ipptr);
+	accum += ntohs(IPPROTO_UDP);
+	accum += ntohs(len);
 	while (accum >> 16)
 		accum = (accum & 0xffff) + (accum >> 16);
-	return ((uint16_t)~accum);
+	return (ntohs(~accum));
 }
 
 u_int16_t			ft_checksum(void *data, unsigned int len, t_bool compliment)
@@ -42,8 +43,8 @@ u_int16_t			ft_checksum(void *data, unsigned int len, t_bool compliment)
 	i = 0;
 	while (i + 1 < len)
 	{
-		ft_memcpy(&word, (uint8_t *)data + i, 2);
-		accum += htons(word);
+		memcpy(&word, (uint8_t *)data + i, 2);
+		accum += ntohs(word);
 		if (accum > 0xffff)
 			accum -= 0xffff;
 		i += 2;
@@ -51,10 +52,10 @@ u_int16_t			ft_checksum(void *data, unsigned int len, t_bool compliment)
 	if (len & 1)
 	{
 		word = 0;
-		ft_memcpy(&word, (uint8_t *)data + len - 1, 1);
-		accum += htons(word);
+		memcpy(&word, (uint8_t *)data + len - 1, 1);
+		accum += ntohs(word);
 		if (accum > 0xffff)
 			accum -= 0xffff;
 	}
-	return (compliment ? (uint16_t)~accum : (uint16_t)accum);
+	return (compliment ? ntohs(~accum) : (uint16_t)accum);
 }

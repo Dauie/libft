@@ -1,20 +1,36 @@
-cmake_minimum_required(VERSION 3.6)
-project(libft)
+cmake_minimum_required(VERSION 3.10)
+project(libft C)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_C_STANDARD 11)
 
-set(SOURCE_FILES
+include_directories(incl)
+
+add_executable(libft
 		incl/bool.h
 		incl/char.h
 		incl/cnvrsn.h
 		incl/gnl.h
 		incl/lst.h
 		incl/mem.h
+		incl/net.h
+		incl/net_ping.h
 		incl/num.h
 		incl/printf.h
 		incl/put.h
+		incl/return_types.h
 		incl/str.h
 		incl/tbl.h
+		src/char/ft_isalnum.c
+		src/char/ft_isalpha.c
+		src/char/ft_isascii.c
+		src/char/ft_isdigit.c
+		src/char/ft_islower.c
+		src/char/ft_isprint.c
+		src/char/ft_isspc.c
+		src/char/ft_isupper.c
+		src/cnvrsn/ft_atoi.c
+		src/cnvrsn/ft_itoa.c
+		src/cnvrsn/ft_itoabse.c
 		src/ft_printf/ft_printf.c
 		src/ft_printf/pf_cast_di.c
 		src/ft_printf/pf_cast_oux.c
@@ -37,102 +53,103 @@ set(SOURCE_FILES
 		src/ft_printf/pf_tick.c
 		src/ft_printf/pf_typechr.c
 		src/ft_printf/pf_width.c
-		src/futil/gnl/gnl.c
-		src/primitive/char/ft_isalnum.c
-		src/primitive/char/ft_isalpha.c
-		src/primitive/char/ft_isascii.c
-		src/primitive/char/ft_isdigit.c
-		src/primitive/char/ft_islower.c
-		src/primitive/char/ft_isprint.c
-		src/primitive/char/ft_isspc.c
-		src/primitive/char/ft_isupper.c
-		src/primitive/cnvrsn/ft_atoi.c
-		src/primitive/cnvrsn/ft_itoa.c
-		src/primitive/cnvrsn/ft_itoabse.c
-		src/primitive/mem/ft_bzero.c
-		src/primitive/mem/ft_memalloc.c
-		src/primitive/mem/ft_memccpy.c
-		src/primitive/mem/ft_memchr.c
-		src/primitive/mem/ft_memcmp.c
-		src/primitive/mem/ft_memcpy.c
-		src/primitive/mem/ft_memdel.c
-		src/primitive/mem/ft_memmove.c
-		src/primitive/mem/ft_memset.c
-		src/primitive/num/ft_numlen.c
-		src/primitive/put/ft_putchar.c
-		src/primitive/put/ft_putchar_fd.c
-		src/primitive/put/ft_putclst.c
-		src/primitive/put/ft_putendl.c
-		src/primitive/put/ft_putendl_fd.c
-		src/primitive/put/ft_puterror.c
-		src/primitive/put/ft_putnbr.c
-		src/primitive/put/ft_putnbr_fd.c
-		src/primitive/put/ft_putnlst.c
-		src/primitive/put/ft_putstr.c
-		src/primitive/put/ft_putstr_fd.c
-		src/primitive/put/ft_putstrrev.c
-		src/primitive/put/ft_puttbl.c
-		src/primitive/str/ft_cntbnespc.c
-		src/primitive/str/ft_cntbspc.c
-		src/primitive/str/ft_cnttotspc.c
-		src/primitive/str/ft_cntwrds.c
-		src/primitive/str/ft_dirjoin.c
-		src/primitive/str/ft_isstralnum.c
-		src/primitive/str/ft_isstralpha.c
-		src/primitive/str/ft_isstrascii.c
-		src/primitive/str/ft_isstrdigit.c
-		src/primitive/str/ft_isstrprint.c
-		src/primitive/str/ft_nxtwrdlen.c
-		src/primitive/str/ft_strcat.c
-		src/primitive/str/ft_strchr.c
-		src/primitive/str/ft_strclr.c
-		src/primitive/str/ft_strcmp.c
-		src/primitive/str/ft_strconcat.c
-		src/primitive/str/ft_strcpy.c
-		src/primitive/str/ft_strdel.c
-		src/primitive/str/ft_strdup.c
-		src/primitive/str/ft_strequ.c
-		src/primitive/str/ft_striter.c
-		src/primitive/str/ft_striteri.c
-		src/primitive/str/ft_strjoin.c
-		src/primitive/str/ft_strjoinn.c
-		src/primitive/str/ft_strlcat.c
-		src/primitive/str/ft_strlen.c
-		src/primitive/str/ft_strmap.c
-		src/primitive/str/ft_strmapi.c
-		src/primitive/str/ft_strncat.c
-		src/primitive/str/ft_strncmp.c
-		src/primitive/str/ft_strncpy.c
-		src/primitive/str/ft_strndup.c
-		src/primitive/str/ft_strnequ.c
-		src/primitive/str/ft_strnew.c
-		src/primitive/str/ft_strnstr.c
-		src/primitive/str/ft_strrchr.c
-		src/primitive/str/ft_strrev.c
-		src/primitive/str/ft_strsplit.c
-		src/primitive/str/ft_strstr.c
-		src/primitive/str/ft_strstrip.c
-		src/primitive/str/ft_strsub.c
-		src/primitive/str/ft_strtrim.c
-		src/primitive/str/ft_tolower.c
-		src/primitive/str/ft_toupper.c
-		src/primitive/tbl/ft_crafttbl.c
-		src/primitive/tbl/ft_itbllen.c
-		src/primitive/tbl/ft_tbladdl.c
-		src/primitive/tbl/ft_tbldel.c
-		src/primitive/tbl/ft_tbldup.c
-		src/primitive/tbl/ft_tbllen.c
-		src/primitive/tbl/ft_tblrepline.c
-		src/primitive/tbl/ft_tblrmline.c
-		src/typedefined/lst/ft_lstadd.c
-		src/typedefined/lst/ft_lstdel.c
-		src/typedefined/lst/ft_lstdelone.c
-		src/typedefined/lst/ft_lstdup.c
-		src/typedefined/lst/ft_lsteadd.c
-		src/typedefined/lst/ft_lstiter.c
-		src/typedefined/lst/ft_lstlen.c
-		src/typedefined/lst/ft_lstmap.c
-		src/typedefined/lst/ft_lstnew.c
-		src/typedefined/lst/ft_lstnewstak.c)
-
-add_executable(libft ${SOURCE_FILES})
+		src/gnl/gnl.c
+		src/lst/ft_lstadd.c
+		src/lst/ft_lstdel.c
+		src/lst/ft_lstdelone.c
+		src/lst/ft_lstdup.c
+		src/lst/ft_lsteadd.c
+		src/lst/ft_lstiter.c
+		src/lst/ft_lstlen.c
+		src/lst/ft_lstmap.c
+		src/lst/ft_lstnew.c
+		src/lst/ft_lstnewstak.c
+		src/mem/ft_bzero.c
+		src/mem/ft_memalloc.c
+		src/mem/ft_memccpy.c
+		src/mem/ft_memchr.c
+		src/mem/ft_memcmp.c
+		src/mem/ft_memcpy.c
+		src/mem/ft_memdel.c
+		src/mem/ft_memmove.c
+		src/mem/ft_memset.c
+		src/net/ft_checksum.c
+		src/net/ft_domtoip.c
+		src/net/ft_gethstaddr.c
+		src/net/ft_getifaceaddr.c
+		src/net/ft_isaddrset.c
+		src/net/ft_makerawsock.c
+		src/net/ft_packet_header.c
+		src/net/ft_setsock_timeout.c
+		src/net/ft_sockoptraw.c
+		src/num/ft_getpercent.c
+		src/num/ft_numlen.c
+		src/num/ft_timediff.c
+		src/put/ft_errorexit.c
+		src/put/ft_hexdump.c
+		src/put/ft_putchar.c
+		src/put/ft_putchar_fd.c
+		src/put/ft_putclst.c
+		src/put/ft_putendl.c
+		src/put/ft_putendl_fd.c
+		src/put/ft_puterror.c
+		src/put/ft_putnbr.c
+		src/put/ft_putnbr_fd.c
+		src/put/ft_putnlst.c
+		src/put/ft_putstr.c
+		src/put/ft_putstr_fd.c
+		src/put/ft_putstrrev.c
+		src/put/ft_puttbl.c
+		src/str/ft_cntbnespc.c
+		src/str/ft_cntbspc.c
+		src/str/ft_cnttotspc.c
+		src/str/ft_cntwrds.c
+		src/str/ft_dirjoin.c
+		src/str/ft_isstralnum.c
+		src/str/ft_isstralpha.c
+		src/str/ft_isstrascii.c
+		src/str/ft_isstrdigit.c
+		src/str/ft_isstrprint.c
+		src/str/ft_nxtwrdlen.c
+		src/str/ft_strcat.c
+		src/str/ft_strchr.c
+		src/str/ft_strclr.c
+		src/str/ft_strcmp.c
+		src/str/ft_strconcat.c
+		src/str/ft_strcpy.c
+		src/str/ft_strdel.c
+		src/str/ft_strdup.c
+		src/str/ft_strequ.c
+		src/str/ft_striter.c
+		src/str/ft_striteri.c
+		src/str/ft_strjoin.c
+		src/str/ft_strjoinn.c
+		src/str/ft_strlcat.c
+		src/str/ft_strlen.c
+		src/str/ft_strmap.c
+		src/str/ft_strmapi.c
+		src/str/ft_strncat.c
+		src/str/ft_strncmp.c
+		src/str/ft_strncpy.c
+		src/str/ft_strndup.c
+		src/str/ft_strnequ.c
+		src/str/ft_strnew.c
+		src/str/ft_strnstr.c
+		src/str/ft_strrchr.c
+		src/str/ft_strrev.c
+		src/str/ft_strsplit.c
+		src/str/ft_strstr.c
+		src/str/ft_strstrip.c
+		src/str/ft_strsub.c
+		src/str/ft_strtrim.c
+		src/str/ft_tolower.c
+		src/str/ft_toupper.c
+		src/tbl/ft_crafttbl.c
+		src/tbl/ft_getenvar.c
+		src/tbl/ft_itbllen.c
+		src/tbl/ft_tbladdl.c
+		src/tbl/ft_tbldel.c
+		src/tbl/ft_tbldup.c
+		src/tbl/ft_tbllen.c
+		src/tbl/ft_tblrepline.c
+		src/tbl/ft_tblrmline.c)

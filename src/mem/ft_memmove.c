@@ -12,31 +12,47 @@
 
 #include "../../incl/mem.h"
 
+static void	copy_backwards(u_int8_t *d, u_int8_t *s, size_t len)
+{
+	s = s + len - 1;
+	d = d + len - 1;
+	while (len >= 8)
+	{
+		*(u_int64_t *)d = *(u_int64_t *)s;
+		d -= 8;
+		s -= 8;
+		len -= 8;
+	}
+	while (len > 0)
+	{
+		*d-- = *s--;
+		len--;
+	}
+}
+
 void		*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*d;
-	char	*s;
+	u_int8_t	*d;
+	u_int8_t	*s;
 
-	d = (char *)dst;
-	s = (char *)src;
+	d = (u_int8_t *)dst;
+	s = (u_int8_t *)src;
 	if (s < d)
-	{
-		s = s + len - 1;
-		d = d + len - 1;
-		while (len)
-		{
-			*d-- = *s--;
-			len--;
-		}
-		return (dst);
-	}
+		copy_backwards(d, s, len);
 	else
 	{
-		while (len)
+		while (len >= 8)
+		{
+			*(u_int64_t *)d = *(u_int64_t *)s;
+			d += 8;
+			s += 8;
+			len -= 8;
+		}
+		while (len > 0)
 		{
 			*d++ = *s++;
 			len--;
 		}
-		return (dst);
 	}
+	return (dst);
 }
